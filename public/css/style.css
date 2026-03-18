@@ -629,3 +629,345 @@ footer { text-align: center; padding: 30px; background: #333; color: white; marg
         padding: 20px;
     }
 }
+.featured-recipe {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.featured-container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Cột trái */
+.recipe-info { flex: 1; }
+.recipe-title { font-size: 2.5rem; color: #333; margin-bottom: 15px; }
+.recipe-meta { margin-bottom: 20px; color: #666; font-size: 0.9rem; }
+.recipe-meta span { margin-right: 20px; }
+.recipe-description { line-height: 1.6; color: #555; margin-bottom: 30px; }
+
+.recipe-actions .btn-primary {
+    background-color: #5d9e6e;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.recipe-actions .btn-secondary {
+    border: 1px solid #5d9e6e;
+    color: #5d9e6e;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+/* Cột giữa - Ảnh lớn */
+.recipe-main-img { flex: 1.5; }
+.recipe-main-img img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Cột phải - Ảnh nhỏ */
+.recipe-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.recipe-thumbnails img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.thumb-nav {
+    background: #eee;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Dots slider */
+.slider-dots { margin-top: 30px; display: flex; gap: 8px; }
+.slider-dots span {
+    width: 8px; height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+}
+.slider-dots span.active { background: #5d9e6e; width: 20px; border-radius: 10px; }
+/* Hero Section Cooking */
+.hero-cooking {
+    background-color: #fcfcfc;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* Cột nội dung bên trái */
+.hero-content { flex: 1; }
+.hero-title {
+    font-size: 32px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+.hero-meta { color: #757575; font-size: 14px; margin-bottom: 20px; }
+.hero-meta span { margin-right: 15px; }
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Nút bấm */
+.hero-btns { display: flex; gap: 10px; margin-bottom: 30px; }
+.btn-cook {
+    background-color: #e67e22; /* Màu xanh lá đặc trưng */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.btn-save {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+/* Pagination Dots */
+.hero-pagination { display: flex; gap: 8px; }
+.dot { width: 8px; height: 8px; background: #ddd; border-radius: 50%; }
+.dot.active { background: #e67e22; width: 25px; border-radius: 10px; }
+
+/* Cột ảnh chính */
+.hero-main-image { flex: 1.8; }
+.hero-main-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Cột ảnh nhỏ bên phải */
+.hero-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.side-thumbs img {
+    width: 90px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: block;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.side-thumbs img:hover { opacity: 1; cursor: pointer; }
+.side-nav {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 992px) {
+    .hero-container { flex-direction: column; }
+    .hero-sidebar { display: none; } /* Ẩn sidebar trên mobile cho gọn */
+}
+ .hero-cooking {
+     background-color: #fcfcfc;
+     padding: 40px 0;
+     border-bottom: 1px solid #eee;
+ }
+
+ .hero-container {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     gap: 30px;
+     align-items: center;
+     padding: 0 15px;
+ }
+
+ .hero-content {
+     flex: 1;
+ }
+
+ .hero-title {
+     font-size: 32px;
+     font-weight: bold;
+     color: #222;
+     margin-bottom: 15px;
+ }
+
+ .hero-meta {
+     color: #757575;
+     font-size: 14px;
+     margin-bottom: 20px;
+ }
+
+ .hero-meta span {
+     margin-right: 15px;
+ }
+
+ .hero-description {
+     font-size: 16px;
+     line-height: 1.6;
+     color: #444;
+     margin-bottom: 25px;
+ }
+
+ .hero-btns {
+     display: flex;
+     gap: 10px;
+     margin-bottom: 30px;
+ }
+
+ .btn-cook {
+     background-color: #e67e22;
+     color: #fff;
+     padding: 10px 25px;
+     border-radius: 25px;
+     text-decoration: none;
+ }
+
+ .btn-save {
+     border: 1px solid #e67e22;
+     color: #e67e22;
+     padding: 10px 25px;
+     border-radius: 25px;
+     text-decoration: none;
+ }
+
+ .hero-main-image {
+     flex: 1.8;
+ }
+
+ .hero-main-image img {
+     width: 100%;
+     height: 450px;
+     object-fit: cover;
+     border-radius: 8px;
+     transition: opacity 0.3s ease;
+     /* Hiệu ứng mượt khi đổi ảnh */
+ }
+
+ .hero-sidebar {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     align-items: center;
+ }
+
+ .side-thumbs img {
+     width: 90px;
+     height: 65px;
+     object-fit: cover;
+     border-radius: 4px;
+     margin-bottom: 8px;
+     cursor: pointer;
+     opacity: 0.7;
+     transition: 0.3s;
+     border: 2px solid transparent;
+ }
+
+ .side-thumbs img:hover,
+ .side-thumbs img.active {
+     opacity: 1;
+     border-color: #e67e22;
+ }
+
+ /* 2. Grid Món ăn bên dưới */
+ .recipe-grid-vnexpress {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 25px;
+     margin-top: 30px;
+ }
+
+ .recipe-item {
+     background: #fff;
+     border-radius: 12px;
+     overflow: hidden;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+     transition: 0.3s;
+ }
+
+ .recipe-item:hover {
+     transform: translateY(-5px);
+ }
+
+ .item-thumb img {
+     width: 100%;
+     height: 220px;
+     object-fit: cover;
+ }
+
+ .item-info {
+     padding: 15px;
+ }
+
+ .item-info h3 a {
+     text-decoration: none;
+     color: #222;
+     font-size: 17px;
+     font-weight: 600;
+ }
+
+ .item-footer {
+     display: flex;
+     justify-content: flex-end;
+     margin-top: 10px;
+ }
+
+ .btn-bookmark {
+     background: none;
+     border: none;
+     color: #888;
+     cursor: pointer;
+ }
+
+ @media (max-width: 992px) {
+     .hero-container {
+         flex-direction: column;
+     }
+
+     .hero-sidebar {
+         display: none;
+     }
+
+     .recipe-grid-vnexpress {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
