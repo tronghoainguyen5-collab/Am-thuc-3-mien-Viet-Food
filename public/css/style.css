@@ -923,10 +923,6 @@ body {
     transform: translateY(-2px);
     /* Nhảy nhẹ lên trên */
 }
-
-
-
-<<<<<<< HEAD
  .recipe-item:hover {
      transform: translateY(-5px);
  }
@@ -1015,5 +1011,3 @@ body {
     font-size: 20px;
 }
 
-=======
->>>>>>> Hà
