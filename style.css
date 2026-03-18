@@ -183,3 +183,129 @@ footer { text-align: center; padding: 30px; background: #333; color: white; marg
     color: #999;
     text-decoration: none;
 }
+/* ==========================================
+   CHỈNH SỬA GIAO DIỆN TRANG LIÊN HỆ
+   ========================================== */
+
+/* 1. Khung bao ngoài chia 2 cột */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Cột form rộng hơn cột thông tin */
+    gap: 40px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Đổ bóng nhẹ sang trọng */
+}
+
+/* 2. Cột thông tin liên hệ */
+.contact-info {
+    background-color: #fff9f4;
+    /* Màu nền cam nhạt cực nhẹ */
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #e67e22;
+    /* Thanh nhấn màu thương hiệu */
+}
+
+.contact-info h3 {
+    color: #e67e22;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.contact-info strong {
+    color: #333;
+    display: inline-block;
+    width: 130px;
+    /* Căn lề cho các chữ tiêu đề */
+}
+
+/* 3. Cột Form liên hệ */
+.contact-form-box {
+    padding: 10px;
+}
+
+.contact-form-box .input-group {
+    margin-bottom: 25px;
+    /* Tăng khoảng cách giữa các ô */
+}
+
+.contact-form-box label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* 4. Chỉnh sửa ô Input và Textarea cho TO và ĐẸP */
+.contact-form-box input,
+.contact-form-box textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #eee;
+    /* Viền nhạt */
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fcfcfc;
+}
+
+/* Hiệu ứng khi nhấn vào ô nhập */
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+    border-color: #e67e22;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.2);
+}
+
+/* Chỉnh riêng cho ô Nội dung */
+.contact-form-box textarea {
+    min-height: 220px;
+    /* Tăng độ cao rất rộng rãi */
+    line-height: 1.6;
+    resize: vertical;
+    /* Chỉ cho kéo rộng theo chiều dọc */
+}
+
+/* 5. Nút gửi tin nhắn */
+.contact-form-box .btn-main {
+    background: #e67e22;
+    color: white;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.contact-form-box .btn-main:hover {
+    background: #d35400;
+    transform: translateY(-3px);
+    /* Nhích nhẹ lên khi hover */
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        /* Chuyển thành 1 cột trên mobile */
+        padding: 20px;
+    }
+}
