@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const region = document.body.getAttribute('data-region');
-    const recipeData = allData[region];
-    if (!recipeData) return;
+    const recipeData = allData[region] || [];
+    if (recipeData.length === 0) return;
 
     const mainImg = document.getElementById('main-img');
     const title = document.getElementById('hero-title');
@@ -30,25 +30,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const time = document.getElementById('hero-time');
     const serves = document.getElementById('hero-serves');
     const thumbs = document.querySelectorAll('.side-thumbs img');
-    const dots = document.querySelectorAll('.dot');
+    const dots = document.querySelectorAll('.hero-dots .dot');
 
-    function update(i) {
-        thumbs.forEach(t => t.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
-        thumbs[i].classList.add('active');
-        dots[i].classList.add('active');
+    let currentIndex = 0;
 
+    function update(index) {
+        if (index < 0 || index >= recipeData.length) return;
+
+        currentIndex = index;
+
+        // Highlight thumb & dot
+        thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+
+        // Fade effect cho ảnh
         mainImg.style.opacity = 0;
         setTimeout(() => {
-            title.innerText = recipeData[i].title;
-            desc.innerText = recipeData[i].desc;
-            time.innerHTML = `<i class="far fa-clock"></i> ${recipeData[i].time}`;
-            serves.innerHTML = `<i class="fas fa-users"></i> ${recipeData[i].serves}`;
-            mainImg.src = recipeData[i].img;
+            title.innerText = recipeData[index].title;
+            desc.innerText = recipeData[index].desc;
+            time.innerHTML = `<i class="far fa-clock"></i> ${recipeData[index].time}`;
+            serves.innerHTML = `<i class="fas fa-users"></i> ${recipeData[index].serves}`;
+            mainImg.src = recipeData[index].img;
             mainImg.style.opacity = 1;
         }, 250);
     }
 
-    thumbs.forEach((t, i) => t.onclick = () => update(i));
-    dots.forEach((d, i) => d.onclick = () => update(i));
+    // Click thumbnail
+    thumbs.forEach((thumb, i) => {
+        thumb.addEventListener('click', () => update(i));
+    });
+
+    // Click dot
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => update(i));
+    });
+
+    // ── THÊM: Nút mũi tên lên / xuống ───────────────────────────────
+    const upArrow = document.querySelector('.nav-arrow i.fa-chevron-up')?.closest('.nav-arrow');
+    const downArrow = document.querySelector('.nav-arrow i.fa-chevron-down')?.closest('.nav-arrow');
+
+    if (upArrow) {
+        upArrow.addEventListener('click', () => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = recipeData.length - 1; // loop về cuối
+            update(newIndex);
+        });
+    }
+
+    if (downArrow) {
+        downArrow.addEventListener('click', () => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= recipeData.length) newIndex = 0; // loop về đầu
+            update(newIndex);
+        });
+    }
+
+    // Khởi tạo ban đầu
+    update(0);
 });
