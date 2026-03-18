@@ -1,5 +1,4 @@
-<<<<<<< HEAD:public/css/style.css
-/* Reset & Base */
+
 * {
     margin: 0;
     padding: 0;
@@ -319,8 +318,7 @@ footer { text-align: center; padding: 30px; background: #333; color: white; marg
     font-size: 0.85rem;
     color: #999;
     text-decoration: none;
-=======
-/* Reset & Base */
+}
 * {
     margin: 0;
     padding: 0;
@@ -630,5 +628,4 @@ footer { text-align: center; padding: 30px; background: #333; color: white; marg
         /* Chuyển thành 1 cột trên mobile */
         padding: 20px;
     }
->>>>>>> Hà:style.css
 }
