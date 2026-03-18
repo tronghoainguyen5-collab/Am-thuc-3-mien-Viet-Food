@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "bac": [
             { title: "Phở Bò Hà Nội", time: "8 giờ", serves: "4 người", desc: "Nước dùng trong, ngọt thanh từ xương ống ninh kỹ cùng quế hồi thơm lừng.", img: "https://static.vinwonders.com/production/pho-bo-ha-noi-4.jpg" },
             { title: "Bún Chả Hà Nội", time: "45 phút", serves: "2-3 người", desc: "Thịt nướng than hoa ăn kèm nước chấm đu đủ xanh chua ngọt.", img: "https://www.seriouseats.com/thmb/atsVhLwxdCWyX-QDuhOLhR0Kx4s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20231204-SEA-VyTran-BunChaHanoi-18-e37d96a89a0f43d097e02311686290f2.jpg" },
-            { title: "Chả Cá Lã Vọng", time: "60 phút", serves: "3-4 người", desc: "Cá lăng nướng vàng, ăn kèm bún, mắm tôm và rau thì là.", img: "https://vcdn1-giadinh.vnecdn.net/2023/07/04/anh-dau-1688440078-4339-1688440263.jpg" },
+            { title: "Chả Cá Lã Vọng", time: "60 phút", serves: "3-4 người", desc: "Cá lăng nướng vàng, ăn kèm bún, mắm tôm và rau thì là.", img: "https://www.cet.edu.vn/wp-content/uploads/2018/08/cha-ca-la-vong.jpg" },
             { title: "Bún Thang", time: "90 phút", serves: "4-5 người", desc: "Sự cầu kỳ từ trứng tráng mỏng, giò lụa và tôm khô.", img: "https://mia.vn/media/uploads/blog-du-lich/bun-thang-ha-noi-1-1760498574.jpg" }
         ],
         "trung": [
