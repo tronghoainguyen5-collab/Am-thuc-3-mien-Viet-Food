@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body data-region="bac">
     <nav class="navbar">
         <div class="logo">VietFood</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li><a href="mien-trung.html">Miền Trung</a></li>
-                <li><a href="mien-nam.html">Miền Nam</a></li>
-            </ul>
+        <ul class="nav-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="mien-bac.html" class="active">Miền Bắc</a></li>
+            <li><a href="mien-trung.html">Miền Trung</a></li>
+            <li><a href="mien-nam.html">Miền Nam</a></li>
+        </ul>
 
         <div class="search-bar">
             <input type="text" placeholder="Bạn muốn nấu món gì?">
@@ -24,10 +25,9 @@
         </div>
 
         <div class="nav-actions">
-
             <div class="auth-buttons">
                 <a href="#" class="btn-saved">
-                <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+                    <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
                 </a>
                 <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
                 <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
@@ -38,14 +38,14 @@
     <section class="hero-cooking">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 id="hero-title" class="hero-title">Canh cá nấu rau cần tháng Giêng</h1>
+                <h1 id="hero-title" class="hero-title">Phở Bò Hà Nội</h1>
                 <div class="hero-meta">
-                    <span id="hero-time"><i class="far fa-clock"></i> 25 phút</span>
-                    <span id="hero-serves"><i class="fas fa-users"></i> 4-5 người</span>
+                    <span id="hero-time"><i class="far fa-clock"></i> 8 giờ</span>
+                    <span id="hero-serves"><i class="fas fa-users"></i> 4 người</span>
                 </div>
                 <p id="hero-desc" class="hero-description">
-                    Cá mềm ngọt tự nhiên, rau cần giòn, thơm mùi đặc trưng, nước canh trong dịu.
-                    Đây là món ăn dân dã quen thuộc trong các bữa cơm miền Bắc vào tháng Giêng.
+                    Phở bò Hà Nội quyến rũ bởi nước dùng trong, ngọt thanh từ xương ống ninh kỹ cùng quế, hồi, thảo quả
+                    nướng thơm lừng.
                 </p>
                 <div class="hero-btns">
                     <a href="#" class="btn-cook">Xem cách nấu</a>
@@ -59,21 +59,22 @@
 
             <div class="hero-main-image">
                 <img id="main-img"
-                    src="https://i1-giadinh.vnecdn.net/2023/02/03/Buoc-5-thanh-pham-1-7960-1675416498.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=31Pbhr1qfS2D6IoZhC4bAg"
-                    alt="Lẩu cá chép">
+                    src="https://bizweb.dktcdn.net/thumb/grande/100/458/718/articles/pho-bo.jpg?v=1697421530047"
+                    alt="Phở bò Hà Nội">
             </div>
 
             <div class="hero-sidebar">
                 <button class="nav-arrow"><i class="fas fa-chevron-up"></i></button>
                 <div class="side-thumbs">
                     <img class="active"
-                        src="https://i1-giadinh.vnecdn.net/2023/02/03/Buoc-5-thanh-pham-1-7960-1675416498.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=31Pbhr1qfS2D6IoZhC4bAg"
-                        alt="step 1">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/07/13/mon6-1689237906-7319-1689237948.jpg?w=500&h=500&q=100&dpr=2&fit=crop&s=gZgx2EWP5waZyCY4ruAHCw" alt="step 2">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/11/04/Bc6Thnhphm16-1699072213-8990-1699072343.jpg?w=500&h=500&q=100&dpr=2&fit=crop&s=Cz22ArE2ESW7TETJI38EZw"
-                        alt="step 3">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/09/16/Bc4Thnhphm11-1694856717-6271-1694856861.jpg?w=500&h=500&q=100&dpr=2&fit=crop&s=IKLIz5VLS8vJvyLxEtYUoA"
-                        alt="step 4">
+                        src="https://static.vinwonders.com/production/pho-bo-ha-noi-4.jpg"
+                        alt="Phở bò Hà Nội">
+                    <img src="https://www.seriouseats.com/thmb/atsVhLwxdCWyX-QDuhOLhR0Kx4s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20231204-SEA-VyTran-BunChaHanoi-18-e37d96a89a0f43d097e02311686290f2.jpg"
+                        alt="Bún chả">
+                    <img src="https://www.cet.edu.vn/wp-content/uploads/2018/08/cha-ca-la-vong.jpg"
+                        alt="Chả cá">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/bun-thang-ha-noi-1-1760498574.jpg"
+                        alt="Bún thang">
                 </div>
                 <button class="nav-arrow"><i class="fas fa-chevron-down"></i></button>
             </div>
@@ -81,66 +82,65 @@
     </section>
 
     <main class="container">
+        <h2 class="section-title">Tinh Hoa Đặc Sản Miền Bắc</h2>
         <div class="recipe-grid">
             <article class="recipe-card">
                 <div class="thumb">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/02/03/Buoc-5-thanh-pham-1-7960-1675416498.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=31Pbhr1qfS2D6IoZhC4bAg"
-                        alt="Vịt">
+                    <img src="https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c807853b7e6aea446c050489a7bda3a6e3708990058a1ebfc90b05b091ec6bc5a6cc031fb93269edfeb9a566ea055eeeefa0b2/bun_cha_ha_noi_8.jpg"
+                        alt="Bún chả">
                     <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
                 </div>
-                <h3>Công thức vịt nấu chao của đầu bếp chuyên nghiệp</h3>
+                <h3>Bún chả Hà Nội - Vị ngon từ thịt nướng than hoa</h3>
             </article>
+
             <article class="recipe-card">
                 <div class="thumb">
-                    <img src="https://vcdn1-giadinh.vnecdn.net/2022/06/17/Bu-n-su-o-ng-1-1655455806-5627-1655456209.jpg"
-                        alt="Sấu">
+                    <img src="https://langngheviet.com.vn/stores/news_dataimages/2025/122025/17/13/cha-ca-la-vong-120251217134649.jpg?rt=20251217134701"
+                        alt="Chả cá Lã Vọng">
                     <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
                 </div>
-                <h3>Món ngon từ sấu - nét ẩm thực dân dã Hà thành</h3>
+                <h3>Chả cá Lã Vọng - Đặc sản tinh tế vùng kinh kỳ</h3>
             </article>
+
             <article class="recipe-card">
                 <div class="thumb">
-                    <img src="https://vcdn1-giadinh.vnecdn.net/2022/09/08/Anh-da-i-die-n-1662608402-5369-1662608530.jpg"
-                        alt="Ốc">
+                    <img src="https://cdn3.ivivu.com/2020/04/huong-dan-nau-mon-oc-om-chuoi-dau-chuan-vi-bac-ivivu-9.jpg"
+                        alt="Ốc om chuối đậu">
                     <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
                 </div>
-                <h3>Ốc Trung thu - ẩm thực cổ truyền Hà Nội</h3>
+                <h3>Ốc om chuối đậu - Hương vị dân dã, đậm đà</h3>
+            </article>
+
+            <article class="recipe-card">
+                <div class="thumb">
+                    <img src="https://file.hstatic.net/200000721249/file/am_vit_om_sau_voi_mang_chua_gion_ngon_3f7482df150444f588971d223153c0ec.jpg"
+                        alt="Bún thang">
+                    <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+                </div>
+                <h3>Bún thang Hà Nội - Sự khéo léo trong từng sợi bún</h3>
+            </article>
+
+            <article class="recipe-card">
+                <div class="thumb">
+                    <img src="https://cdn.zsoft.solutions/poseidon-web/app/media/uploaded-files/270724-cach-lam-vit-om-sau-buffet-posdeidon.jpg"
+                        alt="Món ngon từ sấu">
+                    <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+                </div>
+                <h3>Vịt om sấu - Vị chua thanh mát ngày hè Bắc Bộ</h3>
+            </article>
+
+            <article class="recipe-card">
+                <div class="thumb">
+                    <img src="https://visitninhbinh.com.vn/VisitHaNam/%E1%BA%A2NH%20POST/c%C3%A1%20kho/3049/image-thumb__3049__720_jpg/picture-77-1643453491-670-width1170height730.7f60090e.png"
+                        alt="Cá kho làng Vũ Đại">
+                    <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+                </div>
+                <h3>Cá kho làng Vũ Đại - Đặc sản trứ danh Hà Nam</h3>
             </article>
         </div>
     </main>
 
-    <script>
-        const recipeData = [
-            { title: "Canh cá nấu rau cần tháng Giêng", time: "25 phút", serves: "4-5 người", desc: "Cá mềm ngọt tự nhiên, rau cần giòn, thơm mùi đặc trưng, nước canh trong dịu. Đây là món ăn dân dã quen thuộc trong các bữa cơm miền Bắc vào tháng Giêng.", img: "https://i1-giadinh.vnecdn.net/2023/02/03/Buoc-5-thanh-pham-1-7960-1675416498.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=31Pbhr1qfS2D6IoZhC4bAg" },
-            { title: "Cách nấu phở bò Hà Nội", time: "45 phút", serves: "3-4 người", desc: "Nước dùng thanh ngọt từ xương ống, hòa quyện hương hồi quế đặc trưng.", img: "https://i1-giadinh.vnecdn.net/2023/07/13/mon6-1689237906-7319-1689237948.jpg?w=500&h=500&q=100&dpr=2&fit=crop&s=gZgx2EWP5waZyCY4ruAHCw" },
-            { title: "Bún suông Trà Vinh đặc sản", time: "60 phút", serves: "4 người", desc: "Món bún độc đáo với những con suông làm từ tôm tươi, đậm đà vị miền Tây.", img: "https://i1-giadinh.vnecdn.net/2023/11/04/Bc6Thnhphm16-1699072213-8990-1699072343.jpg?w=500&h=500&q=100&dpr=2&fit=crop&s=Cz22ArE2ESW7TETJI38EZw" },
-            { title: "Gà nướng mắc khén Tây Bắc", time: "50 phút", serves: "4-5 người", desc: "Thịt gà dai ngọt thấm đẫm hương vị mắc khén, hạt dổi thơm lừng rừng núi.", img: "https://i1-giadinh.vnecdn.net/2023/09/16/Bc4Thnhphm11-1694856717-6271-1694856861.jpg?w=500&h=500&q=100&dpr=2&fit=crop&s=IKLIz5VLS8vJvyLxEtYUoA" }
-        ];
-
-        const thumbs = document.querySelectorAll('.side-thumbs img');
-        const mainImg = document.getElementById('main-img');
-        const title = document.getElementById('hero-title');
-        const desc = document.getElementById('hero-desc');
-        const time = document.getElementById('hero-time');
-        const serves = document.getElementById('hero-serves');
-
-        thumbs.forEach((thumb, i) => {
-            thumb.onclick = () => {
-                thumbs.forEach(t => t.classList.remove('active'));
-                thumb.classList.add('active');
-
-                mainImg.style.opacity = 0;
-                setTimeout(() => {
-                    mainImg.src = recipeData[i].img;
-                    title.innerText = recipeData[i].title;
-                    desc.innerText = recipeData[i].desc;
-                    time.innerHTML = `<i class="far fa-clock"></i> ${recipeData[i].time}`;
-                    serves.innerHTML = `<i class="fas fa-users"></i> ${recipeData[i].serves}`;
-                    mainImg.style.opacity = 1;
-                }, 200);
-            }
-        });
-    </script>
+    <script src="public/js/script.js"></script>
 </body>
 
 </html>
