@@ -69,7 +69,7 @@ body {
 /* Region Cards (Trang chủ) */
 .region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .region-card {
-    height: 250px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,9 +80,9 @@ body {
     background-size: cover;
 }
 
-.north { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?q=80&w=500'); }
-.central { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1559592443-7f87a04918e9?q=80&w=500'); }
-.south { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1552590635-27c2c2128b15?q=80&w=500'); }
+.north { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/san-pham-dac-trung-cua-mien-bac-va-mien-nam-1.webp'); }
+.central { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/nhung-net-dac-trung-cua-am-thuc-mien-trung-1.jpg'); }
+.south { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/5-mon-an-trong-am-thuc-mien-nam-ma-ban-nhat-dinh-phai-thu.jpg'); }
 
 .region-card:hover { transform: scale(1.05); }
 
@@ -319,6 +319,7 @@ footer { text-align: center; padding: 30px; background: #333; color: white; marg
     color: #999;
     text-decoration: none;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -971,3 +972,44 @@ footer { text-align: center; padding: 30px; background: #333; color: white; marg
          grid-template-columns: repeat(2, 1fr);
      }
  }
+
+.TinTuc{
+    text-align: center;
+    font-size: bold;
+}
+.HinhVaTinTuc{
+ display: flex;
+ justify-items: center;
+ align-items: center;
+ gap: 20px;
+ padding: 10px;
+}
+.HinhVaTinTuc img{
+    width: 100%;
+    border-radius: 15px;
+}
+.HinhVaTinTuc div{
+    width: 100%;
+    font-size: 20px;
+}
+
+.TinTuc-1{
+    text-align: center;
+    font-size: bold;
+}
+.HinhVaTinTuc-1{
+ display: flex;
+ justify-items: center;
+ align-items: center;
+ gap: 20px;
+ padding: 10px;
+}
+.HinhVaTinTuc-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.HinhVaTinTuc-1 div{
+    width: 100%;
+    font-size: 20px;
+}
+
