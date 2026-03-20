@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ẩm Thực Miền Bắc - VietFood</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Ẩm Thực Miền Nam - VietFood</title>
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body data-region="nam">
     <nav class="navbar">
         <div class="logo">VietFood</div>
         <ul class="nav-links">
@@ -17,144 +17,205 @@
             <li><a href="mien-bac.html">Miền Bắc</a></li>
             <li><a href="mien-trung.html">Miền Trung</a></li>
             <li><a href="mien-nam.html">Miền Nam</a></li>
-            <li><a href="gioi-thieu.html">Giới thiệu</a></li>
-            <li><a href="lien-he.html">Liên hệ</a></li>
+            <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+            <li><a href="lien-he.html">Liên Hệ</a></li>
         </ul>
-        <div class="auth-buttons">
-            <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
-            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+<!-- 
+        <div class="search-bar">
+            <input type="text" placeholder="Bạn muốn nấu món gì?">
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div> -->
+
+        <div class="nav-actions">
+            <div class="auth-buttons">
+                <a href="#" class="btn-saved">
+                    <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+                </a>
+                <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
+                <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+            </div>
         </div>
     </nav>
-
 
     <section class="hero-cooking">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Cách nấu phở bò chuẩn vị</h1>
+                <h1 id="hero-title" class="hero-title">Lẩu Mắm Miền Tây</h1>
                 <div class="hero-meta">
-                    <span><i class="far fa-clock"></i> 45 phút</span>
-                    <span><i class="fas fa-users"></i> 4-5 người</span>
+                    <span id="hero-time"><i class="far fa-clock"></i> 45 phút</span>
+                    <span id="hero-serves"><i class="fas fa-users"></i> 4-6 người</span>
                 </div>
-                <p class="hero-description">
-                    Nước dùng trong veo, ngọt thanh từ xương ống, hòa quyện cùng mùi thơm của quế, hồi và gừng nướng.
-                    Món ăn biểu tượng của Hà Nội mà ai cũng muốn thử một lần.
+                <p id="hero-desc" class="hero-description">
+                    Hương vị đặc trưng của mắm cá linh, cá sặc hòa quyện cùng tôm, mực và các loại rau đồng nội.
+                    Lẩu mắm là biểu tượng của sự trù phú và hiếu khách của người dân vùng sông nước.
                 </p>
                 <div class="hero-btns">
                     <a href="#" class="btn-cook">Xem cách nấu</a>
-                    <a href="#" class="btn-save"><i class="far fa-bookmark"></i> Lưu công thức</a>
+                    <a href="#" class="btn-save-outline"><i class="fa-solid fa-bookmark"></i> Lưu công thức</a>
                 </div>
-                <div class="hero-pagination">
-                    <span class="dot"></span><span class="dot"></span><span class="dot active"></span>
-
-    <main class="container">
-        <h2 class="section-title">Món Ngon Miền Nam</h2>
-        <div class="recipe-grid">
-            <div class="recipe-card">
-                <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=500" alt="Phở">
-                <div class="card-body">
-                    <h3>Phở Bò Hà Nội</h3>
-                    <p>Món ăn quốc hồn quốc túy với nước dùng thanh ngọt.</p>
-                    <a href="chi-tiet.html" class="btn">Xem chi tiết</a>
-
+                <div class="hero-dots">
+                    <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span
+                        class="dot"></span>
                 </div>
             </div>
 
             <div class="hero-main-image">
-                <img id="main-recipe-img"
-                    src="https://i1-giadinh.vnecdn.net/2022/09/30/-1940-1664522303.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=wV0NFFG4ZPebUuimiuDS_Q"
-                    alt="Phở bò">
+                <img id="main-img"
+                    src="https://daotaobeptruong.vn/wp-content/uploads/2021/03/cach-nau-lau-mam-don-gian.jpg"
+                    alt="Lẩu mắm">
             </div>
 
             <div class="hero-sidebar">
-                <div class="side-nav up"><i class="fas fa-chevron-up"></i></div>
+                <button class="nav-arrow"><i class="fas fa-chevron-up"></i></button>
                 <div class="side-thumbs">
                     <img class="active"
-                        src="https://i1-giadinh.vnecdn.net/2022/09/30/-1940-1664522303.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=wV0NFFG4ZPebUuimiuDS_Q"
-                        alt="step">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/02/19/1Cnhgchinmm1-1676800597-9499-1676800982.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_sf-9Xw6kDbbcmIvRvRkSg"
-                        alt="step">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/02/23/Bc9Thnhphm9-1677138455-9744-1677138711.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=x4wSUo6Gh_veLtckaPjkFA"
-                        alt="step">
-                    <img src="https://i1-giadinh.vnecdn.net/2022/09/30/-7717-1664555235.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=id1ejvXO0KZzbb87volMfQ"
-                        alt="step">
+                        src="https://daotaobeptruong.vn/wp-content/uploads/2021/03/cach-nau-lau-mam-don-gian.jpg"
+                        alt="Lẩu mắm">
+                    <img src="https://static.vinwonders.com/production/com-tam-sai-gon-banner.jpg"
+                        alt="Cá kho tộ">
+                    <img src="https://i.ytimg.com/vi/hxI-i5jAeB8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBojnmiQAk3Xll7SREnHLzCPhVJ7w"
+                        alt="Bánh xèo">
+                    <img src="https://static-images.vnncdn.net/vps_images_publish/000001/000003/2026/1/19/cach-lam-vit-nau-chao-don-gian-tai-nha-khong-lo-bi-hoi-1926.jpg?width=0&s=749A_jlfZOaqF9tmDBCtuw"
+                        alt="Vịt nấu chao">
                 </div>
-                <div class="side-nav down"><i class="fas fa-chevron-down"></i></div>
+                <button class="nav-arrow"><i class="fas fa-chevron-down"></i></button>
             </div>
         </div>
     </section>
 
-    <main class="container">
-        <div class="section-header">
-            <h2 class="section-title">Khám phá công thức món ngon miền Nam</h2>
-        </div>
+<main class="container">
+    <h2 class="section-title">Khám Phá Hương Vị Phương Nam</h2>
+    <div class="recipe-grid">
 
-        <div class="recipe-grid-vnexpress">
-            <article class="recipe-item">
-                <div class="item-thumb">
-                    <img src="https://i1-giadinh.vnecdn.net/2022/09/30/-7717-1664555235.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=id1ejvXO0KZzbb87volMfQ"
-                        alt="Vịt nấu chao">
-                </div>
-                <div class="item-info">
-                    <h3><a href="#">Công thức vịt nấu chao của đầu bếp chuyên nghiệp</a></h3>
-                    <div class="item-footer">
-                        <button class="btn-bookmark"><i class="far fa-bookmark"></i></button>
-                    </div>
-                </div>
-            </article>
+        <!-- Cá lóc kho tộ -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://i.ytimg.com/vi/M09eqlVe-FQ/maxresdefault.jpg" alt="Cá lóc kho tộ">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Cá lóc kho tộ - Đậm đà phong vị bữa cơm quê</h3>
+        </article>
 
-            <article class="recipe-item">
-                <div class="item-thumb">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/02/23/Bc9Thnhphm9-1677138455-9744-1677138711.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=x4wSUo6Gh_veLtckaPjkFA"
-                        alt="Ốc">
-                </div>
-                <div class="item-info">
-                    <h3><a href="#">Ốc Trung thu - ẩm thực cổ truyền Hà Nội</a></h3>
-                    <div class="item-footer">
-                        <button class="btn-bookmark"><i class="far fa-bookmark"></i></button>
-                    </div>
-                </div>
-            </article>
+        <!-- Bánh xèo -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://myvietkitchen.com/wp-content/uploads/2026/03/Banh-Xeo-Mien-Tay-scaled.png"
+                    alt="Bánh xèo">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Bánh xèo miền Tây - Giòn rụm, thơm nồng mùi cốt dừa</h3>
+        </article>
 
-            <article class="recipe-item">
-                <div class="item-thumb">
-                    <img src="https://i1-giadinh.vnecdn.net/2023/02/19/1Cnhgchinmm1-1676800597-9499-1676800982.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_sf-9Xw6kDbbcmIvRvRkSg"
-                        alt="Bún">
-                </div>
-                <div class="item-info">
-                    <h3><a href="#">Cách làm bún dọc mùng thanh mát cho ngày hè</a></h3>
-                    <div class="item-footer">
-                        <button class="btn-bookmark"><i class="far fa-bookmark"></i></button>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </main>
+        <!-- Bún bò Hóc Môn -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://www.hungryhuy.com/wp-content/uploads/bun-bo-hue-bowl.jpg" alt="Bún bò Hóc Môn">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Bún bò Hóc Môn - Hương vị độc đáo vùng ngoại ô</h3>
+        </article>
 
+        <!-- Cơm tấm Sài Gòn -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://vietnamluxuryexpress.com/wp-content/uploads/2025/11/com-tam-146-1.jpg" alt="Cơm tấm">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Cơm tấm Sài Gòn - Món ăn đường phố biểu tượng, topping đầy đặn</h3>
+        </article>
+
+        <!-- Lẩu mắm miền Tây -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://keepupcooking.com/wp-content/uploads/2024/08/bun-mam-vietnamese-fermented-fish-noodle-soup-10.webp"
+                    alt="Lẩu mắm">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Lẩu mắm miền Tây - Vị đậm đà sông nước, rau tươi phong phú</h3>
+        </article>
+
+        <!-- Hủ tiếu Nam Vang -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://vietnamnomad.com/wp-content/uploads/2022/09/Hu-Tieu-Nam-Vang-Vietnamnomad.jpg"
+                    alt="Hủ tiếu Nam Vang">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Hủ tiếu Nam Vang - Nước dùng thanh ngọt, topping hải sản tươi</h3>
+        </article>
+
+        <!-- Canh chua cá lóc -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://static.vinwonders.com/production/vietnamese-fish-soup-5.jpg" alt="Canh chua cá lóc">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Canh chua cá lóc - Chua ngọt thanh mát, đặc trưng miền Nam</h3>
+        </article>
+
+        <!-- Bò tơ Tây Ninh -->
+        <article class="recipe-card">
+            <div class="thumb">
+                <img src="https://sunparadiseland.com/_next/image?url=https%3A%2F%2Fsun-ecommerce-cdn.azureedge.net%2Fecommerce%2Fservice-sites%2Fasset%2FSunParadiseLandTayNinh%2Fgoogle-doc%2Fpost_id_12954%2FAD_4nXePx1IunAJqeZI-KrMZjnJnKm86VFslRhLaWLcghS7tW8HNJBVPPhjr6eNAIuchtLBu_5M56s-kYAeua6Bb9N-kJntMWPO4t1ugQHE8S7ERTaiVN0L2d1iJstQoq9-a2581ecarZaIH9xnjLTN7Y8IKA6o.webp&w=1200&q=80"
+                    alt="Bò tơ Tây Ninh">
+                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <h3>Bò tơ Tây Ninh - Thịt mềm ngọt, nướng thơm lừng</h3>
+        </article>
+
+    </div>
+</main>
     <footer class="vietfood-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <h2 class="footer-logo">Viet<span>Food</span></h2>
+                <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba
+                    miền Bắc - Trung - Nam.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-links-group">
+                <div class="footer-nav">
+                    <h3>Danh Mục</h3>
+                    <ul>
+                        <li><a href="mien-bac.html">Miền Bắc</a></li>
+                        <li><a href="mien-trung.html">Miền Trung</a></li>
+                        <li><a href="mien-nam.html">Miền Nam</a></li>
+                        <li><a href="#">Mẹo Nhà Bếp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>Hỗ Trợ</h3>
+                    <ul>
+                        <li><a href="#">Về VietFood</a></li>
+                        <li><a href="#">Chính Sách</a></li>
+                        <li><a href="#">Bảo Mật</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer-newsletter">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <p><i class="fas fa-phone-alt"></i> +84 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> contact@vietfood.vn</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Nhập email của bạn...">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    
         <div class="footer-copyright">
             <p>&copy; 2026 <strong>VietFood</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
         </div>
     </footer>
-
-    <script>
-        const mainImg = document.getElementById('main-recipe-img');
-        const thumbnails = document.querySelectorAll('.side-thumbs img');
-
-        thumbnails.forEach(thumb => {
-            thumb.addEventListener('click', function () {
-                // Đổi ảnh chính
-                mainImg.style.opacity = '0'; // Hiệu ứng mờ đi
-                setTimeout(() => {
-                    mainImg.src = this.src;
-                    mainImg.style.opacity = '1'; // Hiện lên lại
-                }, 200);
-
-                // Đổi trạng thái Active cho ảnh nhỏ
-                thumbnails.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+    <script src="public/js/script.js"></script>
 </body>
 
 </html>
