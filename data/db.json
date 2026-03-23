@@ -351,6 +351,514 @@
     "Bước 12: Thêm hẹ (~10g/tô), giá đỗ (~70g/tô), rắc tiêu, vắt chanh và thêm ớt tùy khẩu vị."
   ],
       "time": "35 phút"
-    }
+    },
+{
+  "id": 7,
+  "name": "Bún mắm",
+  "image": "https://cdn.tgdd.vn/2021/09/CookRecipe/Avatar/bun-mam-thumbnail.jpg",
+  "description": "Đặc sản miền Tây đậm đà",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Bún tươi: 800g",
+    "Mắm cá linh: 100g",
+    "Tôm tươi: 300g",
+    "Mực: 200g",
+    "Cà tím: 300g",
+    "Sả: 100g",
+    "Tỏi: 30g",
+    "Ớt: 10g",
+    "Nước lọc: 4000ml",
+    "Rau sống: 400g",
+    "Chanh: 2 quả (~100g)"
+  ],
+  "steps": [
+    "Bước 1: Chuẩn bị nồi, rửa sạch nồi bằng nước, để ráo.",
+    "Bước 2: Đong chính xác 1000ml nước lọc, đổ vào nồi.",
+    "Bước 3: Cho 100g mắm cá linh vào nồi.",
+    "Bước 4: Bật bếp lửa vừa, đun 10-15 phút cho mắm tan hoàn toàn.",
+    
+    "Bước 5: Tắt bếp, để nguội 5 phút.",
+    "Bước 6: Chuẩn bị rây lọc hoặc vải sạch.",
+    "Bước 7: Lọc nước mắm, bỏ hoàn toàn phần xác cá.",
+    "Bước 8: Giữ lại phần nước trong, bỏ phần cặn.",
+    
+    "Bước 9: Đổ thêm 3000ml nước vào nồi nước mắm vừa lọc.",
+    "Bước 10: Bật bếp, đun sôi lại.",
+    
+    "Bước 11: Lấy sả (100g), cắt bỏ phần gốc cứng (~2cm).",
+    "Bước 12: Đập dập từng cây sả bằng dao.",
+    "Bước 13: Cho toàn bộ sả vào nồi nước dùng.",
+    
+    "Bước 14: Rửa cà tím (300g) dưới nước sạch.",
+    "Bước 15: Cắt cà tím thành khúc dài 4-5cm.",
+    "Bước 16: Ngâm cà tím trong nước muối loãng 5 phút để không bị thâm.",
+    "Bước 17: Vớt ra, để ráo nước.",
+    
+    "Bước 18: Khi nước sôi, cho cà tím vào nấu 5 phút.",
+    
+    "Bước 19: Rửa tôm (300g), bóc vỏ, bỏ đầu.",
+    "Bước 20: Dùng dao rạch lưng tôm, rút chỉ đen.",
+    "Bước 21: Rửa lại tôm lần nữa, để ráo.",
+    
+    "Bước 22: Rửa mực (200g), bỏ ruột, bỏ túi mực.",
+    "Bước 23: Cắt mực thành khoanh dày 1cm.",
+    
+    "Bước 24: Cho tôm và mực vào nồi nước dùng.",
+    "Bước 25: Đun thêm 5-7 phút đến khi tôm chuyển màu đỏ.",
+    
+    "Bước 26: Nêm nếm lại nước dùng (có thể thêm chút đường hoặc nước mắm tùy khẩu vị).",
+    
+    "Bước 27: Chuẩn bị nồi nước riêng để trụng bún.",
+    "Bước 28: Đun nước đến sôi mạnh.",
+    "Bước 29: Cho bún vào trụng đúng 10 giây (không lâu hơn để tránh mềm nhũn).",
+    "Bước 30: Vớt ra, để ráo.",
+    
+    "Bước 31: Chia bún vào 4 tô (~200g mỗi tô).",
+    
+    "Bước 32: Dùng vá múc tôm, mực và cà tím chia đều vào từng tô.",
+    
+    "Bước 33: Chan khoảng 400ml nước dùng nóng vào mỗi tô.",
+    
+    "Bước 34: Rửa rau sống (400g) 2 lần với nước sạch.",
+    "Bước 35: Để ráo, chia vào từng tô (~100g/tô).",
+    
+    "Bước 36: Cắt chanh thành múi.",
+    "Bước 37: Thái ớt lát mỏng.",
+    
+    "Bước 38: Thêm chanh, ớt vào tô theo khẩu vị.",
+    
+    "Bước 39: Trộn nhẹ trước khi ăn.",
+    
+    "Bước 40: Thưởng thức khi còn nóng để giữ trọn hương vị."
+  ],
+  "time": "45 phút"
+},
+{
+  "id": 8,
+  "name": "Cá kho tộ",
+  "image": "https://cdn.zsoft.solutions/poseidon-web/app/media/Nau-an/5.2024/cach-lam-ca-kho-to-thom-ngon-buffet-poseidon-01.jpg",
+  "description": "Món cá kho đậm đà, màu nâu cánh gián, vị mặn ngọt đặc trưng miền Tây",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Cá basa: 800g",
+    "Thịt ba chỉ: 200g",
+    "Hành tím: 80g",
+    "Tỏi: 40g",
+    "Ớt tươi: 15g",
+    "Hành lá: 50g",
+    "Nước mắm ngon: 60ml",
+    "Đường: 50g",
+    "Muối: 10g",
+    "Tiêu xay: 5g",
+    "Nước màu (caramel): 20ml",
+    "Nước dừa tươi: 300ml",
+    "Dầu ăn: 20ml",
+    "Gừng: 20g"
+  ],
+  "steps": [
+    "Bước 1: Chuẩn bị cá - Rửa cá basa (800g) dưới nước chảy ít nhất 3 lần để loại bỏ nhớt.",
+    "Bước 2: Dùng 10g muối và 20g gừng đập dập chà lên cá trong 2 phút để khử mùi tanh.",
+    "Bước 3: Rửa lại cá bằng nước sạch, để ráo khoảng 5-10 phút.",
+    "Bước 4: Dùng dao sắc cắt cá thành từng khúc dày 3-4cm.",
+    
+    "Bước 5: Sơ chế thịt ba chỉ - Rửa sạch 200g thịt, cắt miếng mỏng 0.5cm.",
+    
+    "Bước 6: Bóc vỏ hành tím (80g), tỏi (40g), sau đó băm nhuyễn.",
+    "Bước 7: Rửa sạch ớt, cắt lát mỏng.",
+    "Bước 8: Hành lá rửa sạch, cắt nhỏ phần đầu và phần lá riêng.",
+    
+    "Bước 9: Ướp cá - Cho cá vào tô lớn.",
+    "Bước 10: Thêm hành tỏi băm, 40ml nước mắm, 20g đường, 5g tiêu.",
+    "Bước 11: Trộn đều bằng tay (đeo găng), đảm bảo gia vị phủ đều.",
+    "Bước 12: Ướp tối thiểu 30 phút (tốt nhất 1-2 tiếng).",
+    
+    "Bước 13: Bắc nồi đất (hoặc nồi thường) lên bếp.",
+    "Bước 14: Cho 20ml dầu ăn vào, đun nóng.",
+    "Bước 15: Cho thịt ba chỉ vào xào 3-5 phút đến khi hơi xém cạnh.",
+    
+    "Bước 16: Cho cá đã ướp vào nồi, xếp đều từng miếng.",
+    "Bước 17: Đổ toàn bộ phần nước ướp vào nồi.",
+    
+    "Bước 18: Thêm 20ml nước màu để tạo màu nâu đẹp.",
+    "Bước 19: Đổ 300ml nước dừa tươi vào.",
+    
+    "Bước 20: Bật lửa lớn đến khi sôi (khoảng 5 phút).",
+    "Bước 21: Khi sôi, dùng vá hớt bọt để nước trong.",
+    
+    "Bước 22: Hạ lửa nhỏ (liêu riêu).",
+    "Bước 23: Kho trong 25-30 phút.",
+    
+    "Bước 24: Sau 15 phút, dùng muỗng múc nước chan lên mặt cá (không lật mạnh để tránh nát).",
+    
+    "Bước 25: Nêm lại gia vị: thêm 20ml nước mắm + 30g đường nếu cần.",
+    
+    "Bước 26: Tiếp tục kho thêm 10-15 phút đến khi nước sệt lại.",
+    
+    "Bước 27: Cho ớt vào nồi.",
+    "Bước 28: Rắc tiêu và hành lá lên trên.",
+    
+    "Bước 29: Tắt bếp khi nước gần cạn, còn sánh lại.",
+    
+    "Bước 30: Để nghỉ 5 phút trước khi ăn để cá thấm hơn.",
+    
+    "Bước 31: Dọn ra ăn nóng với cơm trắng."
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 9,
+  "name": "Lẩu mắm miền Tây",
+  "image": "https://i.ytimg.com/vi/3goLsgW6Nfk/maxresdefault.jpg",
+  "description": "Món lẩu đặc trưng miền Tây với vị mắm đậm đà, ăn kèm đa dạng rau và hải sản",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Mắm cá linh: 100g",
+    "Mắm cá sặc: 50g",
+    "Xương heo: 800g",
+    "Tôm tươi: 300g",
+    "Mực: 200g",
+    "Thịt ba chỉ: 300g",
+    "Cá basa: 300g",
+    "Cà tím: 300g",
+    "Khổ qua: 200g",
+    "Đậu bắp: 200g",
+    "Bông súng: 200g",
+    "Rau muống: 200g",
+    "Rau nhút: 200g",
+    "Giá đỗ: 200g",
+    "Sả: 150g",
+    "Hành tím: 100g",
+    "Tỏi: 50g",
+    "Ớt: 20g",
+    "Nước dừa: 500ml",
+    "Nước lọc: 3000ml",
+    "Đường: 30g",
+    "Nước mắm: 30ml",
+    "Dầu ăn: 30ml"
+  ],
+  "steps": [
+    "Bước 1: Rửa sạch xương heo (800g) dưới nước chảy 2-3 lần.",
+    "Bước 2: Đun 1 nồi nước sôi, cho xương vào chần 5 phút để loại bỏ bọt bẩn.",
+    "Bước 3: Vớt xương ra, rửa lại bằng nước lạnh.",
+    
+    "Bước 4: Cho xương vào nồi lớn, thêm 3000ml nước lọc.",
+    "Bước 5: Đun sôi, sau đó hạ lửa nhỏ ninh trong 1.5 - 2 giờ.",
+    "Bước 6: Trong 20 phút đầu, thường xuyên vớt bọt để nước trong.",
+    
+    "Bước 7: Cho 100g mắm cá linh + 50g mắm cá sặc vào nồi nhỏ.",
+    "Bước 8: Thêm 500ml nước, đun 15 phút cho mắm tan hoàn toàn.",
+    "Bước 9: Tắt bếp, dùng rây lọc bỏ xác mắm, giữ lại phần nước.",
+    
+    "Bước 10: Đổ nước mắm đã lọc vào nồi nước xương.",
+    "Bước 11: Thêm 500ml nước dừa để tạo vị ngọt.",
+    
+    "Bước 12: Đập dập sả (150g), cắt khúc 5cm.",
+    "Bước 13: Cho sả vào nồi.",
+    
+    "Bước 14: Bóc hành tím (100g), tỏi (50g), băm nhỏ.",
+    "Bước 15: Làm nóng chảo, cho 30ml dầu ăn.",
+    "Bước 16: Phi hành tỏi đến vàng thơm (~2-3 phút).",
+    "Bước 17: Cho phần phi này vào nồi nước lẩu.",
+    
+    "Bước 18: Nêm 30g đường + 30ml nước mắm, khuấy đều.",
+    
+    "Bước 19: Rửa tôm, bóc vỏ, bỏ đầu, rút chỉ lưng.",
+    "Bước 20: Rửa mực, bỏ ruột, cắt khoanh 1cm.",
+    "Bước 21: Rửa thịt ba chỉ, cắt lát mỏng 3-4mm.",
+    "Bước 22: Cá basa cắt khúc 3cm.",
+    
+    "Bước 23: Rửa cà tím, cắt khúc, ngâm nước muối 5 phút.",
+    "Bước 24: Khổ qua cắt lát mỏng, bỏ ruột.",
+    "Bước 25: Đậu bắp cắt đầu.",
+    
+    "Bước 26: Rửa sạch toàn bộ rau (bông súng, rau muống, rau nhút, giá).",
+    "Bước 27: Ngâm rau với nước muối loãng 5 phút, vớt ra để ráo.",
+    
+    "Bước 28: Khi nước lẩu sôi, cho cà tím + khổ qua vào nấu 5-7 phút.",
+    
+    "Bước 29: Dọn lẩu ra bếp gas mini hoặc bếp điện.",
+    
+    "Bước 30: Khi ăn:",
+    " - Cho thịt ba chỉ vào trước (nấu 3-5 phút)",
+    " - Sau đó cho cá vào",
+    " - Tiếp theo cho tôm và mực",
+    
+    "Bước 31: Nhúng rau lần lượt (không cho hết một lần để giữ độ tươi).",
+    
+    "Bước 32: Nêm lại nước lẩu nếu cần (có thể thêm nước mắm/đường).",
+    
+    "Bước 33: Ăn kèm bún hoặc cơm trắng.",
+    
+    "Bước 34: Giữ lửa nhỏ để nước luôn sôi nhẹ.",
+    
+    "Bước 35: Thưởng thức khi nóng để giữ hương vị đậm đà."
+  ],
+  "time": "120 phút"
+},
+{
+  "id": 10,
+  "name": "Bánh xèo miền Tây",
+  "image": "https://cdn.zsoft.solutions/poseidon-web/app/media/Nau-an/7.2024/banh-xeo-huong-vi-que-nha-01.jpg",
+  "description": "Bánh xèo miền Tây giòn rụm, nhân đầy tôm, thịt, giá, ăn kèm rau sống và nước chấm đậm đà",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Bột bánh xèo: 400g",
+    "Nước cốt dừa: 200ml",
+    "Tôm tươi: 250g",
+    "Thịt ba chỉ: 200g",
+    "Giá đỗ: 300g",
+    "Hành lá: 50g",
+    "Hành tím: 50g",
+    "Tỏi: 20g",
+    "Ớt: 15g",
+    "Dầu ăn: 50ml",
+    "Nước: 500ml",
+    "Đường: 15g",
+    "Muối: 5g",
+    "Nước mắm: 30ml",
+    "Chanh: 1 quả",
+    "Rau sống (xà lách, húng quế, diếp cá): 300g"
+  ],
+  "steps": [
+    "Bước 1: Chuẩn bị bột - Cho 400g bột bánh xèo vào tô lớn.",
+    "Bước 2: Thêm 500ml nước và 200ml nước cốt dừa vào bột.",
+    "Bước 3: Khuấy đều bằng muỗng hoặc phới lồng 5 phút để bột mịn, không vón cục.",
+    "Bước 4: Để bột nghỉ 30 phút để bột nở đều.",
+    
+    "Bước 5: Sơ chế nhân tôm - Rửa 250g tôm, bóc vỏ, bỏ đầu, rút chỉ đen.",
+    "Bước 6: Rửa thịt ba chỉ 200g, thái lát mỏng 3-4mm.",
+    "Bước 7: Rửa giá đỗ 300g, để ráo.",
+    
+    "Bước 8: Sơ chế gia vị - Bóc 50g hành tím, 20g tỏi, băm nhỏ.",
+    "Bước 9: Ớt 15g, thái lát mỏng.",
+    
+    "Bước 10: Làm nóng chảo chống dính, cho 10ml dầu ăn.",
+    "Bước 11: Phi hành tím + tỏi đến vàng thơm (~2 phút).",
+    "Bước 12: Cho thịt vào xào 3 phút, thêm 5g muối và 5g đường.",
+    "Bước 13: Cho tôm vào xào 2 phút đến chín.",
+    "Bước 14: Tắt bếp, giữ nóng.",
+    
+    "Bước 15: Chuẩn bị chảo chiên bánh - Làm nóng chảo với 20ml dầu ăn trên lửa vừa.",
+    "Bước 16: Múc 1 vá bột, đổ vào chảo, nghiêng chảo cho bột tráng đều mỏng.",
+    "Bước 17: Cho nhân gồm tôm, thịt, giá đỗ lên một nửa mặt bánh.",
+    "Bước 18: Rắc hành lá cắt nhỏ lên trên.",
+    
+    "Bước 19: Đậy nắp chảo 2 phút để bánh chín và giòn.",
+    "Bước 20: Kiểm tra đáy bánh đã vàng giòn, dùng xẻng gập bánh lại.",
+    "Bước 21: Chiên thêm 1 phút để bánh giữ hình dạng.",
+    
+    "Bước 22: Gắp bánh ra đĩa có giấy thấm dầu.",
+    "Bước 23: Lặp lại các bước tráng bánh cho đến hết bột và nhân.",
+    
+    "Bước 24: Chuẩn bị rau sống - Rửa sạch xà lách, húng quế, diếp cá, để ráo.",
+    "Bước 25: Chuẩn bị nước chấm - Pha nước mắm 30ml, nước, đường 15g, thêm chanh và ớt theo khẩu vị.",
+    
+    "Bước 26: Bày bánh xèo ra đĩa, kèm rau sống và nước chấm.",
+    "Bước 27: Ăn khi còn nóng để bánh giữ độ giòn và hương vị tươi ngon."
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 11,
+  "name": "Gỏi cuốn miền Tây",
+  "image": "https://i.ytimg.com/vi/w34Qnc-9KBU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAzXE6ASDMpVme1qsjbkQx4v-KaYA",
+  "description": "Gỏi cuốn tươi ngon với tôm, thịt, bún và rau sống, nước chấm chua ngọt chuẩn miền Nam",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Bánh tráng: 200g",
+    "Tôm tươi: 250g",
+    "Thịt heo: 200g",
+    "Bún tươi: 300g",
+    "Xà lách: 100g",
+    "Húng quế: 50g",
+    "Rau diếp cá: 50g",
+    "Rau thơm khác: 50g",
+    "Cà rốt: 50g",
+    "Dưa leo: 50g",
+    "Nước mắm: 50ml",
+    "Đường: 30g",
+    "Chanh: 1 quả",
+    "Tỏi: 10g",
+    "Ớt: 5g"
+  ],
+  "steps": [
+    "Bước 1: Rửa sạch tôm, để ráo.",
+    "Bước 2: Luộc tôm trong nước sôi 5 phút đến khi tôm chín hồng.",
+    "Bước 3: Vớt tôm ra, để nguội và bóc vỏ, rút chỉ đen lưng tôm.",
+    "Bước 4: Rửa thịt heo, luộc 20 phút cho chín mềm.",
+    "Bước 5: Vớt thịt ra để nguội, thái lát mỏng 3-4mm.",
+    "Bước 6: Rửa sạch xà lách, húng quế, rau diếp cá, các loại rau thơm khác.",
+    "Bước 7: Ngâm rau trong nước muối loãng 5 phút, vớt ra để ráo.",
+    "Bước 8: Cắt cà rốt, dưa leo thành sợi nhỏ, dài vừa phải (~5cm).",
+    "Bước 9: Trụng bún tươi trong nước sôi khoảng 30 giây, vớt ra để ráo.",
+    "Bước 10: Chuẩn bị nước chấm: pha 50ml nước mắm, 30g đường, nước cốt 1 quả chanh, băm nhỏ tỏi, ớt.",
+    "Bước 11: Khuấy đều nước chấm cho đường tan hoàn toàn, thử nếm vừa ăn.",
+    "Bước 12: Nhúng bánh tráng vào nước ấm 2-3 giây cho mềm, không để quá lâu kẻo rách.",
+    "Bước 13: Trải bánh tráng ra mâm sạch, trải một lớp xà lách ở giữa bánh.",
+    "Bước 14: Trải rau thơm xen kẽ, thêm một chút rau diếp cá.",
+    "Bước 15: Cho một ít bún tươi lên rau (khoảng 2-3 muỗng).",
+    "Bước 16: Xếp tôm và thịt thái lát lên bún.",
+    "Bước 17: Thêm vài sợi cà rốt, dưa leo cho vừa đủ.",
+    "Bước 18: Gập 2 mép bánh tráng vào giữa để giữ nhân.",
+    "Bước 19: Cuốn chặt tay từ một đầu bánh, lăn đều để tạo cuốn tròn chắc chắn.",
+    "Bước 20: Lặp lại các bước trên cho đến hết nguyên liệu.",
+    "Bước 21: Xếp gỏi cuốn ra đĩa, gọn gàng.",
+    "Bước 22: Trang trí thêm rau sống xung quanh đĩa cho đẹp mắt.",
+    "Bước 23: Chuẩn bị chén nước mắm chấm ở giữa đĩa.",
+    "Bước 24: Ăn ngay khi còn tươi để bánh tráng không mềm nhũn.",
+    "Bước 25: Dùng kéo cắt đôi cuốn nếu muốn dễ ăn.",
+    "Bước 26: Có thể thêm lạc rang giã nhỏ rắc lên nước chấm cho thơm.",
+    "Bước 27: Thưởng thức từng cuốn, nhúng vào nước mắm chua ngọt."
+  ],
+  "time": "50 phút"
+},
+{
+  "id": 12,
+  "name": "Bò kho miền Nam",
+  "image": "https://i.ytimg.com/vi/xfmNh564j1I/maxresdefault.jpg",
+  "description": "Bò kho mềm thơm, nước dùng đậm đà, ăn kèm bánh mì hoặc bún, chuẩn vị miền Nam",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Thịt bò: 800g (nạc vai hoặc bắp bò)",
+    "Cà rốt: 300g",
+    "Khoai tây: 200g",
+    "Sả: 50g",
+    "Hành tím: 50g",
+    "Tỏi: 20g",
+    "Ớt: 10g",
+    "Dầu ăn: 20ml",
+    "Nước dừa tươi: 500ml",
+    "Nước lọc: 1000ml",
+    "Gia vị bò kho (bột, quế, hồi, thảo quả): 15g",
+    "Đường: 15g",
+    "Nước mắm: 20ml",
+    "Tiêu xay: 5g",
+    "Lá nguyệt quế: 2 lá"
+  ],
+  "steps": [
+    "Bước 1: Rửa sạch thịt bò, loại bỏ gân thừa, để ráo.",
+    "Bước 2: Cắt thịt bò thành miếng vuông khoảng 4x4cm.",
+    "Bước 3: Chuẩn bị ướp thịt: cho thịt vào tô, thêm 10g gia vị bò kho, 20ml nước mắm, 15g đường, 5g tiêu, 10g tỏi băm.",
+    "Bước 4: Dùng tay trộn đều thịt và gia vị, đảm bảo từng miếng thấm đều.",
+    "Bước 5: Bọc tô thịt bằng màng bọc thực phẩm, để trong tủ lạnh 30 phút cho thấm.",
+    "Bước 6: Rửa sạch cà rốt, gọt vỏ, cắt khúc vừa ăn (~5cm).",
+    "Bước 7: Rửa khoai tây, gọt vỏ, cắt khúc vừa ăn (~4cm).",
+    "Bước 8: Chuẩn bị sả: đập dập, cắt khúc 5cm.",
+    "Bước 9: Hành tím bóc vỏ, băm nhuyễn.",
+    "Bước 10: Làm nóng nồi, cho 20ml dầu ăn vào.",
+    "Bước 11: Phi hành tím và tỏi băm đến vàng thơm (~2-3 phút).",
+    "Bước 12: Cho thịt bò ướp vào nồi, xào lửa vừa 5 phút đến khi thịt săn lại.",
+    "Bước 13: Thêm 500ml nước dừa tươi và 1000ml nước lọc vào nồi.",
+    "Bước 14: Thêm 2 lá nguyệt quế vào nồi.",
+    "Bước 15: Đun sôi nồi, sau đó hạ lửa nhỏ, ninh 45 phút.",
+    "Bước 16: Trong quá trình hầm, vớt bọt nổi trên mặt để nước dùng trong.",
+    "Bước 17: Sau 30 phút hầm, thêm cà rốt và khoai tây vào nồi, nấu tiếp 15 phút cho chín mềm.",
+    "Bước 18: Nếm thử nước dùng, điều chỉnh gia vị nếu cần bằng nước mắm, đường, tiêu.",
+    "Bước 19: Nếu nước hơi đặc, có thể thêm một ít nước lọc, khuấy đều.",
+    "Bước 20: Khi thịt, cà rốt, khoai chín mềm, tắt bếp.",
+    "Bước 21: Chuẩn bị đĩa/bát để dọn bò kho.",
+    "Bước 22: Dùng muôi hớt từng miếng thịt, cà rốt, khoai ra đĩa.",
+    "Bước 23: Rắc thêm tiêu xay lên trên để tăng mùi thơm.",
+    "Bước 24: Ăn nóng kèm bánh mì hoặc bún tươi.",
+    "Bước 25: Có thể trang trí thêm vài cọng hành lá cắt nhỏ cho đẹp mắt.",
+    "Bước 26: Giữ phần nước dùng còn lại trong nồi, để lửa nhỏ nếu muốn ăn dần."
+  ],
+  "time": "90 phút"
+},
+{
+  "id": 13,
+  "name": "Canh chua cá miền Nam",
+  "image": "https://bizweb.dktcdn.net/100/442/328/files/bac-trung-nam-mien-nao-cung-co-mon-canh-chua-nhung-moi-mien-lai-khac-nhu-the-nay-day-1.jpg?v=1638869741746",
+  "description": "Canh chua cá thơm mát, vị chua thanh, ăn cùng cơm nóng, chuẩn miền Nam",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Cá lóc: 500g",
+    "Me chín: 50g",
+    "Cà chua: 200g",
+    "Dứa: 200g",
+    "Bông súng: 100g",
+    "Rau ngổ: 20g",
+    "Hành lá: 20g",
+    "Ớt: 5g",
+    "Nước lọc: 1200ml",
+    "Đường: 10g",
+    "Muối: 5g",
+    "Nước mắm: 20ml"
+  ],
+  "steps": [
+    "Bước 1: Rửa sạch cá lóc, loại bỏ vảy, mang, ruột.",
+    "Bước 2: Cắt cá thành khúc 4cm, rửa lại với nước, để ráo.",
+    "Bước 3: Chuẩn bị me: ngâm 50g me chín trong 50ml nước nóng khoảng 10 phút.",
+    "Bước 4: Dầm me để lấy nước cốt, bỏ hạt và bã.",
+    "Bước 5: Rửa sạch cà chua, cắt múi cau vừa ăn (~6 múi mỗi quả).",
+    "Bước 6: Gọt vỏ dứa, cắt khúc 3-4cm.",
+    "Bước 7: Rửa bông súng, cắt bỏ gốc cứng, để ráo.",
+    "Bước 8: Hành lá cắt khúc 2-3cm, rau ngổ cắt nhỏ.",
+    "Bước 9: Rửa sạch ớt, bỏ hạt, thái lát mỏng.",
+    "Bước 10: Đun 1200ml nước lọc trong nồi lớn.",
+    "Bước 11: Khi nước sôi, cho nước cốt me vào, khuấy đều để tạo vị chua.",
+    "Bước 12: Nêm 10g đường, 5g muối, 20ml nước mắm vào nồi, thử nếm vừa ăn.",
+    "Bước 13: Cho cá vào nồi, đun lửa vừa 10 phút để cá chín vừa.",
+    "Bước 14: Cho cà chua và dứa vào nồi, đảo nhẹ.",
+    "Bước 15: Hạ lửa nhỏ, nấu thêm 5 phút để cà chua và dứa thấm vị.",
+    "Bước 16: Nếm thử nước, điều chỉnh gia vị nếu cần thêm đường, muối hoặc nước mắm.",
+    "Bước 17: Khi cá gần chín, thêm bông súng, hành lá, rau ngổ, và ớt vào.",
+    "Bước 18: Khuấy nhẹ để rau và cá hòa đều, đun thêm 2 phút.",
+    "Bước 19: Tắt bếp, giữ nồi canh nóng.",
+    "Bước 20: Chuẩn bị bát ăn cơm nóng, múc canh ra từng bát.",
+    "Bước 21: Thêm vài lát ớt tươi nếu thích cay.",
+    "Bước 22: Dọn kèm cơm trắng hoặc bún tươi.",
+    "Bước 23: Thưởng thức ngay khi còn nóng để cá không tanh, rau vẫn xanh tươi.",
+    "Bước 24: Giữ lửa nhỏ nếu ăn từ từ để canh luôn nóng."
+  ],
+  "time": "50 phút"
+},
+{
+  "id": 14,
+  "name": "Chuối nếp nướng miền Nam",
+  "image": "https://danviet.ex-cdn.com/files/f1/296231569849192448/2023/3/13/chuoi-vvt-16786830169082136967536.jpg",
+  "description": "Chuối nếp nướng thơm bùi, nhân chuối ngọt, ăn kèm nước cốt dừa béo, chuẩn miền Nam",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Chuối sứ chín: 600g",
+    "Gạo nếp: 500g",
+    "Nước cốt dừa: 300ml",
+    "Đường: 100g",
+    "Muối: 5g",
+    "Lá chuối: 5 lá",
+    "Vừng rang: 20g"
+  ],
+  "steps": [
+    "Bước 1: Vo gạo nếp 2-3 lần với nước sạch để loại bỏ bụi bẩn và tinh bột thừa.",
+    "Bước 2: Ngâm gạo nếp trong nước ấm 6 giờ hoặc qua đêm để nếp mềm.",
+    "Bước 3: Vớt nếp ra, để ráo nước.",
+    "Bước 4: Cho nếp vào nồi hấp, hấp chín khoảng 25-30 phút.",
+    "Bước 5: Khi nếp chín, cho 50ml nước cốt dừa, 20g đường, 5g muối vào nếp, trộn đều tay để nếp ngấm đều vị.",
+    "Bước 6: Bóc vỏ chuối sứ chín, cắt khúc vừa ăn (~10cm).",
+    "Bước 7: Dàn một lớp nếp trên tay hoặc trên lá chuối sạch, đặt một khúc chuối lên giữa.",
+    "Bước 8: Dàn thêm nếp bao quanh chuối, bọc kín toàn bộ chuối bằng nếp.",
+    "Bước 9: Gói chuối bằng lá chuối, dùng tăm cố định để nếp không bung ra.",
+    "Bước 10: Làm nóng than hoa hoặc lò nướng (khoảng 180°C nếu dùng lò).",
+    "Bước 11: Nướng chuối nếp 10 phút, lật đều để nướng đều các mặt.",
+    "Bước 12: Nướng thêm 10 phút nữa đến khi mặt lá hơi cháy, nếp vàng thơm.",
+    "Bước 13: Trong lúc nướng, chuẩn bị phần nước cốt dừa béo: còn lại 250ml nước cốt dừa, cho 30g đường, 5g muối vào nồi nhỏ, đun lửa nhỏ cho tan đường.",
+    "Bước 14: Rang 20g vừng cho thơm, để riêng.",
+    "Bước 15: Khi chuối nếp chín, gỡ bỏ lá chuối.",
+    "Bước 16: Rắc vừng rang lên mặt nếp và chuối.",
+    "Bước 17: Chan một ít nước cốt dừa ấm lên mặt chuối nếp trước khi ăn.",
+    "Bước 18: Dọn chuối nếp nướng ra đĩa, ăn khi còn ấm để giữ độ thơm, bùi và mềm dẻo của nếp.",
+    "Bước 19: Có thể thêm một ít vừng rang hoặc dừa nạo để trang trí.",
+    "Bước 20: Thưởng thức món tráng miệng chuẩn miền Nam, vừa thơm vừa béo."
+  ],
+  "time": "60 phút"
+}
   ]
 }
