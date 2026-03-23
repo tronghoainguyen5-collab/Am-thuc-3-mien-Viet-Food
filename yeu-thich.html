@@ -2,14 +2,14 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Món ăn đã lưu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Món ăn đã lưu - VietFood</title>
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
+    <nav class="navbar">
         <div class="logo">VietFood</div>
         <ul class="nav-links">
             <li><a href="index.html">Trang Chủ</a></li>
@@ -19,16 +19,10 @@
             <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
             <li><a href="lien-he.html">Liên Hệ</a></li>
         </ul>
-    
-        <!-- <div class="search-bar">
-            <input type="text" placeholder="Bạn muốn nấu món gì?">
-            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div> -->
-    
+
         <div class="nav-actions">
-    
             <div class="auth-buttons">
-                <a href="/yeu-thich.html" class="btn-saved">
+                <a href="yeuthich.html" class="btn-saved">
                     <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
                 </a>
                 <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
@@ -37,105 +31,48 @@
         </div>
     </nav>
 
+    <section class="container" style="min-height: 60vh; padding: 40px 5%;">
+        <h2 class="section-title" style="margin-bottom: 30px; text-align: center;">Món ăn đã lưu của bạn</h2>
 
-<!-- TITLE -->
-<section class="container">
-    <h2 class="section-title">Món ăn đã lưu</h2>
-
-    <!-- GRID -->
-    <div class="recipe-grid">
-
-        <!-- ITEM 1 -->
-        <div class="recipe-card">
-            <div class="thumb">
-                <img src="https://static.vinwonders.com/production/pho-bo-ha-noi-4.jpg" alt="">
-                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+        <div class="recipe-grid" id="favorite-list">
             </div>
-            <h3>Phở bò Hà Nội</h3>
-        </div>
+    </section>
+    <div class="recipe-grid" id="favorite-list"></div>
 
-        <!-- ITEM 2 -->
-        <div class="recipe-card">
-            <div class="thumb">
-                <img src="https://www.seriouseats.com/thmb/AeLQd8S4Z-X9nMKoeJ8A3XYL6PU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230915-SEA-BunBoHue-Vy-Tran-hero-d3a9082377414ca68f3540ceae84fa61.jpg" alt="">
-                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
+<div id="recipe-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-body">
             </div>
-            <h3>Bún bò Huế</h3>
-        </div>
-
-        <!-- ITEM 3 -->
-        <div class="recipe-card">
-            <div class="thumb">
-                <img src="https://vietnamluxuryexpress.com/wp-content/uploads/2025/11/com-tam-146-1.jpg" alt="">
-                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
-            </div>
-            <h3>Cơm tấm Sài Gòn</h3>
-        </div>
-
-        <!-- ITEM 4 -->
-        <div class="recipe-card">
-            <div class="thumb">
-                <img src="https://myvietkitchen.com/wp-content/uploads/2026/03/Banh-Xeo-Mien-Tay-scaled.png" alt="">
-                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
-            </div>
-            <h3>Bánh xèo miền Tây</h3>
-        </div>
-
-        <!-- ITEM 5 -->
-        <div class="recipe-card">
-            <div class="thumb">
-                <img src="https://danangfantasticity.com/wp-content/uploads/2024/04/tong-hop-cac-mon-an-nhat-dinh-phai-thu-khi-den-da-nang-hoi-an-banh-trang-cuon-thit-heo-rice-paper-roll-with-pork-1024x576.jpg" alt="">
-                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
-            </div>
-            <h3>Gỏi cuốn</h3>
-        </div>
-
-        <!-- ITEM 6 -->
-        <div class="recipe-card">
-            <div class="thumb">
-                <img src="https://langngheviet.com.vn/stores/news_dataimages/2025/122025/17/13/cha-ca-la-vong-120251217134649.jpg?rt=20251217134701" alt="">
-                <button class="save-icon"><i class="fa-solid fa-bookmark"></i></button>
-            </div>
-            <h3>Chả cá Lã Vọng</h3>
-        </div>
-
     </div>
-</section>
+</div>
 
-<!-- FOOTER -->
-<footer class="vietfood-footer">
-    <div class="footer-main">
+<style>
+/* CSS cho Popup */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
+.modal-content { background: white; margin: 5% auto; padding: 20px; width: 80%; max-width: 700px; border-radius: 15px; position: relative; }
+.close-btn { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; }
+.modal-img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }
+.tag { background: #f1f1f1; padding: 5px 10px; border-radius: 5px; font-size: 14px; margin-right: 10px; }
+</style>
 
-        <div>
-            <h2 class="footer-logo">Viet<span>Food</span></h2>
-            <p class="brand-text">
-                Nơi chia sẻ công thức ẩm thực 3 miền Việt Nam.
-            </p>
-        </div>
-
-        <div class="footer-links-group">
-            <div class="footer-nav">
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Món ăn</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                </ul>
+    <footer class="vietfood-footer">
+        <div class="footer-main">
+            <div>
+                <h2 class="footer-logo">Viet<span>Food</span></h2>
+                <p class="brand-text">Nơi chia sẻ công thức ẩm thực 3 miền Việt Nam.</p>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Liên hệ</h3>
+                <p><i class="fa-solid fa-envelope"></i> vietfood@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 0123 456 789</p>
             </div>
         </div>
-
-        <div class="footer-newsletter">
-            <h3>Liên hệ</h3>
-            <p><i class="fa-solid fa-envelope"></i> vietfood@gmail.com</p>
-            <p><i class="fa-solid fa-phone"></i> 0123 456 789</p>
+        <div class="footer-copyright">
+            © 2026 <strong>VietFood</strong>. All rights reserved.
         </div>
+    </footer>
 
-    </div>
-
-    <div class="footer-copyright">
-        © 2026 <strong>VietFood</strong>. All rights reserved.
-    </div>
-</footer>
-
+    <script src="/public/js/yeuthich.js"></script>
 </body>
 </html>
