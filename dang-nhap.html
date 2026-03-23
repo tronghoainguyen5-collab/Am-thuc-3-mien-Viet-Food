@@ -36,18 +36,18 @@
     </nav>
     <div class="auth-body">
     <div class="auth-container">
-        <form class="auth-form">
+        <form class="auth-form" onsubmit="login(event)">
             <h2>Chào Mừng Trở Lại</h2>
             <p>Vui lòng đăng nhập để lưu công thức yêu thích</p>
             
             <div class="input-group">
-                <label>Email</label>
-                <input type="email" placeholder="example@gmail.com" required>
+                <label>Username</label>
+                <input type="text" id="username" placeholder="example@gmail.com" required>
             </div>
             
             <div class="input-group">
                 <label>Mật khẩu</label>
-                <input type="password" placeholder="********" required>
+                <input type="password" id="password" placeholder="********" required>
             </div>
             
             <button type="submit" class="btn-submit">Đăng Nhập</button>
@@ -107,5 +107,6 @@
         <p>&copy; 2026 <strong>VietFood</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
     </div>
 </footer>
+<script src="./public/js/auth.js"></script>
 </body>
 </html>

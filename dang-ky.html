@@ -36,26 +36,26 @@
     </nav>
         <div class="auth-body">
         <div class="auth-container">
-        <form class="auth-form">
+        <form class="auth-form" onsubmit="register(event)">
             <h2>Tạo Tài Khoản</h2>
             <p>Tham gia cộng đồng yêu ẩm thực Việt</p>
             
             <div class="input-group">
                 <label>Họ và Tên</label>
-                <input type="text" placeholder="Nguyễn Văn A" required>
+                <input type="text" id="user" placeholder="Nguyễn Văn A" required>
             </div>
 
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" placeholder="example@gmail.com" required>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
             </div>
             <div class="input-group">
                 <label>Mật khẩu</label>
-                <input type="password" placeholder="Ít nhất 6 ký tự" required>
+                <input type="password" id="pass" placeholder="Ít nhất 6 ký tự" required>
             </div>
             <div class="input-group">
                 <label>Xác nhận Mật khẩu</label>
-                <input type="password" placeholder="Ít nhất 6 ký tự" required>
+                <input type="password" id="confirm" placeholder="Ít nhất 6 ký tự" required>
             </div>
             
             <button type="submit" class="btn-submit">Đăng Ký</button>
@@ -115,5 +115,6 @@
         <p>&copy; 2026 <strong>VietFood</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
     </div>
 </footer>
+<script src="./public/js/auth.js"></script>
 </body>
 </html>
