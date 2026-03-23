@@ -74,3 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 });
+document.getElementById("btn-cook").onclick = () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  window.location.href = `nau-an.html?id=${id}`;
+};
