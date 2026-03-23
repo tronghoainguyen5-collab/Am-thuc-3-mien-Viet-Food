@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Chi tiết món ăn</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+ <nav class="navbar">
         <div class="logo">VietFood</div>
         <ul class="nav-links">
             <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="mien-bac.html">Miền Bắc</a></li>
-            <li><a href="mien-trung.html">Miền Trung</a></li>
-            <li><a href="mien-nam.html">Miền Nam</a></li>
+            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+            <li><a href="mien.html?region=trung">Miền Trung</a></li>
+            <li><a href="mien.html?region=nam">Miền Nam</a></li>
             <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
             <li><a href="lien-he.html">Liên Hệ</a></li>
         </ul>
@@ -28,7 +28,10 @@
         <div class="nav-actions">
     
             <div class="auth-buttons">
-                <a href="/yeu-thich.html" class="btn-saved">
+
+                <!-- <a href="yeu-thich.html" class="btn-saved"> -->
+                <span id="user-info"></span>
+                <a href="yeu-thich.html" class="btn-saved">
                     <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
                 </a>
                 <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
@@ -39,177 +42,51 @@
 
 <!-- DETAIL -->
 <section class="detail-container">
+    <div class="detail-page container">
 
-    <!-- Ảnh món -->
-    <img class="detail-img" 
-        src="https://static.vinwonders.com/production/pho-bo-ha-noi-4.jpg" 
-        alt="Phở bò">
+        <div class="detail-grid">
 
-    <div class="detail-content">
+            <!-- ===== CỘT TRÁI ===== -->
+            <div class="left-col">
 
-        <h1>Phở bò Hà Nội</h1>
+                <!-- ẢNH -->
+                <div class="detail-image">
+                    <img id="main-img" src="" alt="">
+                </div>
 
-        <!-- Thông tin nhanh -->
-        <p><strong>⏱ Thời gian:</strong> 60 phút</p>
-        <p><strong>👨‍🍳 Khẩu phần:</strong> 2-3 người</p>
+                <!-- CÁCH LÀM -->
+                <h3>Cách làm</h3>
+                <ol id="steps"></ol>
 
-        <!-- Nguyên liệu -->
-        <h3>Nguyên liệu</h3>
-        <ul>
-            <li><strong>Phần nước dùng:</strong></li>
-            <li>Xương ống bò: 1.5 kg</li>
-            <li>Thịt bò (nạm/gầu/tái): 500g</li>
-<li>Gừng: 100g</li>
-<li>Hành tây: 200g (2 củ)</li>
-<li>Hành tím: 50g</li>
- <li>Nước: 4 – 5 lít</li>
- <li><strong>Gia vị phở:</strong></li>
- <li>Hoa hồi: 5g (~2–3 cái)</li>
- <li>Quế: 5g</li>
- <li>Thảo quả: 3g (1 quả)</li>
- <li>Đinh hương: 2g</li>
- <li>Hạt кориандр (ngò): 5g</li>
- <li><strong>Vị nêm:</strong></li>
- <li>Muối: 20g</li>
- <li>Nước mắm: 40ml</li>
- <li>Đường phèn: 30g</li>
- <li><strong>Phần ăn kèm:</strong></li>
- <li>Bánh phở: 1 kg</li>
- <li>Hành lá: 50g</li>
- <li>Rau mùi: 50g</li>
- <li>Hành tây thái mỏng: 100g</li>
- <li>Chanh, ớt</li>
-        </ul>
-
-        <!-- Cách làm -->
-         <h2>Các bước thực hiện chi tiết</h2>
-        <h3>Cách chế biến</h3>
-        <p><strong>Bước 1: Sơ chế xương bò (rất quan trọng)</strong></p>
-            <li>Rửa sạch xương với nước muối loãng, Chần xương trong nước sôi 5 phút để loại bỏ bọt bẩn, Rửa lại xương bằng nước sạch.</li>
-            <p><strong>Bước 2: Nướng gừng, hành tây, hành tím</strong></p>
-            <li>Gừng + hành tây + hành tím nướng trực tiếp trên bếp (hoặc lò).</li>
-            <li>Khi cháy xém vỏ → rửa sạch lớp cháy.</li>
-            <p><strong>Bước 3: Nấu nước dùng</strong></p>
-            <li>Cho xương vào nồi với 4–5 lít nước.</li>
-            <li>Đun sôi → hớt bọt liên tục.</li>
-            <li>Thêm: Gừng, hành đã nướng.</li>
-            <li>Muối</li>
-            <p><strong>Bước 4: Rang và cho gia vị phở</strong></p>
-            <li>Rang khô: hoa hồi, quế, thảo quả, đinh hương (2–3 phút).</li>
-            <li>Cho vào túi vải (hoặc lọc trà).</li>
-            <li>Thả vào nồi nước dùng.</li>
-            <p><strong>Bước 5: Nêm nếm nước dùng</strong></p>
-            <li>Sau khi hầm 2–3 tiếng:</li>
-            <li>Thêm nước mắm tùy vào khẩu vị gia đình.</li>
-            <li>Thêm đường phèn</li>
-            <li>Nếm vừa ăn (đậm nhẹ, không quá ngọt)</li>
-            <p><strong>Bước 6: Chuẩn bị thịt bò</strong></p>
-            <li>Thịt tái: thái lát mỏng</li>
-            <li>Thịt chín: luộc trong nước dùng 20–30 phút → thái lát</li>
-<li><strong>Bước 7: Trụng bánh phở</strong>
-        <ul>
-            <li>Đun nước sôi riêng</li>
-            <li>Trụng bánh phở 10–15 giây</li>
-            <li>Cho vào tô</li>
-        </ul>
-    </li>
-
-    <li><strong>Bước 8: Hoàn thành tô phở</strong>
-        <ul>
-            <li>Cho bánh phở vào tô</li>
-            <li>Xếp thịt bò lên trên</li>
-            <li>Chan nước dùng thật nóng</li>
-            <li>Thêm hành lá, rau mùi, hành tây</li>
-        </ul>
-    </li>
-
-    <li><strong>Bước 9: Thưởng thức</strong>
-        <ul>
-            <li>Ăn kèm chanh, ớt</li>
-            <li>Có thể thêm tương ớt, tương đen (tuỳ khẩu vị)</li>
-        </ul>
-    </li>
-</ul>
-
-<h3>Mẹo quan trọng</h3>
-<ul>
-    <li><strong>Luôn hớt bọt khi nấu</strong></li>
-    <li><strong>Không cho quá nhiều gia vị</strong> → giữ vị thanh</li>
-    <li><strong>Dùng đường phèn</strong> thay đường thường</li>
-    <li><strong>Nước dùng chuẩn:</strong> trong – thơm – ngọt xương tự nhiên</li>
-</ul>
-        <!-- Nút hành động -->
-        <div class="hero-btns">
-            <a href="#" class="btn-cook">Bắt đầu nấu</a>
-            <a href="#" class="btn-save-outline">
-                <i class="fa-regular fa-bookmark"></i> Lưu món
-            </a>
-        </div>
-    <!-- <article class="detail-container">
-    <img id="image" class="detail-img">
-    <div class="detail-content">
-        <h1 id="name"></h1>
-        <p id="desc" class="desc"></p>
-
-        <button onclick="addFavorite()">❤️ Lưu món</button>
-
-        <h3>Nguyên liệu:</h3>
-        <ul id="ingredients"></ul>
-
-        <h3>Cách thực hiện:</h3>
-        <ol id="steps"></ol>
-
-        <a href="javascript:history.back()" class="btn">Quay lại</a>
-    </div>
-</article> -->
-<div class="detail-page container">
-    <div class="detail-grid">
-
-        <!-- Ảnh -->
-        <div class="detail-image">
-            <img id="main-img" src="" alt="">
-        </div>
-
-        <!-- Nội dung -->
-        <div class="detail-info">
-            <h1 id="title"></h1>
-
-            <div class="detail-meta">
-                <span>⏱ 30 phút</span>
-                <span>🍽 2 người</span>
             </div>
 
-            <p id="description"></p>
+            <!-- ===== CỘT PHẢI ===== -->
+            <div class="detail-info">
 
-            <!-- Nút -->
-            <div class="detail-actions">
-                <button class="btn-cook">Bắt đầu nấu</button>
+                <h1 id="title"></h1>
 
-                <!-- NÚT LƯU -->
-                <button class="btn-saved" id="saveBtn">
-                    <i class="fa-solid fa-bookmark"></i>
-                    Lưu công thức
-                </button>
+                <div class="detail-meta"></div>
+
+                <p id="description"></p>
+
+                <div class="detail-actions">
+                    <button class="btn-cook">Bắt đầu nấu</button>
+
+                    <button class="btn-saved" id="saveBtn">
+                        <i class="fa-solid fa-bookmark"></i>
+                        Lưu công thức
+                    </button>
+                </div>
+
+                <!-- NGUYÊN LIỆU -->
+                <h3>Nguyên liệu</h3>
+                <ul id="ingredients"></ul>
+
             </div>
 
-            <!-- Nguyên liệu -->
-            <h3>Nguyên liệu</h3>
-            <ul id="ingredients"></ul>
-
-            <!-- Cách làm -->
-            <h3>Cách làm</h3>
-            <ol id="steps"></ol>
-
         </div>
-    </div>
-</div>
-
-<script src="public/js/detail.js"></script>
-<script src="js/favorite.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     </div>
-
 </section>
 
 <!-- FOOTER -->
@@ -266,5 +143,6 @@
 <script src="./public/js/detail.js"></script>
 <script src="./public/js/auth.js"></script>
 <script src="./public/js/favorite.js"></script>
+<script src="./public/js/detail.js"></script>
 </body>
 </html>
