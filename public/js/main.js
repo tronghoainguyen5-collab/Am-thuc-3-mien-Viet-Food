@@ -176,3 +176,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+function saveRecipe(button) {
+    // 1. Tìm thẻ cha chứa thông tin món ăn
+    const card = button.closest('.recipe-card');
+    
+    // 2. Thu thập dữ liệu từ các thuộc tính data-
+    const recipe = {
+        id: card.getAttribute('data-id'),
+        name: card.getAttribute('data-name'),
+        img: card.getAttribute('data-img')
+    };
+
+    // 3. Lấy danh sách cũ từ máy người dùng
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // 4. Kiểm tra xem món này đã lưu chưa
+    const isExisted = favorites.some(item => item.id === recipe.id);
+
+    if (!isExisted) {
+        favorites.push(recipe);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        
+        // Hiệu ứng đổi màu nút để người dùng biết đã lưu thành công
+        button.querySelector('i').style.color = "#ff4757"; 
+        alert("Đã thêm '" + recipe.name + "' vào danh sách yêu thích!");
+    } else {
+        alert("Món này bạn đã lưu rồi nhé!");
+    }
+}
