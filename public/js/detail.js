@@ -1,61 +1,76 @@
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
+document.addEventListener("DOMContentLoaded", () => {
 
-fetch("./data/d.json")
-    .then(res => res.json())
-    .then(data => {
-        const product = data.find(item => item.id == id);
+    // 🔍 LẤY ID TỪ URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
 
-        document.getElementById("title").innerText = product.name;
-        document.getElementById("description").innerText = product.description;
-        document.getElementById("main-img").src = product.image;
+    // 📦 FETCH DATA
+    fetch("./data/db.json")
+        .then(res => res.json())
+        .then(data => {
 
-        // nguyên liệu
-        let ingHTML = "";
-        product.ingredients.forEach(i => {
-            ingHTML += `<li>${i}</li>`;
+            const recipes = data.recipes;
+
+            // ⚠️ IMPORTANT: id từ URL là string → convert
+            const food = recipes.find(r => r.id == id);
+
+            if (!food) {
+                document.querySelector(".detail-info").innerHTML = "<h2>Không tìm thấy món ăn</h2>";
+                return;
+            }
+
+            // 🎯 GÁN DATA
+            document.getElementById("main-img").src = food.image;
+            document.getElementById("title").innerText = food.name;
+            document.getElementById("description").innerText = food.description;
+
+            // META
+            document.querySelector(".detail-meta").innerHTML = `
+                <span>⏱ ${food.time}</span>
+                <span>🍽 ${food.serving || "2-4 người"}</span>
+            `;
+
+            // 🥗 NGUYÊN LIỆU
+            const ing = document.getElementById("ingredients");
+            ing.innerHTML = "";
+
+            if (food.ingredients) {
+                food.ingredients.forEach(i => {
+                    const li = document.createElement("li");
+                    li.innerText = i;
+                    ing.appendChild(li);
+                });
+            }
+
+            // 👨‍🍳 CÁC BƯỚC
+            const steps = document.getElementById("steps");
+            steps.innerHTML = "";
+
+            if (food.steps) {
+                food.steps.forEach(s => {
+                    const li = document.createElement("li");
+                    li.innerText = s;
+                    steps.appendChild(li);
+                });
+            }
+
+            // ❤️ LƯU MÓN
+            const saveBtn = document.getElementById("saveBtn");
+            saveBtn.addEventListener("click", () => {
+                let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+                if (!favorites.includes(food.id)) {
+                    favorites.push(food.id);
+                    localStorage.setItem("favorites", JSON.stringify(favorites));
+                    alert("Đã lưu món!");
+                } else {
+                    alert("Món đã lưu rồi!");
+                }
+            });
+
+        })
+        .catch(err => {
+            console.error("Lỗi load data:", err);
         });
-        document.getElementById("ingredients").innerHTML = ingHTML;
 
-        // bước làm
-        let stepHTML = "";
-        product.steps.forEach(s => {
-            stepHTML += `<li>${s}</li>`;
-        });
-        document.getElementById("steps").innerHTML = stepHTML;
-    });
-// dùng lại hàm favorite
-function addFavorite() {
-  let user = JSON.parse(localStorage.getItem("user"));
-
-  if (!user) {
-    alert("Bạn cần đăng nhập!");
-    window.location.href = "dang-nhap.html";
-    return;
-  }
-
-  let fav = JSON.parse(localStorage.getItem("favorite")) || [];
-
-  if (!fav.includes(window.currentId)) {
-    fav.push(window.currentId);
-    localStorage.setItem("favorite", JSON.stringify(fav));
-    alert("Đã lưu!");
-  }
-}
-function checkFavorite(id) {
-    let user = JSON.parse(localStorage.getItem("user"));
-    if (!user) return;
-
-    let key = `favorite_${user.username}`;
-    let fav = JSON.parse(localStorage.getItem(key)) || [];
-
-    const btn = document.getElementById("saveBtn");
-
-    if (fav.includes(id)) {
-        btn.classList.add("active");
-        btn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Đã lưu';
-    }
-}
-
-// gọi sau khi load xong
-checkFavorite(productId);
+});
