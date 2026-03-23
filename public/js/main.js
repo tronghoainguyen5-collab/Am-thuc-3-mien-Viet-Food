@@ -213,3 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //         alert("Món này bạn đã lưu rồi nhé!");
 //     }
 // }
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}

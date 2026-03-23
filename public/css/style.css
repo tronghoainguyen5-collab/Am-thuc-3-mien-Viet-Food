@@ -1532,25 +1532,65 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-/* ===============================
-   📱 MOBILE RESPONSIVE PRO
-=============================== */
+/* =========================================
+   📱 RESPONSIVE MASTER (PRO MAX)
+========================================= */
+
+/* ===== TABLET (<=1024px) ===== */
+@media (max-width: 1024px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-sidebar {
+        display: none;
+    }
+
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ===== MOBILE (<=768px) ===== */
 @media (max-width: 768px) {
 
     /* ===== NAVBAR ===== */
     .navbar {
+        padding: 12px 15px;
         flex-wrap: wrap;
-        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* menu icon */
+    .menu-toggle {
+        display: block;
+        font-size: 22px;
+        cursor: pointer;
     }
 
     .nav-links {
-        display: none; /* ẩn menu desktop */
-        width: 100%;
+        display: none;
         flex-direction: column;
-        background: #fff;
+        width: 100%;
+        background: white;
         margin-top: 10px;
-        border-radius: 10px;
+        border-radius: 12px;
         overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
     .nav-links.active {
@@ -1560,42 +1600,51 @@ body {
     .nav-links li a {
         padding: 12px;
         border-bottom: 1px solid #eee;
+        margin: 0;
     }
 
-    /* nút menu mobile */
-    .menu-toggle {
-        display: block;
-        font-size: 22px;
-        cursor: pointer;
+    .auth-buttons {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .btn-saved {
+        flex: 1;
+        justify-content: center;
     }
 
     /* ===== HERO ===== */
     .hero-container {
         grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 20px;
+        padding: 15px;
     }
 
     .hero-title {
         font-size: 1.6rem;
     }
 
+    .hero-description {
+        font-size: 14px;
+    }
+
     .hero-main-image img {
         height: 220px;
     }
 
-    .hero-sidebar {
-        display: none; /* ẩn sidebar mobile */
-    }
-
     .hero-btns {
         flex-direction: column;
+        gap: 10px;
     }
 
-    /* ===== RECIPE GRID ===== */
+    /* ===== GRID ===== */
     .recipe-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .recipe-card {
+        border-radius: 12px;
     }
 
     .recipe-card img {
@@ -1603,16 +1652,8 @@ body {
     }
 
     /* ===== FAVORITE ===== */
-    .favorite-card {
-        border-radius: 12px;
-    }
-
     .favorite-thumb {
         height: 180px;
-    }
-
-    .favorite-body h3 {
-        font-size: 16px;
     }
 
     .favorite-actions {
@@ -1621,8 +1662,13 @@ body {
     }
 
     /* ===== DETAIL ===== */
+    .detail-container {
+        padding: 15px;
+    }
+
     .detail-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
         padding: 15px;
     }
 
@@ -1630,22 +1676,38 @@ body {
         height: 250px;
     }
 
+    .detail-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-cook,
+    .btn-saved {
+        width: 100%;
+    }
+
+    /* nguyên liệu */
     #ingredients {
         grid-template-columns: 1fr;
     }
 
+    /* steps */
     #steps {
         max-height: none;
     }
 
     /* ===== COOK MODE ===== */
     .cook-container {
-        margin: 20px;
+        margin: 15px;
         padding: 20px;
     }
 
     .cook-img {
         height: 200px;
+    }
+
+    .cook-controls {
+        gap: 10px;
     }
 
     .cook-controls button {
@@ -1666,23 +1728,30 @@ body {
         gap: 20px;
     }
 
-    /* ===== BUTTON ===== */
-    .btn-cook,
-    .btn-save-outline,
-    .btn-view {
+    .social-icons {
+        justify-content: center;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .subscribe-form input {
         width: 100%;
-        text-align: center;
+    }
+
+    .subscribe-form button {
+        width: 100%;
     }
 }
 
 
-/* ===============================
-   📱 SMALL MOBILE (<=480px)
-=============================== */
+/* ===== SMALL MOBILE (<=480px) ===== */
 @media (max-width: 480px) {
 
     .hero-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .section-title {
@@ -1693,12 +1762,42 @@ body {
         font-size: 20px;
     }
 
-    .cook-step {
-        font-size: 14px;
+    .hero-meta span {
+        display: block;
+        margin-bottom: 5px;
     }
 
     .btn-cook {
-        padding: 10px;
         font-size: 14px;
+        padding: 10px;
+    }
+
+    .cook-step {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .toast {
+        right: 10px;
+        left: 10px;
+        text-align: center;
     }
 }
+
+
+/* ===== ULTRA SMALL (<=360px) ===== */
+@media (max-width: 360px) {
+
+    .hero-title {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .btn-saved {
+        font-size: 12px;
+        padding: 8px;
+    }
+}   
