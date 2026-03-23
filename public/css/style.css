@@ -1029,3 +1029,236 @@ body {
 .btn-logout:hover {
   background: #d9363e;
 }
+/* =========================
+   FAVORITE PAGE UPGRADE
+========================= */
+
+#favorite-list {
+    margin-top: 20px;
+}
+
+/* Card món ăn */
+.favorite-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.favorite-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Ảnh */
+.favorite-thumb {
+    position: relative;
+    height: 220px;
+}
+
+.favorite-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nút bookmark góc */
+.favorite-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-icon i {
+    color: #e67e22;
+    font-size: 18px;
+}
+
+/* Khi đã lưu */
+.favorite-icon.active {
+    background: #e67e22;
+}
+
+.favorite-icon.active i {
+    color: #fff;
+}
+
+/* Nội dung */
+.favorite-body {
+    padding: 15px;
+}
+
+.favorite-body h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Nút hành động */
+.favorite-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/* Nút xem */
+.btn-view {
+    background: #e67e22;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-view:hover {
+    background: #d35400;
+}
+
+/* Nút xoá */
+.btn-remove {
+    background: #fff0f0;
+    color: #ff4d4f;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-remove:hover {
+    background: #ff4d4f;
+    color: #fff;
+}
+/* ===== ANIMATION SAVE ===== */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+@keyframes flyHeart {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(1.5);
+    }
+}
+
+.save-icon.active i {
+    animation: pop 0.3s ease;
+}
+
+/* tim bay */
+.heart-fly {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: flyHeart 0.8s ease forwards;
+    pointer-events: none;
+}
+.save-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-icon:hover {
+    transform: scale(1.1);
+}
+
+.save-icon.active {
+    background: #e67e22;
+}
+
+.save-icon.active i {
+    color: white;
+}
+/* ❤️ bay lên */
+.heart-fly {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    animation: flyUp 0.8s ease forwards;
+    font-size: 18px;
+}
+
+@keyframes flyUp {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-40px); }
+}
+
+/* rung khi trùng */
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+/* toast */
+.toast {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: #333;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* icon save đẹp hơn */
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.favorite-icon.active {
+    background: #e67e22;
+    color: white;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.1);
+}
