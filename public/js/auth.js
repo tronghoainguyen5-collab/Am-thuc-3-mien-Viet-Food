@@ -1,9 +1,10 @@
 function register(e) {
   e.preventDefault();
 
-  let user = document.getElementById("user").trim().value;
-  let pass = document.getElementById("pass").trim().value;
-  let confirm = document.getElementById("confirm").trim().value;
+  let username = document.getElementById("user").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let pass = document.getElementById("pass").value.trim();
+  let confirm = document.getElementById("confirm").value.trim();
 
   if (pass !== confirm) {
     alert("Mật khẩu không khớp!");
@@ -12,16 +13,17 @@ function register(e) {
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
-  // check trùng
-  let exist = users.find(u => u.username === user);
+  // check trùng email
+  let exist = users.find(u => u.email === email);
   if (exist) {
-    alert("Tài khoản đã tồn tại!");
+    alert("Email đã tồn tại!");
     return;
   }
 
   users.push({
     id: Date.now(),
-    username: user,
+    username: username,
+    email: email,
     password: pass
   });
 
@@ -33,13 +35,13 @@ function register(e) {
 function login(e) {
   e.preventDefault();
 
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+  let email = document.getElementById("username").value.trim();
+  let password = document.getElementById("password").value.trim();
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
   let user = users.find(u =>
-    u.username === username && u.password === password
+    u.email === email && u.password === password
   );
 
   if (user) {
@@ -47,24 +49,49 @@ function login(e) {
     alert("Đăng nhập thành công");
     window.location.href = "index.html";
   } else {
-    alert("Sai tài khoản hoặc mật khẩu");
+    alert("Sai email hoặc mật khẩu");
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("currentUser"));
 
-  let authBox = document.querySelector(".auth-buttons");
+  let btnLogin = document.querySelector(".btn-login");
+  let btnRegister = document.querySelector(".btn-register");
+  let savedBtn = document.querySelector(".btn-saved");
 
-  if (user && authBox) {
-    authBox.innerHTML = `
-      <span class="user-name">👋 ${user.username}</span>
-      <button id="logoutBtn" class="btn-logout">Đăng xuất</button>
-    `;
+  if (user) {
+    // đổi nút login
+    if (btnLogin) {
+      btnLogin.innerText = `👋 ${user.username}`;
+      btnLogin.href = "#";
+    }
 
-    document.getElementById("logoutBtn").onclick = () => {
+    // ẩn đăng ký
+    if (btnRegister) {
+      btnRegister.style.display = "none";
+    }
+
+    // logout
+    let logoutBtn = document.createElement("button");
+    logoutBtn.innerText = "Đăng xuất";
+    logoutBtn.classList.add("btn-logout");
+
+    logoutBtn.onclick = () => {
       localStorage.removeItem("currentUser");
       alert("Đã đăng xuất!");
       window.location.href = "index.html";
     };
+
+    document.querySelector(".auth-buttons").appendChild(logoutBtn);
+
+    // 🔥 HIỂN THỊ SỐ MÓN ĐÃ LƯU
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || {};
+    let count = favorites[user.id] ? favorites[user.id].length : 0;
+
+    if (savedBtn) {
+      savedBtn.innerHTML = `
+        <i class="fa-solid fa-bookmark"></i> Món đã lưu (${count})
+      `;
+    }
   }
 });
