@@ -1,0 +1,151 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "giang",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
+
+  "categories": [
+    { "id": 1, "name": "Miền Bắc" },
+    { "id": 2, "name": "Miền Trung" },
+    { "id": 3, "name": "Miền Nam" }
+  ],
+
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Phở bò Hà Nội",
+      "image": "public/image/giavi4h.png",
+      "description": "Món ăn truyền thống nổi tiếng miền Bắc",
+      "categoryId": 1,
+      "userId": 1,
+      "ingredients": [
+        "Bánh phở",
+        "Thịt bò",
+        "Xương bò",
+        "Hành, gừng, quế, hồi"
+      ],
+      "steps": [
+        "Ninh xương bò 6-8 tiếng",
+        "Nướng gừng và hành",
+        "Trụng bánh phở",
+        "Cho thịt bò vào tô và chan nước dùng"
+      ],
+      "time": "60 phút"
+    },
+    {
+      "id": 2,
+      "name": "Bún chả Hà Nội",
+      "image": "public/image/bunchahanoi.jpg",
+      "description": "Món nướng thơm ngon đặc trưng miền Bắc",
+      "categoryId": 1,
+      "userId": 1,
+      "ingredients": [
+        "Thịt heo",
+        "Bún",
+        "Nước mắm",
+        "Rau sống"
+      ],
+      "steps": [
+        "Ướp thịt",
+        "Nướng thịt",
+        "Pha nước chấm",
+        "Ăn kèm bún và rau"
+      ],
+      "time": "40 phút"
+    },
+
+    {
+      "id": 3,
+      "name": "Bún bò Huế",
+      "image": "public/image/bunbo.jpg",
+      "description": "Đậm đà cay nồng miền Trung",
+      "categoryId": 2,
+      "userId": 2,
+      "ingredients": [
+        "Bún",
+        "Thịt bò",
+        "Chả Huế",
+        "Ớt, sả"
+      ],
+      "steps": [
+        "Nấu nước dùng với sả",
+        "Luộc bún",
+        "Cho thịt và chả",
+        "Thêm ớt và rau"
+      ],
+      "time": "60 phút"
+    },
+    {
+      "id": 4,
+      "name": "Mì Quảng",
+      "image": "public/image/miquang.jpg",
+      "description": "Món ăn nổi tiếng Quảng Nam",
+      "categoryId": 2,
+      "userId": 2,
+      "ingredients": [
+        "Mì Quảng",
+        "Tôm",
+        "Thịt heo",
+        "Đậu phộng"
+      ],
+      "steps": [
+        "Xào tôm thịt",
+        "Nấu nước dùng",
+        "Trộn mì",
+        "Thêm đậu phộng"
+      ],
+      "time": "45 phút"
+    },
+
+    {
+      "id": 5,
+      "name": "Cơm tấm Sài Gòn",
+      "image": "public/image/comtam.jpg",
+      "description": "Món ăn quen thuộc miền Nam",
+      "categoryId": 3,
+      "userId": 1,
+      "ingredients": [
+        "Cơm tấm",
+        "Sườn nướng",
+        "Trứng",
+        "Nước mắm"
+      ],
+      "steps": [
+        "Nướng sườn",
+        "Nấu cơm",
+        "Chiên trứng",
+        "Ăn kèm nước mắm"
+      ],
+      "time": "30 phút"
+    },
+    {
+      "id": 6,
+      "name": "Hủ tiếu Nam Vang",
+      "image": "public/image/hutieu.jpg",
+      "description": "Món nước nổi tiếng miền Nam",
+      "categoryId": 3,
+      "userId": 2,
+      "ingredients": [
+        "Hủ tiếu",
+        "Tôm",
+        "Thịt băm",
+        "Trứng cút"
+      ],
+      "steps": [
+        "Nấu nước dùng",
+        "Luộc hủ tiếu",
+        "Cho topping",
+        "Thưởng thức"
+      ],
+      "time": "35 phút"
+    }
+  ]
+}

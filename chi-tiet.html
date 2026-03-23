@@ -145,6 +145,68 @@
                 <i class="fa-regular fa-bookmark"></i> Lưu món
             </a>
         </div>
+    <!-- <article class="detail-container">
+    <img id="image" class="detail-img">
+    <div class="detail-content">
+        <h1 id="name"></h1>
+        <p id="desc" class="desc"></p>
+
+        <button onclick="addFavorite()">❤️ Lưu món</button>
+
+        <h3>Nguyên liệu:</h3>
+        <ul id="ingredients"></ul>
+
+        <h3>Cách thực hiện:</h3>
+        <ol id="steps"></ol>
+
+        <a href="javascript:history.back()" class="btn">Quay lại</a>
+    </div>
+</article> -->
+<div class="detail-page container">
+    <div class="detail-grid">
+
+        <!-- Ảnh -->
+        <div class="detail-image">
+            <img id="main-img" src="" alt="">
+        </div>
+
+        <!-- Nội dung -->
+        <div class="detail-info">
+            <h1 id="title"></h1>
+
+            <div class="detail-meta">
+                <span>⏱ 30 phút</span>
+                <span>🍽 2 người</span>
+            </div>
+
+            <p id="description"></p>
+
+            <!-- Nút -->
+            <div class="detail-actions">
+                <button class="btn-cook">Bắt đầu nấu</button>
+
+                <!-- NÚT LƯU -->
+                <button class="btn-saved" id="saveBtn">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Lưu công thức
+                </button>
+            </div>
+
+            <!-- Nguyên liệu -->
+            <h3>Nguyên liệu</h3>
+            <ul id="ingredients"></ul>
+
+            <!-- Cách làm -->
+            <h3>Cách làm</h3>
+            <ol id="steps"></ol>
+
+        </div>
+    </div>
+</div>
+
+<script src="public/js/detail.js"></script>
+<script src="js/favorite.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     </div>
 
@@ -201,5 +263,7 @@
     </div>
 </footer>
 
+<script src="./public/js/auth.js"></script>
+<script src="./public/js/favorite.js"></script>
 </body>
 </html>

@@ -686,11 +686,11 @@ body {
 }
 
 .hero-sidebar {
-    text-align: center;
+    /* text-align: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .side-thumbs img {
@@ -908,4 +908,107 @@ body {
 .HinhVaTinTuc-1 div{
     width: 100%;
     font-size: 20px;
+}
+
+/* sidebar */
+.hero-sidebar {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.side-thumbs img {
+    width: 70px;
+    /* height: 60px; */
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.side-thumbs img.active {
+    opacity: 1;
+    transform: scale(1.1);
+    border: 2px solid #ff6600;
+}
+
+/* arrow */
+.nav-arrow {
+    background: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* smooth ảnh */
+#main-img {
+    transition: all 0.4s ease-in-out;
+}
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.detail-image img {
+    width: 100%;
+    border-radius: 15px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.detail-info h1 {
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.detail-meta {
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* giống hero */
+.btn-cook {
+    background: #e67e22;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+/* nút lưu giống hero */
+.btn-saved {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f1f2f6;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-saved i {
+    color: #e67e22;
+}
+
+.btn-saved.active {
+    background: #e67e22;
+    color: white;
 }

@@ -12,9 +12,9 @@
         <div class="logo">VietFood</div>
         <ul class="nav-links">
             <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="mien-bac.html">Miền Bắc</a></li>
-            <li><a href="mien-trung.html">Miền Trung</a></li>
-            <li><a href="mien-nam.html">Miền Nam</a></li>
+            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+            <li><a href="mien.html?region=trung">Miền Trung</a></li>
+            <li><a href="mien.html?region=nam">Miền Nam</a></li>
             <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
             <li><a href="lien-he.html">Liên Hệ</a></li>
         </ul>
@@ -27,7 +27,10 @@
         <div class="nav-actions">
     
             <div class="auth-buttons">
+
                 <a href="/yeu-thich.html" class="btn-saved">
+                <span id="user-info"></span>
+                <a href="#" class="btn-saved">
                     <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
                 </a>
                 <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
@@ -46,9 +49,9 @@
     <section id="explore" class="container">
         <h2 class="section-title">Danh Mục Vùng Miền</h2>
         <div class="region-grid">
-            <a href="mien-bac.html" class="region-card north"><h3>Miền Bắc</h3></a>
-            <a href="mien-trung.html" class="region-card central"><h3>Miền Trung</h3></a>
-            <a href="mien-nam.html" class="region-card south"><h3>Miền Nam</h3></a>
+            <a href="index.html?region=bac" class="region-card north"><h3>Miền Bắc</h3></a>
+            <a href="index.html?region=trung" class="region-card central"><h3>Miền Trung</h3></a>
+            <a href="index.html?region=nam" class="region-card south"><h3>Miền Nam</h3></a>
         </div>
     </section>
 
@@ -152,11 +155,6 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
     </div>
     </section>
 
-
-    
-
-    
-
 <footer class="vietfood-footer">
     <div class="footer-main">
         <div class="footer-brand">
@@ -206,5 +204,7 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
         <p>&copy; 2026 <strong>VietFood</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
     </div>
 </footer>
+<script src="./public/js/main.js"></script>
+<script src="./public/js/favorite.js"></script>
 </body>
 </html>
