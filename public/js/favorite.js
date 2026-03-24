@@ -1,26 +1,41 @@
 // =======================
-// LẤY USER
+// GLOBAL
+// =======================
+let deleteId = null;
+
+// =======================
+// USER
 // =======================
 function getCurrentUser() {
   return JSON.parse(localStorage.getItem("currentUser"));
 }
 
 // =======================
-// LẤY FAVORITES
+// FAVORITES
 // =======================
 function getFavorites() {
   return JSON.parse(localStorage.getItem("favorites")) || {};
 }
 
-// =======================
-// LƯU FAVORITES
-// =======================
 function saveFavorites(favorites) {
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
 
 // =======================
-// THÊM MÓN
+// CHECK ĐÃ LƯU (THEO ID)
+// =======================
+function isSaved(recipeId) {
+  let user = getCurrentUser();
+  if (!user) return false;
+
+  let favorites = getFavorites();
+  let list = favorites[user.id] || [];
+
+  return list.some(item => item.id === recipeId);
+}
+
+// =======================
+// TOGGLE SAVE (XỊN)
 // =======================
 function addToFavorite(recipe, btn) {
   let user = getCurrentUser();
@@ -36,17 +51,20 @@ function addToFavorite(recipe, btn) {
     favorites[user.id] = [];
   }
 
-  let exist = favorites[user.id].find(item => item.name === recipe.name);
+  let index = favorites[user.id].findIndex(item => item.id === recipe.id);
 
-  // ❌ ĐÃ TỒN TẠI
-  if (exist) {
-    showToast("⚠️ Món này đã lưu rồi!");
+  // ❌ ĐÃ TỒN TẠI → BỎ LƯU
+  if (index !== -1) {
+    favorites[user.id].splice(index, 1);
+    saveFavorites(favorites);
 
     if (btn) {
-      btn.classList.add("shake");
-      setTimeout(() => btn.classList.remove("shake"), 400);
+      btn.classList.remove("active");
+      btn.style.color = "#000";
     }
 
+    showToast("❌ Đã bỏ lưu");
+    updateSavedCount();
     return;
   }
 
@@ -54,9 +72,9 @@ function addToFavorite(recipe, btn) {
   favorites[user.id].push(recipe);
   saveFavorites(favorites);
 
-  // 🎉 animation
   if (btn) {
     btn.classList.add("active");
+    btn.style.color = "#e74c3c";
 
     let heart = document.createElement("span");
     heart.className = "heart-fly";
@@ -71,7 +89,7 @@ function addToFavorite(recipe, btn) {
 }
 
 // =======================
-// XÓA MÓN
+// XÓA (TRANG YÊU THÍCH)
 // =======================
 function removeFavorite(id) {
   let user = getCurrentUser();
@@ -90,7 +108,20 @@ function removeFavorite(id) {
 }
 
 // =======================
-// HIỂN THỊ DANH SÁCH
+// CONFIRM POPUP
+// =======================
+function confirmRemove(id) {
+  deleteId = id;
+  document.getElementById("confirm-modal")?.classList.add("show");
+}
+
+function closeConfirm() {
+  deleteId = null;
+  document.getElementById("confirm-modal")?.classList.remove("show");
+}
+
+// =======================
+// RENDER FAVORITES
 // =======================
 function renderFavorites() {
   let user = getCurrentUser();
@@ -142,7 +173,7 @@ function renderFavorites() {
 }
 
 // =======================
-// HIỂN THỊ SỐ LƯỢNG
+// COUNT
 // =======================
 function updateSavedCount() {
   let user = getCurrentUser();
@@ -159,55 +190,79 @@ function updateSavedCount() {
 }
 
 // =======================
-// CHECK ĐÃ LƯU
+// CHECK BUTTON (DETAIL)
 // =======================
-function checkSaved(recipeName) {
-  let user = getCurrentUser();
+function checkSaved(recipeId) {
   let btn = document.getElementById("btn-save");
+  if (!btn) return;
 
-  if (!user || !btn) return;
-
-  let favorites = getFavorites();
-  let list = favorites[user.id] || [];
-
-  let exist = list.find(item => item.name === recipeName);
-
-  if (exist) {
-    btn.innerHTML = "✅ Đã lưu";
+  if (isSaved(recipeId)) {
     btn.classList.add("active");
+    btn.innerHTML = "✅ Đã lưu";
   }
 }
 
 // =======================
-// GẮN NÚT SAVE (mien.html)
+// SETUP BUTTON DETAIL
 // =======================
 function setupSaveButton() {
   let btnSave = document.getElementById("btn-save");
   if (!btnSave) return;
 
+  // 🔥 lấy id từ slider (hero)
+  let currentId = null;
+
+  // 👉 lấy id khi slider render
+  function updateCurrentRecipe() {
+    const title = document.getElementById("hero-title")?.innerText;
+
+    // 🔥 tìm trong data (hack nhẹ nhưng hiệu quả)
+    fetch("./data/db.json")
+      .then(res => res.json())
+      .then(data => {
+        let found = data.recipes.find(r => r.name === title);
+        if (found) {
+          currentId = found.id;
+
+          // 👉 check saved
+          if (isSaved(currentId)) {
+            btnSave.classList.add("active");
+            btnSave.innerHTML = "✅ Đã lưu";
+          } else {
+            btnSave.classList.remove("active");
+            btnSave.innerHTML = `<i class="fa-solid fa-bookmark"></i> Lưu công thức`;
+          }
+        }
+      });
+  }
+
+  // 🔥 click save
   btnSave.onclick = (e) => {
     e.preventDefault();
 
     let name = document.getElementById("hero-title")?.innerText;
     let image = document.getElementById("main-img")?.src;
 
-    if (!name) return;
+    if (!currentId) return;
 
     let recipe = {
-      id: Date.now(),
-      name: name,
-      image: image
+      id: currentId,
+      name,
+      image
     };
 
     addToFavorite(recipe, btnSave);
+
+    // update lại text
+    setTimeout(updateCurrentRecipe, 100);
   };
 
-  let currentName = document.getElementById("hero-title")?.innerText;
-  if (currentName) checkSaved(currentName);
+  // 🔥 theo dõi slider thay đổi
+  setInterval(updateCurrentRecipe, 500);
 }
 
 // =======================
-// 🔥 TOAST UI
+// TOAST
 // =======================
 function showToast(msg) {
   let toast = document.createElement("div");
@@ -222,25 +277,10 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 200);
   }, 2000);
 }
-function confirmRemove(id) {
-  deleteId = id;
-  document.getElementById("confirm-modal").classList.add("show");
-}
-function closeConfirm() {
-  deleteId = null;
-  document.getElementById("confirm-modal").classList.remove("show");
-}
+
 // =======================
 // INIT
 // =======================
-// document.addEventListener("DOMContentLoaded", () => {
-//   setupSaveButton();
-//   updateSavedCount();
-
-//   if (document.getElementById("favorite-list")) {
-//     renderFavorites();
-//   }
-// });
 document.addEventListener("DOMContentLoaded", () => {
   setupSaveButton();
   updateSavedCount();
@@ -249,7 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderFavorites();
   }
 
-  // 🔥 confirm delete
   let confirmBtn = document.getElementById("confirm-delete-btn");
   if (confirmBtn) {
     confirmBtn.onclick = () => {
