@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <h3>${r.name}</h3>
 
-            <a href="chi-tiet.html?id=${r.id}">
+            <a href="chi-tiet.html?id=${r.id}" style="color:red;">
                 <button class="btn">Xem chi tiết</button>
             </a>
         </article>

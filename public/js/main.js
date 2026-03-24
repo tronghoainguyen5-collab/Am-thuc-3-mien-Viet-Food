@@ -37,25 +37,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
         recipes.forEach(r => {
             container.innerHTML += `
-                <div class="recipe-card">
+    <article class="recipe-card" style="
+        background: #fff; 
+        border-radius: 12px; 
+        overflow: hidden; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06); 
+        border: 1px solid #f1f1f1;
+        font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.2s ease;
+    ">
+        <div class="thumb" style="position: relative; width: 100%; height: 200px; overflow: hidden;">
+            <img src="${r.image}" style="width: 100%; height: 100%; object-fit: cover;">
+            
+            <button onclick='addToFavorite(${JSON.stringify(r)}, this)' class="save-icon" style="
+                position: absolute; 
+                top: 12px; 
+                right: 12px; 
+                background: white; 
+                border: none; 
+                border-radius: 50%; 
+                width: 32px; 
+                height: 32px; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                cursor: pointer; 
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                color: #e67e22; 
+            ">
+                <i class="fa-solid fa-bookmark"></i>
+            </button>
+        </div>
 
-    <div class="thumb">
-      <img src="${r.image}">
+        <div style="padding: 18px; flex-grow: 1; display: flex; flex-direction: column;">
+            <h3 style="
+                margin: 0 0 10px 0; 
+                font-size: 1.2rem; 
+                color: #2c3e50; 
+                font-weight: 700;
+                line-height: 1.3;
+            ">
+                ${r.name}
+            </h3>
 
-      <!-- 🔥 NÚT LƯU -->
-      <button onclick='addToFavorite(${JSON.stringify(r)}, this)' class="save-icon">
-        <i class="fa-solid fa-bookmark"></i>
-      </button>
-    </div>
+            <p style="
+                font-size: 0.95rem; 
+                color: #7f8c8d; 
+                margin: 0 0 20px 0; 
+                line-height: 1.6;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                flex-grow: 1;
+            ">
+                ${r.description}
+            </p>
 
-    <h3>${r.name}</h3>
-    <p>${r.description}</p>
-     <a href="chi-tiet.html?id=${r.id}">
-      <button>Xem chi tiết</button>
-    </a>
-
-    </div>
-            `;
+            <a href="chi-tiet.html?id=${r.id}" style="text-decoration: none;">
+                <button style="
+                    width: fit-content;
+                    padding: 5px 10px;
+                    background: #fff;
+                    color: #333;
+                    border: 1px solid #d1d1d1;
+                    border-radius: 4px;
+                    font-size: 0.8rem;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    text-transform: none;
+                " onmouseover="this.style.borderColor='#e67e22'; this.style.color='#e67e22'" 
+                   onmouseout="this.style.borderColor='#d1d1d1'; this.style.color='#333'">
+                    Xem chi tiết
+                </button>
+            </a>
+        </div>
+    </article>
+`;
         });
     }
 
