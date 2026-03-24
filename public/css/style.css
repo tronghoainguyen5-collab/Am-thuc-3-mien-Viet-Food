@@ -24,6 +24,9 @@ body {
     z-index: 1000;
 }
 .logo { font-size: 1.5rem; font-weight: bold; color: #e67e22; }
+.logo{
+    width: 10%;
+}
 .nav-links { display: flex; list-style: none; }
 .nav-links li a {
     text-decoration: none;
@@ -1515,23 +1518,6 @@ body {
 }
 
 /* toast */
-.toast {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: black;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.3s;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 /* =========================================
    📱 RESPONSIVE MASTER (PRO MAX)
 ========================================= */
