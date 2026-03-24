@@ -118,7 +118,7 @@ function renderFavorites() {
       <div class="favorite-thumb">
         <img src="${item.image}" alt="${item.name}">
         
-        <button class="favorite-icon active" onclick="removeFavorite(${item.id})">
+        <button class="favorite-icon active" onclick="confirmRemove(${item.id})">
           <i class="fa-solid fa-bookmark"></i>
         </button>
       </div>
@@ -131,7 +131,7 @@ function renderFavorites() {
             Xem chi tiết
           </a>
 
-          <button class="btn-remove" onclick="removeFavorite(${item.id})">
+          <button class="btn-remove" onclick="confirmRemove(${item.id})">
             <i class="fa-solid fa-trash"></i> Xóa
           </button>
         </div>
@@ -222,15 +222,41 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 200);
   }, 2000);
 }
-
+function confirmRemove(id) {
+  deleteId = id;
+  document.getElementById("confirm-modal").classList.add("show");
+}
+function closeConfirm() {
+  deleteId = null;
+  document.getElementById("confirm-modal").classList.remove("show");
+}
 // =======================
 // INIT
 // =======================
+// document.addEventListener("DOMContentLoaded", () => {
+//   setupSaveButton();
+//   updateSavedCount();
+
+//   if (document.getElementById("favorite-list")) {
+//     renderFavorites();
+//   }
+// });
 document.addEventListener("DOMContentLoaded", () => {
   setupSaveButton();
   updateSavedCount();
 
   if (document.getElementById("favorite-list")) {
     renderFavorites();
+  }
+
+  // 🔥 confirm delete
+  let confirmBtn = document.getElementById("confirm-delete-btn");
+  if (confirmBtn) {
+    confirmBtn.onclick = () => {
+      if (deleteId !== null) {
+        removeFavorite(deleteId);
+        closeConfirm();
+      }
+    };
   }
 });
