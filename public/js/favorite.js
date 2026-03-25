@@ -40,10 +40,10 @@ function isSaved(recipeId) {
 function addToFavorite(recipe, btn) {
   let user = getCurrentUser();
 
-  if (!user) {
-    alert("Vui lòng đăng nhập!");
-    return;
-  }
+ if (!user) {
+  showPopup("⚠️ Vui lòng đăng nhập!");
+  return;
+}
 
   let favorites = getFavorites();
 
@@ -127,7 +127,7 @@ function renderFavorites() {
   let user = getCurrentUser();
 
   if (!user) {
-    alert("Vui lòng đăng nhập!");
+    showPopup("⚠️ Vui lòng đăng nhập!");
     window.location.href = "dang-nhap.html";
     return;
   }
@@ -277,6 +277,29 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 200);
   }, 2000);
 }
+function showPopup(message) {
+  const popup = document.getElementById("popup");
+  const msg = document.getElementById("popup-message");
+
+  if (!popup || !msg) {
+    console.error("Popup chưa tồn tại!");
+    return;
+  }
+
+  msg.innerText = message;
+  popup.classList.add("show");
+
+  clearTimeout(popup.timer);
+
+  popup.timer = setTimeout(() => {
+    popup.classList.remove("show");
+  }, 2000);
+}
+function closePopup() {
+  const popup = document.getElementById("popup");
+  if (popup) popup.classList.remove("show");
+}
+
 
 // =======================
 // INIT
