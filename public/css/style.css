@@ -1943,9 +1943,15 @@ body {
         width: 200px;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         transition: 0.3s;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .nav-links.active {
         display: flex;
     }
 }
+
+
