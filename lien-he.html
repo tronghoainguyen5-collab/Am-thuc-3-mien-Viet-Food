@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liên Hệ - Bếp Việt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="public/css/style.css">
 </head>
 
@@ -13,9 +14,9 @@
         <img class="logo" src="./public/image/logo.png" alt="">
         <ul class="nav-links">
             <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="mien-bac.html">Miền Bắc</a></li>
-            <li><a href="mien-trung.html">Miền Trung</a></li>
-            <li><a href="mien-nam.html">Miền Nam</a></li>
+            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+            <li><a href="mien.html?region=trung">Miền Trung</a></li>
+            <li><a href="mien.html?region=nam">Miền Nam</a></li>
             <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
             <li><a href="lien-he.html">Liên Hệ</a></li>
         </ul>
@@ -33,6 +34,9 @@
                 </a>
                 <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
                 <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
             </div>
         </div>
     </nav>
