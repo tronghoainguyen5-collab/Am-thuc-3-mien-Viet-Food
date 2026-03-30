@@ -1,4 +1,4 @@
-// --- 1. CHỨC NĂNG ĐĂNG KÝ ---
+// --- 1. ĐĂNG KÝ ---
 function register(e) {
   e.preventDefault();
 
@@ -19,23 +19,18 @@ function register(e) {
     return;
   }
 
-  // 🔥 LOGIC PHÂN QUYỀN KHI ĐĂNG KÝ:
-  // Nếu email Anh nhập có chứa chữ "admin", code sẽ cấp quyền admin.
-  // Ví dụ: anhadmin@gmail.com hoặc admin.tuannanh@fpt.edu.vn
-  let role = "user"; 
+  let role = "user"; // mặc định user
   if (email.toLowerCase().includes("admin")) {
-      role = "admin";
+    role = "admin";
   }
 
   const newUser = {
     id: Date.now(),
-    username: username,
-    email: email,
+    username,
+    email,
     password: pass,
-    role: role 
+    role
   };
-
-  console.log("Đã đăng ký tài khoản với quyền:", role);
 
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
@@ -44,7 +39,7 @@ function register(e) {
   window.location.href = "dang-nhap.html";
 }
 
-// --- 2. CHỨC NĂNG ĐĂNG NHẬP ---
+// --- 2. ĐĂNG NHẬP ---
 function login(e) {
   e.preventDefault();
 
@@ -53,70 +48,85 @@ function login(e) {
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
-  let user = users.find(u =>
-    u.email === email && u.password === password
-  );
+  let user = users.find(u => u.email === email && u.password === password);
 
   if (user) {
     localStorage.setItem("currentUser", JSON.stringify(user));
     alert(`Chào mừng ${user.username} quay trở lại!`);
 
-    // 🔥 ĐIỀU HƯỚNG CHÍNH XÁC
     if (user.role === "admin") {
-        window.location.href = "admin-stats.html"; 
+      window.location.href = "admin.html";
     } else {
-        window.location.href = "index.html"; 
+      window.location.href = "index.html";
     }
   } else {
     alert("Sai email hoặc mật khẩu");
   }
 }
 
-// --- 3. KIỂM TRA TRẠNG THÁI ---
+// --- 3. KIỂM TRA TRẠNG THÁI VÀ DROPDOWN ---
 document.addEventListener("DOMContentLoaded", () => {
   let user = JSON.parse(localStorage.getItem("currentUser"));
 
   // Bảo vệ trang Admin
   if (window.location.pathname.includes("admin") && (!user || user.role !== "admin")) {
-      alert("Bạn không có quyền truy cập!");
-      window.location.href = "index.html";
-      return;
+    alert("Bạn không có quyền truy cập!");
+    window.location.href = "index.html";
+    return;
   }
 
-  let btnLogin = document.querySelector(".btn-login");
-  let btnRegister = document.querySelector(".btn-register");
-  let savedBtn = document.querySelector(".btn-saved");
-  let authButtons = document.querySelector(".auth-buttons");
+  const btnLogin = document.querySelector(".btn-login");
+  const btnRegister = document.querySelector(".btn-register");
+  const dropdown = document.querySelector(".dropdown");
+  const profileLink = document.querySelector(".profile-link");
+  const upgradeAdmin = document.querySelector(".upgrade-admin");
+  const logoutLink = document.querySelector(".logout-link");
+  const usernameSpan = document.querySelector(".username");
+  const avatarImg = document.querySelector(".avatar");
+  const toast = document.getElementById("toast");
+
+  function showToast(msg) {
+    toast.innerText = msg;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2500);
+  }
 
   if (user) {
-    if (btnLogin) {
-      btnLogin.innerText = `👋 ${user.username}`;
-      // Nếu là admin, click vào tên sẽ quay lại bảng điều khiển
-      btnLogin.href = (user.role === "admin") ? "admin-stats.html" : "#";
-    }
+    usernameSpan.innerText = user.username;
+    avatarImg.src = "avatar.png"; // thay avatar nếu cần
+    if (btnRegister) btnRegister.style.display = "none";
+    if (user.role !== "admin") upgradeAdmin.style.display = "flex";
 
-    if (btnRegister) {
-      btnRegister.style.display = "none";
-    }
+    // Toggle dropdown
+    btnLogin.addEventListener("click", e => {
+      e.stopPropagation();
+      dropdown.classList.toggle("show");
+    });
 
-    if (authButtons && !document.querySelector(".btn-logout")) {
-      let logoutBtn = document.createElement("button");
-      logoutBtn.innerText = "Đăng xuất";
-      logoutBtn.classList.add("btn-logout");
+    document.addEventListener("click", () => dropdown.classList.remove("show"));
 
-      logoutBtn.onclick = () => {
-        localStorage.removeItem("currentUser");
-        alert("Đã đăng xuất!");
-        window.location.href = "index.html";
-      };
-      authButtons.appendChild(logoutBtn);
-    }
+    profileLink.addEventListener("click", () => {
+      dropdown.classList.remove("show");
+      showToast(`Đây là trang profile của ${user.username}`);
+    });
 
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || {};
-    let count = favorites[user.id] ? favorites[user.id].length : 0;
+    upgradeAdmin.addEventListener("click", () => {
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let current = users.find(u => u.id === user.id);
+      if (current) {
+        current.role = "admin";
+        localStorage.setItem("users", JSON.stringify(users));
+        user.role = "admin";
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        showToast("Bạn đã được nâng quyền Admin!");
+        setTimeout(() => window.location.href = "admin.html", 500);
+      }
+    });
 
-    if (savedBtn) {
-      savedBtn.innerHTML = `<i class="fa-solid fa-bookmark"></i> Món đã lưu (${count})`;
-    }
+    logoutLink.addEventListener("click", () => {
+      localStorage.removeItem("currentUser");
+      showToast("Đã đăng xuất!");
+      setTimeout(() => window.location.href = "index.html", 500);
+    });
   }
 });

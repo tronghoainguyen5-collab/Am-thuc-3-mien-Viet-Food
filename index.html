@@ -6,6 +6,87 @@
     <title>VietFood - Trang Chủ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
+    <style>
+        /* --- Dropdown Profile --- */
+.auth-buttons .btn-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.auth-buttons .btn-login:hover {
+    background: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.auth-buttons .btn-login .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.auth-buttons .dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    min-width: 200px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 100;
+}
+.auth-buttons .dropdown.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+.auth-buttons .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.auth-buttons .dropdown li {
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+.auth-buttons .dropdown li:hover {
+    background: #f2f2f2;
+}
+
+/* --- Toast ---
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 999;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+} */
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -26,19 +107,30 @@
     
         <div class="nav-actions">
             <div class="auth-buttons">
-                
-                <!-- <a href="yeu-thich.html" class="btn-saved"> -->
-                <span id="user-info"></span>
-                <a href="yeu-thich.html" class="btn-saved">
-                    <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-                </a>
-                <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
-                <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-                
-                <div class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
+    <span id="user-info"></span>
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
+
+    <!-- Nút đăng nhập / username -->
+    <button class="btn-login">
+        <img src="public/image/avatar.png" class="avatar" alt="Avatar">
+        <span class="username">Đăng Nhập</span>
+    </button>
+    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+
+    <!-- Dropdown profile -->
+    <div class="dropdown">
+        <ul>
+            <li class="profile-link"><i class="fa-solid fa-user"></i> Profile</li>
+            <li class="upgrade-admin"><i class="fa-solid fa-shield-halved"></i> Nâng quyền Admin</li>
+            <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+        </ul>
+    </div>
 </div>
-            </div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
         </div>
         
     </nav>
