@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Công thức - VietFood Admin</title>
+    <link rel="stylesheet" href="public/css/admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>VIETFOOD</h2>
+        <nav>
+            <a href="admin.html">📊 Thống kê</a>
+            <a href="admin-users.html">👥 Người dùng</a>
+            <a href="admin-recipes.html" class="active">🍲 Công thức</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Quản lý món ăn</h1>
+            <button class="btn btn-primary">+ Đăng món mới</button>
+        </header>
+
+        <div class="glass-panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Món ăn</th>
+                        <th>Vùng miền</th>
+                        <th>Ngày đăng</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bún Chả Hà Nội</strong></td>
+                        <td>Miền Bắc</td>
+                        <td>30/03/2026</td>
+                        <td><span class="badge">Đã duyệt</span></td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cơm Tấm Sài Gòn</strong></td>
+                        <td>Miền Nam</td>
+                        <td>28/03/2026</td>
+                        <td><span class="badge">Đã duyệt</span></td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

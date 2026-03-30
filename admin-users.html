@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Người dùng - VietFood Admin</title>
+    <link rel="stylesheet" href="public/css/admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>VIETFOOD</h2>
+        <nav>
+            <a href="admin.html">📊 Thống kê</a>
+            <a href="admin-users.html" class="active">👥 Người dùng</a>
+            <a href="admin-recipes.html">🍲 Công thức</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Quản lý người dùng</h1>
+            <button class="btn btn-primary">+ Thêm User</button>
+        </header>
+
+        <div class="glass-panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hội viên</th>
+                        <th>Email</th>
+                        <th>Vai trò</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1092</td>
+                        <td><strong>Anh Bạch</strong></td>
+                        <td>anh.bach@fpt.edu.vn</td>
+                        <td><span class="badge" style="background:rgba(79,172,254,0.2); color:var(--primary-color)">Admin</span></td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1093</td>
+                        <td><strong>Nguyễn Thu</strong></td>
+                        <td>thunguyen@gmail.com</td>
+                        <td><span class="badge">Member</span></td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

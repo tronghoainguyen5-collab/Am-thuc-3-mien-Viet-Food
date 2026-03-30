@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê - VietFood Admin</title>
+    <link rel="stylesheet" href="public/css/admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>VIETFOOD</h2>
+        <nav>
+            <a href="admin.html" class="active">📊 Thống kê</a>
+            <a href="admin-users.html">👥 Người dùng</a>
+            <a href="admin-recipes.html">🍲 Công thức</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Tổng quan hệ thống</h1>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Người dùng mới</h3>
+                <div class="value">2,840</div>
+                <span class="trend" style="color: #10b981;">↑ 12.5%</span>
+            </div>
+            <div class="stat-card">
+                <h3>Công thức đã đăng</h3>
+                <div class="value">452</div>
+                <span class="trend" style="color: #10b981;">↑ 8 món mới</span>
+            </div>
+            <div class="stat-card">
+                <h3>Lượt xem bài viết</h3>
+                <div class="value">124.5K</div>
+                <span class="trend" style="color: #3b82f6;">Hôm nay: 1.2K</span>
+            </div>
+        </section>
+
+        <div class="glass-panel">
+            <h3>Hoạt động gần đây</h3>
+            <div style="height: 250px; display: flex; align-items: flex-end; gap: 15px; padding: 20px 0;">
+                <div style="flex: 1; background: var(--primary-color); height: 40%; border-radius: 8px 8px 0 0;"></div>
+                <div style="flex: 1; background: var(--primary-color); height: 65%; border-radius: 8px 8px 0 0;"></div>
+                <div style="flex: 1; background: var(--secondary-color); height: 95%; border-radius: 8px 8px 0 0;"></div>
+                <div style="flex: 1; background: var(--primary-color); height: 50%; border-radius: 8px 8px 0 0;"></div>
+                <div style="flex: 1; background: var(--primary-color); height: 80%; border-radius: 8px 8px 0 0;"></div>
+                <div style="flex: 1; background: var(--secondary-color); height: 30%; border-radius: 8px 8px 0 0;"></div>
+                <div style="flex: 1; background: var(--primary-color); height: 75%; border-radius: 8px 8px 0 0;"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
