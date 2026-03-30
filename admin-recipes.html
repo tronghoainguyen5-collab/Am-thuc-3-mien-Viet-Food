@@ -2,8 +2,33 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Công thức - VietFood Admin</title>
+    <title>Quản lý công thức - VietFood Admin</title>
     <link rel="stylesheet" href="public/css/admin.css">
+    <style>
+        /* CSS Modal & Loading */
+        .modal {
+            display: none; position: fixed; z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);
+            align-items: center; justify-content: center;
+        }
+        .modal-content {
+            width: 450px; padding: 30px; border-radius: 24px;
+            background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255,255,255,0.1);
+        }
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; color: #94a3b8; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white;
+        }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+        
+        /* Hiệu ứng badge cho vùng miền */
+        .badge-bac { background: rgba(248, 113, 113, 0.2); color: #f87171; }
+        .badge-trung { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+        .badge-nam { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    </style>
 </head>
 <body>
     <aside class="sidebar">
@@ -17,45 +42,60 @@
 
     <main class="main-content">
         <header>
-            <h1>Quản lý món ăn</h1>
-            <button class="btn btn-primary">+ Đăng món mới</button>
+            <h1>Quản lý công thức nấu ăn</h1>
+            <button class="btn btn-primary" onclick="openModal()">+ Thêm món mới</button>
         </header>
 
         <div class="glass-panel">
             <table>
                 <thead>
                     <tr>
-                        <th>Món ăn</th>
+                        <th>Ảnh</th>
+                        <th>Tên món ăn</th>
                         <th>Vùng miền</th>
-                        <th>Ngày đăng</th>
-                        <th>Trạng thái</th>
+                        <th>Lượt xem</th>
                         <th>Thao tác</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="recipeList">
                     <tr>
-                        <td><strong>Bún Chả Hà Nội</strong></td>
-                        <td>Miền Bắc</td>
-                        <td>30/03/2026</td>
-                        <td><span class="badge">Đã duyệt</span></td>
-                        <td>
-                            <button class="btn btn-edit">Sửa</button>
-                            <button class="btn btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cơm Tấm Sài Gòn</strong></td>
-                        <td>Miền Nam</td>
-                        <td>28/03/2026</td>
-                        <td><span class="badge">Đã duyệt</span></td>
-                        <td>
-                            <button class="btn btn-edit">Sửa</button>
-                            <button class="btn btn-delete">Xóa</button>
+                        <td colspan="5" style="text-align:center; padding: 40px;">
+                            <div class="loading">Đang tải dữ liệu từ server...</div>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </main>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content glass-panel">
+            <h2 id="modalTitle" style="margin-bottom: 20px; color: #4facfe;">Công thức</h2>
+            <form id="recipeForm">
+                <input type="hidden" id="recipeId">
+                
+                <div class="input-group">
+                    <label for="recipeName">Tên món ăn</label>
+                    <input type="text" id="recipeName" required placeholder="Ví dụ: Phở Bò Nam Định">
+                </div>
+
+                <div class="input-group">
+                    <label for="recipeRegion">Vùng miền</label>
+                    <select id="recipeRegion">
+                        <option value="Miền Bắc">Miền Bắc</option>
+                        <option value="Miền Trung">Miền Trung</option>
+                        <option value="Miền Nam">Miền Nam</option>
+                    </select>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn" style="background: #334155; color: white;" onclick="closeModal()">Hủy bỏ</button>
+                    <button type="submit" class="btn btn-primary">Lưu công thức</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
 </body>
 </html>
