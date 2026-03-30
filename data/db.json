@@ -1,14 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "giang",
-      "password": "123456"
+      "id": "1092",
+      "fullname": "Bạch Công Tuấn Anh",
+      "email": "anhbach03456@gmail.com",
+      "password":"333333",
+      "role": "Admin",
+      "status": "Active",
+      "avatar": "https://i.pravatar.cc/150?u=1092"
     },
     {
-      "id": 2,
-      "username": "admin",
-      "password": "admin"
+      "id": "1093",
+      "fullname": "Nguyễn Thu",
+      "email": "thunguyen@gmail.com",
+      "role": "Member",
+      "status": "Active",
+      "avatar": "https://i.pravatar.cc/150?u=1093"
     }
   ],
 
@@ -17,7 +24,7 @@
     { "id": 2, "name": "Miền Trung" },
     { "id": 3, "name": "Miền Nam" }
   ],
-
+  
   "recipes": [
     {
       "id": 1,
