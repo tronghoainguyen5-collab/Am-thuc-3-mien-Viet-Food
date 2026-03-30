@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ người dùng | VietFood</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    :root {
+    --primary-orange: #ff6b35;
+    --text-dark: #2d3436;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sidebar */
+.profile-sidebar {
+    flex: 1;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.user-info { text-align: center; margin-bottom: 30px; }
+.avatar-wrapper { position: relative; width: 120px; margin: 0 auto 15px; }
+.avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-orange); }
+
+.edit-avatar {
+    position: absolute; bottom: 5px; right: 5px;
+    background: var(--primary-orange); color: white;
+    width: 35px; height: 35px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+
+.user-stats { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
+.stat strong { display: block; font-size: 1.2rem; }
+.stat span { font-size: 0.8rem; color: #636e72; }
+
+.profile-nav a {
+    display: block; padding: 12px 15px; color: #636e72;
+    text-decoration: none; border-radius: 10px; margin-bottom: 5px; transition: 0.3s;
+}
+
+.profile-nav a.active, .profile-nav a:hover {
+    background: #fff5f0; color: var(--primary-orange); font-weight: 600;
+}
+
+.logout { color: #eb4d4b !important; margin-top: 20px; }
+
+/* Main Content */
+.profile-content { flex: 3; }
+.content-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;
+}
+
+.btn-add {
+    background: var(--primary-orange); color: white; border: none;
+    padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 600;
+}
+
+.recipe-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;
+}
+
+.recipe-card {
+    background: white; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
+}
+
+.recipe-card:hover { transform: translateY(-5px); }
+.recipe-img { height: 180px; background-size: cover; background-position: center; position: relative; }
+
+.category {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(255,255,255,0.9); padding: 4px 10px;
+    border-radius: 20px; font-size: 0.7rem; font-weight: bold;
+}
+
+.recipe-info { padding: 15px; }
+.recipe-info h4 { margin-bottom: 5px; font-size: 1.1rem; }
+.recipe-info p { font-size: 0.85rem; color: #b2bec3; }
+</style>
+<body>
+    <nav class="navbar">
+        <img class="logo" src="./public/image/logo.png" alt="">
+        <ul class="nav-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+            <li><a href="mien.html?region=trung">Miền Trung</a></li>
+            <li><a href="mien.html?region=nam">Miền Nam</a></li>
+            <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+            <li><a href="lien-he.html">Liên Hệ</a></li>
+        </ul>
+    
+        <!-- <div class="search-bar">
+            <input type="text" placeholder="Bạn muốn nấu món gì?">
+            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div> -->
+    
+        <div class="nav-actions">
+            <div class="auth-buttons">
+                
+                <!-- <a href="yeu-thich.html" class="btn-saved"> -->
+                <span id="user-info"></span>
+                <a href="yeu-thich.html" class="btn-saved">
+                    <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+                </a>
+                <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
+                <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+                
+                <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+            </div>
+        </div>
+        
+    </nav>
+    <div class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="user-info">
+                <div class="avatar-wrapper">
+                    <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar">
+                    <label for="upload-photo" class="edit-avatar"><i class="fas fa-camera"></i></label>
+                    <input type="file" id="upload-photo" hidden>
+                </div>
+                <h2>Bạch Công Tuấn Anh</h2>
+                <p class="bio">Người yêu bếp, mê ẩm thực Việt 🍲</p>
+                <div class="user-stats">
+                    <div class="stat"><strong>15</strong><span>Công thức</span></div>
+                    <div class="stat"><strong>1.2k</strong><span>Người theo dõi</span></div>
+                </div>
+            </div>
+            <nav class="profile-nav">
+                <a href="#" class="active"><i class="fas fa-utensils"></i> Công thức của tôi</a>
+                <a href="#"><i class="fas fa-heart"></i> Món ăn đã lưu</a>
+                <a href="#"><i class="fas fa-user-edit"></i> Chỉnh sửa hồ sơ</a>
+                <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </nav>
+        </aside>
+
+        <main class="profile-content">
+            <div class="content-header">
+                <h3>Công thức của tôi</h3>
+                <button class="btn-add"><i class="fas fa-plus"></i> Đăng món mới</button>
+            </div>
+
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <div class="recipe-img" style="background-image: url('https://via.placeholder.com/300x200');">
+                        <span class="category">Miền Bắc</span>
+                    </div>
+                    <div class="recipe-info">
+                        <h4>Phở Bò Hà Nội</h4>
+                        <p><i class="far fa-clock"></i> 45 phút</p>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-img" style="background-image: url('https://via.placeholder.com/300x200');">
+                        <span class="category">Miền Trung</span>
+                    </div>
+                    <div class="recipe-info">
+                        <h4>Bún Bò Huế</h4>
+                        <p><i class="far fa-clock"></i> 60 phút</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="vietfood-footer">
+    <div class="footer-main">
+        <div class="footer-brand">
+            <h2 class="footer-logo">Viet<span>Food</span></h2>
+            <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba miền Bắc - Trung - Nam.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links-group">
+            <div class="footer-nav">
+                <h3>Danh Mục</h3>
+                <ul>
+                    <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+                    <li><a href="mien.html?region=trung">Miền Trung</a></li>
+                    <li><a href="mien.html?region=nam">Miền Nam</a></li>
+                    <li><a href="#">Mẹo Nhà Bếp</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3>Hỗ Trợ</h3>
+                <ul>
+                    <li><a href="#">Về VietFood</a></li>
+                    <li><a href="#">Chính Sách</a></li>
+                    <li><a href="#">Bảo Mật</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>Kết Nối Với Chúng Tôi</h3>
+            <p><i class="fas fa-phone-alt"></i> +84 123 456 789</p>
+            <p><i class="fas fa-envelope"></i> contact@vietfood.vn</p>
+            <div class="subscribe-form">
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <p>&copy; 2026 <strong>VietFood</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>
