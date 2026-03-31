@@ -245,3 +245,61 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Lấy các phần tử HTML
+    const userLoggedIn = document.getElementById('user-logged-in');
+    const userGuest = document.getElementById('user-guest');
+    const headerAvatar = document.getElementById('header-avatar');
+    const headerUsername = document.getElementById('header-username');
+    const dropdownBtn = document.getElementById('profile-dropdown-btn');
+    const dropdownMenu = document.getElementById('profile-dropdown');
+
+    // 2. Kiểm tra trạng thái đăng nhập từ localStorage
+    // Chúng ta giả định khi đăng nhập thành công sẽ lưu user vào key 'currentUser'
+    const currentUser = localStorage.getItem('currentUser');
+
+    if (currentUser) {
+        // Nếu có người dùng đăng nhập
+        const userData = JSON.parse(localStorage.getItem(`user_${currentUser}`));
+        
+        if (userData) {
+            // Hiển thị thông tin lên Header
+            headerUsername.innerText = userData.fullname || userData.username;
+            headerAvatar.src = userData.avatar || './public/image/avatar.png';
+
+            // Hiện vùng User, ẩn vùng Guest
+            userLoggedIn.style.display = 'flex';
+            userGuest.style.display = 'none';
+        }
+    } else {
+        // Nếu chưa đăng nhập
+        userLoggedIn.style.display = 'none';
+        userGuest.style.display = 'flex';
+    }
+
+    // 3. Xử lý đóng/mở Dropdown khi click vào Avatar
+    if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('show');
+        });
+    }
+
+    // Click ra ngoài để đóng dropdown
+    window.addEventListener('click', () => {
+        if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+// Hàm đăng xuất dùng chung
+function logoutUser() {
+    if (confirm("Bạn có chắc muốn đăng xuất không?")) {
+        localStorage.removeItem('currentUser');
+        window.location.href = 'index.html';
+    }
+}
