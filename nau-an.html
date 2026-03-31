@@ -7,8 +7,45 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="cook-body">
+<body>
+  <nav class="navbar">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
+    <ul class="nav-links">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+        <li><a href="mien.html?region=trung">Miền Trung</a></li>
+        <li><a href="mien.html?region=nam">Miền Nam</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+    </ul>
 
+    <div class="nav-actions">
+    <div class="auth-buttons">
+        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span class="username">Đăng Nhập</span>
+        
+        <div class="dropdown">
+            <ul class="dropdown-menu">
+                <li class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</li>
+                <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
+
+    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+</div>
+</div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+</nav>
+
+ <div class="cook-body">
 <div class="cook-container">
 
   <h1 id="cook-title"></h1>
@@ -35,7 +72,7 @@
   </button>
 
 </div>
-
+</div>
 <script src="public/js/nauan.js"></script>
 </body>
 </html>

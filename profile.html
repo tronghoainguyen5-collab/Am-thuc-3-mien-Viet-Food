@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồ sơ người dùng | VietStove</title>
     <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-orange: #ff6b35;
@@ -96,22 +96,43 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
+   <nav class="navbar">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
+    <ul class="nav-links">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+        <li><a href="mien.html?region=trung">Miền Trung</a></li>
+        <li><a href="mien.html?region=nam">Miền Nam</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+    </ul>
 
-        <img class="logo" src="./public/image/logo.jpg" alt="">
+    <div class="nav-actions">
+    <div class="auth-buttons">
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
 
-        <h2 style="color:var(--primary-orange); margin:0;">VietStove</h2>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
-            <li><a href="mien.html?region=trung">Miền Trung</a></li>
-            <li><a href="mien.html?region=nam">Miền Nam</a></li>
-        </ul>
-        <div class="nav-actions">
-            <a href="yeu-thich.html" class="btn-saved"><i class="fa-solid fa-bookmark"></i> Món đã lưu</a>
+    <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span class="username">Đăng Nhập</span>
+        
+        <div class="dropdown">
+            <ul class="dropdown-menu">
+                <li class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</li>
+                <li class="upgrade-admin" style="display: none;"><i class="fa-solid fa-shield-halved"></i> Nâng quyền Admin</li>
+                <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+            </ul>
         </div>
-    </nav>
+    </div>
+
+    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+</div>
+</div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+</nav>
 
     <div class="profile-container">
         <aside class="profile-sidebar">
@@ -127,7 +148,7 @@
             <nav class="profile-nav">
                 <a href="#" class="active"><i class="fas fa-utensils"></i> Công thức của tôi</a>
                 <a href="#" onclick="editProfile()"><i class="fas fa-user-edit"></i> Chỉnh sửa hồ sơ</a>
-                <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                <a href="" class="logout-link"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
             </nav>
         </aside>
 
@@ -199,6 +220,7 @@
         <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
     </div>
 </footer>
+     <script src="public/js/auth.js"></script>
     <script src="public/js/profile.js"></script>
 </body>
 </html>
