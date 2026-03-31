@@ -1,0 +1,178 @@
+    <!DOCTYPE html>
+    <html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ẩm Thực Miền Bắc - VietStove</title>
+        <link rel="stylesheet" href="public/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+
+    <body>
+        <nav class="navbar">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietStove Logo">
+    <ul class="nav-links">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+        <li><a href="mien.html?region=trung">Miền Trung</a></li>
+        <li><a href="mien.html?region=nam">Miền Nam</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <div class="auth-buttons">
+            <!-- Nút đăng nhập / username -->
+            <button class="btn-login">
+                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
+                <span class="username">Đăng Nhập</span>
+            </button>
+
+            <!-- Nút đăng ký -->
+            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+
+              <!-- Nút món ăn yêu thích -->
+        <a href="yeu-thich.html" class="btn-saved">
+            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+        </a>
+            <!-- Dropdown profile -->
+            <div class="dropdown">
+                <ul>
+                    <li class="profile-link"><i class="fa-solid fa-user"></i> Profile</li>
+                    <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+                </ul>
+            </div>
+        </div>
+
+      
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+</nav>
+
+        <section class="hero-cooking">
+    <div class="hero-container">
+
+        <div class="hero-content">
+            <h1 id="hero-title" class="hero-title"></h1>
+
+            <div class="hero-meta">
+                <span id="hero-time"></span>
+                <span id="hero-serves"></span>
+            </div>
+
+            <p id="hero-desc" class="hero-description"></p>
+
+            <div class="hero-btns">
+                <a href="#" class="btn-cook">Xem cách nấu</a>
+                <a href="#" id="btn-save" class="btn-save-outline">
+                <i class="fa-solid fa-bookmark"></i> Lưu công thức
+            </a>
+            </div>
+
+            <div class="hero-dots" id="hero-dots"></div>
+        </div>
+
+        <div class="hero-main-image">
+            <img id="main-img" src="" alt="">
+        </div>
+
+        <!-- 🔥 SIDEBAR TRỞ LẠI -->
+        <div class="hero-sidebar">
+            <button class="nav-arrow" id="btn-up">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+
+            <div class="side-thumbs" id="thumbs"></div>
+
+            <button class="nav-arrow" id="btn-down">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+
+    </div>
+</section>
+
+        <main class="container">
+            <h2 class="section-title">Tinh Hoa Đặc Sản Miền Bắc</h2>
+            <div class="recipe-grid"></div>
+        </main>
+        <footer class="vietfood-footer">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Viet<span>Food</span></h2>
+                    <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba
+                        miền Bắc - Trung - Nam.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+        
+                <div class="footer-links-group">
+                    <div class="footer-nav">
+                        <h3>Danh Mục</h3>
+                        <ul>
+                            <li><a href="mien-bac.html">Miền Bắc</a></li>
+                            <li><a href="mien-trung.html">Miền Trung</a></li>
+                            <li><a href="mien-nam.html">Miền Nam</a></li>
+                            <li><a href="#">Mẹo Nhà Bếp</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav">
+                        <h3>Hỗ Trợ</h3>
+                        <ul>
+                            <li><a href="#">Về VietStove</a></li>
+                            <li><a href="#">Chính Sách</a></li>
+                            <li><a href="#">Bảo Mật</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-newsletter">
+                    <h3>Kết Nối Với Chúng Tôi</h3>
+                    <p><i class="fas fa-phone-alt"></i> +84 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> contact@vietfood.vn</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Nhập email của bạn...">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer-copyright">
+                <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+            </div>
+        </footer>
+        <script src="public/js/main.js"></script>
+        <script src="public/js/favorite.js"></script>
+        <script src="public/js/auth.js"></script>
+        <div id="popup" class="popup-overlay">
+  <div class="popup-box">
+    <p id="popup-message"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+    </body>
+
+    </html>
+<!-- 
+    <div class="container">
+    
+        <h1 id="category-title">Đang tải...</h1>
+
+    
+        <div id="product-list" class="product-grid">
+           <-- JS render -->
+        </div>
+    </div>
+
+    <script src="./public/js/danhmuc.js"></script> 
+
+</body>
+</html>

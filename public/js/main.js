@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const params = new URLSearchParams(window.location.search);
     const region = params.get('region');
+    const type = params.get('type');     // loại món
 
     const map = { bac: 1, trung: 2, nam: 3 };
     const categoryId = map[region];
@@ -11,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             let recipes = data.recipes;
             if (categoryId) recipes = recipes.filter(r => r.categoryId == categoryId);
+             
+        if (type) {
+            recipes = recipes.filter(r => r.type === type);
+        }
             if (!recipes.length) return;
 
             renderList(recipes);
