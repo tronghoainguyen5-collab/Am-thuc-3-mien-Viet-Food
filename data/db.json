@@ -30,7 +30,8 @@
       "id": 1,
       "name": "Phở bò Hà Nội",
       "image": "https://i1-giadinh.vnecdn.net/2025/11/17/Pho-bo-Ha-Noi-7-vnexpress-1763-7388-9585-1763372391.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=cRAvOOkCczbiWO2YXqGWTg",
-      "description": "Món ăn truyền thống nổi tiếng miền Bắc",
+      "description": "Món ăn truyền thống nổi tiếng miền Bắc", 
+      
       "categoryId": 1,
       "userId": 1,
       "ingredients": [
