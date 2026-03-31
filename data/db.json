@@ -24,6 +24,17 @@
     { "id": 2, "name": "Miền Trung" },
     { "id": 3, "name": "Miền Nam" }
   ],
+  "types": [
+  { "id": 1, "type": "kho", "name": "Kho", "slug": "kho" },
+  { "id": 2, "type": "chien", "name": "Chiên", "slug": "chien" },
+  { "id": 3, "type": "xao", "name": "Xào", "slug": "xao" },
+  { "id": 4, "type": "nuong", "name": "Nướng", "slug": "nuong" },
+  { "id": 5, "type": "goi", "name": "Gỏi/Nộm", "slug": "goi" },
+  { "id": 6, "type": "canh", "name": "Canh/Súp", "slug": "canh" },
+  { "id": 7, "type": "hap", "name": "Hấp", "slug": "hap" },
+  { "id": 8, "type": "mon nuoc", "name": "Món Nước", "slug": "mon nuoc" },
+  { "id": 9, "type": "orther", "name": "Khác", "slug": "orther" }
+],
   
   "recipes": [
     {
@@ -33,6 +44,7 @@
       "description": "Món ăn truyền thống nổi tiếng miền Bắc", 
       
       "categoryId": 1,
+       "type": "mon nuoc",
       "userId": 1,
       "ingredients": [
     "1.5 kg xương ống bò",
@@ -78,6 +90,7 @@
       "image": "https://i1-giadinh.vnecdn.net/2023/04/16/Buoc-11-Thanh-pham-11-7068-1681636164.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=3BwD1Zud1vWE1jRJYrvvmw",
       "description": "Món nướng thơm ngon đặc trưng miền Bắc",
       "categoryId": 1,
+      "type": "nuong",
       "userId": 1,
       "ingredients": [
     "a) Phần chả:",
@@ -170,6 +183,7 @@
       "image": "https://static.vinwonders.com/production/bun-bo-hue-ngon-o-sai-gon-1.jpg",
       "description": "Đậm đà cay nồng miền Trung",
       "categoryId": 2,
+       "type": "mon nuoc",
       "userId": 2,
       "ingredients": [
     "Xương bò: 1kg (chặt khúc)",
@@ -244,6 +258,7 @@
       "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-2196-1665132014.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VaH1_0MH2V-TOHFydBl9DQ",
       "description": "Món ăn nổi tiếng Quảng Nam",
       "categoryId": 2,
+       "type": "mon nuoc",
       "userId": 2,
       "ingredients": [
     "Gà ta: 1 con (~1,3kg)",
@@ -316,6 +331,7 @@
       "image": "https://sakos.vn/wp-content/uploads/2024/09/bia.jpg",
       "description": "Món ăn quen thuộc miền Nam",
       "categoryId": 3,
+       "type": "orther",
       "userId": 1,
       "ingredients": [
     "Thịt cốt lết hoặc nạc dăm: 800g",
@@ -405,6 +421,7 @@
       "image": "https://i1-giadinh.vnecdn.net/2023/05/15/Buoc-8-Thanh-pham-1-8-8366-1684125654.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=qDCDua07MoEIbJ4Mdk0isw",
       "description": "Món nước nổi tiếng miền Nam",
       "categoryId": 3,
+       "type": "mon nuoc",
       "userId": 2,
        "ingredients": [
     "Xương ống lợn: 1kg",
@@ -487,6 +504,7 @@
   "image": "https://www.huongnghiepaau.com/wp-content/uploads/2024/09/hoc-cach-lam-bun-mam-mien-tay.jpg",
   "description": "Đặc sản miền Tây đậm đà",
   "categoryId": 3,
+   "type": "nom nuoc",
   "userId": 2,
   "ingredients": [
     "Mắm cá linh: 300g",
@@ -578,6 +596,7 @@
   "image": "https://cdnv2.tgdd.vn/mwg-static/common/Common/05052025%20-%202025-05-09T154044.858.jpg",
   "description": "Món cá kho đậm đà, màu nâu cánh gián, vị mặn ngọt đặc trưng miền Tây",
   "categoryId": 3,
+   "type": "kho",
   "userId": 2,
   "ingredients": [
     "Cá basa: 800g (có thể thay bằng cá tra, cá lóc, cá lăng...)",
@@ -642,6 +661,7 @@
   "image": "https://cdn.tgdd.vn/Files/2019/12/13/1226519/cach-nau-lau-mam-ngon-dam-vi-tru-danh-mien-tay-201912131424309726.jpg",
   "description": "Món lẩu đặc trưng miền Tây với vị mắm đậm đà, ăn kèm đa dạng rau và hải sản",
   "categoryId": 3,
+   "type": "orther",
   "userId": 2,
   "ingredients": [
     "Cá basa: 300g",
@@ -720,6 +740,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/09/19/Buoc-10-Thanh-pham-1-1-5225-1695107554.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=w2NSjDRK5L-CXyoFHF9ygw",
   "description": "Bánh xèo miền Tây giòn rụm, nhân đầy tôm, thịt, giá, ăn kèm rau sống và nước chấm đậm đà",
   "categoryId": 3,
+   "type": "chien",
   "userId": 2,
   "ingredients": [
     "Bột bánh xèo: 250g",
@@ -795,6 +816,7 @@
   "image": "https://i.ytimg.com/vi/w34Qnc-9KBU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAzXE6ASDMpVme1qsjbkQx4v-KaYA",
   "description": "Gỏi cuốn tươi ngon với tôm, thịt, bún và rau sống, nước chấm chua ngọt chuẩn miền Nam",
   "categoryId": 3,
+   "type": "orther",
   "userId": 2,
   "ingredients": [
     "Thịt ba chỉ: 500g",
@@ -853,7 +875,8 @@
   "name": "Bò kho",
   "image": "https://i.ytimg.com/vi/xfmNh564j1I/maxresdefault.jpg",
   "description": "Bò kho mềm thơm, nước dùng đậm đà, ăn kèm bánh mì hoặc bún, chuẩn vị miền Nam",
-  "categoryId": 3,
+  "categoryId": 3, 
+   "type": "mon nuong",
   "userId": 2,
  "ingredients": [
     "Thịt dẻ sườn bò: 700g",
@@ -924,6 +947,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/04/25/Thanh-pham-1-1-7239-1682395675.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=ESfJ2TFAlck0kXhPfOIkxQ",
   "description": "Canh chua cá thơm mát, vị chua thanh, ăn cùng cơm nóng, chuẩn miền Nam",
   "categoryId": 3,
+   "type": "canh",
   "userId": 2,
   "ingredients": [
     "Cá lóc (cá quả): 400g",
@@ -992,6 +1016,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2022/03/17/Thanh-pham-1-1-3717-1647494727.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=_XEfKOSF-Q4kv0BlDR7h3A",
   "description": "Chuối nếp nướng thơm bùi, nhân chuối ngọt, ăn kèm nước cốt dừa béo, chuẩn miền Nam",
   "categoryId": 3,
+   "type": "orther",
   "ingredients": [
     "Chuối sứ (chuối xiêm): 9–10 trái",
     "Gạo nếp: 500g",
@@ -1045,6 +1070,7 @@
   "image": "https://cdn.xanhsm.com/2025/01/20fafb8e-cha-ca-la-vong-hcm-1.jpg",
   "description": "Món cá nướng vàng thơm, ăn kèm bún, rau thơm và mắm tôm đặc trưng Hà Nội",
   "categoryId": 1,
+   "type": "nuong",
   "userId": 1,
   "ingredients": [
     "Cá lăng phi lê: 1kg",
@@ -1116,6 +1142,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2025/05/16/Bun-dau-mam-tom-6-vnexpress-17-9082-8722-1747388531.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=IEeLFY3qNxgwyUKtXbA15A",
   "description": "Bún trắng dân dã + đậu rán giòn + chả cốm + chân giò + nem rán + mắm tôm cay nồng – món vỉa hè Hà Nội",
   "categoryId": 1,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Đậu phụ: 8 bìa",
@@ -1172,6 +1199,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2022/07/14/Buoc-8-8-2030-1657791673.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=xN8pHObJqJ10ERPXRdcM8Q",
   "description": "Món bún thanh mát miền Bắc, dọc mùng giòn giòn, mọc viên dai ngon, nước dùng ngọt từ xương heo ninh kỹ, đặc trưng Hà Nội mùa hè",
   "categoryId": 1,
+  "type": "mon nuoc",
   "userId": 1,
   "ingredients": [
     "Móng giò heo: 500g",
@@ -1250,6 +1278,7 @@
   "image": "https://poliva.vn/wp-content/uploads/2019/10/bun-ca-ro-dong-5-1.jpg",
   "description": "Bún cá rô đồng chiên giòn, nước dùng chua ngọt từ dứa + me, topping rau sống, món dân dã miền Bắc Hà Nội",
   "categoryId": 1,
+   "type": "mon nuoc",
   "userId": 1,
   "ingredients": [
     "Cá rô phi phi lê: 600g",
@@ -1314,6 +1343,7 @@
   "image": "https://i-giadinh.vnecdn.net/2023/11/14/Bc5Thnhphm5-1699955005-4166-1699955007.jpg",
   "description": "Đặc sản Ninh Bình/Hà Nam nổi tiếng toàn quốc: cá trắm đen kho niêu đất bằng củi nhãn, thịt cá săn chắc, xương rục mềm, nước sốt sền sệt đậm đà từ nước mắm cốt + riềng + nước cốt chua, thơm mùi khói bếp dân dã",
   "categoryId": 1,
+   "type": "kho",
   "userId": 1,
   "ingredients": [
     "Cá trắm đen: 800–900g",
@@ -1382,6 +1412,7 @@
   "image": "https://static.vinwonders.com/production/cha-muc-ha-long-02.jpg",
   "description": "Đặc sản Quảng Ninh miền Bắc: chả mực giã tay dai giòn, thơm mùi biển, chiên vàng giòn tan, ăn kèm mắm tỏi ớt hoặc bánh cuốn",
   "categoryId": 1,
+  "type": "chien",
   "userId": 1,
   "ingredients": [
     "Mực nang hổ: 1kg",
@@ -1447,6 +1478,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2024/10/04/Buoc-6-Thanh-pham-1-6-6125-1728034330.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=XVMXn6k4p80p6L5dOuG30A",
   "description": "Món xôi sáng dân dã Hà Nội: xôi nếp cái hoa vàng dẻo thơm, lớp đậu xanh bùi mịn xéo lên trên, rắc hành phi mỡ gà vàng giòn – chuẩn vị Phú Thượng, Yến, Nguyễn Trãi",
   "categoryId": 1,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Gạo nếp cái hoa vàng: 600g",
@@ -1505,6 +1537,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Buoc-7-Thanh-pham-1-7-9577-1678700377.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=UC5N8qQry0_qcAfn2PvYSA",
   "description": "Món đặc trưng Hội An: sợi mì dai giòn từ nước giếng Bá Lễ, thịt heo quay, rau sống, tóp mỡ, nước dùng ít nhưng đậm",
   "categoryId": 2,
+  "type": "mon nuoc",
   "userId": 1,
   "ingredients": [
     "Thịt nạc dăm hoặc thịt đùi, ba chỉ: 600g",
@@ -1585,6 +1618,7 @@
   "image": "https://cdn.tgdd.vn/2021/02/CookProduct/banhramitHue-1200x676-1.jpg",
   "description": "Món bánh đặc sản Huế: lớp ram giòn tan từ bột nếp chiên, lớp ít dẻo nhân tôm thịt mặn ngọt, ăn kèm mắm ruốc cay nồng – chuẩn vị cố đô",
   "categoryId": 2,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Bột nếp: 400g",
