@@ -9,37 +9,47 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <img class="logo" src="./public/image/logo.png" alt="">
-        <ul class="nav-links">
-            <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
-            <li><a href="mien.html?region=trung">Miền Trung</a></li>
-            <li><a href="mien.html?region=nam">Miền Nam</a></li>
-            <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
-            <li><a href="lien-he.html">Liên Hệ</a></li>
-            <li><a href="profile.html">Profile</a></li>
-        </ul>
-    
-        <!-- <div class="search-bar">
-            <input type="text" placeholder="Bạn muốn nấu món gì?">
-            <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div> -->
-    
-        <div class="nav-actions">
-    
-            <div class="auth-buttons">
-                <a href="#" class="btn-saved">
-                    <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-                </a>
-                <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
-                <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-                <div class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-</div>
+   <nav class="navbar">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietStove Logo">
+    <ul class="nav-links">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+        <li><a href="mien.html?region=trung">Miền Trung</a></li>
+        <li><a href="mien.html?region=nam">Miền Nam</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <div class="auth-buttons">
+            <!-- Nút đăng nhập / username -->
+            <button class="btn-login">
+                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
+                <span class="username">Đăng Nhập</span>
+            </button>
+
+            <!-- Nút đăng ký -->
+            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+
+              <!-- Nút món ăn yêu thích -->
+        <a href="yeu-thich.html" class="btn-saved">
+            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+        </a>
+            <!-- Dropdown profile -->
+            <div class="dropdown">
+                <ul>
+                    <li class="profile-link"><i class="fa-solid fa-user"></i> Profile</li>
+                    <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+                </ul>
             </div>
         </div>
-    </nav>
+
+      
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+</nav>
 
     <main class="container">
         <h2 class="section-title">Về <span style="color:#e67e22 ;">VietStove</span></h2>
