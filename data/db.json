@@ -1970,6 +1970,589 @@
     "Nguồn: dienmayxanh"
   ],
   "time": "90 phút"
+},
+{
+  "id": 31,
+  "name": "Bánh cuốn",
+  "image": "https://i1-giadinh.vnecdn.net/2021/08/06/nh1-1628234036-6076-1628234126.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=HoYF-CVCJmTS82af8RL0aQ",
+  "description": "Bánh cuốn làm từ bánh tráng mềm mướt, nhân thịt băm mộc nhĩ đậm đà, ăn kèm hành phi và nước mắm chua ngọt.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Bánh tráng: 1 tập",
+    "Thịt vai heo xay: 150g",
+    "Mộc nhĩ: 1 chén (ngâm mềm, thái nhỏ)",
+    "Hành tây hoặc củ sắn: 1/2 củ",
+    "Hành lá, hành phi, hành tím",
+    "Gia vị: Mắm, muối, hạt nêm, hạt tiêu",
+    "Nước chấm: Chanh, đường, tỏi, ớt",
+    "Đồ ăn kèm: Rau thơm, dưa chuột, giò chả",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🥣 1. Chuẩn bị nhân: Ướp thịt xay với mắm, hạt nêm, tiêu. Mộc nhĩ thái nhỏ, hành tây thái hạt lựu, hành lá thái nhỏ.",
+    "🍳 2. Xào nhân: Phi thơm hành tím, xào thịt săn lại rồi cho mộc nhĩ vào. Cuối cùng thêm hành tây, hành lá, nêm gia vị vừa ăn rồi tắt bếp.",
+    "💧 3. Chuẩn bị vỏ bánh: Ngâm bánh tráng vào thau nước ấm có chút dầu ăn và chanh trong 2 phút đến khi bánh mềm đục. Lấy bánh ra khay đã thoa dầu.",
+    "🌯 4. Cuốn bánh: Cho nhân thịt mộc nhĩ vào giữa bánh tráng, gấp 2 cạnh và cuộn tròn lại. Xếp bánh lên đĩa đã thoa dầu mỏng.",
+    "🔥 5. Hấp bánh: Đun sôi nước, cho đĩa bánh vào nồi hấp, phủ khăn xô lên trên đậy nắp hấp khoảng 3-4 phút cho bánh chín đều.",
+    "🥣 6. Pha nước chấm: Pha hỗn hợp nước mắm, đường, chanh, nước lọc theo tỷ lệ 1:1:1:3. Khuấy tan đường trước khi thêm mắm, tỏi và ớt băm để tỏi ớt nổi lên đẹp mắt.",
+    "🍽️ 7. Thưởng thức: Rắc hành phi, mỡ hành lên bánh. Ăn kèm dưa chuột, chả lụa và chấm nước mắm chua ngọt.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "45 phút"
+},
+{
+  "id": 32,
+  "name": "Phở gà",
+  "image": "https://i1-giadinh.vnecdn.net/2021/01/15/pho1-1610692656-2291-1610693117.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=nTN85xw2x3Vntk16OyVGLQ",
+  "description": "Phở gà truyền thống với nước dùng thanh trong, thơm mùi hạt mùi, gừng nướng và thịt gà dai ngon, da vàng óng.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Gà mái: 1.6 - 1.7 kg",
+    "Xương gà tươi: 1 bộ",
+    "Sá sùng khô: 1 con (tùy chọn)",
+    "Gừng nướng, hành tây, củ cải trắng, hành khô nướng",
+    "Hạt mùi rang chín: 1 muỗng canh",
+    "Gia vị: Mắm, muối, hạt nêm, hạt tiêu, đường",
+    "Nghệ tươi hoặc bột nghệ",
+    "Nấm hương khô (tùy thích)",
+    "Rau ăn kèm: Rau mùi, hành lá, lá chanh, chanh, ớt",
+    "Bánh phở tươi hoặc khô",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🥣 1. Sơ chế: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Xương gà chần qua nước sôi với gừng để khử mùi và giúp nước dùng trong hơn.",
+    "🍲 2. Nấu nước dùng và luộc gà: Cho gà và xương vào nồi nước ngập. Thêm túi vải đựng hạt mùi, hành nướng, gừng nướng, hành tây và củ cải trắng vào nồi.",
+    "🔥 3. Luộc gà: Đun liu riu và hớt bọt thường xuyên. Sau 15-20 phút tắt bếp, ngâm gà thêm 10-15 phút để thịt mọng nước. Vớt gà ra, để nguội và cho vào tủ lạnh 30 phút cho da săn lại trước khi lọc thịt.",
+    "🦴 4. Ninh nước dùng: Tiếp tục ninh xương gà thêm khoảng 45 phút. Sau đó vớt bỏ phần xương và các loại củ, nêm nếm mắm, muối, hạt nêm cho vừa vị. Thêm nấm hương nếu thích.",
+    "🍜 5. Chần phở: Chần nhanh bánh phở tươi qua nước sôi rồi để ráo. Nếu dùng phở khô thì ngâm mềm trước khi chần.",
+    "🌿 6. Chuẩn bị rau: Hành lá chẻ, rau mùi rửa sạch, lá chanh thái sợi nhỏ, chanh và ớt cắt miếng.",
+    "🍽️ 7. Thưởng thức: Xếp phở ra bát, thêm thịt gà lọc, hành lá, lá chanh rồi chan nước dùng nóng hổi. Ăn kèm tương ớt và chanh.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "90 phút"
+},
+{
+  "id": 33,
+  "name": "Cơm gà Hội An",
+  "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=fSiuKQfCjNiGoPz8k46N-Q",
+  "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gà mái tơ thả vườn: 1.5 - 1.6kg",
+    "Gạo tẻ: 200g, Gạo nếp: 1 nắm",
+    "Hành tây: 1 củ, Đu đủ xanh và cà rốt bào sợi",
+    "Lá dứa (lá nếp), Nghệ tươi hoặc bột nghệ",
+    "Rau răm, hành phi, gừng, hành khô, tỏi",
+    "Lòng gà (để làm nước mạ hoặc xào)",
+    "Tương ớt Hội An",
+    "Gia vị: Nước mắm, đường, chanh/quất, muối hạt, tiêu, dầu ăn",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🍗 1. Luộc và xé gà: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Luộc gà cùng gừng, hành khô. Khi chín vớt ra để nguội, lọc lấy thịt xé nhỏ. Ướp thịt gà với mắm, đường, chanh, tiêu và tỏi băm.",
+    "🍚 2. Nấu cơm nghệ: Vo sạch gạo, để ráo. Phi thơm tỏi với dầu ăn, cho gạo vào rang sơ khoảng 30 giây. Cho gạo vào nồi, thêm nước luộc gà, lá dứa, chút muối và bột nghệ rồi nấu chín.",
+    "🥗 3. Làm gỏi hành tây & đồ chua: Hành tây thái mỏng ngâm nước đá cho bớt hăng rồi trộn với thịt gà đã ướp. Đu đủ và cà rốt bào sợi ngâm nước đá, sau đó trộn với muối, đường, chanh và rau răm.",
+    "🥘 4. Làm nước mạ: Lòng gà làm sạch, thái miếng, ướp gia vị rồi xào chín với tỏi. Thêm chút nước luộc gà và dầu điều, đun khoảng 10-15 phút.",
+    "🍲 5. Nước canh: Dùng nước luộc gà đun nóng, nêm nếm vừa ăn và thêm hành lá cắt nhỏ.",
+    "🍽️ 6. Trình bày và thưởng thức: Ép cơm vào bát rồi úp ra đĩa, xếp gà trộn hành tây, gỏi đu đủ lên bên cạnh. Ăn kèm tương ớt Hội An và bát nước canh nóng hổi.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "75 phút"
+},
+{
+  "id": 34,
+  "name": "Bún riêu cua",
+  "image": "https://i1-giadinh.vnecdn.net/2021/12/17/Bc11-1639748576-8269-1639748607.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=qUrXdJRGkKiyCVpJjeK-_Q",
+  "description": "Món bún dân dã với nước dùng chua thanh từ dấm bỗng, thịt cua đồng đóng tảng béo ngậy và màu đỏ tự nhiên từ cà chua, gạch cua.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Cua đồng: 600g",
+    "Bún tươi: 1 - 1.2kg",
+    "Xương hom lợn: 800g (ninh lấy nước dùng)",
+    "Cà chua chín: 3 - 4 quả",
+    "Dấm bỗng rượu",
+    "Hành khô, mỡ lợn, ớt khô",
+    "Rau sống: Diếp, tía tô, kinh giới, bắp chuối, rau răm, hành lá",
+    "Gia vị: Mắm tôm, mắm, muối, hạt nêm",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🦀 1. Sơ chế cua: Cua rửa sạch, giã nhuyễn với chút muối hạt. Chắt lọc lấy nước thịt cua nhiều lần. Khều riêng gạch cua ở mai.",
+    "🍲 2. Nấu riêu cua: Đun nước lọc cua, khuấy nhẹ tay theo vòng tròn đến khi thịt cua nổi lên đóng tảng thì hạ lửa nhỏ, vớt thịt cua ra bát riêng để ép chặt nước.",
+    "🍅 3. Chuẩn bị cà chua: 2 quả băm nhuyễn xào chín mềm với hành khô và mỡ lợn. Quả còn lại thái múi cau để riêng.",
+    "🍳 4. Chưng gạch cua & ớt: Phi thơm hành khô, cho gạch cua vào chưng với chút mắm, hạt nêm rồi để riêng. Làm tương tự với ớt khô để tạo ớt chưng ăn kèm.",
+    "🥣 5. Nấu nước dùng: Kết hợp nước ninh xương hom và nước cua. Cho cà chua xào, gạch cua và cà chua múi cau vào. Nêm mắm, muối, hạt nêm và cuối cùng thêm dấm bỗng tạo vị chua thanh.",
+    "🍜 6. Trình bày: Trụng bún cho vào bát, thêm thịt cua, hành hoa. Chan nước dùng nóng hổi, rắc hành phi.",
+    "🍽️ 7. Thưởng thức: Ăn kèm rau sống thái nhỏ, ớt chưng và một chút mắm tôm để dậy mùi thơm đặc trưng.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "90 phút"
+},
+{
+  "id": 35,
+  "name": "Bánh đa cua Hải Phòng",
+  "image": "https://i1-giadinh.vnecdn.net/2023/02/25/Bc12thnhphm12-1677318726-1841-1677318769.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=DlZvy2asRYb6fkfprjCvgA",
+  "description": "Món ăn biểu tượng của đất Cảng với sợi bánh đa đỏ dai mềm, nước dùng đậm đà vị cua đồng, ăn kèm chả lá lốt, chả cá và tóp mỡ hành phi giòn rụm.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Cua đồng: 800g",
+    "Bánh đa đỏ Hải Phòng",
+    "Thịt vai xay: 400g (làm chả lá lốt)",
+    "Tôm tươi hoặc bề bề: 400g",
+    "Chả cá: 300g",
+    "Mỡ phần: 150g (làm tóp mỡ)",
+    "Lá lốt, hành khô, cà chua",
+    "Rau ăn kèm: Rau muống, rau rút, hoa chuối",
+    "Gia vị: Mắm Cát Hải, mắm tôm khô Hải Phòng, nước me chua, chí chương",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🦀 1. Sơ chế cua: Cua giã nhuyễn với muối, lọc lấy nước. Gạch cua khều riêng, rửa nhẹ qua nước để khử mùi tanh.",
+    "🌿 2. Làm chả lá lốt & topping: Cuộn thịt băm vào lá lốt rồi chiên chín. Chả cá chiên vàng. Tôm hoặc bề bề luộc chín, bóc vỏ. Mỡ phần thắng lấy tóp mỡ, dùng dầu đó phi thơm hành khô.",
+    "🍲 3. Nấu nước dùng: Đun nước cua, khuấy đều đến khi thịt đóng tảng thì vớt ra bát, ép chặt. Nêm nước dùng với mắm tôm khô nướng, nước mắm ngon, me chua và hành nướng để dậy mùi.",
+    "🍅 4. Chưng gạch cua: Xào cà chua băm nhuyễn với dầu hành phi, cho gạch cua vào chưng đến khi hơi quánh lại, có thể thêm ớt bột nếu thích cay.",
+    "🥬 5. Sơ chế rau: Rau muống và rau rút chần chín tới trong nước sôi để giữ màu xanh và độ giòn.",
+    "🍜 6. Trình bày: Chần bánh đa đỏ cho vào bát, xếp chả lá lốt, chả cá, tôm, rau muống lên trên. Chan nước dùng nóng hổi, thêm thịt cua, gạch cua chưng và tóp mỡ hành phi.",
+    "🍽️ 7. Thưởng thức: Ăn kèm với chí chương (tương ớt kiểu Hải Phòng) để cảm nhận trọn vẹn hương vị đặc trưng.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "90 phút"
+},
+{
+  "id": 36,
+  "name": "Thắng cố Hà Giang",
+  "image": "https://ik.imagekit.io/tvlk/blog/2024/10/thang-co-cover-desktop.jpg?tr=q-70,c-at_max,w-500,h-250,dpr-2",
+  "description": "Món ăn đặc trưng của đồng bào vùng cao Tây Bắc với hương vị độc đáo từ nội tạng bò ninh nhừ cùng các loại gia vị núi rừng như mắc khén, thảo quả, hoa hồi.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Nội tạng bò (tim, gan, lòng, sách): 1kg",
+    "Thịt ba chỉ bò",
+    "Gia vị vùng cao: Lá thắng cố, mắc khén, hạt dổi, quế chi, hoa hồi, thảo quả",
+    "Gia vị khử mùi: Gừng, sả, lá chanh rừng, chanh tươi",
+    "Nước chấm: Tương ớt Tây Bắc, tương tàu",
+    "Rau ăn kèm: Cải mèo, cải thảo, tầm bóp",
+    "Mì hoặc bún tươi",
+    "Gia vị cơ bản: Muối, đường, mì chính, nước mắm",
+    "Nguồn: Traveloka"
+  ],
+  "steps": [
+    "🧼 1. Sơ chế nội tạng: Chà xát lòng bò với muối và bột ngọt trong 10 phút rồi rửa sạch. Tiếp tục bóp với chanh để khử mùi hôi. Chần qua nước sôi và bóp lại với chanh/muối lần cuối trước khi rửa sạch.",
+    "🧂 2. Tẩm ướp: Thái nhỏ nội tạng và thịt ba chỉ bò vừa ăn. Ướp với thảo quả, hoa hồi, quế chi và lá thắng cố trong khoảng 30 phút để thấm sâu gia vị rừng.",
+    "🍳 3. Xào săn: Cho các nguyên liệu đã ngấm gia vị vào chảo, xào lửa lớn cho đến khi miếng thịt và nội tạng săn lại và tỏa mùi thơm.",
+    "🔥 4. Ninh thắng cố: Cho toàn bộ nguyên liệu vào nồi lớn, thêm nước và đun nhỏ lửa. Ninh thật kỹ để các loại gia vị tiết ra hương thơm và thịt mềm nhừ (nấu càng lâu vị càng đậm đà).",
+    "🥣 5. Pha nước chấm: Sử dụng tương tàu kết hợp với tương ớt Tây Bắc, thêm chút mắc khén để tạo độ cay nồng đặc trưng.",
+    "🍽️ 6. Thưởng thức: Múc thắng cố ra bát tô hoặc để trên bếp lẩu. Ăn kèm với các loại rau rừng như cải mèo, bún tươi hoặc mì. Nhâm nhi cùng chút rượu ngô để cảm nhận trọn vẹn vị Tây Bắc.",
+    "Nguồn: Traveloka"
+  ],
+  "time": "120 phút"
+},
+{
+  "id": 37,
+  "name": "Thịt trâu gác bếp",
+  "image": "https://cdn.tgdd.vn/2021/12/CookRecipe/CookTipsNote/thit-trau-gac-bep-la-gi-an-co-tot-khong-tipsnote-800x450-17.jpg",
+  "description": "Đặc sản nức tiếng của vùng cao Tây Bắc với vị ngọt của thịt trâu tươi hòa quyện cùng mùi khói bếp đặc trưng và vị cay nồng từ mắc khén, hạt dổi.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Thịt trâu tươi (thớ dọc): 1kg",
+    "Gia vị ướp: Mắc khén, hạt dổi, ớt khô nướng, tỏi, gừng, sả",
+    "Gia vị cơ bản: Muối, đường, bột ngọt",
+    "Phụ liệu sấy: Lá chuối, lá ngải cứu, than hoa",
+    "Nước chấm kèm: Chẩm chéo hoặc tương ớt",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🔪 1. Sơ chế thịt: Cắt thịt trâu theo thớ dọc thành miếng dài khoảng 20cm, dày 5cm. Dần nhẹ cho miếng thịt mềm ra để dễ thấm gia vị.",
+    "🧂 2. Ướp gia vị: Nướng thơm ớt khô rồi giã nhuyễn cùng tỏi, gừng, sả, mắc khén, muối và đường. Sát đều hỗn hợp này lên từng miếng thịt trâu và để thấm trong ít nhất 3 tiếng.",
+    "🔥 3. Gác bếp sấy khô: Treo thịt trên bếp than hoa (cách mặt bếp 60-70cm). Trải lá chuối lên trên để giữ nhiệt và chèn thêm lá ngải cứu vào giữa các miếng thịt để tạo mùi thơm.",
+    "🌡️ 4. Kiểm tra nhiệt độ: Đốt than hoa lửa vừa để khói tỏa đều. Thường xuyên lật mặt thịt nếu thấy khô mặt và duy trì nhiệt độ bếp ổn định từ 9 - 12 giờ đồng hồ.",
+    "💧 5. Hấp cách thủy: Sau khi sấy khô, cho thịt vào trõ hấp cách thủy để thịt chín đều hoàn toàn và giữ được độ ngọt bên trong.",
+    "🍽️ 6. Thưởng thức: Dùng chày dần cho miếng thịt mềm và giãn ra, xé nhỏ theo thớ. Chấm cùng chẩm chéo, nhâm nhi cùng rượu ngô để cảm nhận trọn vẹn hương vị vùng cao.",
+    "❄️ 7. Bảo quản: Hút chân không và để trong ngăn đông tủ lạnh để giữ hương vị thơm ngon từ 6 - 8 tháng.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "720 phút"
+},
+{
+  "id": 38,
+  "name": "Bún ốc",
+  "image": "https://i1-giadinh.vnecdn.net/2022/08/06/Thnhphm22-1659778295-5035-1659778478.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=MNNda7JthI-SLOOhCpIq_A",
+  "description": "Món bún tinh tế của người Hà Nội với nước dùng trong, vị chua thanh đặc trưng của giấm bỗng nếp, ốc nhồi béo giòn và màu đỏ nhẹ từ cà chua xào.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Ốc nhồi hoặc ốc mít: 2kg",
+    "Bún tươi",
+    "Cà chua: 3 - 4 quả",
+    "Giấm bỗng nếp",
+    "Hành khô phi, hành lá, ớt bột",
+    "Rau sống: Xà lách, tía tô, kinh giới, hoa chuối bào",
+    "Gia vị: Mắm, muối, hạt nêm, mắm tôm, dầu ăn",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🐚 1. Sơ chế ốc: Ngâm ốc với nước vo gạo và ớt ít nhất 2 giờ để nhả sạch bùn. Luộc ốc với chút muối đến khi bong vảy thì tắt bếp. Khều lấy thịt, bỏ phần phân và rửa sạch lại bằng nước sôi. Gạn lấy nước luộc ốc trong để làm nước dùng.",
+    "🍅 2. Chuẩn bị rau củ: Cà chua bổ múi cau. Hành lá cắt khúc. Rau sống các loại rửa sạch, ngâm muối loãng rồi thái nhỏ để ăn kèm.",
+    "🍳 3. Tạo màu nước dùng: Phi thơm hành khô, cho cà chua vào xào sơ để tạo màu hồng nhạt đặc trưng cho nước bún ốc.",
+    "🍲 4. Nấu nước dùng: Trút cà chua xào vào nồi nước luộc ốc (có thể thêm nước dùng xương heo cho ngọt). Nêm mắm, muối, hạt nêm vừa vị. Cuối cùng thêm giấm bỗng nếp vào để tạo vị chua thanh và mùi thơm dịu.",
+    "🌶️ 5. Làm ớt chưng: Phi thơm hành khô với nhiều dầu, cho ớt bột vào chưng ở lửa nhỏ, nêm chút muối cho đậm vị rồi để riêng.",
+    "🍜 6. Trình bày: Chần bún cho vào bát tô, xếp ốc lên trên cùng hành lá và cà chua múi cau. Chan nước dùng nóng hổi vào bát.",
+    "🍽️ 7. Thưởng thức: Ăn kèm với rau sống thái nhỏ, ớt chưng và một chút mắm tôm để làm dậy mùi thơm nồng nàn đặc trưng của món bún ốc Hà thành.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 39,
+  "name": "Nem chua rán",
+  "image": "https://cdn.tgdd.vn/Files/2020/03/23/1243844/lam-nem-chua-ran-chien-xu-chuan-vi-ha-noi-tai-nha-202202241114056183.jpg",
+  "description": "Món ăn vặt đường phố nức tiếng Hà Nội với lớp vỏ chiên xù giòn rụm, bên trong nhân thịt và bì heo dai giòn sần sật, thơm mùi thính gạo.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Thịt heo xay (tỷ lệ nạc mỡ 8:2 hoặc 9:1): 300g",
+    "Da heo (bì): 200g",
+    "Bột chiên xù: 300g",
+    "Thính gạo: 2 muỗng",
+    "Bột năng: 2 muỗng",
+    "Trứng gà: 1 quả",
+    "Gia vị khử mùi bì: Gừng, sả, giấm",
+    "Gia vị nêm: Nước mắm, đường, hành tím băm, tiêu, hạt nêm",
+    "Đồ ăn kèm: Tương ớt, dưa leo, xoài xanh",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🥩 1. Ướp và đông thịt: Trộn thịt xay với mắm, đường, hạt nêm, hành tím và tiêu. Dàn đều thịt vào túi zip, để ngăn đá tủ lạnh khoảng 2 tiếng để thịt định hình và giữ độ tươi.",
+    "🐖 2. Luộc da heo: Luộc bì heo với gừng, sả, giấm và muối. Khi chín vớt ra ngâm nước đá cho giòn, sau đó thái sợi thật mỏng.",
+    "🌪️ 3. Trộn nhân: Lấy thịt từ tủ đông ra xay nhuyễn lần nữa. Trộn đều thịt xay với bì heo, bột năng và thính gạo cho đến khi hỗn hợp kết dính.",
+    "🍬 4. Gói nem: Dùng màng bọc thực phẩm cuốn thịt thành các thanh trụ dài, xoắn hai đầu như vặn kẹo. Cho nem vào ngăn mát tủ lạnh 2 tiếng để nem săn lại.",
+    "🔥 5. Tẩm bột và chiên: Gỡ bỏ màng bọc, nhúng nem qua trứng gà rồi lăn qua bột chiên xù. Chiên nem trong chảo ngập dầu ở lửa vừa cho đến khi vàng giòn đều.",
+    "🍽️ 6. Thưởng thức: Cắt nhỏ nem, chấm cùng tương ớt cay. Ăn kèm dưa leo hoặc xoài xanh để cân bằng vị béo.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "240 phút"
+},
+{
+  "id": 40,
+  "name": "Bánh gai",
+  "image": "https://cdn.tgdd.vn/2022/05/CookRecipe/GalleryStep/thanh-pham-31.jpg",
+  "description": "Món bánh truyền thống với lớp vỏ đen bóng dẻo thơm mùi lá gai, nhân đậu xanh dừa bùi béo, hòa quyện tạo nên hương vị đặc trưng của làng quê miền Bắc.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Gạo nếp: 1kg",
+    "Lá gai khô: 200g",
+    "Đậu xanh: 300g",
+    "Dừa nạo: 100g",
+    "Đường: 700g",
+    "Mè trắng: 1 chén nhỏ",
+    "Lá chuối khô: 20 cái (để gói bánh)",
+    "Tro bếp củi: 3kg (để chắt nước nấu lá)",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🌾 1. Sơ chế nguyên liệu: Gạo nếp ngâm 8 tiếng rồi nghiền thành bột khô. Chắt lấy nước tro bếp để nấu lá gai khô cho đến khi mềm. Vớt lá gai ra rửa sạch, vắt khô rồi rang lại trên chảo cho ráo hẳn nước.",
+    "🥣 2. Làm bột bánh: Cho lá gai đã rang, đường và bột nếp vào máy trộn. Trộn đều đến khi hỗn hợp mịn màng, có màu nâu đặc trưng và không còn dính tay.",
+    "🥥 3. Làm nhân bánh: Đậu xanh ngâm nở, hấp chín rồi sên với đường trên chảo cho tan hoàn toàn. Sau khi để nguội, trộn thêm dừa nạo sợi vào để tăng độ béo.",
+    "🌯 4. Nặn và gói bánh: Chia bột thành các phần bằng nhau, bọc nhân đậu xanh vào giữa rồi vo tròn. Lăn bánh qua lớp mè trắng, sau đó dùng lá chuối khô cuốn khoảng 3 vòng và gấp chặt hai đầu.",
+    "🔥 5. Hấp bánh: Xếp bánh vào xửng hấp trong khoảng 1 tiếng để bánh chín đều. Sau khi chín, vớt ra lau khô nước bám trên vỏ lá và để nguội.",
+    "🍽️ 6. Thành phẩm: Bánh khi nguội sẽ có lớp vỏ đen tuyền, dai dẻo, đậm đà vị lá gai hòa cùng nhân đậu xanh ngọt bùi.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "120 phút"
+},
+{
+  "id": 41,
+  "name": "Cơm gà Hội An",
+  "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_VviRYSnhMvPjlmzeGytlQ",
+  "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gà mái tơ thả vườn: 1.5 - 1.6kg",
+    "Gạo tẻ: 200g, Gạo nếp: 1 nắm",
+    "Hành tây: 1 củ, Đu đủ xanh và cà rốt bào sợi",
+    "Lá dứa (lá nếp), Nghệ tươi hoặc bột nghệ",
+    "Rau răm, hành phi, gừng, hành khô, tỏi",
+    "Lòng gà (để làm nước mạ hoặc xào)",
+    "Tương ớt Hội An",
+    "Gia vị: Nước mắm, đường, chanh/quất, muối hạt, tiêu, dầu ăn",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🍗 1. Luộc và xé gà: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Luộc gà cùng gừng, hành khô. Khi chín vớt ra để nguội, lọc lấy thịt xé nhỏ. Ướp thịt gà với mắm, đường, chanh, tiêu và tỏi băm.",
+    "🍚 2. Nấu cơm nghệ: Vo sạch gạo, để ráo. Phi thơm tỏi với dầu ăn, cho gạo vào rang sơ khoảng 30 giây. Cho gạo vào nồi cơm điện, thêm nước luộc gà, lá dứa, chút muối và bột nghệ rồi nấu chín.",
+    "🥗 3. Làm gỏi hành tây & đồ chua: Hành tây thái mỏng ngâm nước đá cho bớt hăng rồi trộn với thịt gà đã ướp. Đu đủ và cà rốt bào sợi ngâm nước đá, sau đó trộn với muối, đường, chanh và rau răm.",
+    "🥘 4. Làm nước mạ: Lòng gà làm sạch, thái miếng, ướp gia vị rồi xào chín với tỏi. Thêm chút nước luộc gà và dầu hạt điều, đun khoảng 10-15 phút để làm nước sốt rưới cơm.",
+    "🍲 5. Nước canh: Dùng nước luộc gà đun nóng, nêm nếm vừa ăn và thêm hành lá cắt nhỏ làm nước dùng ăn kèm.",
+    "🍽️ 6. Trình bày và thưởng thức: Ép cơm vào bát rồi úp ra đĩa, xếp gà trộn hành tây, gỏi đu đủ lên bên cạnh. Ăn kèm tương ớt Hội An và bát nước canh nóng hổi.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "75 phút"
+},
+{
+  "id": 42,
+  "name": "Mì Quảng gà",
+  "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-1238-1665132014.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=OtUz8nAFXK6yWDEYj7n1wg",
+  "description": "Món ăn đặc trưng của miền Trung với sợi mì dai mướt, nước dùng đậm đà vàng ươm màu nghệ, quyện cùng thịt gà ta chắc ngọt, thịt ba chỉ béo ngậy và trứng cút thấm vị.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gà ta: 1.3kg",
+    "Thịt ba chỉ: 200g",
+    "Trứng cút: 20 quả",
+    "Mì Quảng, bánh đa nướng",
+    "Nghệ tươi, hành tăm (củ nén), tỏi, sả",
+    "Dầu đậu phộng, dầu màu điều",
+    "Đậu phộng rang, hành lá",
+    "Rau ăn kèm: Bắp chuối, giá đỗ, rau húng",
+    "Gia vị: Mắm, muối, đường, hạt nêm",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🔪 1. Sơ chế: Gà làm sạch bằng chanh và muối, chặt miếng vừa ăn. Thịt ba chỉ thái miếng vừa ăn. Trứng cút luộc chín bóc vỏ. Nghệ giã nhỏ, hành tăm và tỏi băm nhuyễn.",
+    "🧂 2. Tẩm ướp: Ướp gà và thịt ba chỉ riêng biệt với nghệ giã, hành tăm, tỏi băm, nước mắm, muối và hạt nêm để thấm vị trong ít nhất 30 phút.",
+    "🔥 3. Xào gà: Đun nóng dầu đậu phộng, phi thơm hành tăm và tỏi. Cho gà vào xào săn, sau đó thêm nước xâm xấp mặt thịt và om ở lửa vừa.",
+    "🍳 4. Chế biến topping: Xào săn thịt ba chỉ và cho trứng cút vào đảo chung để lên màu đẹp, sau đó trút toàn bộ vào nồi gà đang om.",
+    "🍲 5. Nấu nước dùng: Thêm sả đập dập vào nồi để dậy mùi thơm. Khi thịt và trứng đã mềm, thêm dầu màu điều và nêm nếm lại gia vị cho đậm đà (nước dùng mì Quảng thường cô đặc, không quá nhiều nước).",
+    "🍜 6. Trình bày: Trụng sơ mì Quảng cho vào tô, xếp thịt gà, ba chỉ và trứng cút lên trên. Chan nước dùng nóng vào xâm xấp mặt mì, rắc thêm hành lá và đậu phộng rang.",
+    "🍽️ 7. Thưởng thức: Ăn kèm với rau sống bắp chuối và bánh đa nướng giòn tan. Vắt thêm chút chanh và ớt tươi để tăng hương vị.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 43,
+  "name": "Gà bóp hành rau răm",
+  "image": "https://i1-giadinh.vnecdn.net/2023/01/28/Thnhphm11-1674881647-1380-1674881658.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=FAowPdZLITHGzjFD3CGJ3Q",
+  "description": "Món gỏi truyền thống miền Trung với thịt gà ta dai giòn, hành tây trắng trong không hăng, quyện cùng vị cay nồng của rau răm và ớt bột.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gà ta (luộc chín): 1/2 con",
+    "Hành tây: 1 củ",
+    "Cà rốt: 1/2 củ",
+    "Giá đỗ (tùy chọn)",
+    "Rau thơm: Rau răm, hành lá, lá chanh, rau mùi",
+    "Gia vị: Muối, hạt tiêu, mì chính, ớt bột, ớt tươi, chanh, đường",
+    "Lạc rang giã dập, vừng rang",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🧅 1. Sơ chế hành tây: Hành tây bỏ vỏ, thái lát mỏng. Ngâm hành với chút đường, nước cốt chanh và nước đá lạnh để khử mùi hăng và giúp hành giữ độ giòn.",
+    "🥕 2. Chuẩn bị rau củ: Cà rốt bào sợi ngâm muối loãng. Giá đỗ rửa sạch. Các loại rau thơm rửa sạch, để ráo và cắt rối. Lá chanh thái chỉ, ớt tươi thái vát.",
+    "🍗 3. Ướp thịt gà: Thịt gà xé miếng vừa ăn, đem trộn đều với muối, ớt bột, hạt tiêu, mì chính, đường và lá chanh thái chỉ cho thấm gia vị.",
+    "🥗 4. Trộn gỏi: Vớt hành tây để ráo nước rồi cho vào thịt gà, vắt thêm nước cốt chanh. Đeo găng tay đảo nhẹ tay (đảo dong).",
+    "🌿 5. Hoàn thiện: Thêm cà rốt, giá đỗ, rau thơm và ớt tươi vào tiếp tục đảo đều. Nêm nếm lại gia vị cho hài hòa các vị chua, cay, mặn, ngọt.",
+    "🍽️ 6. Thưởng thức: Bày gà ra đĩa, rắc thêm lạc rang và vừng rang lên trên. Món này dùng kèm xôi hoặc cơm trắng rất ngon.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "30 phút"
+},
+{
+  "id": 44,
+  "name": "Rau muống xào tỏi",
+  "image": "https://i1-giadinh.vnecdn.net/2024/06/20/Thnhphm11-1718869928-7526-1718870073.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=beESYNjuJ8qq2arO8qmhYw",
+  "description": "Món ăn quốc dân giản dị với rau muống xanh mướt, giòn mềm, dậy mùi thơm nồng của tỏi phi và vị béo ngậy đặc trưng từ tóp mỡ xào bằng nồi đế dày.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Rau muống (nên chọn rau muống nước): 1 bó",
+    "Tỏi: 1 củ lớn",
+    "Mỡ lợn, tóp mỡ (hoặc dầu ăn)",
+    "Gia vị: Muối tinh, hạt nêm, mắm tôm (tùy chọn)",
+    "Nước lọc: 1/4 chén",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🌿 1. Sơ chế rau: Rau muống ngắt bỏ cọng cứng và lá già, ngâm nước muối loãng rồi rửa sạch, để thật ráo nước.",
+    "🧄 2. Chuẩn bị tỏi: Tỏi bóc vỏ, chia làm hai phần: một phần băm nhỏ để phi thơm, một phần đập dập để cho vào sau cùng giúp giữ mùi thơm nồng.",
+    "🔥 3. Phi tỏi: Sử dụng nồi đế dày, cho mỡ lợn vào đun nóng già rồi phi thơm phần tỏi băm nhỏ.",
+    "🥘 4. Xào rau bằng nồi: Tăng nhiệt độ cao, cho rau muống vào nồi cùng 1/4 chén nước và muối tinh. Đậy nắp nồi lại trong khoảng 1-1.5 phút để hơi nóng làm rau chín xanh và mềm.",
+    "🥢 5. Nêm nếm: Mở nắp nồi, dùng đũa đảo nhanh tay để rau chín đều. Cho phần tỏi đập dập, hạt nêm và tóp mỡ vào đảo cùng.",
+    "🍽️ 6. Hoàn thiện: Nêm lại gia vị cho vừa miệng, đảo thêm vài lượt cho rau ngấm đều gia vị rồi tắt bếp, múc ra đĩa dùng ngay khi còn nóng.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "15 phút"
+},
+{
+  "id": 45,
+  "name": "Gà kho sả nghệ",
+  "image": "https://i1-giadinh.vnecdn.net/2021/11/19/Thnhphm1-1637329120-4505-1637329124.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=mElqEmiDFMHfhGlVWvc6nA",
+  "description": "Món gà kho đậm đà với màu vàng óng ả từ nghệ tươi, dậy mùi thơm nồng của sả gừng, nước sốt sánh quyện cực kỳ bắt cơm.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gà mái ta: 1.4 - 1.5kg",
+    "Nghệ tươi (hoặc bột nghệ): 1 củ",
+    "Sả: 2 cây",
+    "Gừng: 2 nhánh",
+    "Hành khô: 2 củ",
+    "Ớt tươi: 1 - 2 quả (tùy chọn)",
+    "Gia vị: Mắm, muối, hạt nêm, hạt tiêu, dầu ăn",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🔪 1. Sơ chế: Hành và sả băm nhuyễn. Gừng thái sợi hoặc đập dập. Gà làm sạch bằng muối và chanh, chặt miếng vừa ăn (cỡ bao diêm).",
+    "🧂 2. Tẩm ướp: Ướp gà với bột nghệ, 1/2 lượng hành, sả, gừng băm và ớt. Thêm mắm, muối, hạt nêm, tiêu rồi đảo đều. Để gà thấm vị trong ít nhất 30 phút.",
+    "🔥 3. Xào gà: Phi thơm lượng hành, sả, tỏi còn lại trong chảo nóng, sau đó cho gà đã ướp vào xào ở lửa lớn cho đến khi thịt gà săn lại.",
+    "🍲 4. Kho gà: Thêm nước xâm xấp mặt thịt (dùng nước dừa tươi sẽ ngon hơn). Hạ lửa nhỏ vừa, đậy vung và kho cho đến khi thịt chín mềm.",
+    "✨ 5. Hoàn thiện: Nêm nếm lại gia vị cho vừa miệng. Tiếp tục đun đến khi nước kho cạn bớt, sánh lại và bao quanh miếng thịt gà vàng óng thì tắt bếp.",
+    "🍽️ 6. Thưởng thức: Múc gà ra đĩa, ăn cùng cơm trắng nóng hổi. Món ăn rất phù hợp cho những ngày thời tiết se lạnh.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "50 phút"
+},
+{
+  "id": 46,
+  "name": "Cháo lươn Nghệ An",
+  "image": "https://img-global.cpcdn.com/recipes/b62c051f7b90a2f9/600x852cq80/chao-l%C6%B0%C6%A1n-ngh%E1%BB%87-an-recipe-main-photo.webp",
+  "description": "Món cháo đặc sản miền Trung với thịt lươn đồng dai ngọt, vàng óng màu nghệ, thơm nồng vị sả và tiêu, mang đến hương vị ấm nồng, bổ dưỡng.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gạo tẻ và gạo nếp (tỷ lệ 3:1): 1 bát",
+    "Lươn đồng tươi sống",
+    "Nghệ tươi (hoặc bột nghệ)",
+    "Sả, hành tím, tỏi, ớt",
+    "Hành lá, rau răm",
+    "Gia vị: Nước mắm, muối, hạt nêm, tiêu",
+    "Nguồn: Cookpad"
+  ],
+  "steps": [
+    "🐍 1. Sơ chế lươn: Lươn làm sạch, chà xát với muối và giấm, ngâm khoảng 10 phút để loại bỏ hoàn toàn nhớt và mùi tanh, sau đó rửa lại thật sạch.",
+    "🌾 2. Chuẩn bị gạo: Vo sạch hỗn hợp gạo nếp và gạo tẻ, ngâm 10 phút rồi bóp nhẹ cho hạt gạo hơi nát để cháo nhanh nhừ và có độ sánh vừa phải.",
+    "🧂 3. Tẩm ướp: Ướp thịt lươn với tỏi băm, nghệ và sả băm trong khoảng 10 - 15 phút để gia vị thấm sâu vào từng thớ thịt.",
+    "🔥 4. Xào lươn: Phi thơm hành tím băm với dầu ăn, cho lươn đã ướp vào xào ở lửa nhỏ khoảng 10 phút cho đến khi thịt lươn săn lại và tỏa mùi thơm đặc trưng.",
+    "🍲 5. Nấu cháo: Cho gạo vào nồi ninh đến khi hạt gạo nở bung và nhừ. Trút phần lươn đã xào vào nồi cháo, khuấy nhẹ và nấu thêm vài phút cho lươn chín mềm.",
+    "✨ 6. Nêm nếm: Gia giảm nước mắm, hạt nêm và tiêu cho vừa miệng. Lưu ý giữ độ loãng vừa phải đặc trưng của cháo lươn Nghệ An.",
+    "🍽️ 7. Thưởng thức: Múc cháo ra tô, rắc thêm hành lá, rau răm thái nhỏ, hành phi và tiêu bột. Ăn nóng kèm với bánh mì hoặc bánh đa nướng là ngon nhất.",
+    "Nguồn: Cookpad"
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 47,
+  "name": "Cao lầu",
+  "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Bc7Thnhphm17-1678700338-1698-1678700377.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=o7clU_ZnQXrsGyaxyVAwtw",
+  "description": "Món mì trứ danh của Hội An với sợi mì vàng đục dai giòn đặc trưng, thịt xá xíu đậm đà, ăn kèm ram chiên phồng và nước nhưn ngọt mặn hài hòa.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Thịt nạc dăm hoặc ba chỉ: 600g",
+    "Sợi cao lầu tươi hoặc khô",
+    "Ram cao lầu (miếng vuông chiên giòn)",
+    "Xương lợn (ninh lấy nước dùng): 600g",
+    "Gia vị xíu thịt: Ngũ vị hương, nước tương, đường, dầu màu điều, hạt tiêu, ớt bột",
+    "Hành khô, tỏi",
+    "Rau ăn kèm: Rau húng, giá đỗ, rau cải con, xà lách",
+    "Tương ớt Hội An, ớt xiêm xanh, chanh",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🥩 1. Sơ chế thịt: Thịt cắt thớ dài dọc, rửa sạch. Hành tỏi giã nhuyễn vắt lấy nước cốt để ướp thịt cho nhanh thấm và không bị cháy khi chiên, giữ lại xác hành tỏi để phi thơm.",
+    "🧂 2. Tẩm ướp: Ướp thịt với ngũ vị hương, nước tương, đường, dầu màu điều, muối, hạt nêm và tiêu. Để thịt thấm vị tối thiểu 2 - 3 giờ hoặc để ngăn mát tủ lạnh qua đêm.",
+    "🔥 3. Chiên và xíu thịt: Áp chảo thịt cho vàng đều hai mặt. Phi thơm xác hành tỏi, cho thịt và nước sốt ướp vào cùng nước dùng xương. Đun lửa liu riu khoảng 40 - 50 phút cho thịt mềm và thấm vị.",
+    "🥣 4. Làm nước nhưn: Khi thịt gần chín, chắt một phần nước xíu ra riêng để làm nước chan (nước nhưn). Phần thịt còn lại tiếp tục xíu đến khi nước keo lại, thịt lên màu nâu đỏ đẹp mắt thì để nguội và cắt lát mỏng.",
+    "🥨 5. Chuẩn bị cao lầu: Chiên phồng các miếng ram vuông. Sợi cao lầu nếu khô thì ngâm nở rồi trụng nước sôi cho mềm, trộn chút dầu cho mướt.",
+    "🍜 6. Trình bày: Cho giá đỗ trụng dưới đáy tô, thêm sợi cao lầu và thịt xíu lên trên. Rưới nước nhưn đậm đà, thêm ram chiên giòn.",
+    "🍽️ 7. Thưởng thức: Ăn kèm rau húng, cải con, tương ớt Hội An và ớt xiêm xanh để cảm nhận trọn vẹn phong vị phố Hội.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "120 phút"
+},
+{
+  "id": 48,
+  "name": "Gỏi cá Nam Ô",
+  "image": "https://cdn.tgdd.vn/2021/08/CookProduct/Duanmoi-1200x676-1.jpg",
+  "description": "Món ăn đậm đà vị biển Đà Nẵng với thịt cá trích tươi rói, thấm đẫm nước mắm Nam Ô trứ danh, hòa quyện cùng vị bùi của đậu phộng và các loại rau rừng đặc trưng.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Cá trích tươi (hoặc cá thu, cá cơm): 500g",
+    "Nước mắm Nam Ô (đặc sản Đà Nẵng)",
+    "Rau sống: Ngò, bạc hà, húng quế, lá chanh, dưa leo, rau thơm",
+    "Đậu phộng rang, hành phi",
+    "Bánh tráng cuốn, bánh tráng nướng",
+    "Gia vị: Tỏi, ớt, chanh, muối, tiêu",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🐟 1. Sơ chế cá: Cá trích làm sạch, bỏ ruột, đánh vảy và cắt thành các lát mỏng vừa ăn. Rửa cá với nước muối loãng để khử mùi tanh và giữ độ tươi, sau đó để thật ráo nước.",
+    "🥣 2. Pha hỗn hợp gia vị: Cho tỏi băm, ớt giã nhuyễn, tiêu, nước mắm Nam Ô nguyên chất và nước cốt chanh vào bát lớn. Khuấy đều cho các gia vị hòa quyện.",
+    "🧂 3. Thấm vị cá: Cho lát cá vào tô gia vị, đảo nhẹ tay để cá ngấm đều. Để cá nghỉ khoảng 5 - 10 phút cho thịt cá tái nhẹ và đậm đà hơn.",
+    "🌿 4. Chuẩn bị rau kèm: Rau sống rửa sạch, để ráo. Các loại lá chanh và rau thơm có thể thái nhỏ hoặc để nguyên tùy sở thích để tạo mùi thơm khi cuốn.",
+    "🥗 5. Trộn gỏi: Cho rau sống vào tô cá đã thấm vị, trộn đều nhẹ nhàng. Rắc thêm đậu phộng rang giã dập và hành phi giòn lên trên bề mặt để tăng độ bùi béo.",
+    "🍽️ 6. Thưởng thức: Trải bánh tráng, đặt rau sống và gỏi cá lên trên rồi cuộn lại. Chấm cùng nước cốt dùng riêng của gỏi cá Nam Ô để cảm nhận trọn vẹn vị ngọt, cay, chát, bùi.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "45 phút"
+},
+{
+  "id": 49,
+  "name": "Bánh căn",
+  "image": "https://img-global.cpcdn.com/recipes/9bf7b93b52ade46d/600x852f0.5_0.500105_1.0q80/banh-can-recipe-main-photo.webp",
+  "description": "Món bánh nướng trong khuôn đất nung với lớp vỏ giòn rụm, thơm mùi trứng, ăn kèm mỡ hành béo ngậy và nước mắm cà chua thơm dịu đặc trưng.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Gạo (loại nở, xốp): 1kg",
+    "Đậu xanh không vỏ: 50g",
+    "Trứng gà: 10 quả, Trứng cút: 30 quả",
+    "Thịt bò: 500g",
+    "Hành lá: 300g",
+    "Cà chua: 1 quả, Thơm (dứa): 1/4 quả",
+    "Nước dừa xiêm: 1 quả",
+    "Ớt sừng, tỏi, chanh, đường phèn",
+    "Gia vị: Nước mắm, muối, mỡ lợn/dầu ăn",
+    "Nguồn: Cookpad"
+  ],
+  "steps": [
+    "🌾 1. Chuẩn bị bột: Ngâm gạo và đậu xanh qua đêm cho mềm, sau đó đem xay mịn thành hỗn hợp bột nước. Đậu xanh giúp vỏ bánh có độ bùi và thơm hơn.",
+    "🍯 2. Pha nước mắm đặc biệt: Nấu cà chua và thơm với đường phèn cho chín mềm. Cho hỗn hợp vào máy xay nhuyễn vừa phải rồi pha thêm nước dừa tươi, nước mắm, chút muối và cốt chanh. Nêm vị ngọt dịu, chua nhẹ.",
+    "🧄 3. Hoàn thiện nước chấm: Cho tỏi và ớt sừng băm nhuyễn vào bát nước mắm đã pha để tạo mùi thơm và màu sắc bắt mắt.",
+    "🌿 4. Làm mỡ hành: Hành lá cắt nhỏ. Đun nóng dầu ăn hoặc mỡ lợn, cho hành và chút muối vào đảo nhanh trong 1 phút rồi tắt bếp để giữ màu xanh tươi.",
+    "🔥 5. Đổ bánh: Làm nóng khuôn đất nung trên bếp than hồng. Thoa một lớp mỡ mỏng vào khuôn, đổ bột vào rồi thêm nhân trứng gà (đánh tan), trứng cút hoặc thịt bò băm lên trên.",
+    "🍳 6. Nướng bánh: Đậy nắp khuôn, chờ đến khi rìa bánh chín vàng giòn và nhân bên trên chín đều thì dùng cây cậy bánh ra khỏi khuôn.",
+    "🍽️ 7. Thưởng thức: Xếp bánh ra đĩa theo từng cặp, phết mỡ hành lên trên. Ăn kèm với xoài băm, xíu mại (tùy chọn) và chấm ngập trong bát nước mắm cà chua thơm lừng.",
+    "Nguồn: Cookpad"
+  ],
+  "time": "90 phút"
+},
+{
+  "id": 50,
+  "name": "Phở khô Gia Lai",
+  "image": "https://bizweb.dktcdn.net/100/489/006/files/pho-kho-gia-lai-1.jpg?v=1698305557083",
+  "description": "Đặc sản nức tiếng với sợi phở nhỏ dai, trộn cùng tương đen đặc chế, tóp mỡ, thịt băm và ăn kèm một tô nước dùng ngọt thanh từ xương bò.",
+  "categoryId": 2,
+  "userId": 2,
+  "ingredients": [
+    "Sợi phở khô Gia Lai: 500g",
+    "Thịt bò (tái/bắp/gân) và Bò viên",
+    "Thịt heo băm: 300g",
+    "Xương heo và xương gà (ninh nước dùng)",
+    "Tương đen (linh hồn của món ăn), tương ớt",
+    "Tóp mỡ, hành phi, tỏi phi",
+    "Rau ăn kèm: Giá đỗ, ngò gai, húng quế, xà lách",
+    "Gia vị: Nước tương, đường, muối, hạt nêm",
+    "Nguồn: Elmich & Hướng Nghiệp Á Âu"
+  ],
+  "steps": [
+    "🦴 1. Ninh nước dùng: Hầm xương ống heo và xương gà cùng hành tây, gừng nướng trong khoảng 90 phút. Thường xuyên hớt bọt để nước dùng trong và ngọt thanh.",
+    "🍳 2. Chế biến topping: Thịt heo băm xào săn với hành tím phi thơm. Tóp mỡ chiên giòn, tỏi và hành phi vàng rộm.",
+    "🥣 3. Pha nước sốt trộn: Tương đen đặc sản Gia Lai pha cùng chút nước tương, đường và dầu hào, đun nhẹ cho hơi sánh lại.",
+    "🍜 4. Trụnh phở: Trụnh sợi phở khô qua nước sôi khoảng 30-60 giây cho vừa mềm nhưng vẫn giữ độ dai, xả qua nước lạnh rồi trộn với dầu tỏi cho mướt.",
+    "✨ 5. Trình bày: Cho phở vào tô, thêm thịt băm, tóp mỡ, hành phi. Tô còn lại cho thịt bò tái, bò viên và chan nước dùng nóng hổi.",
+    "🍽️ 6. Thưởng thức: Khi ăn, trộn đều tô phở với tương đen và tương ớt, ăn kèm rau sống và húp một ngụm nước dùng để cảm nhận vị ngọt đậm đà.",
+    "Nguồn: Elmich"
+  ],
+  "time": "120 phút"
 }
   ]
 }
