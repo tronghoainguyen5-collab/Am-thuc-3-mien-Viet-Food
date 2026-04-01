@@ -11,7 +11,7 @@
 
     <body>
         <nav class="navbar">
-    <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietStove Logo">
     <ul class="nav-links">
         <li><a href="index.html">Trang Chủ</a></li>
         <li><a href="mien.html?region=bac">Miền Bắc</a></li>
@@ -22,12 +22,22 @@
     </ul>
 
     <div class="nav-actions">
-    <div class="auth-buttons">
-        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
-        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
-        <span class="username">Đăng Nhập</span>
-        
-        <div class="dropdown user-dropdown">
+        <div class="auth-buttons">
+            <!-- Nút đăng nhập / username -->
+            <button class="btn-login">
+                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
+                <span class="username">Đăng Nhập</span>
+            </button>
+
+            <!-- Nút đăng ký -->
+            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+
+              <!-- Nút món ăn yêu thích -->
+        <a href="yeu-thich.html" class="btn-saved">
+            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+        </a>
+            <!-- Dropdown profile -->
+            <div class="dropdown user-dropdown">
     <ul class="user-menu">
         <li class="profile-link">
             <i class="fa-solid fa-user"></i> Trang cá nhân
@@ -37,15 +47,10 @@
         </li>
     </ul>
 </div>
+        </div>
+
+      
     </div>
-
-    <a href="yeu-thich.html" class="btn-saved">
-        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-    </a>
-
-    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-</div>
-</div>
 
     <!-- Toast -->
     <div id="toast" class="toast"></div>
@@ -65,7 +70,7 @@
             <p id="hero-desc" class="hero-description"></p>
 
             <div class="hero-btns">
-                <a href="#" id="btn-cook" class="btn-cook">Xem cách nấu</a>
+                <a href="#" class="btn-cook">Xem cách nấu</a>
                 <a href="#" id="btn-save" class="btn-save-outline">
                 <i class="fa-solid fa-bookmark"></i> Lưu công thức
             </a>
@@ -75,9 +80,8 @@
         </div>
 
         <div class="hero-main-image">
-    <img id="img-current" class="img-layer active" src="">
-    <img id="img-next" class="img-layer" src="">
-</div>
+            <img id="main-img" src="" alt="">
+        </div>
 
         <!-- 🔥 SIDEBAR TRỞ LẠI -->
         <div class="hero-sidebar">
@@ -100,7 +104,6 @@
             <div class="recipe-grid"></div>
         </main>
         <footer class="vietfood-footer">
-
             <div class="footer-main">
                 <div class="footer-brand">
                     <h2 class="footer-logo">Viet<span>Food</span></h2>
@@ -148,7 +151,8 @@
         
             <div class="footer-copyright">
                 <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
-</footer>
+            </div>
+        </footer>
         <script src="public/js/main.js"></script>
         <script src="public/js/favorite.js"></script>
         <script src="public/js/auth.js"></script>
@@ -161,3 +165,18 @@
     </body>
 
     </html>
+<!-- 
+    <div class="container">
+    
+        <h1 id="category-title">Đang tải...</h1>
+
+    
+        <div id="product-list" class="product-grid">
+           <-- JS render -->
+        </div>
+    </div>
+
+    <script src="./public/js/danhmuc.js"></script> 
+
+</body>
+</html>

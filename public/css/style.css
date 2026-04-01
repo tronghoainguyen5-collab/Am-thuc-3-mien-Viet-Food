@@ -2050,7 +2050,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 16px;
+    padding: 8  px 14px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 24px;
@@ -2104,5 +2104,170 @@ body {
 .auth-buttons .dropdown li:hover {
     background: #f2f2f2;
 }
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #fff;
+    position: relative;
+    z-index: 1000;
+}
+.hero-main-image {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
 
+.img-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transform: scale(1.08);
+    transition: transform 0.7s cubic-bezier(.22,.61,.36,1),
+                opacity 0.7s ease;
+}
+
+.img-layer.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+/* slide */
+.slide-out-left {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0;
+}
+
+.slide-in-right {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+}
+
+.slide-start-right {
+    transform: translateX(100%) scale(1.05);
+    opacity: 0.4;
+}
+
+/* 👉 TEXT animation sync */
+.hero-content {
+    transition: all 0.6s cubic-bezier(.22,.61,.36,1);
+}
+
+.hero-content.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* LOGO */
+.logo {
+    height: 50px;
+}
+
+/* MENU */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #e67e22;
+}
+
+/* DROPDOWN CHA */
+.dropdown-parent {
+    position: relative;
+}
+
+/* LINK MÓN NGON */
+.dropdown-parent > a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 240px;
+
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 0;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    /* ẨN */
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+/* SHOW khi click */
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ITEM */
+.dropdown-menu li {
+    list-style: none;
+}
+
+/* LINK ITEM */
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 18px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* HOVER ITEM */
+.dropdown-menu li a:hover {
+    background: #f2f2f2;
+}
+
+/* ICON XOAY */
+.dropdown-parent.active i {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
 

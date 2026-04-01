@@ -37,6 +37,21 @@
     <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
     <ul class="nav-links">
         <li><a href="index.html">Trang Chủ</a></li>
+        <li class="dropdown-parent">
+    <a href="#">Món Ngon <i class="fa fa-chevron-down"></i></a>
+
+    <ul class="dropdown-menu">
+        <li><a href="danh-muc.html?type=kho">Kho</a></li>
+        <li><a href="danh-muc.html?type=chien">Chiên</a></li>
+        <li><a href="danh-muc.html?type=xao">Xào</a></li>
+        <li><a href="danh-muc.html?type=nuong">Nướng</a></li>
+        <li><a href="danh-muc.html?type=goi">Gỏi/Nộm</a></li>
+        <li><a href="danh-muc.html?type=canh">Canh/Súp</a></li>
+        <li><a href="danh-muc.html?type=hap">Hấp</a></li>
+        <li><a href="danh-muc.html?type=mon nuoc">Món Nước</a></li>
+        <li><a href="danh-muc.html?type=orther">Cách chế biến khác</a></li>
+    </ul>
+</li>
         <li><a href="mien.html?region=bac">Miền Bắc</a></li>
         <li><a href="mien.html?region=trung">Miền Trung</a></li>
         <li><a href="mien.html?region=nam">Miền Nam</a></li>
@@ -46,22 +61,25 @@
 
     <div class="nav-actions">
     <div class="auth-buttons">
-    <a href="yeu-thich.html" class="btn-saved">
-        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-    </a>
-
-    <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
         <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
         <span class="username">Đăng Nhập</span>
         
-        <div class="dropdown">
-            <ul class="dropdown-menu">
-                <li class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</li>
-                <li class="upgrade-admin" style="display: none;"><i class="fa-solid fa-shield-halved"></i> Nâng quyền Admin</li>
-                <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
-            </ul>
-        </div>
+        <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
+</div>
     </div>
+
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
 
     <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
 </div>
@@ -106,10 +124,10 @@
                  tôi bắt đầu hành trình khám phá một số nguồn cảm hứng đã thổi hồn cho từng món ăn đặc trưng của mỗi vùng miền.</div>
                  </div>
     </div>
-<div class="nguon" style="position: relative; width: 100%">
-        <div style="position: absolute; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
-   </div>
+    </div>
+
     </section>
+    
 
     <!-- <div class="TinTuc-1">
         <h1 class="section-title">Lần theo bản đồ gia vị Việt Nam <br>
@@ -129,7 +147,7 @@
         <div class="col1"> <img src="public/image/giavi4h.png" alt=""></div>
     </div>
     <div class="nguon" style="position: relative; width: 100%">
-        <div style="position: absolute; right: 20px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
+        <div style="position: absolute; right: 30px; top: -150px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
    </div>
     </section>
 
@@ -150,7 +168,7 @@
                  </div>
     </div>
 <div class="nguon" style="position: relative; width: 100%">
-        <div style="position: absolute; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
+        <div style="position: absolute; left: 20px; top: -280px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
    </div>
     </section>
 
@@ -174,7 +192,7 @@
         <div class="col1"> <img src="public/image/giavi7h.png" alt=""></div>
     </div>
     <div class="nguon" style="position: relative; width: 100%">
-        <div style="position: absolute; right: 20px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
+        <div style="position: absolute; right: 40px; top: -400px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
    </div>
     </section>
 
@@ -240,8 +258,8 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
 
         <div class="footer-newsletter">
             <h3>Kết Nối Với Chúng Tôi</h3>
-            <p><i class="fas fa-phone-alt"></i> 0395045813</p>
-            <p><i class="fas fa-envelope"></i>daonguyenquocviet9190@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> +84 395 045 813</p>
+            <p><i class="fas fa-envelope"></i>vietstove@gmail.com</p>
             <div class="subscribe-form">
                 <input type="email" placeholder="Nhập email của bạn...">
                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -250,14 +268,13 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
     </div>
 
     <div class="footer-copyright">
-        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Lục vị</strong>.</p>
     </div>
 </footer>
+<script src="./public/js/auth.js"></script>
 <script src="./public/js/main.js"></script>
 <script src="./public/js/favorite.js"></script>
-
-<script src="./public/js/auth.js"></script>
-
-<script src="./public/js/detail.js"></script>   
+<script src="./public/js/detail.js"></script>  
+<script src="./public/js/danhmuc.js"></script> 
 </body>
 </html>

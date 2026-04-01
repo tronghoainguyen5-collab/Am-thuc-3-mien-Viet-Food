@@ -21,19 +21,40 @@
             <!-- <li><a href="profile.html">Profile</a></li> -->
         </ul>
 
-        <div class="nav-actions">
-            <div class="auth-buttons">
-                <a href="yeu-thich.html" class="btn-saved">
-                    <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-                </a>
-                <a href="dang-nhap.html" class="btn-login">Đăng Nhập</a>
-                <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-                <div class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
+    <div class="nav-actions">
+        <div class="auth-buttons">
+            <!-- Nút đăng nhập / username -->
+            <button class="btn-login">
+                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
+                <span class="username">Đăng Nhập</span>
+            </button>
+
+            <!-- Nút đăng ký -->
+            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+
+              <!-- Nút món ăn yêu thích -->
+        <a href="yeu-thich.html" class="btn-saved">
+            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+        </a>
+            <!-- Dropdown profile -->
+            <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
 </div>
-            </div>
         </div>
-    </nav>
+
+      
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+</nav>
 
     <section class="container" style="min-height: 60vh; padding: 40px 5%;">
         <h2 class="section-title" style="margin-bottom: 30px; text-align: center;">Món ăn đã lưu của bạn</h2>
@@ -101,8 +122,8 @@
 
         <div class="footer-newsletter">
             <h3>Kết Nối Với Chúng Tôi</h3>
-            <p><i class="fas fa-phone-alt"></i> 0395045813</p>
-            <p><i class="fas fa-envelope"></i>daonguyenquocviet9190@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> +84 395 045 813</p>
+            <p><i class="fas fa-envelope"></i>vietstove@gmail.com</p>
             <div class="subscribe-form">
                 <input type="email" placeholder="Nhập email của bạn...">
                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -111,7 +132,7 @@
     </div>
 
     <div class="footer-copyright">
-        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Lục vị</strong>.</p>
     </div>
 </footer>
     <!-- CONFIRM DELETE POPUP -->

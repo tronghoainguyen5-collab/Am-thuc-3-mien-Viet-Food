@@ -134,166 +134,257 @@
 
 // --- 1. ĐĂNG KÝ ---
 // --- 1. ĐĂNG KÝ ---
+// =======================
+// 🔐 AUTH FINAL VERSION
+// =======================
+
+// =======================
+// 🔐 VALIDATE EMAIL
+// =======================
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regex.test(email)) return false;
+
+  const validDomains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com"];
+  const domain = email.split("@")[1];
+
+  return validDomains.includes(domain?.toLowerCase());
+}
+
+// =======================
+// 🎨 UI ERROR
+// =======================
+function setError(id, message) {
+  const input = document.getElementById(id);
+  const error = document.getElementById("error-" + id);
+
+  if (!input || !error) return;
+
+  input.classList.add("error-input");
+  input.classList.remove("valid-input");
+  error.innerText = message;
+}
+
+function setSuccess(id) {
+  const input = document.getElementById(id);
+  const error = document.getElementById("error-" + id);
+
+  if (!input || !error) return;
+
+  input.classList.remove("error-input");
+  input.classList.add("valid-input");
+  error.innerText = "";
+}
+
+// =======================
+// 🧠 VALIDATE FIELD
+// =======================
+function validateField(type, value, extra = null) {
+  switch (type) {
+    case "user":
+      return !value ? "Không được để trống" : "";
+
+    case "email":
+      return !validateEmail(value) ? "Email không hợp lệ" : "";
+
+    case "pass":
+      return value.length < 6 ? "Tối thiểu 6 ký tự" : "";
+
+    case "confirm":
+      return value !== extra ? "Mật khẩu không khớp" : "";
+
+    case "login-email":
+      return !validateEmail(value) ? "Email không hợp lệ" : "";
+
+    case "login-pass":
+      return !value ? "Vui lòng nhập mật khẩu" : "";
+
+    default:
+      return "";
+  }
+}
+
+// =======================
+// 📝 REGISTER
+// =======================
 function register(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let username = document.getElementById("user").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let pass = document.getElementById("pass").value.trim();
-    let confirm = document.getElementById("confirm").value.trim();
+  const username = document.getElementById("user")?.value.trim();
+  const email = document.getElementById("email")?.value.trim();
+  const pass = document.getElementById("pass")?.value.trim();
+  const confirm = document.getElementById("confirm")?.value.trim();
 
-    if (pass !== confirm) {
-        alert("Mật khẩu không khớp!");
-        return;
-    }
+  let isValid = true;
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+  const userErr = validateField("user", username);
+  const emailErr = validateField("email", email);
+  const passErr = validateField("pass", pass);
+  const confirmErr = validateField("confirm", confirm, pass);
 
-    if (users.find(u => u.email === email)) {
-        alert("Email đã tồn tại!");
-        return;
-    }
+  if (userErr) { setError("user", userErr); isValid = false; }
+  else setSuccess("user");
 
-    let role = "user"; 
-    if (email.toLowerCase().includes("admin")) {
-        role = "admin";
-    }
+  if (emailErr) { setError("email", emailErr); isValid = false; }
+  else setSuccess("email");
 
-    const newUser = {
-        id: Date.now(),
-        username: username,
-        email: email,
-        password: pass,
-        role: role,
-        avatar: "public/image/avatar.png" // Khởi tạo ảnh mặc định
-    };
+  if (passErr) { setError("pass", passErr); isValid = false; }
+  else setSuccess("pass");
 
-    users.push(newUser);
-    localStorage.setItem("users", JSON.stringify(users));
+  if (confirmErr) { setError("confirm", confirmErr); isValid = false; }
+  else setSuccess("confirm");
 
-    alert(`Đăng ký thành công tài khoản ${role.toUpperCase()}!`);
-    window.location.href = "dang-nhap.html";
+  if (!isValid) return;
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  if (users.find(u => u.email === email)) {
+    setError("email", "Email đã tồn tại");
+    return;
+  }
+
+  const newUser = {
+    id: Date.now(),
+    username,
+    email,
+    password: pass,
+    role: email.includes("admin") ? "admin" : "user",
+    avatar: "public/image/avatar.png"
+  };
+
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Đăng ký thành công!");
+  window.location.href = "dang-nhap.html";
 }
 
-// --- 2. ĐĂNG NHẬP ---
+// =======================
+// 🔑 LOGIN
+// =======================
 function login(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let email = document.getElementById("username").value.trim();
-    let password = document.getElementById("password").value.trim();
+  const email = document.getElementById("username")?.value.trim();
+  const password = document.getElementById("password")?.value.trim();
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+  let isValid = true;
 
-    // Tìm user khớp email và password
-    let user = users.find(u => u.email === email && u.password === password);
+  const emailErr = validateField("login-email", email);
+  const passErr = validateField("login-pass", password);
 
-    if (user) {
-        // Lưu toàn bộ object user vào currentUser để dùng ở các trang khác
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        alert(`Chào mừng ${user.username} quay trở lại!`);
+  if (emailErr) { setError("username", emailErr); isValid = false; }
+  else setSuccess("username");
 
-        if (user.role === "admin") {
-            window.location.href = "admin.html";
-        } else {
-            window.location.href = "index.html";
-        }
-    } else {
-        alert("Sai email hoặc mật khẩu");
-    }
+  if (passErr) { setError("password", passErr); isValid = false; }
+  else setSuccess("password");
+
+  if (!isValid) return;
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let user = users.find(u => u.email === email && u.password === password);
+
+  if (!user) {
+    setError("password", "Sai email hoặc mật khẩu");
+    return;
+  }
+
+  localStorage.setItem("currentUser", JSON.stringify(user));
+
+  window.location.href = user.role === "admin" ? "admin.html" : "index.html";
 }
 
-// --- 3. KIỂM TRA TRẠNG THÁI VÀ HIỂN THỊ HEADER (Dùng cho mọi trang) ---
+// =======================
+// 🌐 DOM READY
+// =======================
 document.addEventListener("DOMContentLoaded", () => {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
 
-    const btnLogin = document.querySelector(".btn-login");
-    const btnRegister = document.querySelector(".btn-register");
-    const dropdown = document.querySelector(".dropdown");
-    const profileLink = document.querySelector(".profile-link");
-    const upgradeAdmin = document.querySelector(".upgrade-admin");
-    const logoutLink = document.querySelector(".logout-link");
-    const usernameSpan = document.querySelector(".username");
-    const avatarImg = document.querySelector(".avatar");
-    const toast = document.getElementById("toast");
+  // ===== BLUR VALIDATE (CHUẨN WEB) =====
+  function bindBlur(id, type, extraId = null) {
+    const input = document.getElementById(id);
+    if (!input) return;
 
-    function showToast(msg) {
-        if (!toast) return;
-        toast.innerText = msg;
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 2500);
+    input.addEventListener("blur", () => {
+      const value = input.value.trim();
+      const extra = extraId ? document.getElementById(extraId)?.value : null;
+
+      const err = validateField(type, value, extra);
+
+      if (err) setError(id, err);
+      else setSuccess(id);
+    });
+  }
+
+  bindBlur("user", "user");
+  bindBlur("email", "email");
+  bindBlur("pass", "pass");
+  bindBlur("confirm", "confirm", "pass");
+
+  bindBlur("username", "login-email");
+  bindBlur("password", "login-pass");
+
+  // =======================
+  // 👤 NAVBAR LOGIC
+  // =======================
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const btnLogin = document.querySelector(".btn-login");
+  const btnRegister = document.querySelector(".btn-register");
+  const btnSaved = document.querySelector(".btn-saved");
+  const dropdown = document.querySelector(".dropdown");
+  const logoutLink = document.querySelector(".logout-link");
+  const usernameSpan = document.querySelector(".username");
+  const avatarImg = document.querySelector(".avatar");
+
+  // ❌ CHƯA LOGIN
+  if (!currentUser) {
+    if (btnSaved) btnSaved.style.display = "none";
+    if (avatarImg) avatarImg.style.display = "none";
+
+    if (btnLogin) {
+      btnLogin.onclick = () => window.location.href = "dang-nhap.html";
     }
 
-    // Bảo vệ trang Admin
-    if (window.location.pathname.includes("admin") && (!user || user.role !== "admin")) {
-        alert("Bạn không có quyền truy cập!");
-        window.location.href = "index.html";
-        return;
-    }
+    return;
+  }
 
-    // TRƯỜNG HỢP: CHƯA ĐĂNG NHẬP
-    if (!user) {
-        if (btnLogin) {
-            usernameSpan.innerText = "Đăng Nhập";
-            btnLogin.onclick = () => window.location.href = "dang-nhap.html";
-        }
-        if (btnRegister) btnRegister.style.display = "inline-block";
-        if (dropdown) dropdown.style.display = "none";
-        return;
-    }
+  // ✅ ĐÃ LOGIN
+  if (btnSaved) btnSaved.style.display = "inline-block";
+  if (btnRegister) btnRegister.style.display = "none";
 
-    // TRƯỜNG HỢP: ĐÃ ĐĂNG NHẬP
-    if (user) {
-        // 1. Hiển thị thông tin từ currentUser lên Header
-        if (usernameSpan) usernameSpan.innerText = user.username;
-        if (avatarImg) avatarImg.src = user.avatar || "public/image/avatar.png";
-        if (btnRegister) btnRegister.style.display = "none";
+  if (usernameSpan) usernameSpan.innerText = currentUser.username;
 
-        // 2. Xử lý Dropdown
-        if (btnLogin) {
-            // Xóa sự kiện chuyển trang để thay bằng hiện dropdown
-            btnLogin.onclick = null; 
-            btnLogin.addEventListener("click", (e) => {
-                e.stopPropagation();
-                if (dropdown) dropdown.classList.toggle("show");
-            });
-        }
+  if (avatarImg) {
+    avatarImg.style.display = "inline-block";
+    avatarImg.src = currentUser.avatar || "public/image/avatar.png";
+  }
 
-        // 3. Đóng dropdown khi click ngoài
-        document.addEventListener("click", () => {
-            if (dropdown) dropdown.classList.remove("show");
-        });
+  // dropdown
+  if (btnLogin && dropdown) {
+    btnLogin.addEventListener("click", (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle("show");
+    });
 
-        // 4. Link đến Profile
-        if (profileLink) {
-            profileLink.onclick = () => window.location.href = "profile.html";
-        }
+    document.addEventListener("click", () => {
+      dropdown.classList.remove("show");
+    });
+  }
 
-        // 5. Nâng quyền Admin (Giữ nguyên logic của bạn)
-        if (upgradeAdmin) {
-            if (user.role === "admin") upgradeAdmin.style.display = "none";
-            upgradeAdmin.addEventListener("click", () => {
-                let users = JSON.parse(localStorage.getItem("users")) || [];
-                let currentIdx = users.findIndex(u => u.id === user.id);
-                if (currentIdx !== -1) {
-                    users[currentIdx].role = "admin";
-                    localStorage.setItem("users", JSON.stringify(users));
-                    
-                    user.role = "admin";
-                    localStorage.setItem("currentUser", JSON.stringify(user));
-                    
-                    showToast("Bạn đã được nâng quyền Admin!");
-                    setTimeout(() => window.location.href = "admin.html", 1000);
-                }
-            });
-        }
+  const profileLink = document.querySelector(".profile-link");
+  // logout
+  // ===== PROFILE =====
+if (profileLink) {
+  profileLink.addEventListener("click", () => {
+    window.location.href = "profile.html";
+  });
+}
 
-        // 6. Logout
-        if (logoutLink) {
-            logoutLink.addEventListener("click", () => {
-                localStorage.removeItem("currentUser");
-                showToast("Đã đăng xuất!");
-                setTimeout(() => window.location.href = "index.html", 800);
-            });
-        }
-    }
+// ===== LOGOUT =====
+if (logoutLink) {
+  logoutLink.onclick = () => {
+    localStorage.removeItem("currentUser");
+    window.location.href = "index.html";
+  };
+}
 });

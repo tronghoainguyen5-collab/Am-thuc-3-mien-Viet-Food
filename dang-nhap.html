@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập - VietStove</title>
     <link rel="stylesheet" href="public/css/style.css">
+    <style>
+           .input-group input:focus {
+  border-color: #e67e22;
+  outline: none;
+}
+
+/* lỗi */
+.input-group input.error-input {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+/* đúng */
+.input-group input.valid-input {
+  border-color: #2ecc71;
+}
+
+/* text lỗi */
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -19,31 +44,30 @@
     </ul>
 
     <div class="nav-actions">
-        <div class="auth-buttons">
-            <!-- Nút đăng nhập / username -->
-            <button class="btn-login">
-                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
-                <span class="username">Đăng Nhập</span>
-            </button>
-
-            <!-- Nút đăng ký -->
-            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-
-              <!-- Nút món ăn yêu thích -->
-        <a href="yeu-thich.html" class="btn-saved">
-            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-        </a>
-            <!-- Dropdown profile -->
-            <div class="dropdown">
-                <ul>
-                    <li class="profile-link"><i class="fa-solid fa-user"></i> Profile</li>
-                    <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
-                </ul>
-            </div>
-        </div>
-
-      
+    <div class="auth-buttons">
+        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span class="username">Đăng Nhập</span>
+        
+        <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
+</div>
     </div>
+
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
+
+    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+</div>
+</div>
 
     <!-- Toast -->
     <div id="toast" class="toast"></div>
@@ -57,11 +81,13 @@
             <div class="input-group">
                 <label>Email</label>
             <input type="email" id="username" placeholder="example@gmail.com" required>
+            <small class="error" id="error-username"></small>
             </div>
             
             <div class="input-group">
                 <label>Mật khẩu</label>
                 <input type="password" id="password" placeholder="********" required>
+            <small class="error" id="error-password"></small>   
             </div>
             
             <button type="submit" class="btn-submit">Đăng Nhập</button>
@@ -108,8 +134,8 @@
 
         <div class="footer-newsletter">
             <h3>Kết Nối Với Chúng Tôi</h3>
-            <p><i class="fas fa-phone-alt"></i> +84 123 456 789</p>
-            <p><i class="fas fa-envelope"></i> contact@vietfood.vn</p>
+            <p><i class="fas fa-phone-alt"></i> +84 395 045 813</p>
+            <p><i class="fas fa-envelope"></i>vietstove@gmail.com</p>
             <div class="subscribe-form">
                 <input type="email" placeholder="Nhập email của bạn...">
                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -118,7 +144,7 @@
     </div>
 
     <div class="footer-copyright">
-        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Lục vị</strong>.</p>
     </div>
 </footer>
 <script src="./public/js/auth.js"></script>

@@ -2,218 +2,356 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const params = new URLSearchParams(window.location.search);
     const region = params.get('region');
+    const type = params.get('type');     // loại món
 
     const map = { bac: 1, trung: 2, nam: 3 };
     const categoryId = map[region];
+
+    let allRecipes = [];
+    let sliderData = [];
+    let expanded = false;
+
+    const LIMIT = 8;
 
     fetch("./data/db.json")
         .then(res => res.json())
         .then(data => {
             let recipes = data.recipes;
             if (categoryId) recipes = recipes.filter(r => r.categoryId == categoryId);
+             
+        if (type) {
+            recipes = recipes.filter(r => r.type === type);
+        }
             if (!recipes.length) return;
+            allRecipes = data.recipes;
+            if (categoryId) {
+                allRecipes = allRecipes.filter(r => r.categoryId == categoryId);
+            }
 
-            renderList(recipes);
-            initSlider(recipes);
+            sliderData = allRecipes.slice(0, 10);
+            if (document.getElementById('img-current')) {
+            initSlider(sliderData);
+        }
+
+            renderInitial();
             updateTitle(region);
         });
 
-    // ===== RENDER LIST =====
-    function renderList(recipes) {
+    // =======================
+    // 🚀 RENDER BAN ĐẦU
+    // =======================
+   function renderInitial() {
+    const container = document.querySelector('.recipe-grid');
+    if (!container) return; // 🔥 FIX
+
+    container.innerHTML = "";
+
+    const data = allRecipes.slice(0, LIMIT);
+    appendList(data);
+
+    renderToggleButton();
+}
+
+    // =======================
+    // ➕ APPEND (KHÔNG RESET)
+    // =======================
+    function appendList(recipes) {
         const container = document.querySelector('.recipe-grid');
-        if (!container) return;
-        container.innerHTML = "";
+        if (!container) return; // 🔥 FIX
 
         recipes.forEach(r => {
             const saved = isSaved(r.id);
-            container.innerHTML += `
-<article class="recipe-card" style="
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    border: 1px solid #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-">
-    <div class="thumb" style="position: relative; width: 100%; height: 200px; overflow: hidden;">
-        <img src="${r.image}" style="
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        ">
-        <button 
-            onclick='addToFavorite(${JSON.stringify(r)}, this)' 
-            class="save-icon ${saved ? 'active' : ''}"
-            style="color: ${saved ? '#e74c3c' : '#000'}; position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.8); border: none; border-radius: 50%; padding: 6px; cursor: pointer;">
-            <i class="fa-solid fa-bookmark"></i>
-        </button>
-    </div>
-    <div style="padding: 18px; flex-grow: 1; display: flex; flex-direction: column;">
-        <h3 style="
-            margin: 0 0 10px 0; 
-            font-size: 1.2rem; 
-            color: #2c3e50; 
-            font-weight: 700;
-            line-height: 1.3;
-        ">
-            ${r.name}
-        </h3>
-        <p style="
-            font-size: 0.95rem; 
-            color: #7f8c8d; 
-            margin: 0 0 20px 0; 
-            line-height: 1.6;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            flex-grow: 1;
-        ">
-            ${r.description}
-        </p>
-        <a href="chi-tiet.html?id=${r.id}" style="text-decoration: none;">
-            <button style="
-                width: fit-content;
-                padding: 5px 10px;
-                background: #fff;
-                color: #333;
-                border: 1px solid #d1d1d1;
-                border-radius: 4px;
-                font-size: 0.8rem;
-                cursor: pointer;
-                transition: all 0.25s ease;
-                text-transform: none;
-            " onmouseover="this.style.borderColor='#e67e22'; this.style.color='#e67e22'" 
-               onmouseout="this.style.borderColor='#d1d1d1'; this.style.color='#333'">
-                Xem chi tiết
-            </button>
-        </a>
-    </div>
-</article>
-`;
-        });
 
-        // Hover animation cho ảnh và card
-        document.querySelectorAll('.recipe-card').forEach(card => {
-            const img = card.querySelector('img');
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = "translateY(-8px)";
-                card.style.boxShadow = "0 15px 35px rgba(0,0,0,0.15)";
-                img.style.transform = "scale(1.07)";
+            const div = document.createElement("div");
+            div.className = "recipe-card";
+            div.style = `
+                opacity:0;
+                transform:translateY(20px);
+                transition:all 0.25s ease;
+            `;
+
+            div.innerHTML = `
+                <div class="thumb" style="position:relative;height:200px;">
+                    <img src="${r.image}" style="width:100%;height:100%;object-fit:cover;">
+                    <button onclick='addToFavorite(${JSON.stringify(r)}, this)' 
+                        class="save-icon ${saved ? 'active' : ''}"
+                        style="color:${saved ? '#e74c3c' : '#000'};position:absolute;top:8px;right:8px;">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </button>
+                </div>
+
+                <div style="padding:16px">
+                    <h3>${r.name}</h3>
+                    <p>${r.description}</p>
+
+                    <a href="chi-tiet.html?id=${r.id}">
+                        <button>Xem chi tiết</button>
+                    </a>
+                </div>
+            `;
+
+            container.appendChild(div);
+
+            // animate
+            requestAnimationFrame(() => {
+                div.style.opacity = "1";
+                div.style.transform = "translateY(0)";
             });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = "translateY(0)";
-                card.style.boxShadow = "0 6px 20px rgba(0,0,0,0.08)";
+
+            // hover
+            const img = div.querySelector('img');
+            div.addEventListener('mouseenter', () => {
+                div.style.transform = "translateY(-6px)";
+                div.style.boxShadow = "0 12px 30px rgba(0,0,0,0.15)";
+                img.style.transform = "scale(1.05)";
+            });
+
+            div.addEventListener('mouseleave', () => {
+                div.style.transform = "translateY(0)";
+                div.style.boxShadow = "0 6px 20px rgba(0,0,0,0.08)";
                 img.style.transform = "scale(1)";
             });
         });
     }
 
-    // ===== SLIDER =====
+    // =======================
+    // 🔘 BUTTON TOGGLE
+    // =======================
+    function renderToggleButton() {
+        let btn = document.getElementById("toggle-btn");
+        let container = document.querySelector(".container");
+    if (!container) return; // 🔥 FIX
+
+        if (!btn) {
+            btn = document.createElement("button");
+            btn.id = "toggle-btn";
+
+            btn.style = `
+                margin:20px auto;
+                display:block;
+                padding:10px 22px;
+                cursor:pointer;
+                border-radius:30px;
+                border:none;
+                background:linear-gradient(135deg,#ff7e5f,#e67e22);
+                color:#fff;
+                font-weight:600;
+                transition:0.25s;
+            `;
+
+            document.querySelector(".container").appendChild(btn);
+        }
+
+        updateBtnText(btn);
+
+        btn.onclick = () => {
+            const container = document.querySelector('.recipe-grid');
+
+            if (!expanded) {
+                // 👉 load thêm (append)
+                appendList(allRecipes.slice(LIMIT));
+            } else {
+                // 👉 thu gọn (xóa bớt)
+                const items = container.querySelectorAll('.recipe-card');
+
+                items.forEach((item, index) => {
+                    if (index >= LIMIT) {
+                        item.remove();
+                    }
+                });
+            }
+
+            expanded = !expanded;
+            updateBtnText(btn);
+        };
+    }
+
+    function updateBtnText(btn) {
+        btn.innerHTML = expanded
+            ? '<i class="fa-solid fa-chevron-up"></i> Thu gọn'
+            : '<i class="fa-solid fa-chevron-down"></i> Xem thêm';
+    }
+
+    // =======================
+    // 🎞 SLIDER (GIỮ NGUYÊN)
+    // =======================
     function initSlider(recipes) {
-        const mainImg = document.getElementById('main-img');
-        const title = document.getElementById('hero-title');
-        const desc = document.getElementById('hero-desc');
-        const time = document.getElementById('hero-time');
-        const dotsContainer = document.getElementById('hero-dots');
-        const thumbsContainer = document.getElementById('thumbs');
-        const btnUp = document.getElementById('btn-up');
-        const btnDown = document.getElementById('btn-down');
-        if (!mainImg) return;
+    const imgCurrent = document.getElementById('img-current');
+    const imgNext = document.getElementById('img-next');
 
-        let index = 0, isAnimating = false, autoSlide;
+    const title = document.getElementById('hero-title');
+    const desc = document.getElementById('hero-desc');
+    const time = document.getElementById('hero-time');
+    const content = document.querySelector('.hero-content');
 
-        // preload images
-        recipes.forEach(r => new Image().src = r.image);
+    const dotsContainer = document.getElementById('hero-dots');
+    const thumbsContainer = document.getElementById('thumbs');
+    const btnUp = document.getElementById('btn-up');
+    const btnDown = document.getElementById('btn-down');
+    if (!dotsContainer || !thumbsContainer) return;
 
-        // render dots
-        dotsContainer.innerHTML = recipes.map((_, i) =>
-            `<span class="dot ${i===0?'active':''}" data-i="${i}"></span>`
-        ).join('');
-        const dots = document.querySelectorAll('.dot');
+    let index = 0;
+    let currentId = null;
+    let isAnimating = false;
+    let autoSlide;
 
-        // render thumbs
-        thumbsContainer.innerHTML = recipes.map((r,i) =>
-            `<img src="${r.image}" class="${i===0?'active':''}" data-i="${i}">`
-        ).join('');
-        const thumbs = thumbsContainer.querySelectorAll('img');
+    // dots
+    dotsContainer.innerHTML = recipes.map((_, i) =>
+        `<span class="dot ${i===0?'active':''}" data-i="${i}"></span>`
+    ).join('');
 
-        function render(i) {
-            if (isAnimating) return;
-            isAnimating = true;
+    // thumbs
+    thumbsContainer.innerHTML = recipes.map((r,i) =>
+        `<img src="${r.image}" class="${i===0?'active':''}" data-i="${i}">`
+    ).join('');
 
-            const r = recipes[i];
-            mainImg.style.transition = "transform 0.5s ease, opacity 0.5s ease";
-            mainImg.style.opacity = 0;
-            mainImg.style.transform = "scale(0.95)";
+    const dots = document.querySelectorAll('.dot');
+    const thumbs = thumbsContainer.querySelectorAll('img');
 
-            setTimeout(() => {
-                title.innerText = r.name;
-                desc.innerText = r.description;
-                time.innerHTML = `<i class="far fa-clock"></i> ${r.time}`;
-                mainImg.src = r.image;
+    function changeSlide(i) {
+        if (isAnimating || i === index) return;
+        isAnimating = true;
 
-                dots.forEach(d => d.classList.remove('active'));
-                dots[i].classList.add('active');
+        const next = recipes[i];
 
-                thumbs.forEach(t => t.classList.remove('active'));
-                thumbs[i].classList.add('active');
+        // 👉 TEXT fade out (sync với ảnh)
+        content.classList.remove("fade-in");
+        content.classList.add("fade-out");
 
-                mainImg.style.opacity = 1;
-                mainImg.style.transform = "scale(1)";
+        // 👉 set ảnh next
+        imgNext.src = next.image;
+        imgNext.className = "img-layer slide-start-right";
 
-                index = i;
-                isAnimating = false;
-            }, 200);
-        }
-
-        render(index);
-
-        // click thumbnail
-        thumbs.forEach(t => t.addEventListener("click", () => render(+t.dataset.i)));
-
-        // click dot
-        dots.forEach(d => d.addEventListener("click", () => render(+d.dataset.i)));
-
-        // nút up/down
-        btnUp.addEventListener("click", () => render(index-1<0?recipes.length-1:index-1));
-        btnDown.addEventListener("click", () => render((index+1)%recipes.length));
-
-        // click main image → chi tiết
-        mainImg.addEventListener("click", () => window.location.href=`chi-tiet.html?id=${recipes[index].id}`);
-
-        // ===== Auto slide với hover pause =====
-        function startAutoSlide() {
-            stopAutoSlide();
-            autoSlide = setInterval(() => render((index+1)%recipes.length), 4000);
-        }
-        function stopAutoSlide() { clearInterval(autoSlide); }
-
-        [mainImg, thumbsContainer, ...document.querySelectorAll('.recipe-card')].forEach(el => {
-            el.addEventListener('mouseenter', stopAutoSlide);
-            el.addEventListener('mouseleave', startAutoSlide);
+        requestAnimationFrame(() => {
+            imgCurrent.classList.add("slide-out-left");
+            imgNext.classList.add("active", "slide-in-right");
         });
 
-        startAutoSlide();
+        // 👉 dùng transitionend → KHÔNG bị lệch timing
+        imgNext.addEventListener("transitionend", function handler() {
+            imgNext.removeEventListener("transitionend", handler);
+
+            // swap ảnh
+            imgCurrent.src = next.image;
+            imgCurrent.className = "img-layer active";
+            imgNext.className = "img-layer";
+
+            // 👉 update text (đúng lúc animation kết thúc)
+            title.innerText = next.name;
+            desc.innerText = next.description;
+            time.innerHTML = `<i class="far fa-clock"></i> ${next.time}`;
+
+            // 👉 TEXT fade in (đồng bộ)
+            content.classList.remove("fade-out");
+            content.classList.add("fade-in");
+
+            currentId = next.id;
+
+            // UI
+            dots.forEach(d => d.classList.remove('active'));
+            dots[i].classList.add('active');
+
+            thumbs.forEach(t => t.classList.remove('active'));
+            thumbs[i].classList.add('active');
+
+            index = i;
+            isAnimating = false;
+        });
     }
+
+    // init
+    imgCurrent.src = recipes[0].image;
+    imgCurrent.classList.add("active");
+
+    title.innerText = recipes[0].name;
+    desc.innerText = recipes[0].description;
+    time.innerHTML = `<i class="far fa-clock"></i> ${recipes[0].time}`;
+
+    currentId = recipes[0].id;
+
+    // click
+    thumbs.forEach(t => t.onclick = () => changeSlide(+t.dataset.i));
+    dots.forEach(d => d.onclick = () => changeSlide(+d.dataset.i));
+
+    btnUp.onclick = () => changeSlide(index-1 < 0 ? recipes.length-1 : index-1);
+    btnDown.onclick = () => changeSlide((index+1) % recipes.length);
+
+    // auto slide
+    function startAuto() {
+        autoSlide = setInterval(() => {
+            changeSlide((index + 1) % recipes.length);
+        }, 4000);
+    }
+
+    function stopAuto() {
+        clearInterval(autoSlide);
+    }
+
+    const hero = document.querySelector('.hero-main-image');
+    hero.addEventListener('mouseenter', stopAuto);
+    hero.addEventListener('mouseleave', startAuto);
+
+    startAuto();
+
+    // nút xem cách nấu
+    const cookBtn = document.getElementById("btn-cook");
+    cookBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentId) {
+            window.location.href = `chi-tiet.html?id=${currentId}`;
+        }
+    });
+}
 
     function updateTitle(region) {
         const el = document.querySelector(".section-title");
         if (!el) return;
+
         const map = {
             bac: "Tinh Hoa Đặc Sản Miền Bắc",
             trung: "Tinh Hoa Đặc Sản Miền Trung",
             nam: "Tinh Hoa Đặc Sản Miền Nam"
         };
+
         el.innerText = map[region] || "Tất Cả Món Ăn";
     }
-
 });
+
+
+// =======================
+// 🔝 SCROLL TO TOP
+// =======================
+const scrollBtn = document.createElement("button");
+scrollBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+
+scrollBtn.style = `
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#e67e22;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
+    z-index:999;
+`;
+
+document.body.appendChild(scrollBtn);
+
+window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+});
+
+scrollBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
 // function saveRecipe(button) {
 //     // 1. Tìm thẻ cha chứa thông tin món ăn
 //     const card = button.closest('.recipe-card');
@@ -248,58 +386,58 @@ function toggleMenu() {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Lấy các phần tử HTML
-    const userLoggedIn = document.getElementById('user-logged-in');
-    const userGuest = document.getElementById('user-guest');
-    const headerAvatar = document.getElementById('header-avatar');
-    const headerUsername = document.getElementById('header-username');
-    const dropdownBtn = document.getElementById('profile-dropdown-btn');
-    const dropdownMenu = document.getElementById('profile-dropdown');
+// document.addEventListener('DOMContentLoaded', () => {
+//     // 1. Lấy các phần tử HTML
+//     const userLoggedIn = document.getElementById('user-logged-in');
+//     const userGuest = document.getElementById('user-guest');
+//     const headerAvatar = document.getElementById('header-avatar');
+//     const headerUsername = document.getElementById('header-username');
+//     const dropdownBtn = document.getElementById('profile-dropdown-btn');
+//     const dropdownMenu = document.getElementById('profile-dropdown');
 
-    // 2. Kiểm tra trạng thái đăng nhập từ localStorage
-    // Chúng ta giả định khi đăng nhập thành công sẽ lưu user vào key 'currentUser'
-    const currentUser = localStorage.getItem('currentUser');
+//     // 2. Kiểm tra trạng thái đăng nhập từ localStorage
+//     // Chúng ta giả định khi đăng nhập thành công sẽ lưu user vào key 'currentUser'
+//     const currentUser = localStorage.getItem('currentUser');
 
-    if (currentUser) {
-        // Nếu có người dùng đăng nhập
-        const userData = JSON.parse(localStorage.getItem(`user_${currentUser}`));
+//     if (currentUser) {
+//         // Nếu có người dùng đăng nhập
+//         const userData = JSON.parse(localStorage.getItem(`user_${currentUser}`));
         
-        if (userData) {
-            // Hiển thị thông tin lên Header
-            headerUsername.innerText = userData.fullname || userData.username;
-            headerAvatar.src = userData.avatar || './public/image/avatar.png';
+//         if (userData) {
+//             // Hiển thị thông tin lên Header
+//             headerUsername.innerText = userData.fullname || userData.username;
+//             headerAvatar.src = userData.avatar || './public/image/avatar.png';
 
-            // Hiện vùng User, ẩn vùng Guest
-            userLoggedIn.style.display = 'flex';
-            userGuest.style.display = 'none';
-        }
-    } else {
-        // Nếu chưa đăng nhập
-        userLoggedIn.style.display = 'none';
-        userGuest.style.display = 'flex';
-    }
+//             // Hiện vùng User, ẩn vùng Guest
+//             userLoggedIn.style.display = 'flex';
+//             userGuest.style.display = 'none';
+//         }
+//     } else {
+//         // Nếu chưa đăng nhập
+//         userLoggedIn.style.display = 'none';
+//         userGuest.style.display = 'flex';
+//     }
 
-    // 3. Xử lý đóng/mở Dropdown khi click vào Avatar
-    if (dropdownBtn) {
-        dropdownBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdownMenu.classList.toggle('show');
-        });
-    }
+//     // 3. Xử lý đóng/mở Dropdown khi click vào Avatar
+//     if (dropdownBtn) {
+//         dropdownBtn.addEventListener('click', (e) => {
+//             e.stopPropagation();
+//             dropdownMenu.classList.toggle('show');
+//         });
+//     }
 
-    // Click ra ngoài để đóng dropdown
-    window.addEventListener('click', () => {
-        if (dropdownMenu && dropdownMenu.classList.contains('show')) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
+//     // Click ra ngoài để đóng dropdown
+//     window.addEventListener('click', () => {
+//         if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+//             dropdownMenu.classList.remove('show');
+//         }
+//     });
+// });
 
-// Hàm đăng xuất dùng chung
-function logoutUser() {
-    if (confirm("Bạn có chắc muốn đăng xuất không?")) {
-        localStorage.removeItem('currentUser');
-        window.location.href = 'index.html';
-    }
-}
+// // Hàm đăng xuất dùng chung
+// function logoutUser() {
+//     if (confirm("Bạn có chắc muốn đăng xuất không?")) {
+//         localStorage.removeItem('currentUser');
+//         window.location.href = 'index.html';
+//     }
+// }
