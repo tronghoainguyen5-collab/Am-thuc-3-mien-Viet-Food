@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${r.description}</p>
 
                     <a href="chi-tiet.html?id=${r.id}">
-                        <button>Xem chi tiết</button>
+                        <button class="btn-detail">Xem chi tiết</button>
                     </a>
                 </div>
             `;
@@ -444,22 +444,17 @@ function initAdvancedSearch_VS(recipes) {
 // render dropdown
 function renderSearchDropdown_VS(list, keyword) {
     const box = document.getElementById("search-result");
-    if (!box) return;
 
     if (!list.length) {
-        box.innerHTML = `
-            <div style="padding:12px;text-align:center;color:#888">
-                Không tìm thấy món ăn
-            </div>
-        `;
+        box.innerHTML = `<div style="padding:12px;text-align:center">Không tìm thấy</div>`;
+        box.classList.add("show");
         return;
     }
 
     box.innerHTML = list.map(item => {
-        // highlight keyword
         const nameHighlight = item.name.replace(
             new RegExp(keyword, "gi"),
-            (match) => `<b style="color:#e67e22">${match}</b>`
+            (m) => `<b style="color:#e67e22">${m}</b>`
         );
 
         return `
@@ -473,11 +468,18 @@ function renderSearchDropdown_VS(list, keyword) {
         `;
     }).join("");
 
-    // click item
+    requestAnimationFrame(() => {
+        box.classList.add("show");
+    });
+
     box.querySelectorAll(".search-item").forEach(el => {
         el.onclick = () => {
-            const id = el.getAttribute("data-id");
-            window.location.href = `chi-tiet.html?id=${id}`;
+            el.style.transform = "scale(0.9)";
+            el.style.opacity = "0.6";
+
+            setTimeout(() => {
+                window.location.href = `chi-tiet.html?id=${el.dataset.id}`;
+            }, 120);
         };
     });
 }
