@@ -9,8 +9,9 @@
 </head>
 
 <body>
+
    <nav class="navbar">
-    <img class="logo" src="./public/image/logo.jpg" alt="VietStove Logo">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
     <ul class="nav-links">
         <li><a href="index.html">Trang Chủ</a></li>
         <li><a href="mien.html?region=bac">Miền Bắc</a></li>
@@ -21,31 +22,30 @@
     </ul>
 
     <div class="nav-actions">
-        <div class="auth-buttons">
-            <!-- Nút đăng nhập / username -->
-            <button class="btn-login">
-                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
-                <span class="username">Đăng Nhập</span>
-            </button>
-
-            <!-- Nút đăng ký -->
-            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-
-              <!-- Nút món ăn yêu thích -->
-        <a href="yeu-thich.html" class="btn-saved">
-            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-        </a>
-            <!-- Dropdown profile -->
-            <div class="dropdown">
-                <ul>
-                    <li class="profile-link"><i class="fa-solid fa-user"></i> Profile</li>
-                    <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
-                </ul>
-            </div>
-        </div>
-
-      
+    <div class="auth-buttons">
+        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span class="username">Đăng Nhập</span>
+        
+        <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
+</div>
     </div>
+
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
+
+    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+</div>
+</div>
 
     <!-- Toast -->
     <div id="toast" class="toast"></div>
@@ -82,8 +82,9 @@
 <footer class="vietfood-footer">
     <div class="footer-main">
         <div class="footer-brand">
-            <h2 class="footer-logo">Viet<span>Food</span></h2>
-            <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba miền Bắc - Trung - Nam.</p>
+            <h2 class="footer-logo">Viet<span>Stove</span></h2>
+            <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba
+                miền Bắc - Trung - Nam.</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
@@ -105,18 +106,20 @@
             <div class="footer-nav">
                 <h3>Hỗ Trợ</h3>
                 <ul>
+
                     <li><a href="#">Về <span style="color:#e67e22 ;">VietStove</span></a></li>
+                    <li><a href="#">Về VietStove</a></li>
                     <li><a href="#">Chính Sách</a></li>
                     <li><a href="#">Bảo Mật</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="/lien-he.html">Liên Hệ</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-newsletter">
             <h3>Kết Nối Với Chúng Tôi</h3>
-            <p><i class="fas fa-phone-alt"></i> +84 123 456 789</p>
-            <p><i class="fas fa-envelope"></i> contact@vietfood.vn</p>
+            <p><i class="fas fa-phone-alt"></i> +84 395 045 813</p>
+            <p><i class="fas fa-envelope"></i>vietstove@gmail.com</p>
             <div class="subscribe-form">
                 <input type="email" placeholder="Nhập email của bạn...">
                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -125,7 +128,7 @@
     </div>
 
     <div class="footer-copyright">
-        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Lục vị</strong>.</p>
     </div>
 </footer>
 <script src="./public/js/main.js"></script>

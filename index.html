@@ -60,31 +60,30 @@
     </ul>
 
     <div class="nav-actions">
-        <div class="auth-buttons">
-            <!-- Nút đăng nhập / username -->
-            <button class="btn-login">
-                <img src="./public/image/avatar.png" class="avatar" alt="Avatar">
-                <span class="username">Đăng Nhập</span>
-            </button>
-
-            <!-- Nút đăng ký -->
-            <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-
-              <!-- Nút món ăn yêu thích -->
-        <a href="yeu-thich.html" class="btn-saved">
-            <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-        </a>
-            <!-- Dropdown profile -->
-            <div class="dropdown">
-                <ul>
-                    <li class="profile-link"><i class="fa-solid fa-user"></i> Profile</li>
-                    <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
-                </ul>
-            </div>
-        </div>
-
-      
+    <div class="auth-buttons">
+        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span class="username">Đăng Nhập</span>
+        
+        <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
+</div>
     </div>
+
+    <a href="yeu-thich.html" class="btn-saved">
+        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
+    </a>
+
+    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
+</div>
+</div>
 
     <!-- Toast -->
     <div id="toast" class="toast"></div>
@@ -125,7 +124,10 @@
                  tôi bắt đầu hành trình khám phá một số nguồn cảm hứng đã thổi hồn cho từng món ăn đặc trưng của mỗi vùng miền.</div>
                  </div>
     </div>
+    </div>
+
     </section>
+    
 
     <!-- <div class="TinTuc-1">
         <h1 class="section-title">Lần theo bản đồ gia vị Việt Nam <br>
@@ -144,6 +146,9 @@
                  </div> 
         <div class="col1"> <img src="public/image/giavi4h.png" alt=""></div>
     </div>
+    <div class="nguon" style="position: relative; width: 100%">
+        <div style="position: absolute; right: 30px; top: -150px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
+   </div>
     </section>
 
 
@@ -162,6 +167,9 @@
         <div>Bên cạnh đó, gia vị miền Trung cũng mang hương vị đậm đà của biển cả với mắm ruốc hay mắm nêm. Mắm ruốc được làm từ con ruốc, có vị mặn, ngọt, cay đặc trưng, thường được dùng trong các món bún bò Huế, bánh canh. Nếu mắm ruốc là linh hồn của ẩm thực Huế, tạo nên hương vị không thể lẫn vào đâu được, thì mắm nêm lại có nhiều sự biến tấu ở các tỉnh thành khác, được làm từ mắm cá cơm lên men có mùi thơm đặc biệt.</div>
                  </div>
     </div>
+<div class="nguon" style="position: relative; width: 100%">
+        <div style="position: absolute; left: 20px; top: -280px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
+   </div>
     </section>
 
 
@@ -183,6 +191,9 @@
         </div>
         <div class="col1"> <img src="public/image/giavi7h.png" alt=""></div>
     </div>
+    <div class="nguon" style="position: relative; width: 100%">
+        <div style="position: absolute; right: 40px; top: -400px; color: #b1b1b1;">Cre: <a style="text-decoration: none; color: #b1b1b1;" href="https://saigoneer.com/vn/vietnam-food-culture/17832-l%E1%BA%A7n-theo-b%E1%BA%A3n-%C4%91%E1%BB%93-gia-v%E1%BB%8B-vi%E1%BB%87t-nam,-nghe-k%E1%BB%83-chuy%E1%BB%87n-v%C4%83n-h%C3%B3a-%E1%BA%A9m-th%E1%BB%B1c-3-mi%E1%BB%81n">saigoneer.com</a></div>
+   </div>
     </section>
 
 
@@ -210,7 +221,12 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
     <div class="footer-main">
         <div class="footer-brand">
             <h2 class="footer-logo">Viet<span>Stove</span></h2>
+
             <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba miền Bắc - Trung - Nam.</p>
+
+            <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba
+                miền Bắc - Trung - Nam.</p>
+
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
@@ -223,9 +239,9 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
             <div class="footer-nav">
                 <h3>Danh Mục</h3>
                 <ul>
-                    <li><a href="mien.html?region=bac">Miền Bắc</a></li>
-                    <li><a href="mien.html?region=trung">Miền Trung</a></li>
-                    <li><a href="mien.html?region=nam">Miền Nam</a></li>
+                    <li><a href="mien-bac.html">Miền Bắc</a></li>
+                    <li><a href="mien-trung.html">Miền Trung</a></li>
+                    <li><a href="mien-nam.html">Miền Nam</a></li>
                     <li><a href="#">Mẹo Nhà Bếp</a></li>
                 </ul>
             </div>
@@ -235,15 +251,15 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
                     <li><a href="#">Về VietStove</a></li>
                     <li><a href="#">Chính Sách</a></li>
                     <li><a href="#">Bảo Mật</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
+                    <li><a href="/lien-he.html">Liên Hệ</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-newsletter">
             <h3>Kết Nối Với Chúng Tôi</h3>
-            <p><i class="fas fa-phone-alt"></i> +84 123 456 789</p>
-            <p><i class="fas fa-envelope"></i> contact@vietfood.vn</p>
+            <p><i class="fas fa-phone-alt"></i> +84 395 045 813</p>
+            <p><i class="fas fa-envelope"></i>vietstove@gmail.com</p>
             <div class="subscribe-form">
                 <input type="email" placeholder="Nhập email của bạn...">
                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -252,14 +268,12 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
     </div>
 
     <div class="footer-copyright">
-        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Nhóm 4</strong>.</p>
+        <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Lục vị</strong>.</p>
     </div>
 </footer>
+<script src="./public/js/auth.js"></script>
 <script src="./public/js/main.js"></script>
 <script src="./public/js/favorite.js"></script>
-
-<script src="./public/js/auth.js"></script>
-
 <script src="./public/js/detail.js"></script>  
 <script src="./public/js/danhmuc.js"></script> 
 </body>
