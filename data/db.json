@@ -255,7 +255,7 @@
     {
       "id": 4,
       "name": "Mì Quảng",
-      "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-2196-1665132014.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VaH1_0MH2V-TOHFydBl9DQ",
+      "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-1238-1665132014.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=iSjcWkw3oPKDCzfgB3MXYg",
       "description": "Món ăn nổi tiếng Quảng Nam",
       "categoryId": 2,
        "type": "mon nuoc",
@@ -1967,43 +1967,6 @@
     "Nguồn: dienmayxanh"
   ],
   "time": "180 phút"
-},
-{
-  "id": 30,
-  "name": "Gỏi cá Nam Ô",
-  "image": "https://photo.znews.vn/w660/Uploaded/pgi_cuhpguvau/2019_04_21/thiennguyen1012.jpg",
-  "description": "Món gỏi đặc sản Nam Ô Đà Nẵng: cá thu tươi cuốn bánh tráng với rau sống, chuối xanh, khế chua, chấm mắm nêm cay nồng – tươi mát, lạ miệng",
-  "categoryId": 2,
-  "userId": 1,
-  "ingredients": [
-    "Cá trích: 500g",
-    "Gừng: 3 củ",
-    "Riềng: 3 củ",
-    "Ớt: 5 trái",
-    "Tỏi: 3 củ",
-    "Chanh: 2 trái",
-    "Giấm: 100ml",
-    "Đường: 3 muỗng canh",
-    "Dầu điều: 5 muỗng canh",
-    "Mè trắng rang: 1 ít",
-    "Nước mắm: 1 ít",
-    "Nguồn: dienmayxanh"
-  ],
-  "steps": [
-    "🐟 1. Sơ chế cá trích: Cá trích đánh vảy, cắt bỏ đầu và đuôi, bỏ ruột. Rửa cá với nước muối loãng khoảng 5 phút rồi để ráo. Dùng dao lọc lấy phần thịt cá và bỏ xương.",
-    
-    "🔪 2. Sơ chế nguyên liệu: Gừng và riềng gọt vỏ rồi giã nhuyễn. Tỏi bóc vỏ và băm nhỏ. Ớt rửa sạch rồi cắt nhỏ. Chanh rửa sạch và chuẩn bị để vắt lấy nước.",
-    
-    "🥣 3. Tái cá: Cho cá trích vào tô, thêm một ít gừng và ớt băm rồi trộn đều để khử mùi. Cho giấm vào ướp khoảng 30 phút để cá tái.",
-    
-    "🥄 4. Pha nước trộn: Cho nước mắm vào chén, thêm tỏi, ớt, riềng băm và đường. Khuấy đều cho đường tan.",
-    
-    "🍋 5. Trộn gỏi: Sau khi cá tái, đổ bỏ nước giấm rồi vắt nước chanh vào cá. Rưới hỗn hợp nước mắm đã pha vào và trộn đều.",
-    
-    "✨ 6. Hoàn thành: Thêm dầu điều và rắc mè rang lên trên. Trộn nhẹ lần nữa rồi dọn ra thưởng thức.",
-    "Nguồn: dienmayxanh"
-  ],
-  "time": "90 phút"
 },
 {
   "id": 31,
