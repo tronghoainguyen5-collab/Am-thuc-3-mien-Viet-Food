@@ -14,6 +14,22 @@
     <img class="logo" src="./public/image/logo.jpg" alt="VietStove Logo">
     <ul class="nav-links">
         <li><a href="index.html">Trang Chủ</a></li>
+       <li class="dropdown-parent">
+    <a href="#">Món Ngon <i class="fa fa-chevron-down"></i></a>
+
+    <ul class="dropdown-menu">
+        <li><a href="danh-muc.html?type=kho">Tất Cả</a></li>
+        <li><a href="danh-muc.html?type=kho">Kho</a></li>
+        <li><a href="danh-muc.html?type=chien">Chiên</a></li>
+        <li><a href="danh-muc.html?type=xao">Xào</a></li>
+        <li><a href="danh-muc.html?type=nuong">Nướng</a></li>
+        <li><a href="danh-muc.html?type=goi">Gỏi/Nộm</a></li>
+        <li><a href="danh-muc.html?type=canh">Canh/Súp</a></li>
+        <li><a href="danh-muc.html?type=hap">Hấp</a></li>
+        <li><a href="danh-muc.html?type=mon nuoc">Món Nước</a></li>
+        <li><a href="danh-muc.html?type=orther">Cách chế biến khác</a></li>
+    </ul>
+</li>
         <li><a href="mien.html?region=bac">Miền Bắc</a></li>
         <li><a href="mien.html?region=trung">Miền Trung</a></li>
         <li><a href="mien.html?region=nam">Miền Nam</a></li>
@@ -70,7 +86,7 @@
             <p id="hero-desc" class="hero-description"></p>
 
             <div class="hero-btns">
-                <a href="#" class="btn-cook">Xem cách nấu</a>
+                <a href="#" id="btn-cook" class="btn-cook">Xem cách nấu</a>
                 <a href="#" id="btn-save" class="btn-save-outline">
                 <i class="fa-solid fa-bookmark"></i> Lưu công thức
             </a>
@@ -80,8 +96,9 @@
         </div>
 
         <div class="hero-main-image">
-            <img id="main-img" src="" alt="">
-        </div>
+    <img id="img-current" class="img-layer active" src="">
+    <img id="img-next" class="img-layer" src="">
+</div>
 
         <!-- 🔥 SIDEBAR TRỞ LẠI -->
         <div class="hero-sidebar">
@@ -156,15 +173,13 @@
         <script src="public/js/main.js"></script>
         <script src="public/js/favorite.js"></script>
         <script src="public/js/auth.js"></script>
+         <script src="./public/js/danhmuc.js"></script> 
         <div id="popup" class="popup-overlay">
   <div class="popup-box">
     <p id="popup-message"></p>
     <button onclick="closePopup()">OK</button>
   </div>
 </div>
-    </body>
-
-    </html>
 <!-- 
     <div class="container">
     
@@ -173,10 +188,9 @@
     
         <div id="product-list" class="product-grid">
            <-- JS render -->
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
 
-    <script src="./public/js/danhmuc.js"></script> 
 
 </body>
 </html>

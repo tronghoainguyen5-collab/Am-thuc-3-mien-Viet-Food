@@ -32,7 +32,7 @@
   { "id": 5, "type": "goi", "name": "Gỏi/Nộm", "slug": "goi" },
   { "id": 6, "type": "canh", "name": "Canh/Súp", "slug": "canh" },
   { "id": 7, "type": "hap", "name": "Hấp", "slug": "hap" },
-  { "id": 8, "type": "mon nuoc", "name": "Món Nước", "slug": "mon nuoc" },
+  { "id": 8, "type": "mon-nuoc", "name": "Món Nước", "slug": "mon-nuoc" },
   { "id": 9, "type": "orther", "name": "Khác", "slug": "orther" }
 ],
   
@@ -44,7 +44,7 @@
       "description": "Món ăn truyền thống nổi tiếng miền Bắc", 
       
       "categoryId": 1,
-       "type": "mon nuoc",
+       "type": "mon-nuoc",
       "userId": 1,
       "ingredients": [
     "1.5 kg xương ống bò",
@@ -183,7 +183,7 @@
       "image": "https://static.vinwonders.com/production/bun-bo-hue-ngon-o-sai-gon-1.jpg",
       "description": "Đậm đà cay nồng miền Trung",
       "categoryId": 2,
-       "type": "mon nuoc",
+       "type": "mon-nuoc",
       "userId": 2,
       "ingredients": [
     "Xương bò: 1kg (chặt khúc)",
@@ -252,78 +252,7 @@
 ],
       "time": "60 phút"
     },
-    {
-      "id": 4,
-      "name": "Mì Quảng",
-      "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-2196-1665132014.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VaH1_0MH2V-TOHFydBl9DQ",
-      "description": "Món ăn nổi tiếng Quảng Nam",
-      "categoryId": 2,
-       "type": "mon nuoc",
-      "userId": 2,
-      "ingredients": [
-    "Gà ta: 1 con (~1,3kg)",
-    "Thịt ba rọi (ba chỉ): 200g",
-    "Trứng cút: 20 quả",
-    "Nghệ tươi: 1 củ",
-    "Hành tăm: 1 nắm (hoặc thay bằng hành tím)",
-    "Tỏi: 4 tép",
-    "Sả: 2 nhánh",
-    "Ớt tươi: vài quả",
-    "Hành lá: 1 bó nhỏ",
-    "Mì Quảng: 1 gói",
-    "Bánh đa (bánh tráng nướng): vài cái",
-    "Đậu phộng rang: 1 ít",
-    "Rau ăn kèm: bắp chuối bào, giá đỗ, rau húng, rau thơm",
-    "Gia vị: nước mắm, muối, đường, hạt nêm",
-    "Dầu đậu phộng",
-    "Dầu màu điều",
-    "Nguồn: VnExpress"
-],
 
-"steps": [
-    "🔪 1. Sơ chế nguyên liệu",
-    "Nghệ giã nhỏ. Hành tăm và tỏi băm nhỏ. Ớt bỏ hạt, thái vát.",
-    "Hành lá rửa sạch, cắt nhỏ.",
-    "Gà làm sạch, chà xát với chanh và muối rồi rửa lại, chặt miếng vừa ăn.",
-    "Thịt ba chỉ rửa sạch, cắt miếng vừa ăn.",
-    "Trứng cút luộc chín, ngâm nước lạnh rồi bóc vỏ.",
-    "Rau sống (bắp chuối bào, giá, rau húng...) rửa sạch và để ráo.",
-
-    "🥣 2. Tẩm ướp",
-    "Ướp thịt gà với 2/3 lượng nghệ giã, 1/2 hành tăm và tỏi băm, 2 muỗng canh nước mắm, 1 muỗng cà phê muối và 1 muỗng cà phê hạt nêm.",
-    "Trộn đều và để khoảng 20–30 phút cho thấm gia vị.",
-    "Ướp thịt ba chỉ với 1/3 lượng nghệ còn lại, 1/2 muỗng canh nước mắm, 1/2 muỗng cà phê muối và 1/2 muỗng cà phê hạt nêm.",
-
-    "🔥 3. Chế biến",
-    "Đun nóng dầu đậu phộng, phi thơm phần hành tăm và tỏi còn lại.",
-    "Cho thịt gà đã ướp vào xào cho săn, sau đó cho vào nồi và thêm nước xâm xấp rồi om ở lửa vừa.",
-    "Xào săn thịt ba chỉ đã ướp, cho trứng cút vào đảo sơ cho lên màu đẹp.",
-    "Cho phần thịt ba chỉ và trứng cút vào nồi gà.",
-    "Thêm sả đập dập vào nồi cho thơm.",
-    "Thỉnh thoảng hớt bọt để nước dùng trong.",
-    "Khi thịt mềm và thấm vị, thêm một ít dầu màu điều để tạo màu vàng đẹp.",
-    "Nêm nếm lại gia vị cho vừa ăn.",
-
-    "🍜 4. Hoàn thiện món ăn",
-    "Trụng sơ mì Quảng trong nước sôi rồi cho vào tô.",
-    "Xếp thịt gà, thịt ba chỉ và trứng cút lên trên.",
-    "Chan nước dùng nóng vào xâm xấp (không chan quá nhiều).",
-    "Rắc hành lá và đậu phộng rang lên trên.",
-    "Ăn kèm rau sống và bánh đa nướng.",
-
-    "🍽️ 5. Yêu cầu thành phẩm",
-    "Thịt gà mềm vừa phải, thịt ba chỉ béo thơm, trứng cút bùi.",
-    "Nước dùng vàng ươm, đậm đà.",
-    "Khi ăn bẻ bánh tráng nướng, vắt thêm chút chanh rồi trộn nhẹ.",
-
-    "🔥 Chú ý",
-    "Mì Quảng truyền thống có ít nước, chỉ chan xâm xấp.",
-    "Bánh tráng nướng ăn kèm là đặc trưng của người Quảng.",
-    "Có thể biến tấu nhân: gà, bò, tôm, cá lóc, cá leo...",
-    "Nguồn: VnExpress"
-],
-      "time": "45 phút"
-    },
 
     {
       "id": 5,
@@ -421,7 +350,7 @@
       "image": "https://i1-giadinh.vnecdn.net/2023/05/15/Buoc-8-Thanh-pham-1-8-8366-1684125654.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=qDCDua07MoEIbJ4Mdk0isw",
       "description": "Món nước nổi tiếng miền Nam",
       "categoryId": 3,
-       "type": "mon nuoc",
+       "type": "mon-nuoc",
       "userId": 2,
        "ingredients": [
     "Xương ống lợn: 1kg",
@@ -876,7 +805,7 @@
   "image": "https://i.ytimg.com/vi/xfmNh564j1I/maxresdefault.jpg",
   "description": "Bò kho mềm thơm, nước dùng đậm đà, ăn kèm bánh mì hoặc bún, chuẩn vị miền Nam",
   "categoryId": 3, 
-   "type": "mon nuong",
+   "type": "mon-nuoc",
   "userId": 2,
  "ingredients": [
     "Thịt dẻ sườn bò: 700g",
@@ -1199,7 +1128,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2022/07/14/Buoc-8-8-2030-1657791673.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=xN8pHObJqJ10ERPXRdcM8Q",
   "description": "Món bún thanh mát miền Bắc, dọc mùng giòn giòn, mọc viên dai ngon, nước dùng ngọt từ xương heo ninh kỹ, đặc trưng Hà Nội mùa hè",
   "categoryId": 1,
-  "type": "mon nuoc",
+  "type": "mon-nuoc",
   "userId": 1,
   "ingredients": [
     "Móng giò heo: 500g",
@@ -1278,7 +1207,7 @@
   "image": "https://poliva.vn/wp-content/uploads/2019/10/bun-ca-ro-dong-5-1.jpg",
   "description": "Bún cá rô đồng chiên giòn, nước dùng chua ngọt từ dứa + me, topping rau sống, món dân dã miền Bắc Hà Nội",
   "categoryId": 1,
-   "type": "mon nuoc",
+   "type": "mon-nuoc",
   "userId": 1,
   "ingredients": [
     "Cá rô phi phi lê: 600g",
@@ -1531,87 +1460,7 @@
 ],
   "time": "120-150 phút (bao gồm ngâm và hấp)"
 },
-{
-  "id": 22,
-  "name": "Cao lầu Hội An",
-  "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Buoc-7-Thanh-pham-1-7-9577-1678700377.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=UC5N8qQry0_qcAfn2PvYSA",
-  "description": "Món đặc trưng Hội An: sợi mì dai giòn từ nước giếng Bá Lễ, thịt heo quay, rau sống, tóp mỡ, nước dùng ít nhưng đậm",
-  "categoryId": 2,
-  "type": "mon nuoc",
-  "userId": 1,
-  "ingredients": [
-    "Thịt nạc dăm hoặc thịt đùi, ba chỉ: 600g",
-    "Xương heo: 600g (tùy chọn để ninh nước dùng)",
-    "Hành tím: 4 củ",
-    "Tỏi: 4 tép",
-    "Ngũ vị hương: 1 gói (5g)",
-    "Nước tương (xì dầu): 4 muỗng canh",
-    "Đường: 1.5 muỗng canh",
-    "Muối: 1/2 muỗng cà phê",
-    "Hạt nêm: 1/2 muỗng cà phê",
-    "Hạt tiêu: 1/2 muỗng cà phê",
-    "Ớt bột: 1 ít (tùy chọn)",
-    "Dầu màu điều: 1 muỗng canh",
-    "Dầu ăn: 1 ít",
-    "Sợi cao lầu Hội An: 500g",
-    "Ram vuông cao lầu: 1 ít",
-    "Tương ớt Hội An: 1 ít",
-    "Ớt xiêm xanh: vài quả",
-    "Rau ăn kèm: rau húng, giá đỗ, rau cải con, xà lách, chanh",
-    "Nguồn:VnExpress"
-],
 
-"steps": [
-    "🔪 1. Sơ chế thịt",
-    "Chọn thịt tươi, màu hồng nhạt và có độ đàn hồi.",
-    "Cắt thịt theo thớ dài để khi nấu xong cắt ngang thớ đẹp hơn.",
-
-    "🧄 2. Chuẩn bị gia vị",
-    "Hành tím và tỏi giã nhuyễn rồi vắt lấy nước cốt để ướp thịt.",
-    "Phần xác hành tỏi giữ lại để phi thơm sau.",
-    "Rau ăn kèm rửa sạch và để ráo nước.",
-
-    "🥣 3. Ướp thịt",
-    "Ướp thịt với ngũ vị hương, nước tương, đường, dầu màu điều, muối, hạt nêm, tiêu và ớt bột.",
-    "Trộn đều và ướp ít nhất 2–3 giờ.",
-    "Nếu có thời gian, để thịt trong tủ lạnh qua đêm cho thấm vị.",
-
-    "🍳 4. Chiên sơ thịt",
-    "Đun nóng dầu ăn rồi cho thịt vào chiên vàng đều hai mặt.",
-    "Gắp thịt ra để riêng.",
-
-    "🍲 5. Xíu thịt",
-    "Phi thơm phần xác hành tỏi với dầu vừa chiên.",
-    "Cho thịt đã chiên vào cùng nước ướp.",
-    "Thêm nước hầm xương hoặc nước lạnh ngập mặt thịt.",
-    "Đun sôi rồi hạ lửa nhỏ, xíu khoảng 40–50 phút cho thịt mềm và thấm vị.",
-    "Sau 10–15 phút nên lật thịt để màu đều.",
-
-    "🥄 6. Chuẩn bị nước chan",
-    "Chắt bớt một phần nước xíu thịt để làm nước chan cao lầu.",
-    "Nêm đậm vị vì sợi cao lầu khá nhạt.",
-
-    "🔪 7. Cắt thịt",
-    "Khi thịt mềm và nước sốt keo lại, tắt bếp.",
-    "Để nguội rồi cắt thịt thành lát mỏng.",
-
-    "🍜 8. Chuẩn bị sợi cao lầu",
-    "Nếu dùng sợi tươi: trụng hoặc hấp nóng.",
-    "Nếu dùng sợi khô: ngâm 1–2 giờ rồi trụng nước sôi cho mềm.",
-    "Để ráo và trộn chút dầu để sợi không dính.",
-
-    "🍤 9. Chiên ram cao lầu",
-    "Ram vuông chiên ngập dầu đến khi nở phồng và vàng giòn.",
-
-    "🍽️ 10. Hoàn thành",
-    "Cho sợi cao lầu vào tô.",
-    "Xếp thịt xá xíu lên trên.",
-    "Thêm rau sống, ram chiên, ớt xiêm và tương ớt.",
-    "Chan một ít nước xíu đậm vị rồi thưởng thức.",
-    "Nguồn:VnExpress"
-],
-  "time": "300 phút"
-},
 {
   "id": 23,
   "name": "Bánh ram ít Huế",
@@ -1705,6 +1554,7 @@
   "image": "https://static.vinwonders.com/production/banh-uot-da-nang-06.jpg",
   "description": "Món ăn vặt Đà Nẵng: bánh ướt mỏng dai, thịt heo nướng thơm lừng, hành phi mỡ, rau sống, chấm mắm nêm cay nồng",
   "categoryId": 2,
+  "type": "nuong",
   "userId": 1,
   "ingredients": [
     "Thịt bò: 2kg",
@@ -1757,6 +1607,7 @@
   "image": "https://nethue.com.vn/uploaded/Tin%20tuc/tin-tuc-nguongoc-1.jpg",
   "description": "Món cơm đặc sản Huế: cơm nguội trộn hến xào, tóp mỡ, đậu phộng, rau thơm, nước mắm ruốc cay – mát lạnh mùa hè",
   "categoryId": 2,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Cơm nguội: 1 ít",
@@ -1805,6 +1656,7 @@
   "image": "https://huesmiletravel.com.vn/wp-content/uploads/2019/07/banh-khoai.jpg",
   "description": "Bánh khoái Huế: bánh giòn nhỏ hơn bánh xèo, nhân tôm thịt, đậu xanh, ăn kèm rau sống và mắm ruốc cay",
   "categoryId": 2,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Bột gạo: 300g",
@@ -1848,6 +1700,7 @@
   "image": "https://aeonmall-review-rikkei.cdn.vccloud.vn/website/21/articles/July2025/99f0b0d1-a46e-4d52-be0a-8580aec4cf59.jpg",
   "description": "Bánh bột lọc trong suốt Huế: vỏ dai giòn, nhân tôm thịt rim mặn ngọt, gói lá chuối hấp hoặc luộc, chấm mắm ớt cay",
   "categoryId": 2,
+  "type": "hap",
   "userId": 1,
   "ingredients": [
     "Bột gạo: 300g",
@@ -1887,6 +1740,7 @@
   "image": "https://ticotravel.com.vn/wp-content/uploads/2022/05/banh-nam-hue-9.jpg",
   "description": "Bánh nậm Huế: bánh mỏng dẹt từ bột gạo, nhân tôm thịt băm, gói lá chuối hấp, ăn kèm mắm ruốc",
   "categoryId": 2,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Bột gạo: 250g",
@@ -1935,6 +1789,7 @@
   "image": "https://mia.vn/media/uploads/blog-du-lich/banh-it-la-gai-binh-dinh-4-1679331850.jpg",
   "description": "Bánh ít lá gai đặc sản Bình Định: vỏ xanh đen từ lá gai giã, nhân đậu xanh dừa ngọt, gói lá chuối hấp dẻo thơm",
   "categoryId": 2,
+  "type": "orther",
   "userId": 1,
   "ingredients": [
     "Lá gai: 250g",
@@ -1974,6 +1829,7 @@
   "image": "https://photo.znews.vn/w660/Uploaded/pgi_cuhpguvau/2019_04_21/thiennguyen1012.jpg",
   "description": "Món gỏi đặc sản Nam Ô Đà Nẵng: cá thu tươi cuốn bánh tráng với rau sống, chuối xanh, khế chua, chấm mắm nêm cay nồng – tươi mát, lạ miệng",
   "categoryId": 2,
+  "type": "goi",
   "userId": 1,
   "ingredients": [
     "Cá trích: 500g",
@@ -2011,6 +1867,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2021/08/06/nh1-1628234036-6076-1628234126.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=HoYF-CVCJmTS82af8RL0aQ",
   "description": "Bánh cuốn làm từ bánh tráng mềm mướt, nhân thịt băm mộc nhĩ đậm đà, ăn kèm hành phi và nước mắm chua ngọt.",
   "categoryId": 1,
+  "type": "hap",
   "userId": 2,
   "ingredients": [
     "Bánh tráng: 1 tập",
@@ -2041,6 +1898,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2021/01/15/pho1-1610692656-2291-1610693117.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=nTN85xw2x3Vntk16OyVGLQ",
   "description": "Phở gà truyền thống với nước dùng thanh trong, thơm mùi hạt mùi, gừng nướng và thịt gà dai ngon, da vàng óng.",
   "categoryId": 1,
+  "type": "mon-nuoc",
   "userId": 2,
   "ingredients": [
     "Gà mái: 1.6 - 1.7 kg",
@@ -2067,41 +1925,14 @@
   ],
   "time": "90 phút"
 },
-{
-  "id": 33,
-  "name": "Cơm gà Hội An",
-  "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=fSiuKQfCjNiGoPz8k46N-Q",
-  "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
-  "categoryId": 2,
-  "userId": 2,
-  "ingredients": [
-    "Gà mái tơ thả vườn: 1.5 - 1.6kg",
-    "Gạo tẻ: 200g, Gạo nếp: 1 nắm",
-    "Hành tây: 1 củ, Đu đủ xanh và cà rốt bào sợi",
-    "Lá dứa (lá nếp), Nghệ tươi hoặc bột nghệ",
-    "Rau răm, hành phi, gừng, hành khô, tỏi",
-    "Lòng gà (để làm nước mạ hoặc xào)",
-    "Tương ớt Hội An",
-    "Gia vị: Nước mắm, đường, chanh/quất, muối hạt, tiêu, dầu ăn",
-    "Nguồn: VnExpress"
-  ],
-  "steps": [
-    "🍗 1. Luộc và xé gà: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Luộc gà cùng gừng, hành khô. Khi chín vớt ra để nguội, lọc lấy thịt xé nhỏ. Ướp thịt gà với mắm, đường, chanh, tiêu và tỏi băm.",
-    "🍚 2. Nấu cơm nghệ: Vo sạch gạo, để ráo. Phi thơm tỏi với dầu ăn, cho gạo vào rang sơ khoảng 30 giây. Cho gạo vào nồi, thêm nước luộc gà, lá dứa, chút muối và bột nghệ rồi nấu chín.",
-    "🥗 3. Làm gỏi hành tây & đồ chua: Hành tây thái mỏng ngâm nước đá cho bớt hăng rồi trộn với thịt gà đã ướp. Đu đủ và cà rốt bào sợi ngâm nước đá, sau đó trộn với muối, đường, chanh và rau răm.",
-    "🥘 4. Làm nước mạ: Lòng gà làm sạch, thái miếng, ướp gia vị rồi xào chín với tỏi. Thêm chút nước luộc gà và dầu điều, đun khoảng 10-15 phút.",
-    "🍲 5. Nước canh: Dùng nước luộc gà đun nóng, nêm nếm vừa ăn và thêm hành lá cắt nhỏ.",
-    "🍽️ 6. Trình bày và thưởng thức: Ép cơm vào bát rồi úp ra đĩa, xếp gà trộn hành tây, gỏi đu đủ lên bên cạnh. Ăn kèm tương ớt Hội An và bát nước canh nóng hổi.",
-    "Nguồn: VnExpress"
-  ],
-  "time": "75 phút"
-},
+
 {
   "id": 34,
   "name": "Bún riêu cua",
   "image": "https://i1-giadinh.vnecdn.net/2021/12/17/Bc11-1639748576-8269-1639748607.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=qUrXdJRGkKiyCVpJjeK-_Q",
   "description": "Món bún dân dã với nước dùng chua thanh từ dấm bỗng, thịt cua đồng đóng tảng béo ngậy và màu đỏ tự nhiên từ cà chua, gạch cua.",
   "categoryId": 1,
+  "type": "mon-nuoc",
   "userId": 2,
   "ingredients": [
     "Cua đồng: 600g",
@@ -2132,6 +1963,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/02/25/Bc12thnhphm12-1677318726-1841-1677318769.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=DlZvy2asRYb6fkfprjCvgA",
   "description": "Món ăn biểu tượng của đất Cảng với sợi bánh đa đỏ dai mềm, nước dùng đậm đà vị cua đồng, ăn kèm chả lá lốt, chả cá và tóp mỡ hành phi giòn rụm.",
   "categoryId": 1,
+  "type": "mon-nuoc",
   "userId": 2,
   "ingredients": [
     "Cua đồng: 800g",
@@ -2163,6 +1995,7 @@
   "image": "https://ik.imagekit.io/tvlk/blog/2024/10/thang-co-cover-desktop.jpg?tr=q-70,c-at_max,w-500,h-250,dpr-2",
   "description": "Món ăn đặc trưng của đồng bào vùng cao Tây Bắc với hương vị độc đáo từ nội tạng bò ninh nhừ cùng các loại gia vị núi rừng như mắc khén, thảo quả, hoa hồi.",
   "categoryId": 1,
+  "type": "xao",
   "userId": 2,
   "ingredients": [
     "Nội tạng bò (tim, gan, lòng, sách): 1kg",
@@ -2192,6 +2025,7 @@
   "image": "https://cdn.tgdd.vn/2021/12/CookRecipe/CookTipsNote/thit-trau-gac-bep-la-gi-an-co-tot-khong-tipsnote-800x450-17.jpg",
   "description": "Đặc sản nức tiếng của vùng cao Tây Bắc với vị ngọt của thịt trâu tươi hòa quyện cùng mùi khói bếp đặc trưng và vị cay nồng từ mắc khén, hạt dổi.",
   "categoryId": 1,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Thịt trâu tươi (thớ dọc): 1kg",
@@ -2219,6 +2053,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2022/08/06/Thnhphm22-1659778295-5035-1659778478.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=MNNda7JthI-SLOOhCpIq_A",
   "description": "Món bún tinh tế của người Hà Nội với nước dùng trong, vị chua thanh đặc trưng của giấm bỗng nếp, ốc nhồi béo giòn và màu đỏ nhẹ từ cà chua xào.",
   "categoryId": 1,
+  "type": "mon-nuoc",
   "userId": 2,
   "ingredients": [
     "Ốc nhồi hoặc ốc mít: 2kg",
@@ -2248,6 +2083,7 @@
   "image": "https://cdn.tgdd.vn/Files/2020/03/23/1243844/lam-nem-chua-ran-chien-xu-chuan-vi-ha-noi-tai-nha-202202241114056183.jpg",
   "description": "Món ăn vặt đường phố nức tiếng Hà Nội với lớp vỏ chiên xù giòn rụm, bên trong nhân thịt và bì heo dai giòn sần sật, thơm mùi thính gạo.",
   "categoryId": 1,
+  "type": "chien",
   "userId": 2,
   "ingredients": [
     "Thịt heo xay (tỷ lệ nạc mỡ 8:2 hoặc 9:1): 300g",
@@ -2278,6 +2114,7 @@
   "image": "https://cdn.tgdd.vn/2022/05/CookRecipe/GalleryStep/thanh-pham-31.jpg",
   "description": "Món bánh truyền thống với lớp vỏ đen bóng dẻo thơm mùi lá gai, nhân đậu xanh dừa bùi béo, hòa quyện tạo nên hương vị đặc trưng của làng quê miền Bắc.",
   "categoryId": 1,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Gạo nếp: 1kg",
@@ -2307,6 +2144,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_VviRYSnhMvPjlmzeGytlQ",
   "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
   "categoryId": 2,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Gà mái tơ thả vườn: 1.5 - 1.6kg",
@@ -2336,6 +2174,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-1238-1665132014.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=OtUz8nAFXK6yWDEYj7n1wg",
   "description": "Món ăn đặc trưng của miền Trung với sợi mì dai mướt, nước dùng đậm đà vàng ươm màu nghệ, quyện cùng thịt gà ta chắc ngọt, thịt ba chỉ béo ngậy và trứng cút thấm vị.",
   "categoryId": 2,
+  "type": "mon-nuoc",
   "userId": 2,
   "ingredients": [
     "Gà ta: 1.3kg",
@@ -2367,6 +2206,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/01/28/Thnhphm11-1674881647-1380-1674881658.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=FAowPdZLITHGzjFD3CGJ3Q",
   "description": "Món gỏi truyền thống miền Trung với thịt gà ta dai giòn, hành tây trắng trong không hăng, quyện cùng vị cay nồng của rau răm và ớt bột.",
   "categoryId": 2,
+  "type": "goi",
   "userId": 2,
   "ingredients": [
     "Gà ta (luộc chín): 1/2 con",
@@ -2395,6 +2235,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2024/06/20/Thnhphm11-1718869928-7526-1718870073.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=beESYNjuJ8qq2arO8qmhYw",
   "description": "Món ăn quốc dân giản dị với rau muống xanh mướt, giòn mềm, dậy mùi thơm nồng của tỏi phi và vị béo ngậy đặc trưng từ tóp mỡ xào bằng nồi đế dày.",
   "categoryId": 2,
+  "type": "xao",
   "userId": 2,
   "ingredients": [
     "Rau muống (nên chọn rau muống nước): 1 bó",
@@ -2421,6 +2262,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2021/11/19/Thnhphm1-1637329120-4505-1637329124.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=mElqEmiDFMHfhGlVWvc6nA",
   "description": "Món gà kho đậm đà với màu vàng óng ả từ nghệ tươi, dậy mùi thơm nồng của sả gừng, nước sốt sánh quyện cực kỳ bắt cơm.",
   "categoryId": 2,
+  "type": "kho",
   "userId": 2,
   "ingredients": [
     "Gà mái ta: 1.4 - 1.5kg",
@@ -2449,6 +2291,7 @@
   "image": "https://img-global.cpcdn.com/recipes/b62c051f7b90a2f9/600x852cq80/chao-l%C6%B0%C6%A1n-ngh%E1%BB%87-an-recipe-main-photo.webp",
   "description": "Món cháo đặc sản miền Trung với thịt lươn đồng dai ngọt, vàng óng màu nghệ, thơm nồng vị sả và tiêu, mang đến hương vị ấm nồng, bổ dưỡng.",
   "categoryId": 2,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Gạo tẻ và gạo nếp (tỷ lệ 3:1): 1 bát",
@@ -2477,6 +2320,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Bc7Thnhphm17-1678700338-1698-1678700377.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=o7clU_ZnQXrsGyaxyVAwtw",
   "description": "Món mì trứ danh của Hội An với sợi mì vàng đục dai giòn đặc trưng, thịt xá xíu đậm đà, ăn kèm ram chiên phồng và nước nhưn ngọt mặn hài hòa.",
   "categoryId": 2,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Thịt nạc dăm hoặc ba chỉ: 600g",
@@ -2501,39 +2345,14 @@
   ],
   "time": "120 phút"
 },
-{
-  "id": 48,
-  "name": "Gỏi cá Nam Ô",
-  "image": "https://cdn.tgdd.vn/2021/08/CookProduct/Duanmoi-1200x676-1.jpg",
-  "description": "Món ăn đậm đà vị biển Đà Nẵng với thịt cá trích tươi rói, thấm đẫm nước mắm Nam Ô trứ danh, hòa quyện cùng vị bùi của đậu phộng và các loại rau rừng đặc trưng.",
-  "categoryId": 2,
-  "userId": 2,
-  "ingredients": [
-    "Cá trích tươi (hoặc cá thu, cá cơm): 500g",
-    "Nước mắm Nam Ô (đặc sản Đà Nẵng)",
-    "Rau sống: Ngò, bạc hà, húng quế, lá chanh, dưa leo, rau thơm",
-    "Đậu phộng rang, hành phi",
-    "Bánh tráng cuốn, bánh tráng nướng",
-    "Gia vị: Tỏi, ớt, chanh, muối, tiêu",
-    "Nguồn: Thế Giới Di Động"
-  ],
-  "steps": [
-    "🐟 1. Sơ chế cá: Cá trích làm sạch, bỏ ruột, đánh vảy và cắt thành các lát mỏng vừa ăn. Rửa cá với nước muối loãng để khử mùi tanh và giữ độ tươi, sau đó để thật ráo nước.",
-    "🥣 2. Pha hỗn hợp gia vị: Cho tỏi băm, ớt giã nhuyễn, tiêu, nước mắm Nam Ô nguyên chất và nước cốt chanh vào bát lớn. Khuấy đều cho các gia vị hòa quyện.",
-    "🧂 3. Thấm vị cá: Cho lát cá vào tô gia vị, đảo nhẹ tay để cá ngấm đều. Để cá nghỉ khoảng 5 - 10 phút cho thịt cá tái nhẹ và đậm đà hơn.",
-    "🌿 4. Chuẩn bị rau kèm: Rau sống rửa sạch, để ráo. Các loại lá chanh và rau thơm có thể thái nhỏ hoặc để nguyên tùy sở thích để tạo mùi thơm khi cuốn.",
-    "🥗 5. Trộn gỏi: Cho rau sống vào tô cá đã thấm vị, trộn đều nhẹ nhàng. Rắc thêm đậu phộng rang giã dập và hành phi giòn lên trên bề mặt để tăng độ bùi béo.",
-    "🍽️ 6. Thưởng thức: Trải bánh tráng, đặt rau sống và gỏi cá lên trên rồi cuộn lại. Chấm cùng nước cốt dùng riêng của gỏi cá Nam Ô để cảm nhận trọn vẹn vị ngọt, cay, chát, bùi.",
-    "Nguồn: Thế Giới Di Động"
-  ],
-  "time": "45 phút"
-},
+
 {
   "id": 49,
   "name": "Bánh căn",
   "image": "https://img-global.cpcdn.com/recipes/9bf7b93b52ade46d/600x852f0.5_0.500105_1.0q80/banh-can-recipe-main-photo.webp",
   "description": "Món bánh nướng trong khuôn đất nung với lớp vỏ giòn rụm, thơm mùi trứng, ăn kèm mỡ hành béo ngậy và nước mắm cà chua thơm dịu đặc trưng.",
   "categoryId": 2,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Gạo (loại nở, xốp): 1kg",
@@ -2565,6 +2384,7 @@
   "image": "https://bizweb.dktcdn.net/100/489/006/files/pho-kho-gia-lai-1.jpg?v=1698305557083",
   "description": "Đặc sản nức tiếng với sợi phở nhỏ dai, trộn cùng tương đen đặc chế, tóp mỡ, thịt băm và ăn kèm một tô nước dùng ngọt thanh từ xương bò.",
   "categoryId": 2,
+  "type": "orther",
   "userId": 2,
   "ingredients": [
     "Sợi phở khô Gia Lai: 500g",

@@ -25,29 +25,13 @@ async function loadData() {
         const res = await fetch('./data/db.json');
         const data = await res.json();
 
-        console.log(data);
-
-        // ❗ FIX: nếu không có type → dừng
-        if (!type) return;
-
-        // ❗ FIX: check tồn tại
-        if (!titleEl || !productList) return;
-
-        // =======================
-        // 🎯 TITLE
-        // =======================
-        const typeObj = data.types?.find(t => t.type === type);
-
-        titleEl.innerText = typeObj
-            ? typeObj.name
-            : 'Không tìm thấy danh mục';
-
-        // =======================
-        // 📋 DATA
-        // =======================
         const recipes = data.recipes || [];
 
-        const filteredRecipes = recipes.filter(r => r.type === type);
+        const filteredRecipes = recipes.filter(r => {
+    if (!r.type || !type) return false;
+
+    return r.type.toLowerCase().trim() === type.toLowerCase().trim();
+});
 
         renderRecipes(filteredRecipes);
 

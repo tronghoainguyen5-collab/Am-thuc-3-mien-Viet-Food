@@ -13,29 +13,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const LIMIT = 8;
 
-    fetch("./data/db.json")
-        .then(res => res.json())
-        .then(data => {
-            let recipes = data.recipes;
-            if (categoryId) recipes = recipes.filter(r => r.categoryId == categoryId);
-             
-        if (type) {
-            recipes = recipes.filter(r => r.type === type);
-        }
-            if (!recipes.length) return;
-            allRecipes = data.recipes;
-            if (categoryId) {
-                allRecipes = allRecipes.filter(r => r.categoryId == categoryId);
-            }
+   fetch("./data/db.json")
+    .then(res => res.json())
+    .then(data => {
+        let recipes = data.recipes;
 
-            sliderData = allRecipes.slice(0, 10);
-            if (document.getElementById('img-current')) {
+        if (categoryId) {
+            recipes = recipes.filter(r => r.categoryId == categoryId);
+        }
+
+        if (type) {
+            recipes = recipes.filter(r => 
+                r.type?.toLowerCase().trim() === type.toLowerCase().trim()
+            );
+        }
+
+        if (!recipes.length) return;
+
+        // ✅ FIX QUAN TRỌNG
+        allRecipes = recipes;
+
+        sliderData = allRecipes.slice(0, 10);
+
+        if (document.getElementById('img-current')) {
             initSlider(sliderData);
         }
 
-            renderInitial();
-            updateTitle(region);
-        });
+        renderInitial();
+        updateTitle(region);
+    });
 
     // =======================
     // 🚀 RENDER BAN ĐẦU
@@ -295,12 +301,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // nút xem cách nấu
     const cookBtn = document.getElementById("btn-cook");
+if (cookBtn) {
     cookBtn.addEventListener("click", (e) => {
         e.preventDefault();
         if (currentId) {
             window.location.href = `chi-tiet.html?id=${currentId}`;
         }
     });
+}
 }
 
     function updateTitle(region) {
