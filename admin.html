@@ -2,12 +2,49 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thống kê - VietStove Admin</title>
     <link rel="stylesheet" href="public/css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+        .stat-value { font-size: 32px; font-weight: bold; color: #4facfe; margin: 10px 0; }
+        .stat-label { color: #94a3b8; font-size: 14px; text-transform: uppercase; }
+        
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .chart-box {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        @media (max-width: 768px) { .charts-container { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <aside class="sidebar">
-        <h2>VIETSTOVE</h2>
+        <div class="sidebar-logo" style="padding: 30px 20px; text-align: center;">
+            <!-- <img src="public/image/lg.png" alt="" style="border-radius: 100px;
+                                                        "> -->
+            <h2 style="color: #4facfe; letter-spacing: 2px; margin: 0;">VIETSTOVE</h2>
+        </div>
         <nav>
             <a href="admin.html" class="active">📊 Thống kê</a>
             <a href="admin-users.html">👥 Người dùng</a>
@@ -16,40 +53,45 @@
     </aside>
 
     <main class="main-content">
-        <header>
-            <h1>Tổng quan hệ thống</h1>
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <div>
+                <h1 style="font-size: 24px; margin: 0;">Bảng điều khiển hệ thống</h1>
+                <p style="color: #94a3b8; font-size: 14px;">Tổng quan dữ liệu VietStove thời gian thực</p>
+            </div>
+            <div class="admin-profile-header" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 50px;">
+                <img id="adminAvatar" src="" style="width: 35px; height: 35px; border-radius: 50%; border: 2px solid #4facfe;">
+                <span id="adminName" style="font-size: 14px;">Admin</span>
+            </div>
         </header>
 
-        <section class="stats-grid">
+        <div class="stats-grid">
             <div class="stat-card">
-                <h3>Người dùng mới</h3>
-                <div class="value">2,840</div>
-                <span class="trend" style="color: #10b981;">↑ 12.5%</span>
+                <div class="stat-label">Tổng món ăn</div>
+                <div id="totalRecipes" class="stat-value">0</div>
             </div>
             <div class="stat-card">
-                <h3>Công thức đã đăng</h3>
-                <div class="value">452</div>
-                <span class="trend" style="color: #10b981;">↑ 8 món mới</span>
+                <div class="stat-label">Tổng lượt xem</div>
+                <div id="totalViews" class="stat-value">0</div>
             </div>
             <div class="stat-card">
-                <h3>Lượt xem bài viết</h3>
-                <div class="value">124.5K</div>
-                <span class="trend" style="color: #3b82f6;">Hôm nay: 1.2K</span>
+                <div class="stat-label">Thành viên</div>
+                <div id="totalUsers" class="stat-value">0</div>
             </div>
-        </section>
+        </div>
 
-        <div class="glass-panel">
-            <h3>Hoạt động gần đây</h3>
-            <div style="height: 250px; display: flex; align-items: flex-end; gap: 15px; padding: 20px 0;">
-                <div style="flex: 1; background: var(--primary-color); height: 40%; border-radius: 8px 8px 0 0;"></div>
-                <div style="flex: 1; background: var(--primary-color); height: 65%; border-radius: 8px 8px 0 0;"></div>
-                <div style="flex: 1; background: var(--secondary-color); height: 95%; border-radius: 8px 8px 0 0;"></div>
-                <div style="flex: 1; background: var(--primary-color); height: 50%; border-radius: 8px 8px 0 0;"></div>
-                <div style="flex: 1; background: var(--primary-color); height: 80%; border-radius: 8px 8px 0 0;"></div>
-                <div style="flex: 1; background: var(--secondary-color); height: 30%; border-radius: 8px 8px 0 0;"></div>
-                <div style="flex: 1; background: var(--primary-color); height: 75%; border-radius: 8px 8px 0 0;"></div>
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 16px; color: #e2e8f0;">Tỉ lệ món ăn theo vùng miền</h3>
+                <canvas id="regionChart"></canvas>
+            </div>
+            <div class="chart-box">
+                <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 16px; color: #e2e8f0;">Top 5 món ăn xem nhiều nhất</h3>
+                <canvas id="topRecipesChart"></canvas>
             </div>
         </div>
     </main>
+
+    <script src="public/js/data.js"></script>
+    <script src="public/js/admin-stats.js"></script>
 </body>
 </html>

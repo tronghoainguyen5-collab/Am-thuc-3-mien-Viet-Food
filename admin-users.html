@@ -2,60 +2,109 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Người dùng - VietStove Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng - VietStove Admin</title>
     <link rel="stylesheet" href="public/css/admin.css">
+    <style>
+        /* Giữ nguyên Style từ trang công thức để đồng bộ */
+        body { background: #0f172a; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); align-items: center; justify-content: center;
+        }
+        .modal-content {
+            width: 400px; padding: 30px; border-radius: 24px; background: rgba(30, 41, 59, 0.95); 
+            border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; margin-bottom: 8px; color: #94a3b8; font-size: 14px; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 12px; color: white; outline: none; transition: 0.3s;
+        }
+        .admin-profile-header { display: flex; align-items: center; gap: 12px; padding: 8px 16px; background: rgba(255,255,255,0.05); border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); }
+        .admin-profile-header img { width: 35px; height: 35px; border-radius: 50%; border: 2px solid #4facfe; }
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 25px; }
+        .btn-cancel { background: #334155; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+        .btn-save { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 10px 25px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+    </style>
 </head>
 <body>
     <aside class="sidebar">
-        <h2>VIETSTOVE</h2>
+        <div class="sidebar-logo" style="padding: 30px 20px; text-align: center;">
+            <h2 style="color: #4facfe; letter-spacing: 2px; margin: 0;">VIETSTOVE</h2>
+        </div>
         <nav>
-            <a href="admin.html">📊 Thống kê</a>
-            <a href="admin-users.html" class="active">👥 Người dùng</a>
+            <a href="admin.html" class="active">📊 Thống kê</a>
+            <a href="admin-users.html">👥 Người dùng</a>
             <a href="admin-recipes.html">🍲 Công thức</a>
         </nav>
     </aside>
 
     <main class="main-content">
-        <header>
-            <h1>Quản lý người dùng</h1>
-            <button class="btn btn-primary">+ Thêm User</button>
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <div>
+                <h1 style="font-size: 24px;">Quản lý người dùng</h1>
+                <p style="color: #94a3b8; font-size: 14px;">Danh sách thành viên quản trị và người dùng</p>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="admin-profile-header">
+                    <img src="https://via.placeholder.com/35" alt="Avatar">
+                    <span>Admin</span>
+                </div>
+                <button class="btn btn-primary" onclick="openUserModal()" style="padding: 12px 20px; border-radius: 12px; background: #4facfe; border: none; color: white; font-weight: 600; cursor: pointer;">
+                    + Thêm User
+                </button>
+            </div>
         </header>
 
-        <div class="glass-panel">
-            <table>
+        <div class="glass-panel" style="background: rgba(30, 41, 59, 0.7); border-radius: 20px; padding: 20px; border: 1px solid rgba(255,255,255,0.05);">
+            <table style="width: 100%; border-collapse: collapse;">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Hội viên</th>
-                        <th>Email</th>
-                        <th>Vai trò</th>
-                        <th>Hành động</th>
+                    <tr style="text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <th style="padding: 15px;">ID</th>
+                        <th style="padding: 15px;">Hội viên</th>
+                        <th style="padding: 15px;">Email</th>
+                        <th style="padding: 15px;">Vai trò</th>
+                        <th style="padding: 15px; text-align: center;">Hành động</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>#1092</td>
-                        <td><strong>Anh Bạch</strong></td>
-                        <td>anh.bach@fpt.edu.vn</td>
-                        <td><span class="badge" style="background:rgba(79,172,254,0.2); color:var(--primary-color)">Admin</span></td>
-                        <td>
-                            <button class="btn btn-edit">Sửa</button>
-                            <button class="btn btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#1093</td>
-                        <td><strong>Nguyễn Thu</strong></td>
-                        <td>thunguyen@gmail.com</td>
-                        <td><span class="badge">Member</span></td>
-                        <td>
-                            <button class="btn btn-edit">Sửa</button>
-                            <button class="btn btn-delete">Xóa</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="userList">
+                    </tbody>
             </table>
         </div>
     </main>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <h2 id="userModalTitle" style="margin-bottom: 25px; color: #4facfe; font-size: 20px;">Thêm người dùng</h2>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <div class="input-group">
+                    <label>Họ tên</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="input-group">
+                    <label>Vai trò</label>
+                    <select id="userRole">
+                        <option value="Admin">Admin</option>
+                        <option value="Hội viên">Hội viên</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeUserModal()">Hủy</button>
+                    <button type="submit" class="btn-save">Lưu lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="public/js/data.js"></script> 
+    <script src="public/js/admin-users.js"></script>
 </body>
 </html>
