@@ -2302,35 +2302,6 @@
   "time": "120 phút"
 },
 {
-  "id": 41,
-  "name": "Cơm gà Hội An",
-  "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_VviRYSnhMvPjlmzeGytlQ",
-  "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
-  "categoryId": 2,
-  "userId": 2,
-  "ingredients": [
-    "Gà mái tơ thả vườn: 1.5 - 1.6kg",
-    "Gạo tẻ: 200g, Gạo nếp: 1 nắm",
-    "Hành tây: 1 củ, Đu đủ xanh và cà rốt bào sợi",
-    "Lá dứa (lá nếp), Nghệ tươi hoặc bột nghệ",
-    "Rau răm, hành phi, gừng, hành khô, tỏi",
-    "Lòng gà (để làm nước mạ hoặc xào)",
-    "Tương ớt Hội An",
-    "Gia vị: Nước mắm, đường, chanh/quất, muối hạt, tiêu, dầu ăn",
-    "Nguồn: VnExpress"
-  ],
-  "steps": [
-    "🍗 1. Luộc và xé gà: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Luộc gà cùng gừng, hành khô. Khi chín vớt ra để nguội, lọc lấy thịt xé nhỏ. Ướp thịt gà với mắm, đường, chanh, tiêu và tỏi băm.",
-    "🍚 2. Nấu cơm nghệ: Vo sạch gạo, để ráo. Phi thơm tỏi với dầu ăn, cho gạo vào rang sơ khoảng 30 giây. Cho gạo vào nồi cơm điện, thêm nước luộc gà, lá dứa, chút muối và bột nghệ rồi nấu chín.",
-    "🥗 3. Làm gỏi hành tây & đồ chua: Hành tây thái mỏng ngâm nước đá cho bớt hăng rồi trộn với thịt gà đã ướp. Đu đủ và cà rốt bào sợi ngâm nước đá, sau đó trộn với muối, đường, chanh và rau răm.",
-    "🥘 4. Làm nước mạ: Lòng gà làm sạch, thái miếng, ướp gia vị rồi xào chín với tỏi. Thêm chút nước luộc gà và dầu hạt điều, đun khoảng 10-15 phút để làm nước sốt rưới cơm.",
-    "🍲 5. Nước canh: Dùng nước luộc gà đun nóng, nêm nếm vừa ăn và thêm hành lá cắt nhỏ làm nước dùng ăn kèm.",
-    "🍽️ 6. Trình bày và thưởng thức: Ép cơm vào bát rồi úp ra đĩa, xếp gà trộn hành tây, gỏi đu đủ lên bên cạnh. Ăn kèm tương ớt Hội An và bát nước canh nóng hổi.",
-    "Nguồn: VnExpress"
-  ],
-  "time": "75 phút"
-},
-{
   "id": 42,
   "name": "Mì Quảng gà",
   "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-1238-1665132014.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=OtUz8nAFXK6yWDEYj7n1wg",
@@ -2470,36 +2441,6 @@
     "Nguồn: Cookpad"
   ],
   "time": "60 phút"
-},
-{
-  "id": 47,
-  "name": "Cao lầu",
-  "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Bc7Thnhphm17-1678700338-1698-1678700377.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=o7clU_ZnQXrsGyaxyVAwtw",
-  "description": "Món mì trứ danh của Hội An với sợi mì vàng đục dai giòn đặc trưng, thịt xá xíu đậm đà, ăn kèm ram chiên phồng và nước nhưn ngọt mặn hài hòa.",
-  "categoryId": 2,
-  "userId": 2,
-  "ingredients": [
-    "Thịt nạc dăm hoặc ba chỉ: 600g",
-    "Sợi cao lầu tươi hoặc khô",
-    "Ram cao lầu (miếng vuông chiên giòn)",
-    "Xương lợn (ninh lấy nước dùng): 600g",
-    "Gia vị xíu thịt: Ngũ vị hương, nước tương, đường, dầu màu điều, hạt tiêu, ớt bột",
-    "Hành khô, tỏi",
-    "Rau ăn kèm: Rau húng, giá đỗ, rau cải con, xà lách",
-    "Tương ớt Hội An, ớt xiêm xanh, chanh",
-    "Nguồn: VnExpress"
-  ],
-  "steps": [
-    "🥩 1. Sơ chế thịt: Thịt cắt thớ dài dọc, rửa sạch. Hành tỏi giã nhuyễn vắt lấy nước cốt để ướp thịt cho nhanh thấm và không bị cháy khi chiên, giữ lại xác hành tỏi để phi thơm.",
-    "🧂 2. Tẩm ướp: Ướp thịt với ngũ vị hương, nước tương, đường, dầu màu điều, muối, hạt nêm và tiêu. Để thịt thấm vị tối thiểu 2 - 3 giờ hoặc để ngăn mát tủ lạnh qua đêm.",
-    "🔥 3. Chiên và xíu thịt: Áp chảo thịt cho vàng đều hai mặt. Phi thơm xác hành tỏi, cho thịt và nước sốt ướp vào cùng nước dùng xương. Đun lửa liu riu khoảng 40 - 50 phút cho thịt mềm và thấm vị.",
-    "🥣 4. Làm nước nhưn: Khi thịt gần chín, chắt một phần nước xíu ra riêng để làm nước chan (nước nhưn). Phần thịt còn lại tiếp tục xíu đến khi nước keo lại, thịt lên màu nâu đỏ đẹp mắt thì để nguội và cắt lát mỏng.",
-    "🥨 5. Chuẩn bị cao lầu: Chiên phồng các miếng ram vuông. Sợi cao lầu nếu khô thì ngâm nở rồi trụng nước sôi cho mềm, trộn chút dầu cho mướt.",
-    "🍜 6. Trình bày: Cho giá đỗ trụng dưới đáy tô, thêm sợi cao lầu và thịt xíu lên trên. Rưới nước nhưn đậm đà, thêm ram chiên giòn.",
-    "🍽️ 7. Thưởng thức: Ăn kèm rau húng, cải con, tương ớt Hội An và ớt xiêm xanh để cảm nhận trọn vẹn phong vị phố Hội.",
-    "Nguồn: VnExpress"
-  ],
-  "time": "120 phút"
 },
 {
   "id": 48,
