@@ -20,6 +20,29 @@
             <li><a href="lien-he.html">Liên Hệ</a></li>
         </ul>
 
+    <div class="nav-actions">
+    <div class="auth-buttons">
+        <div class="search-box">
+    <input type="text" id="search-input" placeholder="Tìm món ăn...">
+    <i class="fa fa-search"></i>
+
+    <!-- dropdown kết quả -->
+    <div id="search-result" class="search-result"></div>
+</div>
+        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        <span class="username">Đăng Nhập</span>
+        
+        <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
+</div>
         <div class="nav-actions">
         <div class="auth-buttons">
             <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
@@ -44,6 +67,7 @@
 
         <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
     </div>
+
     </div>
 
         <!-- Toast -->
@@ -147,6 +171,25 @@
             </div>
         </div>
 
+        <div class="footer-links-group">
+            <div class="footer-nav">
+                <h3>Danh Mục</h3>
+                <ul>
+                    <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+                    <li><a href="mien.html?region=trung">Miền Trung</a></li>
+                    <li><a href="mien.html?region=nam">Miền Nam</a></li>
+                    <li><a href="#">Mẹo Nhà Bếp</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h3>Hỗ Trợ</h3>
+                <ul>
+                    <li><a href="#">Về VietStove</a></li>
+                    <li><a href="#">Chính Sách</a></li>
+                    <li><a href="#">Bảo Mật</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </div>
         <div class="footer-copyright">
             <p>&copy; 2026 <strong>VietStove</strong>. Thiết kế bởi <strong>Lục vị</strong>.</p>
         </div>
