@@ -1,149 +1,154 @@
-const API_URL = "http://localhost:3000/recipes";
-const CAT_URL = "http://localhost:3000/categories";
-
-const modal = document.getElementById("recipeModal");
-const recipeForm = document.getElementById("recipeForm");
+// Lấy các element
+localStorage.removeItem("db.json"); // Dòng code tạm thời
 const recipeList = document.getElementById("recipeList");
+const recipeForm = document.getElementById("recipeForm");
+const modal = document.getElementById("recipeModal");
+const imageInput = document.getElementById("recipeImage");
+const imagePreview = document.getElementById("imagePreview");
+const imagePreviewContainer = document.getElementById("imagePreviewContainer");
 
-let categories = []; // Lưu danh mục để dùng chung
+// Khởi tạo dữ liệu
+let db = getDB(); 
 
-// Khởi tạo khi load trang
-document.addEventListener("DOMContentLoaded", async () => {
-    await fetchCategories(); 
-    await fetchRecipes();   
+document.addEventListener("DOMContentLoaded", () => {
+    if (recipeList && recipeForm) {
+        renderCategories(); 
+        renderRecipes();    
+        setupImagePreview();
+    }
 });
 
-// --- 1. LẤY DANH MỤC VÙNG MIỀN ---
-async function fetchCategories() {
-    try {
-        const response = await fetch(CAT_URL);
-        categories = await response.json();
-        
-        // Đổ dữ liệu vào select box trong form
-        const selectRegion = document.getElementById("recipeRegion");
-        if (selectRegion) {
-            selectRegion.innerHTML = categories.map(cat => 
-                `<option value="${cat.id}">${cat.name}</option>`
-            ).join('');
-        }
-    } catch (error) {
-        console.error("Lỗi lấy danh mục:", error);
+// --- 1. HIỂN THỊ DANH MỤC TRONG MODAL ---
+function renderCategories() {
+    const selectRegion = document.getElementById("recipeRegion");
+    if (selectRegion && db.categories) {
+        selectRegion.innerHTML = db.categories.map(cat => 
+            `<option value="${cat.id}">${cat.name}</option>`
+        ).join('');
     }
 }
 
-// --- 2. LẤY DANH SÁCH MÓN ĂN ---
-async function fetchRecipes() {
-    try {
-        console.log("Đang gọi API..."); // Kiểm tra xem nó có chạy đến đây không
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error("Server không phản hồi!");
-        const recipes = await response.json();
-        console.log("Dữ liệu nhận được:", recipes); // Check xem có nhận được dữ liệu không
-        renderRecipes(recipes);
-    } catch (error) {
-        console.error("LỖI CHI TIẾT:", error);
-        recipeList.innerHTML = `<tr><td colspan="5" style="color:red;">Lỗi: ${error.message}</td></tr>`;
-    }
-}
-
-// --- 3. HIỂN THỊ DỮ LIỆU LÊN BẢNG ---
-function renderRecipes(recipes) {
+// --- 2. HIỂN THỊ DANH SÁCH MÓN ĂN ---
+function renderRecipes() {
     if (!recipeList) return;
-    
-    recipeList.innerHTML = recipes.map((item) => {
-        // Tìm tên vùng miền tương ứng với categoryId
-        const category = categories.find(cat => cat.id == item.categoryId);
+
+    // Sắp xếp ID giảm dần để món mới luôn nằm trên cùng
+    const sortedRecipes = [...db.recipes].sort((a, b) => b.id - a.id);
+
+    if (sortedRecipes.length === 0) {
+        recipeList.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 40px; color: #94a3b8;">Chưa có dữ liệu công thức.</td></tr>`;
+        return;
+    }
+
+    recipeList.innerHTML = sortedRecipes.map((item) => {
+        const category = db.categories.find(cat => cat.id == item.categoryId);
         const categoryName = category ? category.name : "N/A";
 
         return `
-        <tr>
-            <td><img src="${item.image}" alt="${item.name}" style="width:60px; height:45px; object-fit:cover; border-radius:6px; border: 1px solid #334155;"></td>
-            <td><strong>${item.name}</strong></td>
-            <td><span class="badge" style="background: rgba(79, 172, 254, 0.1); color: #4facfe; padding: 4px 8px; border-radius: 6px;">${categoryName}</span></td>
-            <td>${item.time || '---'}</td>
-            <td>
-                <button class="btn btn-edit" onclick="openModal(true, ${item.id})" style="cursor:pointer; margin-right:5px;">Sửa</button>
-                <button class="btn btn-delete" onclick="deleteRecipe(${item.id})" style="cursor:pointer; color:#f87171;">Xóa</button>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 15px; text-align:center;">
+                <img src="${item.image}" alt="${item.name}" style="width:80px; height:55px; object-fit:cover; border-radius:8px; border: 1px solid #334155;" onerror="this.src='https://placehold.co/80x55?text=No+Image'">
             </td>
-        </tr>
-    `}).join('');
+            <td style="padding: 15px;"><span style="font-weight:600; color:#e2e8f0;">${item.name}</span></td>
+            <td style="padding: 15px;">
+                <span style="background: rgba(79, 172, 254, 0.1); color: #4facfe; padding: 6px 14px; border-radius: 20px; font-size:12px; border: 1px solid rgba(79, 172, 254, 0.2); white-space: nowrap;">
+                    ${categoryName}
+                </span>
+            </td>
+            <td style="padding: 15px; text-align:center; color:#94a3b8;">${item.views || 0} lượt</td>
+            <td style="padding: 15px; text-align:center;">
+                <button onclick="openModal(true, ${item.id})" style="background:none; border:1px solid #4facfe; color:#4facfe; padding:6px 16px; border-radius:8px; cursor:pointer; margin-right:5px; transition: 0.3s;">Sửa</button>
+                <button onclick="deleteRecipe(${item.id})" style="background:none; border:1px solid #f87171; color:#f87171; padding:6px 16px; border-radius:8px; cursor:pointer; transition: 0.3s;">Xóa</button>
+            </td>
+        </tr>`;
+    }).join('');
 }
 
-// --- 4. ĐIỀU KHIỂN MODAL ---
-async function openModal(isEdit = false, id = null) {
-    modal.style.display = "flex";
-    recipeForm.reset(); // Xóa trắng form trước khi làm việc
+// --- 3. XỬ LÝ ẢNH ---
+function setupImagePreview() {
+    if (!imageInput) return;
+    imageInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                imagePreview.src = e.target.result;
+                imagePreviewContainer.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
 
+function fileToBase64(file) {
+    return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+    });
+}
+
+// --- 4. MODAL CONTROL ---
+function openModal(isEdit = false, id = null) {
+    if (!modal) return;
+    recipeForm.reset();
+    imagePreviewContainer.style.display = 'none';
+    
     if (isEdit && id) {
-        try {
-            const response = await fetch(`${API_URL}/${id}`);
-            const recipe = await response.json();
-            
+        const recipe = db.recipes.find(r => r.id == id);
+        if (recipe) {
             document.getElementById("modalTitle").innerText = "Chỉnh sửa công thức";
             document.getElementById("recipeId").value = recipe.id;
             document.getElementById("recipeName").value = recipe.name;
             document.getElementById("recipeRegion").value = recipe.categoryId;
-        } catch (error) {
-            alert("Không thể lấy thông tin món ăn!");
+            imagePreview.src = recipe.image;
+            imagePreviewContainer.style.display = 'block';
         }
     } else {
         document.getElementById("modalTitle").innerText = "Thêm công thức mới";
         document.getElementById("recipeId").value = "";
     }
+    modal.style.display = "flex";
 }
 
-function closeModal() {
-    modal.style.display = "none";
-}
+function closeModal() { modal.style.display = "none"; }
 
-// --- 5. XỬ LÝ LƯU DỮ LIỆU (POST / PUT) ---
+// --- 5. LƯU DỮ LIỆU ---
 recipeForm.onsubmit = async (e) => {
     e.preventDefault();
-    
     const id = document.getElementById("recipeId").value;
     const name = document.getElementById("recipeName").value.trim();
-    const catId = document.getElementById("recipeRegion").value;
+    const catId = parseInt(document.getElementById("recipeRegion").value);
+    const file = imageInput.files[0];
 
-    // Tạo đối tượng dữ liệu để gửi lên db.json
-    const recipeData = {
-        name: name,
-        categoryId: parseInt(catId),
-        // Giữ lại ảnh cũ hoặc dùng ảnh placeholder nếu là món mới
-        image: "https://via.placeholder.com/300x200?text=VietFood", 
-        time: "45 phút",
-        views: 0
-    };
+    let imageData = imagePreview.src;
+    if (file) imageData = await fileToBase64(file);
 
-    try {
-        const method = id ? "PUT" : "POST";
-        const url = id ? `${API_URL}/${id}` : API_URL;
-
-        const response = await fetch(url, {
-            method: method,
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(recipeData)
+    if (id) {
+        const index = db.recipes.findIndex(r => r.id == id);
+        db.recipes[index] = { ...db.recipes[index], name, categoryId: catId, image: imageData };
+    } else {
+        db.recipes.push({
+            id: Date.now(),
+            name,
+            categoryId: catId,
+            image: imageData,
+            views: 0
         });
-
-        if (response.ok) {
-            closeModal();
-            fetchRecipes(); // Cập nhật lại danh sách ngay lập tức
-        }
-    } catch (error) {
-        alert("Có lỗi xảy ra khi lưu!");
     }
+
+    saveDB(db);
+    closeModal();
+    renderRecipes();
 };
 
-// --- 6. XÓA MÓN ĂN ---
-async function deleteRecipe(id) {
-    if (confirm("Anh có chắc muốn xóa món ăn này khỏi hệ thống?")) {
-        try {
-            await fetch(`${API_URL}/${id}`, { method: "DELETE" });
-            fetchRecipes();
-        } catch (error) {
-            alert("Xóa thất bại!");
-        }
+// --- 6. XÓA ---
+function deleteRecipe(id) {
+    if (confirm("Xác nhận xóa món ăn này?")) {
+        db.recipes = db.recipes.filter(r => r.id != id);
+        saveDB(db);
+        renderRecipes();
     }
 }
 
-// Đóng modal khi click ra ngoài vùng trắng
 window.onclick = (e) => { if (e.target == modal) closeModal(); };
