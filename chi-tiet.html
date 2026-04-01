@@ -102,13 +102,51 @@
                 <h3>Nguyên liệu</h3>
                 <ul id="ingredients"></ul>
 
+                
             </div>
-
+            
         </div>
+<div class="review-section">
 
+    <h3>Đánh giá món ăn</h3>
+
+    <!-- ⭐ RATING -->
+    <div class="rating-box">
+        <div class="stars" id="star-rating">
+            <i class="fa-solid fa-star" data-rate="1"></i>
+            <i class="fa-solid fa-star" data-rate="2"></i>
+            <i class="fa-solid fa-star" data-rate="3"></i>
+            <i class="fa-solid fa-star" data-rate="4"></i>
+            <i class="fa-solid fa-star" data-rate="5"></i>
+        </div>
+        <span id="rating-text">Chưa đánh giá</span>
+        <span id="avg-rating" class="avg-rating"></span>
+    </div>
+
+    <!-- INPUT -->
+    <div class="comment-box">
+        <textarea id="comment-input" placeholder="Chia sẻ cảm nhận của bạn..."></textarea>
+        <button id="btn-comment">Gửi</button>
+    </div>
+
+    <!-- LIST -->
+    <div id="comment-list" class="comment-list"></div>
+
+</div>
     </div>
 </section>
-
+<!-- LOGIN REQUIRED MODAL -->
+<div id="login-required-modal" class="login-modal">
+    <div class="login-box">
+        <i class="fa-solid fa-lock"></i>
+        <h3>Yêu cầu đăng nhập</h3>
+        <p>Bạn cần đăng nhập để đánh giá & bình luận</p>
+        <div class="login-actions">
+            <a href="dang-nhap.html" class="btn-login-now">Đăng nhập ngay</a>
+            <button onclick="closeLoginModal()">Đóng</button>
+        </div>
+    </div>
+</div>
 <!-- FOOTER -->
 <footer class="vietfood-footer">
     <div class="footer-main">

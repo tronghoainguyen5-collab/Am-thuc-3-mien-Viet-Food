@@ -99,7 +99,7 @@ body {
 .btn { color: #e67e22; text-decoration: none; font-weight: bold; border: 1px solid #e67e22; padding: 5px 15px; border-radius: 5px; display: inline-block; margin-top: 10px; }
 
 /* Detail Page */
-.detail-container { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; }
+.detail-container { max-width: 900px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; }
 .detail-img { width: 100%; border-radius: 15px; margin-bottom: 30px; }
 .detail-content h1 { margin-bottom: 20px; color: #e67e22; }
 .detail-content h3 { margin: 20px 0 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
@@ -2510,4 +2510,225 @@ body {
 
 .recipe-card .btn-detail:hover::after {
     left: 100%;
+}
+
+/* ===== REVIEW SECTION ===== */
+.review-section{
+    margin-top:40px;
+    padding:20px;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    animation:fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+/* ⭐ STARS */
+.rating-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
+}
+
+.stars i{
+    font-size:22px;
+    color:#ccc;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.stars i.active{
+    color:#f39c12;
+    transform:scale(1.2);
+}
+/* ===== REVIEW SECTION ===== */
+.review-section {
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ===== RATING ===== */
+.rating-box {
+    margin-bottom: 20px;
+}
+
+#star-rating i {
+    font-size: 22px;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#star-rating i.active,
+#star-rating i:hover {
+    color: #f39c12;
+    transform: scale(1.2);
+}
+
+/* ===== COMMENT BOX ===== */
+.comment-box {
+    margin-bottom: 20px;
+}
+
+.comment-box textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    outline: none;
+    resize: none;
+    transition: 0.25s;
+}
+
+.comment-box textarea:focus {
+    border-color: #e67e22;
+    box-shadow: 0 0 0 2px rgba(230,126,34,0.2);
+}
+
+.comment-box button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg,#ff7e5f,#e67e22);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.comment-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230,126,34,0.4);
+}
+
+/* ===== COMMENT LIST ===== */
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== COMMENT ITEM ===== */
+.comment-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    animation: fadeUp 0.3s ease;
+}
+
+.comment-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.comment-top strong {
+    color: #e67e22;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.comment-actions span {
+    cursor: pointer;
+    color: #777;
+    transition: 0.2s;
+}
+
+.comment-actions span:hover {
+    color: #e67e22;
+}
+
+/* ===== REPLY ===== */
+.reply-box {
+    margin-top: 8px;
+}
+
+.reply-box input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.reply-list {
+    margin-top: 8px;
+    padding-left: 10px;
+}
+
+.reply-item {
+    font-size: 13px;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* ===== MODAL LOGIN ===== */
+.login-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-modal.show {
+    display: flex;
+}
+
+.login-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    width: 320px;
+    animation: fadeUp 0.3s ease;
+}
+
+.btn-login-now {
+    background: #e67e22;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
