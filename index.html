@@ -61,6 +61,13 @@
 
     <div class="nav-actions">
     <div class="auth-buttons">
+        <div class="search-box">
+    <input type="text" id="search-input" placeholder="Tìm món ăn...">
+    <i class="fa fa-search"></i>
+
+    <!-- dropdown kết quả -->
+    <div id="search-result" class="search-result"></div>
+</div>
         <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
         <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
         <span class="username">Đăng Nhập</span>
@@ -116,7 +123,7 @@
        
         <div class="col2">
             <h2>Viet<span style="color: #e67e22">Stove</span></h2>
-        <div>Ẩm thực Việt là sự kết tinh của những giá trị tinh hoa dọc suốt chiều dài dải đất hình chữ S. Chẳng biết từ bao giờ, người Việt mình đã biết cách sáng tạo,
+        <div>Bếp Việt là sự kết tinh của những giá trị tinh hoa dọc suốt chiều dài dải đất hình chữ S. Chẳng biết từ bao giờ, người Việt mình đã biết cách sáng tạo,
         <div>VietStove là sự kết tinh của những giá trị tinh hoa dọc suốt chiều dài dải đất hình chữ S. Chẳng biết từ bao giờ, người Việt mình đã biết cách sáng tạo,
              kết hợp tài tình để chỉ đơn thuần chiếc lá, cái hạt, hay mảnh vỏ cây khô cũng đủ khiến một món ăn trở nên ấn tượng. </div>
              <br>
@@ -222,8 +229,6 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
         <div class="footer-brand">
             <h2 class="footer-logo">Viet<span>Stove</span></h2>
 
-            <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba miền Bắc - Trung - Nam.</p>
-
             <p class="brand-text">Gìn giữ và lan tỏa tinh hoa ẩm thực Việt qua từng công thức nấu ăn đặc trưng của ba
                 miền Bắc - Trung - Nam.</p>
 
@@ -239,9 +244,9 @@ Gia vị chính là linh hồn, giúp mỗi món ăn có chiều sâu, có hươ
             <div class="footer-nav">
                 <h3>Danh Mục</h3>
                 <ul>
-                    <li><a href="mien-bac.html">Miền Bắc</a></li>
-                    <li><a href="mien-trung.html">Miền Trung</a></li>
-                    <li><a href="mien-nam.html">Miền Nam</a></li>
+                    <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+                    <li><a href="mien.html?region=trung">Miền Trung</a></li>
+                    <li><a href="mien.html?region=nam">Miền Nam</a></li>
                     <li><a href="#">Mẹo Nhà Bếp</a></li>
                 </ul>
             </div>

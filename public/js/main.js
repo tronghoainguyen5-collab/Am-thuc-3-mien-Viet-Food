@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
             if (!recipes.length) return;
             allRecipes = data.recipes;
+            // 🔥 INIT SEARCH (THÊM DÒNG NÀY)
+            initAdvancedSearch_VS(allRecipes);
             if (categoryId) {
                 allRecipes = allRecipes.filter(r => r.categoryId == categoryId);
             }
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${r.description}</p>
 
                     <a href="chi-tiet.html?id=${r.id}">
-                        <button>Xem chi tiết</button>
+                        <button class="btn-detail">Xem chi tiết</button>
                     </a>
                 </div>
             `;
@@ -382,6 +384,104 @@ scrollBtn.onclick = () => {
 // }
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
+}
+
+// =======================
+// 🔍 ADVANCED SEARCH (PRO)
+// =======================
+
+let __searchData = [];
+let __searchTimer;
+
+// init search (gọi sau khi có data)
+function initAdvancedSearch_VS(recipes) {
+    __searchData = recipes;
+
+    const input = document.getElementById("search-input");
+    const box = document.getElementById("search-result");
+
+    if (!input || !box) return;
+
+    // input realtime
+    input.addEventListener("input", (e) => {
+        const keyword = e.target.value.trim().toLowerCase();
+
+        clearTimeout(__searchTimer);
+
+        __searchTimer = setTimeout(() => {
+            if (!keyword) {
+                box.classList.remove("show");
+                return;
+            }
+
+            // loading effect
+            box.innerHTML = `<div style="padding:10px">Đang tìm...</div>`;
+            box.classList.add("show");
+
+            const result = __searchData
+                .filter(r => r.name.toLowerCase().includes(keyword))
+                .slice(0, 6);
+
+            renderSearchDropdown_VS(result, keyword);
+        }, 180);
+    });
+
+    // focus show lại
+    input.addEventListener("focus", () => {
+        if (input.value.trim()) {
+            box.classList.add("show");
+        }
+    });
+
+    // click ngoài đóng
+    document.addEventListener("click", () => {
+        box.classList.remove("show");
+    });
+
+    input.addEventListener("click", (e) => e.stopPropagation());
+}
+
+// render dropdown
+function renderSearchDropdown_VS(list, keyword) {
+    const box = document.getElementById("search-result");
+
+    if (!list.length) {
+        box.innerHTML = `<div style="padding:12px;text-align:center">Không tìm thấy</div>`;
+        box.classList.add("show");
+        return;
+    }
+
+    box.innerHTML = list.map(item => {
+        const nameHighlight = item.name.replace(
+            new RegExp(keyword, "gi"),
+            (m) => `<b style="color:#e67e22">${m}</b>`
+        );
+
+        return `
+            <div class="search-item" data-id="${item.id}">
+                <img src="${item.image}">
+                <div>
+                    <h4>${nameHighlight}</h4>
+                    <small style="color:#999">${item.time || ""}</small>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    requestAnimationFrame(() => {
+        box.classList.add("show");
+    });
+
+    box.querySelectorAll(".search-item").forEach(el => {
+        el.onclick = () => {
+            el.style.transform = "scale(0.9)";
+            el.style.opacity = "0.6";
+
+            setTimeout(() => {
+                window.location.href = `chi-tiet.html?id=${el.dataset.id}`;
+            }, 120);
+        };
+    });
 }
 
 

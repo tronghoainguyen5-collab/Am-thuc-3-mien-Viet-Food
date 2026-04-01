@@ -87,3 +87,108 @@ function editProfile() {
         // window.location.reload();
     }
 }
+
+// ================= LỊCH SỬ ĐÃ XEM =================
+
+// Load lịch sử
+function loadHistory() {
+    const historyList = document.getElementById("history-list");
+    if (!historyList) return;
+
+    let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+
+    historyList.innerHTML = "";
+
+    if (history.length === 0) {
+        historyList.innerHTML = `<p class="history-empty">Chưa có món nào</p>`;
+        return;
+    }
+
+    [...history].reverse().forEach(item => {
+        const card = document.createElement("div");
+        card.className = "history-card";
+
+        card.innerHTML = `
+            <div class="history-img" style="background-image:url('${item.img}')"></div>
+            
+            <div class="history-info">
+                <h4>${item.name}</h4>
+                <p>⏱ ${item.time}</p>
+            </div>
+
+            <span class="delete-item" data-id="${item.id}">
+                <i class="fas fa-times"></i>
+            </span>
+        `;
+
+        // click mở món
+        card.onclick = () => {
+            window.location.href = `chi-tiet.html?id=${item.id}`;
+        };
+
+        // ❌ click nút xóa (chặn click card)
+        card.querySelector(".delete-item").onclick = (e) => {
+            e.stopPropagation(); // chặn click lan ra card
+            deleteHistoryItem(item.id);
+        };
+
+        historyList.appendChild(card);
+    });
+}
+
+// Gọi khi load trang (KHÔNG đụng code cũ)
+document.addEventListener("DOMContentLoaded", loadHistory);
+
+
+// Hàm lưu lịch sử (gọi ở trang món ăn)
+function saveToHistory(recipe) {
+    let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+
+    // tránh trùng
+    history = history.filter(item => item.name !== recipe.name);
+
+    history.push(recipe);
+
+    // giới hạn 10 món
+    if (history.length > 10) {
+        history.shift();
+    }
+
+    localStorage.setItem("viewHistory", JSON.stringify(history));
+}
+// ================= TOGGLE LỊCH SỬ =================
+function toggleHistory() {
+    const box = document.getElementById("history-box");
+
+    if (box.style.display === "none") {
+        box.style.display = "block";
+        loadHistory(); // load khi mở
+    } else {
+        box.style.display = "none";
+    }
+}
+// ================= LƯU LỊCH SỬ =================
+function saveToHistory(recipe) {
+    let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+
+    // tránh trùng
+    history = history.filter(item => item.name !== recipe.name);
+
+    history.push(recipe);
+
+    // giới hạn 10 món
+    if (history.length > 10) {
+        history.shift();
+    }
+
+    localStorage.setItem("viewHistory", JSON.stringify(history));
+}
+function deleteHistoryItem(id) {
+    let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+
+    history = history.filter(item => item.id !== id);
+
+    localStorage.setItem("viewHistory", JSON.stringify(history));
+
+    loadHistory(); // render lại
+}
