@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const LIMIT = 8;
 
- HEAD
     fetch("./data/db.json")
         .then(res => res.json())
         .then(data => {
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.json())
     .then(data => {
         let recipes = data.recipes;
- giang
 
         if (categoryId) {
             recipes = recipes.filter(r => r.categoryId == categoryId);
@@ -509,7 +507,7 @@ function renderSearchDropdown_VS(list, keyword) {
     });
 }
 
-
+})
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     // 1. Lấy các phần tử HTML
