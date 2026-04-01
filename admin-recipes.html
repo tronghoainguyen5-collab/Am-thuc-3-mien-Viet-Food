@@ -2,100 +2,201 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý công thức - VietStove Admin</title>
     <link rel="stylesheet" href="public/css/admin.css">
     <style>
-        /* CSS Modal & Loading */
-        .modal {
-            display: none; position: fixed; z-index: 1000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px);
-            align-items: center; justify-content: center;
+        /* Tối ưu giao diện Glassmorphism đặc trưng cho VietFood */
+        body { 
+            background: #0f172a; 
+            color: white; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0;
         }
-        .modal-content {
-            width: 450px; padding: 30px; border-radius: 24px;
-            background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255,255,255,0.1);
-        }
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; color: #94a3b8; }
-        .input-group input, .input-group select {
-            width: 100%; padding: 12px; background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white;
-        }
-        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
         
-        /* Hiệu ứng badge cho vùng miền */
-        .badge-bac { background: rgba(248, 113, 113, 0.2); color: #f87171; }
-        .badge-trung { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
-        .badge-nam { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(12px);
+            align-items: center; 
+            justify-content: center;
+        }
+        
+        .modal-content {
+            width: 90%;
+            max-width: 480px; 
+            padding: 30px; 
+            border-radius: 24px;
+            background: rgba(30, 41, 59, 0.95); 
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; margin-bottom: 8px; color: #94a3b8; font-size: 14px; }
+        .input-group input, .input-group select {
+            width: 100%; 
+            padding: 12px; 
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 12px; 
+            color: white;
+            box-sizing: border-box;
+            outline: none; 
+            transition: 0.3s;
+        }
+        .input-group input:focus, .input-group select:focus { 
+            border-color: #4facfe; 
+            box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2); 
+        }
+
+        #imagePreviewContainer {
+            margin-top: 15px; 
+            text-align: center; 
+            padding: 10px; 
+            border: 1px dashed rgba(255,255,255,0.2); 
+            border-radius: 12px;
+            background: rgba(0,0,0,0.2);
+        }
+        #imagePreview {
+            max-width: 100%; 
+            max-height: 150px; 
+            border-radius: 8px; 
+            object-fit: cover;
+        }
+
+        .admin-profile-header {
+            display: flex; 
+            align-items: center; 
+            gap: 12px;
+            padding: 8px 16px; 
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px; 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .admin-profile-header img { 
+            width: 35px; 
+            height: 35px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 2px solid #4facfe; 
+        }
+        .admin-profile-header span { font-size: 14px; font-weight: 500; color: #e2e8f0; }
+
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 25px; }
+        .btn-cancel { background: #334155; color: white; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .btn-cancel:hover { background: #475569; }
+        .btn-save { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 12px 25px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-save:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        /* Scrollbar cho bảng */
+        .table-responsive { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
     </style>
 </head>
 <body>
     <aside class="sidebar">
-        <h2>VIETSTOVE</h2>
+        <div class="sidebar-logo" style="padding: 30px 20px; text-align: center;">
+            <h2 style="color: #4facfe; letter-spacing: 2px; margin: 0;">VIETSTOVE</h2>
+        </div>
         <nav>
-            <a href="admin.html">📊 Thống kê</a>
+            <a href="admin.html" class="active">📊 Thống kê</a>
             <a href="admin-users.html">👥 Người dùng</a>
-            <a href="admin-recipes.html" class="active">🍲 Công thức</a>
+            <a href="admin-recipes.html">🍲 Công thức</a>
         </nav>
     </aside>
 
     <main class="main-content">
-        <header>
-            <h1>Quản lý công thức nấu ăn</h1>
-            <button class="btn btn-primary" onclick="openModal()">+ Thêm món mới</button>
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h1 style="font-size: 24px; margin: 0 0 5px 0;">Quản lý công thức nấu ăn</h1>
+                <p style="color: #94a3b8; font-size: 14px; margin: 0;">Danh sách tất cả món ăn trên hệ thống VietStove</p>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="admin-profile-header">
+                    <img id="adminAvatar" src="https://via.placeholder.com/35" alt="Avatar">
+                    <span id="adminName">Bach Cong Tuan Anh</span>
+                </div>
+                <button class="btn btn-primary" onclick="openModal()" style="padding: 12px 24px; border-radius: 12px; background: #4facfe; border: none; color: white; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);">
+                    + Thêm món mới
+                </button>
+            </div>
         </header>
 
-        <div class="glass-panel">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ảnh</th>
-                        <th>Tên món ăn</th>
-                        <th>Vùng miền</th>
-                        <th>Lượt xem</th>
-                        <th>Thao tác</th>
-                    </tr>
-                </thead>
-                <tbody id="recipeList">
-                    <tr>
-                        <td colspan="5" style="text-align:center; padding: 40px;">
-                            <div class="loading">Đang tải dữ liệu từ server...</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="glass-panel" style="background: rgba(30, 41, 59, 0.7); border-radius: 24px; padding: 25px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr style="text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">
+                            <th style="padding: 15px;">Ảnh</th>
+                            <th style="padding: 15px;">Tên món ăn</th>
+                            <th style="padding: 15px;">Vùng miền</th>
+                            <th style="padding: 15px;">Lượt xem</th>
+                            <th style="padding: 15px; text-align: center;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recipeList">
+                        <tr>
+                            <td colspan="5" style="text-align:center; padding: 80px;">
+                                <div class="loading" style="color: #94a3b8; font-style: italic;">Đang tải dữ liệu từ VietStove...</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
     <div id="recipeModal" class="modal">
-        <div class="modal-content glass-panel">
-            <h2 id="modalTitle" style="margin-bottom: 20px; color: #4facfe;">Công thức</h2>
+        <div class="modal-content">
+            <h2 id="modalTitle" style="margin: 0 0 25px 0; color: #4facfe; font-size: 22px;">Thêm công thức mới</h2>
             <form id="recipeForm">
                 <input type="hidden" id="recipeId">
                 
                 <div class="input-group">
                     <label for="recipeName">Tên món ăn</label>
-                    <input type="text" id="recipeName" required placeholder="Ví dụ: Phở Bò Nam Định">
+                    <input type="text" id="recipeName" required placeholder="Ví dụ: Phở Bò Hà Nội">
                 </div>
 
                 <div class="input-group">
-                    <label for="recipeRegion">Vùng miền</label>
-                    <select id="recipeRegion">
-                        <option value="Miền Bắc">Miền Bắc</option>
-                        <option value="Miền Trung">Miền Trung</option>
-                        <option value="Miền Nam">Miền Nam</option>
-                    </select>
+                    <label for="recipeRegion">Vùng miền (Danh mục)</label>
+                    <select id="recipeRegion" required>
+                        </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="recipeImage">Hình ảnh công thức</label>
+                    <input type="file" id="recipeImage" accept="image/*" style="padding: 8px; cursor: pointer;">
+                    
+                    <div id="imagePreviewContainer" style="display: none;">
+                        <img id="imagePreview" src="" alt="Preview">
+                        <p style="font-size: 11px; color: #94a3b8; margin-top: 5px;">Xem trước hình ảnh</p>
+                    </div>
                 </div>
 
                 <div class="modal-actions">
-                    <button type="button" class="btn" style="background: #334155; color: white;" onclick="closeModal()">Hủy bỏ</button>
-                    <button type="submit" class="btn btn-primary">Lưu công thức</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Đóng</button>
+                    <button type="submit" class="btn-save">Lưu thay đổi</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="admin.js"></script>
+    <script src="public/js/data.js"></script> 
+    <script src="public/js/admin.js"></script>
+    
+    <script>
+        // Đóng modal khi click ra ngoài vùng chứa
+        window.onclick = function(event) {
+            const modal = document.getElementById("recipeModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
