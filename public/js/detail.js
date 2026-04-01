@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
-    // ❌ Nếu không có id → dừng luôn (tránh lỗi)
+    // ❌ Nếu không có id → dừng luôn
     if (!id) return;
 
     // 📦 FETCH DATA
@@ -105,8 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // 🎯 TÌM MÓN
             const food = recipes.find(r => r.id == id);
 
-            // ❌ KHÔNG TÌM THẤY
             const detailInfo = document.querySelector(".detail-info");
+
+            // ❌ KHÔNG TÌM THẤY
             if (!food) {
                 if (detailInfo) {
                     detailInfo.innerHTML = "<h2>Không tìm thấy món ăn</h2>";
@@ -115,9 +116,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // =======================
-            // 🎯 GÁN DATA (CHECK NULL)
+            // 🔥 LƯU LỊCH SỬ XEM (THÊM MỚI)
             // =======================
+            saveToHistory({
+                id: food.id,
+                name: food.name,
+                img: food.image,
+                category: food.category || "Món ăn",
+                time: food.time
+            });
 
+            // =======================
+            // 🎯 GÁN DATA
+            // =======================
             const mainImg = document.getElementById("main-img");
             if (mainImg) mainImg.src = food.image;
 
@@ -170,12 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // =======================
-            // ❤️ LƯU MÓN (FIX NULL + UX)
+            // ❤️ LƯU MÓN
             // =======================
             const saveBtn = document.getElementById("saveBtn");
 
             if (saveBtn) {
-                // check đã lưu chưa
                 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
                 if (favorites.includes(food.id)) {
@@ -198,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // =======================
-            // 🍳 NÚT NẤU ĂN (GỘP LUÔN)
+            // 🍳 NÚT NẤU ĂN
             // =======================
             const cookBtn = document.getElementById("btn-cook");
 
@@ -214,3 +224,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 });
+
+
+// ===============================
+// 🔥 HÀM LƯU LỊCH SỬ
+// ===============================
+function saveToHistory(recipe) {
+    let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+
+    // ❌ tránh trùng
+    history = history.filter(item => item.id !== recipe.id);
+
+    // ✅ thêm mới
+    history.push(recipe);
+
+    // 📉 giới hạn 10 món
+    if (history.length > 10) {
+        history.shift();
+    }
+
+    localStorage.setItem("viewHistory", JSON.stringify(history));
+}
