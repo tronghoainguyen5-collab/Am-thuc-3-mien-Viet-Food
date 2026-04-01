@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             sliderData = allRecipes.slice(0, 10);
+            if (document.getElementById('img-current')) {
             initSlider(sliderData);
+        }
 
             renderInitial();
             updateTitle(region);
@@ -38,21 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // =======================
     // 🚀 RENDER BAN ĐẦU
     // =======================
-    function renderInitial() {
-        const container = document.querySelector('.recipe-grid');
-        container.innerHTML = "";
+   function renderInitial() {
+    const container = document.querySelector('.recipe-grid');
+    if (!container) return; // 🔥 FIX
 
-        const data = allRecipes.slice(0, LIMIT);
-        appendList(data);
+    container.innerHTML = "";
 
-        renderToggleButton();
-    }
+    const data = allRecipes.slice(0, LIMIT);
+    appendList(data);
+
+    renderToggleButton();
+}
 
     // =======================
     // ➕ APPEND (KHÔNG RESET)
     // =======================
     function appendList(recipes) {
         const container = document.querySelector('.recipe-grid');
+        if (!container) return; // 🔥 FIX
 
         recipes.forEach(r => {
             const saved = isSaved(r.id);
@@ -114,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =======================
     function renderToggleButton() {
         let btn = document.getElementById("toggle-btn");
+        let container = document.querySelector(".container");
+    if (!container) return; // 🔥 FIX
 
         if (!btn) {
             btn = document.createElement("button");
@@ -181,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbsContainer = document.getElementById('thumbs');
     const btnUp = document.getElementById('btn-up');
     const btnDown = document.getElementById('btn-down');
+    if (!dotsContainer || !thumbsContainer) return;
 
     let index = 0;
     let currentId = null;

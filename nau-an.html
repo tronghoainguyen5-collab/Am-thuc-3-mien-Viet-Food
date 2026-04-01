@@ -30,13 +30,16 @@
         <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
         <span class="username">Đăng Nhập</span>
         
-        <div class="dropdown">
-            <ul class="dropdown-menu">
-                <li class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</li>
-                <li class="upgrade-admin" style="display: none;"><i class="fa-solid fa-shield-halved"></i> Nâng quyền Admin</li>
-                <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
-            </ul>
-        </div>
+        <div class="dropdown user-dropdown">
+    <ul class="user-menu">
+        <li class="profile-link">
+            <i class="fa-solid fa-user"></i> Trang cá nhân
+        </li>
+        <li class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </li>
+    </ul>
+</div>
     </div>
 
     <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
@@ -46,28 +49,6 @@
     <!-- Toast -->
     <div id="toast" class="toast"></div>
 </nav>
-
-    <div class="nav-actions">
-    <div class="auth-buttons">
-        <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
-        <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
-        <span class="username">Đăng Nhập</span>
-        
-        <div class="dropdown">
-            <ul class="dropdown-menu">
-                <li class="profile-link"><i class="fa-solid fa-user"></i> Trang cá nhân</li>
-                <li class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
-            </ul>
-        </div>
-    </div>
-
-    <a href="yeu-thich.html" class="btn-saved">
-        <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
-    </a>
-
-    <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-</div>
-</div>
 
     <!-- Toast -->
     <div id="toast" class="toast"></div>
@@ -158,5 +139,6 @@
 
 
 <script src="public/js/nauan.js"></script>
+<script src="public/js/auth.js"></script>
 </body>
 </html>
