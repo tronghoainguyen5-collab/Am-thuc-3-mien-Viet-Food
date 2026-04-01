@@ -4469,6 +4469,295 @@
       "image": "https://via.placeholder.com/300x200?text=VietFood",
       "time": "45 phút",
       "views": 0
-    }
+    },
+{
+  "id": 51,
+  "name": "Bánh khọt Vũng Tàu",
+  "image": "https://cdn.tgdd.vn/2021/02/CookProduct/CACHLAMBANHKHOTVUNGTAUNGONTAINHADONGIANNHAT-CKK0-4screenshot-1200x675.jpg",
+  "description": "Món bánh chiên vàng giòn rụm với vị béo ngậy đặc trưng từ nước cốt dừa, nhân hải sản tươi rói, ăn kèm rau sống và nước mắm chua ngọt đậm đà.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Bột bánh khọt: 200g",
+    "Nước cốt dừa: 400ml",
+    "Tôm thẻ: 300g",
+    "Mực tươi: 300g",
+    "Hành lá: 50g",
+    "Rau thơm, xà lách ăn kèm",
+    "Gia vị nước chấm: Nước mắm, chanh, tỏi băm, ớt băm, đường",
+    "Dầu ăn",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🦑 1. Sơ chế hải sản: Mực làm sạch, bỏ túi mực và răng mực, thái khoanh tròn vừa ăn. Tôm lột vỏ, rút chỉ lưng, rửa sạch và để ráo.",
+    "🥣 2. Pha bột bánh: Trộn bột bánh khọt với 400ml nước cốt dừa và hành lá cắt nhỏ. Khuấy đều tay cho bột tan hoàn toàn rồi để bột nghỉ khoảng 5 - 10 phút.",
+    "🍯 3. Pha nước chấm: Hòa tan 2 muỗng canh nước mắm, 2 muỗng nước lọc, 4 muỗng cà phê đường và 2 muỗng cà phê nước cốt chanh. Sau cùng cho tỏi ớt băm vào khuấy đều.",
+    "🔥 4. Chuẩn bị khuôn: Làm nóng khuôn bánh khọt trên bếp, cho khoảng 1 muỗng cà phê dầu ăn vào mỗi ô khuôn. Chờ dầu nóng già để bánh có độ giòn.",
+    "🍳 5. Đổ bánh: Đổ bột vào từng ô khuôn, đặt 1 con tôm hoặc 1 khoanh mực lên trên mặt bánh. Đậy nắp lại và chiên lửa vừa trong khoảng 3 phút đến khi vỏ bánh vàng giòn.",
+    "🍽️ 6. Thưởng thức: Gắp bánh ra đĩa, cuốn cùng xà lách và các loại rau thơm. Chấm ngập trong nước mắm chua ngọt để cảm nhận vị béo, giòn và ngọt từ hải sản.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "45 phút"
+},
+{
+  "id": 52,
+  "name": "Bánh tráng trộn",
+  "image": "https://i1-giadinh.vnecdn.net/2023/08/05/anhdaidien-1691221857-9943-1691221866.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=KZRGjdJmptImeOcmcXpQbw",
+  "description": "Món ăn vặt đường phố nổi tiếng với sự kết hợp hài hòa giữa bánh tráng dai nhẹ, vị chua của xoài, bùi béo của trứng cút, đậu phộng và đậm đà từ khô bò, muối tôm.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Bánh tráng trắng: 200g",
+    "Khô bò xé sợi: 100g",
+    "Chà bông (ruốc): 100g",
+    "Trứng cút: 5 quả",
+    "Xoài xanh: 1/2 quả",
+    "Đậu phộng (lạc): 10g",
+    "Rau răm: 100g",
+    "Hành tím: 100g",
+    "Muối tôm nhuyễn: 10g",
+    "Ớt xay (làm sa tế): 100g",
+    "Dầu ăn",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "✂️ 1. Sơ chế bánh tráng & topping: Dùng kéo cắt bánh tráng thành sợi vừa ăn. Khô bò xé sợi nhỏ. Xoài xanh gọt vỏ, bào sợi dài. Rau răm rửa sạch, cắt nhuyễn.",
+    "🧅 2. Làm hành phi: Hành tím bào mỏng. Đun sôi dầu ăn, cho hành vào phi ở lửa nhỏ đến khi vàng đều thì vớt ra để ráo dầu.",
+    "🥚 3. Luộc trứng & đậu: Trứng cút luộc chín (khoảng 10 phút), ngâm nước lạnh rồi bóc vỏ. Đậu phộng rang vàng, bóc bỏ lớp vỏ lụa.",
+    "🌶️ 4. Làm sa tế: Đun nóng nửa chén dầu ăn, cho ớt xay nhuyễn vào đun sôi rồi tắt bếp, để nguội để thu được hỗn hợp sa tế cay nồng.",
+    "🥣 5. Trộn bánh: Cho bánh tráng vào thau lớn, lần lượt thêm khô bò, chà bông, sa tế, đậu phộng, hành phi, xoài và muối tôm vào trộn đều tay.",
+    "✨ 6. Hoàn thiện: Cuối cùng cho trứng cút và rau răm vào trộn nhẹ nhàng lần nữa để tránh làm nát trứng.",
+    "🍽️ 7. Thưởng thức: Cho bánh tráng ra đĩa và dùng ngay để giữ được độ dai và giòn của các nguyên liệu, tránh để lâu bánh sẽ bị mềm.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "40 phút"
+},
+{
+  "id": 53,
+  "name": "Hủ tiếu gõ Sài Gòn",
+  "image": "https://cdn.tgdd.vn/Files/2021/04/16/1343884/cach-lam-hu-tieu-go-thom-ngon-don-gian-tai-nha-chuan-vi-ngoai-hang-202104161413554627.jpg",
+  "description": "Món ăn đêm bình dân gắn liền với ký ức Sài Gòn, sở hữu nước dùng ngọt thanh từ xương heo và tôm khô, ăn kèm thịt heo thái mỏng, da heo béo ngậy và tóp mỡ thơm lừng.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Sợi hủ tiếu dai: 300g",
+    "Xương heo: 500g",
+    "Thịt nạc heo: 300g",
+    "Tôm khô: 20g",
+    "Da heo: 100g",
+    "Củ cải trắng: 3 củ",
+    "Giá đỗ, hành lá, hành phi, tóp mỡ",
+    "Gia vị: Đường phèn, bột canh, muối, tiêu, bột ngọt",
+    "Nguồn: Điện Máy Xanh"
+  ],
+  "steps": [
+    "🦴 1. Sơ chế thịt & xương: Rửa sạch thịt, xương và da heo. Chần qua nước sôi pha muối để khử mùi và chất bẩn. Rửa lại với nước lạnh cho sạch hoàn toàn. Da heo luộc chín riêng rồi thái miếng nhỏ.",
+    "🥕 2. Sơ chế rau củ: Củ cải trắng gọt vỏ, rửa sạch. Giá đỗ và hành lá rửa sạch, để ráo. Hành lá cắt khúc vừa ăn.",
+    "🍲 3. Nấu nước dùng: Ninh xương heo, thịt heo, củ cải trắng và tôm khô với 2 lít nước. Nêm đường phèn, muối, bột canh và bột ngọt. Thường xuyên vớt bọt để nước dùng trong vắt, ngọt thanh.",
+    "🥩 4. Chuẩn bị thịt: Sau khi ninh khoảng 30 phút, vớt thịt nạc ra ngâm nước lạnh cho săn lại rồi thái lát thật mỏng (đúng phong cách hủ tiếu gõ).",
+    "🍜 5. Trụng hủ tiếu: Ngâm hủ tiếu với nước lạnh cho hơi mềm. Trụng hủ tiếu và giá qua nước sôi khoảng 1 phút rồi vớt ra ngay, xả nước lạnh và trộn chút dầu ăn để sợi hủ tiếu dai, không bị dính.",
+    "✨ 6. Trình bày: Cho giá và hủ tiếu vào tô, xếp thịt heo, da heo và xương lên trên. Chan nước dùng nóng hổi ngập mặt bánh.",
+    "🍽️ 7. Thưởng thức: Rắc hành lá, hành phi, tóp mỡ, tiêu và ớt tươi. Ăn kèm xì dầu hoặc tương đen để tăng thêm hương vị đậm đà.",
+    "Nguồn: Điện Máy Xanh"
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 54,
+  "name": "Bún thịt nướng",
+  "image": "https://vcdn1-giadinh.vnecdn.net/2021/05/20/Anh-da-dien-6695-1621503923.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=4_YmI9qXyE8Z8f-uX2W6yQ",
+  "description": "Sự kết hợp hoàn hảo giữa thịt ba chỉ nướng vàng óng, chả viên đậm đà, ăn kèm bún tươi, đồ chua giòn rụm và nước mắm chua ngọt tinh tế.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Thịt ba chỉ: 500g",
+    "Thịt nạc vai xay: 250g, Giò sống: 50g",
+    "Bún tươi, chả giò (ăn kèm)",
+    "Gia vị ướp: Sả, tỏi, hành tím, dầu hào, mật ong, nước màu, dầu điều, ngũ vị hương",
+    "Đồ chua: Củ cải trắng, cà rốt, giấm, đường",
+    "Rau ăn kèm: Xà lách, dưa chuột, giá đỗ, rau mùi, lạc rang, mỡ hành",
+    "Nước chấm: Nước mắm, chanh, đường, tỏi, ớt",
+    "Nguồn: VnExpress"
+  ],
+  "steps": [
+    "🥩 1. Sơ chế & Ướp thịt: Xay nhuyễn hành, tỏi, sả lấy nước cốt. Pha hỗn hợp sốt gồm dầu hào, mật ong, mắm, nước màu, dầu điều, ngũ vị hương. Chia sốt để ướp thịt ba chỉ thái mỏng và phần thịt xay trộn giò sống trong ít nhất 1 giờ.",
+    "🔥 2. Nướng thịt: Xiên thịt miếng vào que tre, thịt viên nặn dẹt. Nướng trên than hồng, thỉnh thoảng phết mỡ hành để thịt mềm mọng, chín vàng đều hai mặt.",
+    "🥕 3. Làm đồ chua: Cà rốt, củ cải thái sợi ngâm muối, vắt ráo rồi trộn với giấm đường. Để tủ lạnh 15 phút cho giòn.",
+    "🍯 4. Pha nước chấm: Pha mắm, đường, chanh, nước theo tỷ lệ 1:1:1:5. Khuấy tan đường rồi thêm tỏi ớt băm nhuyễn để nổi lên trên.",
+    "🌿 5. Chuẩn bị rau & mỡ hành: Rau sống rửa sạch, dưa chuột thái sợi, giá đỗ chần sơ. Làm mỡ hành bằng cách dội dầu nóng vào hành lá xắt nhỏ cùng chút muối.",
+    "🍽️ 6. Trình bày: Cho rau sống và giá dưới tô, thêm bún, xếp thịt nướng, chả giò lên trên. Rắc lạc rang, mỡ hành và chan nước mắm chua ngọt khi ăn.",
+    "Nguồn: VnExpress"
+  ],
+  "time": "90 phút"
+},
+{
+  "id": 55,
+  "name": "Lẩu cá linh bông điên điển",
+  "image": "https://cdn-images.vtv.vn/2019/10/4/lau-ca-linh-bong-dien-dien-157018318721245700816.jpg",
+  "description": "Đặc sản mùa nước nổi miền Tây với vị chua thanh từ me, vị ngọt béo tự nhiên của cá linh non hòa quyện cùng hương thơm đặc trưng của bông điên điển vàng rực.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Cá linh non tươi: 500g",
+    "Bông điên điển: 300g",
+    "Rau kèm: Bông súng, rau nhút, giá, rau muống chẻ",
+    "Gia vị nấu lẩu: Me chín (100g), cà chua, thơm (dứa), sả, ớt",
+    "Ngò om, ngò gai, hành tím, tỏi",
+    "Bún tươi hoặc cơm trắng",
+    "Gia vị: Nước mắm, đường, muối, bột ngọt, dầu ăn",
+    "Nguồn: VTC News"
+  ],
+  "steps": [
+    "🐟 1. Sơ chế cá linh: Cá làm sạch, rửa nhẹ với nước muối loãng để tránh làm nát thịt cá béo mềm, sau đó để ráo nước.",
+    "🌼 2. Chuẩn bị rau: Bông điên điển nhặt bỏ cọng già, rửa nhẹ tay. Bông súng, rau nhút và các loại rau kèm rửa sạch, cắt khúc vừa ăn.",
+    "🍋 3. Sơ chế nước dùng: Me ngâm nước sôi, dằm lấy nước cốt bỏ hạt. Cà chua cắt múi cau, thơm cắt nhỏ. Sả đập dập, hành tỏi băm nhuyễn.",
+    "🔥 4. Nấu nước lẩu: Phi thơm hành tỏi, xào sơ cà chua và thơm. Thêm 2 lít nước đun sôi cùng sả và nước cốt me. Nêm nước mắm, đường, muối sao cho vị chua thanh, ngọt dịu.",
+    "🍲 5. Hoàn thiện nước dùng: Đun nhỏ lửa khoảng 10-15 phút để các gia vị thấm đều và dậy mùi thơm từ sả và me.",
+    "✨ 6. Thưởng thức: Đặt nồi lẩu ra bàn, khi nước sôi thì cho cá linh vào. Cá vừa chín tới (rất nhanh chín) thì nhúng bông điên điển và rau kèm vào dùng ngay.",
+    "💡 7. Mẹo nhỏ: Không nấu cá quá lâu để giữ độ béo và không bị nát. Bông điên điển chỉ nhúng tái để giữ độ giòn và mùi thơm đặc trưng.",
+    "Nguồn: VTC News"
+  ],
+  "time": "40 phút"
+},
+{
+  "id": 56,
+  "name": "Cơm trái dừa Bến Tre",
+  "image": "https://tuyhoafoods.vn/wp-content/uploads/2024/03/image-45.png",
+  "description": "Món ăn độc đáo với gạo ngon được nấu trực tiếp trong gáo dừa xiêm, thấm đẫm vị ngọt thanh của nước dừa và hương thơm béo ngậy từ cơm dừa non.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Gạo trắng (loại dẻo thơm, hạt mẩy): 300g",
+    "Dừa xiêm tươi (loại gáo lớn, nước ngọt): 1-2 trái",
+    "Nguyên liệu bổ sung (tùy chọn): Cà rốt, nấm hương, bắp, đậu Hà Lan",
+    "Nước dừa tươi (lấy từ chính trái dừa)",
+    "Nguồn: TuyhoaFoods"
+  ],
+  "steps": [
+    "🥥 1. Chuẩn bị trái dừa: Dừa xiêm gọt bỏ lớp vỏ xanh bên ngoài, tạo hình phẳng ở đáy để đứng vững. Cắt một phần trên đầu để làm nắp đậy, giữ lại nước dừa bên trong.",
+    "🌾 2. Sơ chế gạo: Chọn gạo ngon, vo sạch rồi ngâm nước khoảng 1-2 tiếng cho hạt gạo nở mềm, sau đó để ráo nước.",
+    "🥣 3. Cho gạo vào dừa: Đổ gạo đã ngâm vào trong trái dừa (chừa khoảng trống để gạo nở). Nếu thích đa dạng hương vị, có thể trộn thêm các loại đậu hoặc nấm vào bước này.",
+    "💧 4. Canh nước dừa: Châm nước dừa tươi vào trái dừa sao cho vừa đủ. Đây là bước quan trọng nhất: nước quá nhiều sẽ gây nhão, quá ít sẽ khiến cơm bị khô cứng.",
+    "🔥 5. Nấu cơm (Hấp hoặc Nướng): Đậy nắp trái dừa lại. Có thể chọn cách hấp cách thủy trong nồi lớn hoặc đun trực tiếp trên lửa nhỏ.",
+    "⏲️ 6. Canh thời gian: Thời gian nấu kéo dài khoảng 1-2 tiếng tùy vào kích thước trái dừa. Khi ngửi thấy mùi thơm nức đặc trưng lan tỏa là cơm đã chín.",
+    "🍽️ 7. Thưởng thức: Ăn ngay khi còn nóng trong trái dừa để cảm nhận trọn vẹn vị ngọt, béo và thơm của nước dừa thấm vào từng hạt cơm dẻo.",
+    "Nguồn: TuyhoaFoods"
+  ],
+  "time": "120 phút"
+},
+{
+  "id": 57,
+  "name": "Nem rán truyền thống",
+  "image": "https://cdn.tgdd.vn/2022/10/CookDish/cach-lam-mon-nem-ran-thom-ngon-chuan-vi-don-gian-tai-nha-avt-1200x676.jpg",
+  "description": "Món ăn quốc hồn quốc túy với lớp vỏ đa nem giòn rụm, phần nhân thịt băm hòa quyện cùng mộc nhĩ, miến và rau củ, chấm kèm nước mắm chua ngọt tinh tế.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Thịt nạc vai heo: 200g",
+    "Miến: 100g, Mộc nhĩ: 15g",
+    "Trứng gà: 3 quả (lấy lòng đỏ trộn nhân, lòng trắng dán mép)",
+    "Bánh đa nem (loại mềm): 1 gói",
+    "Rau củ: Giá đỗ, hành tây, cà rốt, hành lá, rau mùi",
+    "Gia vị: Nước mắm, chanh, tỏi, ớt, đường, hạt nêm, tiêu xay",
+    "Dầu ăn",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🔪 1. Sơ chế nhân: Thịt heo băm nhuyễn. Mộc nhĩ ngâm nở, băm nhỏ. Miến chần sơ rồi cắt đoạn ngắn. Cà rốt, hành tây thái sợi. Giá đỗ rửa sạch, vắt kiệt nước để nhân không bị ra nước làm rách bánh.",
+    "🧂 2. Trộn nhân: Cho tất cả nguyên liệu vào tô lớn cùng lòng đỏ trứng, đường, hạt nêm và tiêu xay. Trộn đều và để thấm trong 15 phút.",
+    "🌯 3. Cuốn nem: Trải bánh đa nem, lau sơ nước cho mềm. Cho lượng nhân vừa đủ vào đầu lá nem, cuộn chắc tay và gấp hai đầu lại. Dùng lòng trắng trứng bôi vào mép cuối để cố định cuốn nem.",
+    "🔥 4. Chiên nem lần 1: Đun nóng dầu (ngập nem), hạ lửa nhỏ và thả nem vào chiên sơ đến khi lớp vỏ hơi cứng lại thì vớt ra để ráo dầu.",
+    "🍳 5. Chiên vàng: Trước khi ăn, chiên lại lần 2 ở lửa lớn hoặc dùng nồi chiên không dầu (200°C trong 6-7 phút) để vỏ nem đạt độ giòn tan và có màu vàng ươm đẹp mắt.",
+    "🍯 6. Pha nước chấm: Đun sôi hỗn hợp nước mắm, đường, nước lọc theo tỷ lệ 1:1:3. Khi ăn thêm nước cốt chanh, tỏi ớt băm và rau mùi thái nhỏ vào khuấy đều.",
+    "🍽️ 7. Thưởng thức: Ăn kèm với bún tươi hoặc cơm nóng, xà lách và các loại rau thơm. Vị giòn của vỏ hòa cùng vị đậm đà của nhân tạo nên sức hấp dẫn khó cưỡng.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "60 phút"
+},
+{
+  "id": 58,
+  "name": "Bánh Pía Sóc Trăng",
+  "image": "https://cdn.tgdd.vn/2021/04/CookProduct/thumbbanhpia-1200x676.jpg",
+  "description": "Món bánh đặc sản trứ danh của Sóc Trăng với lớp vỏ mềm dẻo, nhân đậu xanh ngọt bùi, thơm nồng hương vani, mang đậm nét văn hóa ẩm thực vùng sông nước.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Bột nếp: 400g",
+    "Đậu xanh (đã ngâm nở): 200g",
+    "Đường cát: 150g",
+    "Dầu ăn: 2 muỗng canh",
+    "Nước nóng (80-90°C): 200ml",
+    "Vani: 1/2 ống (tùy chọn)",
+    "Muối: 1/2 muỗng cà phê",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "steps": [
+    "🫘 1. Chế biến nhân: Đậu xanh sau khi ngâm nở đem hấp chín mềm, sau đó tán hoặc xay thật nhuyễn mịn.",
+    "🍯 2. Sên nhân: Đun tan đường với chút nước, cho đậu xanh vào khuấy đều cùng vani. Sên đến khi hỗn hợp dẻo mịn, đặc lại và không dính nồi thì tắt bếp, để nguội rồi vo thành viên nhỏ (khoảng 15g).",
+    "🥣 3. Nhào bột vỏ: Trộn bột nếp với dầu ăn. Rót từ từ nước nóng vào bột, nhào đều tay cho đến khi khối bột mềm dẻo, đồng nhất. Để bột nghỉ khoảng 20 phút.",
+    "🥯 4. Tạo hình bánh: Chia bột vỏ thành các viên nhỏ bằng phần nhân. Cán mỏng lớp vỏ, đặt viên nhân vào giữa rồi gói kín lại, tạo hình tròn hoặc vuông tùy ý.",
+    "🔥 5. Hấp bánh: Xếp bánh vào khay (có phết lớp dầu ăn mỏng để chống dính). Hấp cách thủy trong khoảng 15 - 20 phút cho đến khi vỏ bánh chuyển màu trong và chín đều.",
+    "🍽️ 6. Thưởng thức: Bánh Pía sau khi hấp có độ dẻo thơm, vị ngọt thanh. Thưởng thức cùng một tách trà nóng là sự kết hợp tuyệt vời nhất.",
+    "Nguồn: Thế Giới Di Động"
+  ],
+  "time": "75 phút"
+},
+{
+  "id": 59,
+  "name": "Gỏi đu đủ tai heo",
+  "image": "https://static-images.vnncdn.net/files/publish/2023/1/5/goi-du-du-1-850.jpg?width=0&s=K0yaRYJ7tA9SMrIJI2-DNw",
+  "description": "Món nộm thanh mát với sợi đu đủ xanh giòn sần sật, tai heo dai giòn và tôm tươi ngọt thịt, hòa quyện cùng nước mắm chua ngọt đậm đà và lạc rang thơm bùi.",
+  "categoryId": 3,
+  "userId": 2,
+  "ingredients": [
+    "Đu đủ xanh: 1 quả",
+    "Tai heo: 1 cái",
+    "Tôm tươi: 200g",
+    "Cà rốt: 1 củ",
+    "Lạc (đậu phộng) rang",
+    "Rau mùi, tỏi, ớt, chanh",
+    "Gia vị: Nước mắm, đường, muối, giấm, bột ngọt",
+    "Nguồn: Vietnamnet"
+  ],
+  "steps": [
+    "🥕 1. Sơ chế rau củ: Đu đủ gọt vỏ, ngâm nước 15 phút cho sạch mủ rồi bào sợi. Cà rốt bào sợi. Trộn đu đủ và cà rốt với 1 muỗng muối, bóp nhẹ để ra bớt nước giúp nguyên liệu giòn hơn.",
+    "🦐 2. Chế biến tôm: Tôm rửa sạch, luộc chín rồi bóc vỏ, bỏ chỉ lưng. Dùng dao chẻ dọc thân tôm làm đôi để khi trộn dễ thấm gia vị và đẹp mắt hơn.",
+    "🐷 3. Chế biến tai heo: Rửa tai heo với muối và chanh để khử mùi. Luộc tai heo cùng muối, hạt nêm và chút giấm cho trắng. Khi chín vớt ra ngâm ngay vào nước đá để giữ độ giòn rồi thái miếng mỏng.",
+    "🍯 4. Pha nước mắm: Khuấy đều hỗn hợp gồm 3 muỗng nước mắm, 3 muỗng đường, nước cốt 2 quả chanh, bột ngọt, tỏi ớt băm và 1 chén nhỏ nước lọc cho tan hoàn toàn.",
+    "🥗 5. Trộn gỏi: Cho đu đủ, cà rốt, tai heo và tôm vào tô lớn. Rưới nước mắm đã pha vào và trộn đều tay để các nguyên liệu thấm đẫm vị chua cay mặn ngọt.",
+    "🍽️ 6. Hoàn thiện: Gắp gỏi ra đĩa, trang trí thêm rau mùi, vài lát ớt và rắc lạc rang giã dập lên trên. Thưởng thức kèm bánh phồng tôm là chuẩn vị nhất.",
+    "Nguồn: Vietnamnet"
+  ],
+  "time": "45 phút"
+},
+{
+  "id": 60,
+  "name": "Chè thập cẩm",
+  "image": "https://cdnv2.tgdd.vn/bhx-static/bhx/production/2026/3/image/News/Images/2021/05/28/1355352/image1_202603162329056805.jpg",
+  "description": "Sự kết hợp tinh tế giữa các loại đậu bùi béo, cốm xanh thơm nồng và các loại topping như nho khô, dừa khô, tạo nên món tráng miệng đa dạng hương vị và màu sắc.",
+  "categoryId": 1,
+  "userId": 2,
+  "ingredients": [
+    "Đậu đen, đậu đỏ, đậu xanh: mỗi loại 100g",
+    "Cốm xanh: 100g",
+    "Bột năng: 4 muỗng canh",
+    "Đường cát: 400g",
+    "Nước cốt dừa: 20g",
+    "Topping: Nho khô, dừa khô, đậu phộng rang, rau câu",
+    "Gia vị: Muối",
+    "Nguồn: Bách Hóa Xanh"
+  ],
+  "steps": [
+    "🫘 1. Sơ chế đậu: Ngâm đậu đen, đậu đỏ và đậu xanh từ 6 - 8 tiếng cho mềm để khi nấu nhanh chín và không bị sượng. Sau đó vớt ra vo sạch, để ráo.",
+    "🌾 2. Chuẩn bị cốm và bột: Cốm xanh vo sạch, để ráo. Hòa tan bột năng với 100ml nước lạnh để tránh bị vón cục khi nấu.",
+    "🔥 3. Nấu các loại đậu: Chia 3 loại đậu vào 3 nồi riêng, nấu chín mềm trong khoảng 30-40 phút. Với đậu xanh, thêm đường và nước bột năng vào khuấy đều cho sánh lại rồi tắt bếp.",
+    "🍯 4. Sên đường cho đậu: Với đậu đen và đậu đỏ, sau khi chín thì chắt nước riêng, cho hạt đậu vào chảo sên cùng đường khoảng 2 phút để hạt đậu ngấm vị ngọt đậm đà, sau đó mới cho nước đậu vào lại.",
+    "🍀 5. Nấu chè cốm: Đun sôi cốm với 500ml nước và chút muối trong 15-20 phút. Khi cốm chín, thêm đường và phần nước bột năng còn lại vào khuấy đều đến khi hỗn hợp sánh mịn.",
+    "✨ 6. Trình bày: Cho đá bào vào ly, lần lượt múc chè đậu đen, đậu đỏ, đậu xanh và chè cốm vào. Thêm rau câu, nho khô, dừa khô và đậu phộng lên trên cùng.",
+    "🍽️ 7. Thưởng thức: Rưới nước cốt dừa béo ngậy lên trên. Trộn đều các lớp để cảm nhận vị ngọt thanh, bùi béo và độ dai giòn từ các loại topping.",
+    "Nguồn: Bách Hóa Xanh"
+  ],
+  "time": "80 phút"
+}
   ]
 }
