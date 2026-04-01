@@ -2443,36 +2443,6 @@
   "time": "60 phút"
 },
 {
-  "id": 47,
-  "name": "Cao lầu",
-  "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Bc7Thnhphm17-1678700338-1698-1678700377.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=o7clU_ZnQXrsGyaxyVAwtw",
-  "description": "Món mì trứ danh của Hội An với sợi mì vàng đục dai giòn đặc trưng, thịt xá xíu đậm đà, ăn kèm ram chiên phồng và nước nhưn ngọt mặn hài hòa.",
-  "categoryId": 2,
-  "userId": 2,
-  "ingredients": [
-    "Thịt nạc dăm hoặc ba chỉ: 600g",
-    "Sợi cao lầu tươi hoặc khô",
-    "Ram cao lầu (miếng vuông chiên giòn)",
-    "Xương lợn (ninh lấy nước dùng): 600g",
-    "Gia vị xíu thịt: Ngũ vị hương, nước tương, đường, dầu màu điều, hạt tiêu, ớt bột",
-    "Hành khô, tỏi",
-    "Rau ăn kèm: Rau húng, giá đỗ, rau cải con, xà lách",
-    "Tương ớt Hội An, ớt xiêm xanh, chanh",
-    "Nguồn: VnExpress"
-  ],
-  "steps": [
-    "🥩 1. Sơ chế thịt: Thịt cắt thớ dài dọc, rửa sạch. Hành tỏi giã nhuyễn vắt lấy nước cốt để ướp thịt cho nhanh thấm và không bị cháy khi chiên, giữ lại xác hành tỏi để phi thơm.",
-    "🧂 2. Tẩm ướp: Ướp thịt với ngũ vị hương, nước tương, đường, dầu màu điều, muối, hạt nêm và tiêu. Để thịt thấm vị tối thiểu 2 - 3 giờ hoặc để ngăn mát tủ lạnh qua đêm.",
-    "🔥 3. Chiên và xíu thịt: Áp chảo thịt cho vàng đều hai mặt. Phi thơm xác hành tỏi, cho thịt và nước sốt ướp vào cùng nước dùng xương. Đun lửa liu riu khoảng 40 - 50 phút cho thịt mềm và thấm vị.",
-    "🥣 4. Làm nước nhưn: Khi thịt gần chín, chắt một phần nước xíu ra riêng để làm nước chan (nước nhưn). Phần thịt còn lại tiếp tục xíu đến khi nước keo lại, thịt lên màu nâu đỏ đẹp mắt thì để nguội và cắt lát mỏng.",
-    "🥨 5. Chuẩn bị cao lầu: Chiên phồng các miếng ram vuông. Sợi cao lầu nếu khô thì ngâm nở rồi trụng nước sôi cho mềm, trộn chút dầu cho mướt.",
-    "🍜 6. Trình bày: Cho giá đỗ trụng dưới đáy tô, thêm sợi cao lầu và thịt xíu lên trên. Rưới nước nhưn đậm đà, thêm ram chiên giòn.",
-    "🍽️ 7. Thưởng thức: Ăn kèm rau húng, cải con, tương ớt Hội An và ớt xiêm xanh để cảm nhận trọn vẹn phong vị phố Hội.",
-    "Nguồn: VnExpress"
-  ],
-  "time": "120 phút"
-},
-{
   "id": 48,
   "name": "Gỏi cá Nam Ô",
   "image": "https://cdn.tgdd.vn/2021/08/CookProduct/Duanmoi-1200x676-1.jpg",
