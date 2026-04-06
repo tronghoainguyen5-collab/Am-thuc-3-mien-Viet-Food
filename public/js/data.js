@@ -12,7 +12,7 @@ const defaultData = {
     ],
     "recipes": [
     // --- MIỀN BẮC (categoryId: 1) - Tổng ~35 views ---
-    { "id": 1, "name": "Phở Bò Hà Nội", "image": "https://i1-giadinh.vnecdn.net/2021/11/17/Pho-bo-Ha-Noi-7-vnexpress-1763-7388-9585-1763372391.jpg", "categoryId": 1, "views": 8 },
+    { "id": 1, "name": "Phở Bò Hà Nội", "image": "public/image/image1/id1.png", "categoryId": 1, "views": 8 },
     { "id": 2, "name": "Bún Chả Hà Nội", "image": "https://unicef.org.vn/wp-content/uploads/2023/10/bun-cha-ha-noi.jpeg", "categoryId": 1, "views": 5 },
     { "id": 3, "name": "Bún Đậu Mắm Tôm", "image": "https://unicef.org.vn/wp-content/uploads/2023/10/bun-dau-mam-tom.jpeg", "categoryId": 1, "views": 7 },
     { "id": 4, "name": "Bánh Cuốn Thanh Trì", "image": "https://i1-giadinh.vnecdn.net/2021/11/17/Banh-cuon-Thanh-Tri-7-vnexpress-1763-8270-3622-1763372439.jpg", "categoryId": 1, "views": 2 },
