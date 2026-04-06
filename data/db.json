@@ -1,23 +1,5 @@
 {
-  "users": [
-    {
-      "id": "1092",
-      "fullname": "Bạch Công Tuấn Anh",
-      "email": "anhbach03456@gmail.com",
-      "password":"333333",
-      "role": "Admin",
-      "status": "Active",
-      "avatar": "https://i.pravatar.cc/150?u=1092"
-    },
-    {
-      "id": "1093",
-      "fullname": "Nguyễn Thu",
-      "email": "thunguyen@gmail.com",
-      "role": "Member",
-      "status": "Active",
-      "avatar": "https://i.pravatar.cc/150?u=1093"
-    }
-  ],
+  "users": [],
 
   "categories": [
     { "id": 1, "name": "Miền Bắc" },
@@ -38,7 +20,7 @@
   
   "recipes": [
     {
-      "id": 1,
+      "_id": 1,
       "name": "Phở bò Hà Nội",
       "image": "https://i1-giadinh.vnecdn.net/2025/11/17/Pho-bo-Ha-Noi-7-vnexpress-1763-7388-9585-1763372391.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=cRAvOOkCczbiWO2YXqGWTg",
       "description": "Món ăn truyền thống nổi tiếng miền Bắc", 
@@ -85,7 +67,7 @@
       "time": "60 phút"
     },
     {
-      "id": 2,
+      "_id": 2,
       "name": "Bún chả Hà Nội",
       "image": "https://i1-giadinh.vnecdn.net/2023/04/16/Buoc-11-Thanh-pham-11-7068-1681636164.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=3BwD1Zud1vWE1jRJYrvvmw",
       "description": "Món nướng thơm ngon đặc trưng miền Bắc",
@@ -178,7 +160,7 @@
     },
 
     {
-      "id": 3,
+      "_id": 3,
       "name": "Bún bò Huế",
       "image": "https://static.vinwonders.com/production/bun-bo-hue-ngon-o-sai-gon-1.jpg",
       "description": "Đậm đà cay nồng miền Trung",
@@ -253,7 +235,7 @@
       "time": "60 phút"
     },
     {
-      "id": 4,
+      "_id": 4,
       "name": "Mì Quảng",
       "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-2196-1665132014.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=VaH1_0MH2V-TOHFydBl9DQ",
       "description": "Món ăn nổi tiếng Quảng Nam",
@@ -326,7 +308,7 @@
     },
 
     {
-      "id": 5,
+      "_id": 5,
       "name": "Cơm tấm sườn bì chả",
       "image": "https://sakos.vn/wp-content/uploads/2024/09/bia.jpg",
       "description": "Món ăn quen thuộc miền Nam",
@@ -416,7 +398,7 @@
       "time": "30 phút"
     },
     {
-      "id": 6,
+      "_id": 6,
       "name": "Hủ tiếu Nam Vang",
       "image": "https://i1-giadinh.vnecdn.net/2023/05/15/Buoc-8-Thanh-pham-1-8-8366-1684125654.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=qDCDua07MoEIbJ4Mdk0isw",
       "description": "Món nước nổi tiếng miền Nam",
@@ -499,7 +481,7 @@
       "time": "35 phút"
     },
 {
-  "id": 7,
+  "_id": 7,
   "name": "Bún mắm",
   "image": "https://www.huongnghiepaau.com/wp-content/uploads/2024/09/hoc-cach-lam-bun-mam-mien-tay.jpg",
   "description": "Đặc sản miền Tây đậm đà",
@@ -591,7 +573,7 @@
   "time": "45 phút"
 },
 {
-  "id": 8,
+  "_id": 8,
   "name": "Cá kho tộ",
   "image": "https://cdnv2.tgdd.vn/mwg-static/common/Common/05052025%20-%202025-05-09T154044.858.jpg",
   "description": "Món cá kho đậm đà, màu nâu cánh gián, vị mặn ngọt đặc trưng miền Tây",
@@ -656,7 +638,7 @@
   "time": "60 phút"
 },
 {
-  "id": 9,
+  "_id": 9,
   "name": "Lẩu mắm",
   "image": "https://cdn.tgdd.vn/Files/2019/12/13/1226519/cach-nau-lau-mam-ngon-dam-vi-tru-danh-mien-tay-201912131424309726.jpg",
   "description": "Món lẩu đặc trưng miền Tây với vị mắm đậm đà, ăn kèm đa dạng rau và hải sản",
@@ -735,7 +717,7 @@
   "time": "120 phút"
 },
 {
-  "id": 10,
+  "_id": 10,
   "name": "Bánh xèo",
   "image": "https://i1-giadinh.vnecdn.net/2023/09/19/Buoc-10-Thanh-pham-1-1-5225-1695107554.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=w2NSjDRK5L-CXyoFHF9ygw",
   "description": "Bánh xèo miền Tây giòn rụm, nhân đầy tôm, thịt, giá, ăn kèm rau sống và nước chấm đậm đà",
@@ -811,7 +793,7 @@
   "time": "60 phút"
 },
 {
-  "id": 11,
+  "_id": 11,
   "name": "Gỏi cuốn",
   "image": "https://i.ytimg.com/vi/w34Qnc-9KBU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAzXE6ASDMpVme1qsjbkQx4v-KaYA",
   "description": "Gỏi cuốn tươi ngon với tôm, thịt, bún và rau sống, nước chấm chua ngọt chuẩn miền Nam",
@@ -871,7 +853,7 @@
   "time": "50 phút"
 },
 {
-  "id": 12,
+  "_id": 12,
   "name": "Bò kho",
   "image": "https://i.ytimg.com/vi/xfmNh564j1I/maxresdefault.jpg",
   "description": "Bò kho mềm thơm, nước dùng đậm đà, ăn kèm bánh mì hoặc bún, chuẩn vị miền Nam",
@@ -942,7 +924,7 @@
   "time": "90 phút"
 },
 {
-  "id": 13,
+  "_id": 13,
   "name": "Canh chua cá lóc",
   "image": "https://i1-giadinh.vnecdn.net/2023/04/25/Thanh-pham-1-1-7239-1682395675.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=ESfJ2TFAlck0kXhPfOIkxQ",
   "description": "Canh chua cá thơm mát, vị chua thanh, ăn cùng cơm nóng, chuẩn miền Nam",
@@ -1011,7 +993,7 @@
   "time": "50 phút"
 },
 {
-  "id": 14,
+  "_id": 14,
   "name": "Chuối nếp nướng",
   "image": "https://i1-giadinh.vnecdn.net/2022/03/17/Thanh-pham-1-1-3717-1647494727.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=_XEfKOSF-Q4kv0BlDR7h3A",
   "description": "Chuối nếp nướng thơm bùi, nhân chuối ngọt, ăn kèm nước cốt dừa béo, chuẩn miền Nam",
@@ -1065,7 +1047,7 @@
   "time": "60 phút"
 },
 {
-  "id": 15,
+  "_id": 15,
   "name": "Chả cá Lã Vọng",
   "image": "https://cdn.xanhsm.com/2025/01/20fafb8e-cha-ca-la-vong-hcm-1.jpg",
   "description": "Món cá nướng vàng thơm, ăn kèm bún, rau thơm và mắm tôm đặc trưng Hà Nội",
@@ -1137,7 +1119,7 @@
   "time": "120 phút"
 },
 {
-  "id": 16,
+  "_id": 16,
   "name": "Bún đậu mắm tôm",
   "image": "https://i1-giadinh.vnecdn.net/2025/05/16/Bun-dau-mam-tom-6-vnexpress-17-9082-8722-1747388531.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=IEeLFY3qNxgwyUKtXbA15A",
   "description": "Bún trắng dân dã + đậu rán giòn + chả cốm + chân giò + nem rán + mắm tôm cay nồng – món vỉa hè Hà Nội",
@@ -1194,7 +1176,7 @@
   "time": "80 phút"
 },
 {
-  "id": 17,
+  "_id": 17,
   "name": "Bún mọc dọc mùng",
   "image": "https://i1-giadinh.vnecdn.net/2022/07/14/Buoc-8-8-2030-1657791673.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=xN8pHObJqJ10ERPXRdcM8Q",
   "description": "Món bún thanh mát miền Bắc, dọc mùng giòn giòn, mọc viên dai ngon, nước dùng ngọt từ xương heo ninh kỹ, đặc trưng Hà Nội mùa hè",
@@ -1273,7 +1255,7 @@
   "time": "360 phút (chủ yếu ninh nước dùng)"
 },
 {
-  "id": 18,
+  "_id": 18,
   "name": "Bún cá rô đồng",
   "image": "https://poliva.vn/wp-content/uploads/2019/10/bun-ca-ro-dong-5-1.jpg",
   "description": "Bún cá rô đồng chiên giòn, nước dùng chua ngọt từ dứa + me, topping rau sống, món dân dã miền Bắc Hà Nội",
@@ -1338,7 +1320,7 @@
   "time": "90 phút"
 },
 {
-  "id": 19,
+  "_id": 19,
   "name": "Cá kho làng Vũ Đại",
   "image": "https://i-giadinh.vnecdn.net/2023/11/14/Bc5Thnhphm5-1699955005-4166-1699955007.jpg",
   "description": "Đặc sản Ninh Bình/Hà Nam nổi tiếng toàn quốc: cá trắm đen kho niêu đất bằng củi nhãn, thịt cá săn chắc, xương rục mềm, nước sốt sền sệt đậm đà từ nước mắm cốt + riềng + nước cốt chua, thơm mùi khói bếp dân dã",
@@ -1407,7 +1389,7 @@
   "time": "960-1440 phút (16-24 giờ, chủ yếu kho chậm lửa nhỏ)"
 },
 {
-  "id": 20,
+  "_id": 20,
   "name": "Chả mực Hạ Long",
   "image": "https://static.vinwonders.com/production/cha-muc-ha-long-02.jpg",
   "description": "Đặc sản Quảng Ninh miền Bắc: chả mực giã tay dai giòn, thơm mùi biển, chiên vàng giòn tan, ăn kèm mắm tỏi ớt hoặc bánh cuốn",
@@ -1473,7 +1455,7 @@
   "time": "180 phút (bao gồm giã tay và chiên)"
 },
 {
-  "id": 21,
+  "_id": 21,
   "name": "Xôi xéo",
   "image": "https://i1-giadinh.vnecdn.net/2024/10/04/Buoc-6-Thanh-pham-1-6-6125-1728034330.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=XVMXn6k4p80p6L5dOuG30A",
   "description": "Món xôi sáng dân dã Hà Nội: xôi nếp cái hoa vàng dẻo thơm, lớp đậu xanh bùi mịn xéo lên trên, rắc hành phi mỡ gà vàng giòn – chuẩn vị Phú Thượng, Yến, Nguyễn Trãi",
@@ -1532,7 +1514,7 @@
   "time": "120-150 phút (bao gồm ngâm và hấp)"
 },
 {
-  "id": 22,
+  "_id": 22,
   "name": "Cao lầu Hội An",
   "image": "https://i1-giadinh.vnecdn.net/2023/03/13/Buoc-7-Thanh-pham-1-7-9577-1678700377.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=UC5N8qQry0_qcAfn2PvYSA",
   "description": "Món đặc trưng Hội An: sợi mì dai giòn từ nước giếng Bá Lễ, thịt heo quay, rau sống, tóp mỡ, nước dùng ít nhưng đậm",
@@ -1613,7 +1595,7 @@
   "time": "300 phút"
 },
 {
-  "id": 23,
+  "_id": 23,
   "name": "Bánh ram ít Huế",
   "image": "https://cdn.tgdd.vn/2021/02/CookProduct/banhramitHue-1200x676-1.jpg",
   "description": "Món bánh đặc sản Huế: lớp ram giòn tan từ bột nếp chiên, lớp ít dẻo nhân tôm thịt mặn ngọt, ăn kèm mắm ruốc cay nồng – chuẩn vị cố đô",
@@ -1700,7 +1682,7 @@
   "time": "180 phút"
 },
 {
-  "id": 24,
+  "_id": 24,
   "name": "Bánh ướt thịt nướng Đà Nẵng",
   "image": "https://static.vinwonders.com/production/banh-uot-da-nang-06.jpg",
   "description": "Món ăn vặt Đà Nẵng: bánh ướt mỏng dai, thịt heo nướng thơm lừng, hành phi mỡ, rau sống, chấm mắm nêm cay nồng",
@@ -1752,7 +1734,7 @@
   "time": "150 phút"
 },
 {
-  "id": 25,
+  "_id": 25,
   "name": "Cơm hến Huế",
   "image": "https://nethue.com.vn/uploaded/Tin%20tuc/tin-tuc-nguongoc-1.jpg",
   "description": "Món cơm đặc sản Huế: cơm nguội trộn hến xào, tóp mỡ, đậu phộng, rau thơm, nước mắm ruốc cay – mát lạnh mùa hè",
@@ -1800,7 +1782,7 @@
   "time": "120 phút"
 },
 {
-  "id": 26,
+  "_id": 26,
   "name": "Bánh khoái Huế",
   "image": "https://huesmiletravel.com.vn/wp-content/uploads/2019/07/banh-khoai.jpg",
   "description": "Bánh khoái Huế: bánh giòn nhỏ hơn bánh xèo, nhân tôm thịt, đậu xanh, ăn kèm rau sống và mắm ruốc cay",
@@ -1843,7 +1825,7 @@
   "time": "100 phút"
 },
 {
-  "id": 27,
+  "_id": 27,
   "name": "Bánh bột lọc",
   "image": "https://aeonmall-review-rikkei.cdn.vccloud.vn/website/21/articles/July2025/99f0b0d1-a46e-4d52-be0a-8580aec4cf59.jpg",
   "description": "Bánh bột lọc trong suốt Huế: vỏ dai giòn, nhân tôm thịt rim mặn ngọt, gói lá chuối hấp hoặc luộc, chấm mắm ớt cay",
@@ -1882,7 +1864,7 @@
   "time": "120 phút"
 },
 {
-  "id": 28,
+  "_id": 28,
   "name": "Bánh nậm",
   "image": "https://ticotravel.com.vn/wp-content/uploads/2022/05/banh-nam-hue-9.jpg",
   "description": "Bánh nậm Huế: bánh mỏng dẹt từ bột gạo, nhân tôm thịt băm, gói lá chuối hấp, ăn kèm mắm ruốc",
@@ -1930,7 +1912,7 @@
   "time": "90 phút"
 },
 {
-  "id": 29,
+  "_id": 29,
   "name": "Bánh ít lá gai",
   "image": "https://mia.vn/media/uploads/blog-du-lich/banh-it-la-gai-binh-dinh-4-1679331850.jpg",
   "description": "Bánh ít lá gai đặc sản Bình Định: vỏ xanh đen từ lá gai giã, nhân đậu xanh dừa ngọt, gói lá chuối hấp dẻo thơm",
@@ -1969,7 +1951,7 @@
   "time": "180 phút"
 },
 {
-  "id": 30,
+  "_id": 30,
   "name": "Gỏi cá Nam Ô",
   "image": "https://photo.znews.vn/w660/Uploaded/pgi_cuhpguvau/2019_04_21/thiennguyen1012.jpg",
   "description": "Món gỏi đặc sản Nam Ô Đà Nẵng: cá thu tươi cuốn bánh tráng với rau sống, chuối xanh, khế chua, chấm mắm nêm cay nồng – tươi mát, lạ miệng",
@@ -2006,7 +1988,7 @@
   "time": "90 phút"
 },
 {
-  "id": 31,
+  "_id": 31,
   "name": "Bánh cuốn",
   "image": "https://i1-giadinh.vnecdn.net/2021/08/06/nh1-1628234036-6076-1628234126.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=HoYF-CVCJmTS82af8RL0aQ",
   "description": "Bánh cuốn làm từ bánh tráng mềm mướt, nhân thịt băm mộc nhĩ đậm đà, ăn kèm hành phi và nước mắm chua ngọt.",
@@ -2036,7 +2018,7 @@
   "time": "45 phút"
 },
 {
-  "id": 32,
+  "_id": 32,
   "name": "Phở gà",
   "image": "https://i1-giadinh.vnecdn.net/2021/01/15/pho1-1610692656-2291-1610693117.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=nTN85xw2x3Vntk16OyVGLQ",
   "description": "Phở gà truyền thống với nước dùng thanh trong, thơm mùi hạt mùi, gừng nướng và thịt gà dai ngon, da vàng óng.",
@@ -2068,7 +2050,7 @@
   "time": "90 phút"
 },
 {
-  "id": 33,
+  "_id": 33,
   "name": "Cơm gà Hội An",
   "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=fSiuKQfCjNiGoPz8k46N-Q",
   "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
@@ -2097,7 +2079,7 @@
   "time": "75 phút"
 },
 {
-  "id": 34,
+  "_id": 34,
   "name": "Bún riêu cua",
   "image": "https://i1-giadinh.vnecdn.net/2021/12/17/Bc11-1639748576-8269-1639748607.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=qUrXdJRGkKiyCVpJjeK-_Q",
   "description": "Món bún dân dã với nước dùng chua thanh từ dấm bỗng, thịt cua đồng đóng tảng béo ngậy và màu đỏ tự nhiên từ cà chua, gạch cua.",
@@ -2127,7 +2109,7 @@
   "time": "90 phút"
 },
 {
-  "id": 35,
+  "_id": 35,
   "name": "Bánh đa cua Hải Phòng",
   "image": "https://i1-giadinh.vnecdn.net/2023/02/25/Bc12thnhphm12-1677318726-1841-1677318769.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=DlZvy2asRYb6fkfprjCvgA",
   "description": "Món ăn biểu tượng của đất Cảng với sợi bánh đa đỏ dai mềm, nước dùng đậm đà vị cua đồng, ăn kèm chả lá lốt, chả cá và tóp mỡ hành phi giòn rụm.",
@@ -2158,7 +2140,7 @@
   "time": "90 phút"
 },
 {
-  "id": 36,
+  "_id": 36,
   "name": "Thắng cố Hà Giang",
   "image": "https://ik.imagekit.io/tvlk/blog/2024/10/thang-co-cover-desktop.jpg?tr=q-70,c-at_max,w-500,h-250,dpr-2",
   "description": "Món ăn đặc trưng của đồng bào vùng cao Tây Bắc với hương vị độc đáo từ nội tạng bò ninh nhừ cùng các loại gia vị núi rừng như mắc khén, thảo quả, hoa hồi.",
@@ -2187,7 +2169,7 @@
   "time": "120 phút"
 },
 {
-  "id": 37,
+  "_id": 37,
   "name": "Thịt trâu gác bếp",
   "image": "https://cdn.tgdd.vn/2021/12/CookRecipe/CookTipsNote/thit-trau-gac-bep-la-gi-an-co-tot-khong-tipsnote-800x450-17.jpg",
   "description": "Đặc sản nức tiếng của vùng cao Tây Bắc với vị ngọt của thịt trâu tươi hòa quyện cùng mùi khói bếp đặc trưng và vị cay nồng từ mắc khén, hạt dổi.",
@@ -2214,7 +2196,7 @@
   "time": "720 phút"
 },
 {
-  "id": 38,
+  "_id": 38,
   "name": "Bún ốc",
   "image": "https://i1-giadinh.vnecdn.net/2022/08/06/Thnhphm22-1659778295-5035-1659778478.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=MNNda7JthI-SLOOhCpIq_A",
   "description": "Món bún tinh tế của người Hà Nội với nước dùng trong, vị chua thanh đặc trưng của giấm bỗng nếp, ốc nhồi béo giòn và màu đỏ nhẹ từ cà chua xào.",
@@ -2243,7 +2225,7 @@
   "time": "60 phút"
 },
 {
-  "id": 39,
+  "_id": 39,
   "name": "Nem chua rán",
   "image": "https://cdn.tgdd.vn/Files/2020/03/23/1243844/lam-nem-chua-ran-chien-xu-chuan-vi-ha-noi-tai-nha-202202241114056183.jpg",
   "description": "Món ăn vặt đường phố nức tiếng Hà Nội với lớp vỏ chiên xù giòn rụm, bên trong nhân thịt và bì heo dai giòn sần sật, thơm mùi thính gạo.",
@@ -2273,7 +2255,7 @@
   "time": "240 phút"
 },
 {
-  "id": 40,
+  "_id": 40,
   "name": "Bánh gai",
   "image": "https://cdn.tgdd.vn/2022/05/CookRecipe/GalleryStep/thanh-pham-31.jpg",
   "description": "Món bánh truyền thống với lớp vỏ đen bóng dẻo thơm mùi lá gai, nhân đậu xanh dừa bùi béo, hòa quyện tạo nên hương vị đặc trưng của làng quê miền Bắc.",
@@ -2302,7 +2284,7 @@
   "time": "120 phút"
 },
 {
-  "id": 42,
+  "_id": 42,
   "name": "Mì Quảng gà",
   "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-1238-1665132014.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=OtUz8nAFXK6yWDEYj7n1wg",
   "description": "Món ăn đặc trưng của miền Trung với sợi mì dai mướt, nước dùng đậm đà vàng ươm màu nghệ, quyện cùng thịt gà ta chắc ngọt, thịt ba chỉ béo ngậy và trứng cút thấm vị.",
@@ -2333,7 +2315,7 @@
   "time": "60 phút"
 },
 {
-  "id": 43,
+  "_id": 43,
   "name": "Gà bóp hành rau răm",
   "image": "https://i1-giadinh.vnecdn.net/2023/01/28/Thnhphm11-1674881647-1380-1674881658.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=FAowPdZLITHGzjFD3CGJ3Q",
   "description": "Món gỏi truyền thống miền Trung với thịt gà ta dai giòn, hành tây trắng trong không hăng, quyện cùng vị cay nồng của rau răm và ớt bột.",
@@ -2361,7 +2343,7 @@
   "time": "30 phút"
 },
 {
-  "id": 44,
+  "_id": 44,
   "name": "Rau muống xào tỏi",
   "image": "https://i1-giadinh.vnecdn.net/2024/06/20/Thnhphm11-1718869928-7526-1718870073.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=beESYNjuJ8qq2arO8qmhYw",
   "description": "Món ăn quốc dân giản dị với rau muống xanh mướt, giòn mềm, dậy mùi thơm nồng của tỏi phi và vị béo ngậy đặc trưng từ tóp mỡ xào bằng nồi đế dày.",
@@ -2387,7 +2369,7 @@
   "time": "15 phút"
 },
 {
-  "id": 45,
+  "_id": 45,
   "name": "Gà kho sả nghệ",
   "image": "https://i1-giadinh.vnecdn.net/2021/11/19/Thnhphm1-1637329120-4505-1637329124.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=mElqEmiDFMHfhGlVWvc6nA",
   "description": "Món gà kho đậm đà với màu vàng óng ả từ nghệ tươi, dậy mùi thơm nồng của sả gừng, nước sốt sánh quyện cực kỳ bắt cơm.",
@@ -2415,7 +2397,7 @@
   "time": "50 phút"
 },
 {
-  "id": 46,
+  "_id": 46,
   "name": "Cháo lươn Nghệ An",
   "image": "https://img-global.cpcdn.com/recipes/b62c051f7b90a2f9/600x852cq80/chao-l%C6%B0%C6%A1n-ngh%E1%BB%87-an-recipe-main-photo.webp",
   "description": "Món cháo đặc sản miền Trung với thịt lươn đồng dai ngọt, vàng óng màu nghệ, thơm nồng vị sả và tiêu, mang đến hương vị ấm nồng, bổ dưỡng.",
@@ -2443,7 +2425,7 @@
   "time": "60 phút"
 },
 {
-  "id": 48,
+  "_id": 48,
   "name": "Gỏi cá Nam Ô",
   "image": "https://cdn.tgdd.vn/2021/08/CookProduct/Duanmoi-1200x676-1.jpg",
   "description": "Món ăn đậm đà vị biển Đà Nẵng với thịt cá trích tươi rói, thấm đẫm nước mắm Nam Ô trứ danh, hòa quyện cùng vị bùi của đậu phộng và các loại rau rừng đặc trưng.",
@@ -2470,7 +2452,7 @@
   "time": "45 phút"
 },
 {
-  "id": 49,
+  "_id": 49,
   "name": "Bánh căn",
   "image": "https://img-global.cpcdn.com/recipes/9bf7b93b52ade46d/600x852f0.5_0.500105_1.0q80/banh-can-recipe-main-photo.webp",
   "description": "Món bánh nướng trong khuôn đất nung với lớp vỏ giòn rụm, thơm mùi trứng, ăn kèm mỡ hành béo ngậy và nước mắm cà chua thơm dịu đặc trưng.",
@@ -2501,7 +2483,7 @@
   "time": "90 phút"
 },
 {
-  "id": 50,
+  "_id": 50,
   "name": "Phở khô Gia Lai",
   "image": "https://bizweb.dktcdn.net/100/489/006/files/pho-kho-gia-lai-1.jpg?v=1698305557083",
   "description": "Đặc sản nức tiếng với sợi phở nhỏ dai, trộn cùng tương đen đặc chế, tóp mỡ, thịt băm và ăn kèm một tô nước dùng ngọt thanh từ xương bò.",
