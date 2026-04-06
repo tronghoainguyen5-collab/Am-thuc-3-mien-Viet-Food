@@ -128,7 +128,7 @@ recipeForm.onsubmit = async (e) => {
         const index = db.recipes.findIndex(r => r.id == id);
         db.recipes[index] = { ...db.recipes[index], name, categoryId: catId, image: imageData };
     } else {
-        db.recipes.push({
+        db.recipes.unshift({
             id: Date.now(),
             name,
             categoryId: catId,

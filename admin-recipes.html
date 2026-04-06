@@ -6,95 +6,177 @@
     <title>Quản lý công thức - VietStove Admin</title>
     <link rel="stylesheet" href="public/css/admin.css">
     <style>
-        /* Tối ưu giao diện Glassmorphism đặc trưng cho VietFood */
-        body { 
-            background: #0f172a; 
-            color: white; 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            margin: 0;
-        }
-        
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.85); 
-            backdrop-filter: blur(12px);
-            align-items: center; 
-            justify-content: center;
-        }
-        
-        .modal-content {
-            width: 90%;
-            max-width: 480px; 
-            padding: 30px; 
-            border-radius: 24px;
-            background: rgba(30, 41, 59, 0.95); 
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+        /* admin.css - Cập nhật cho trang Quản lý Công thức */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-        .input-group { margin-bottom: 18px; }
-        .input-group label { display: block; margin-bottom: 8px; color: #94a3b8; font-size: 14px; }
-        .input-group input, .input-group select {
-            width: 100%; 
-            padding: 12px; 
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1); 
-            border-radius: 12px; 
-            color: white;
-            box-sizing: border-box;
-            outline: none; 
-            transition: 0.3s;
-        }
-        .input-group input:focus, .input-group select:focus { 
-            border-color: #4facfe; 
-            box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2); 
-        }
+:root {
+    --primary: #ff6d1b;
+    --primary-glow: rgba(255, 109, 27, 0.3);
+    --bg-black: #080808;
+    --surface: rgba(20, 20, 22, 0.8);
+    --border: rgba(255, 255, 255, 0.08);
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+}
 
-        #imagePreviewContainer {
-            margin-top: 15px; 
-            text-align: center; 
-            padding: 10px; 
-            border: 1px dashed rgba(255,255,255,0.2); 
-            border-radius: 12px;
-            background: rgba(0,0,0,0.2);
-        }
-        #imagePreview {
-            max-width: 100%; 
-            max-height: 150px; 
-            border-radius: 8px; 
-            object-fit: cover;
-        }
+body { 
+    background-color: var(--bg-black);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(255, 109, 27, 0.08) 0px, transparent 40%),
+        radial-gradient(at 100% 100%, rgba(255, 109, 27, 0.03) 0px, transparent 40%);
+    color: var(--text-main); 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    margin: 0;
+    min-height: 100vh;
+}
 
-        .admin-profile-header {
-            display: flex; 
-            align-items: center; 
-            gap: 12px;
-            padding: 8px 16px; 
-            background: rgba(255,255,255,0.05);
-            border-radius: 50px; 
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .admin-profile-header img { 
-            width: 35px; 
-            height: 35px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-            border: 2px solid #4facfe; 
-        }
-        .admin-profile-header span { font-size: 14px; font-weight: 500; color: #e2e8f0; }
+/* --- MODAL STYLE --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(15px);
+    align-items: center; 
+    justify-content: center;
+    transition: var(--ease) 0.4s;
+}
 
-        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 25px; }
-        .btn-cancel { background: #334155; color: white; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; transition: 0.3s; }
-        .btn-cancel:hover { background: #475569; }
-        .btn-save { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; padding: 12px 25px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: 0.3s; }
-        .btn-save:hover { opacity: 0.9; transform: translateY(-1px); }
+.modal-content {
+    width: 90%;
+    max-width: 500px; 
+    padding: 40px; 
+    border-radius: 32px;
+    background: #121212; 
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 109, 27, 0.05);
+    transform: translateY(20px);
+    animation: modalShow 0.4s var(--ease) forwards;
+}
 
-        /* Scrollbar cho bảng */
-        .table-responsive { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+@keyframes modalShow {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- INPUTS --- */
+.input-group { margin-bottom: 20px; }
+.input-group label { 
+    display: block; 
+    margin-bottom: 10px; 
+    color: var(--text-muted); 
+    font-size: 13px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input, .input-group select {
+    width: 100%; 
+    padding: 14px 18px; 
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border); 
+    border-radius: 16px; 
+    color: white;
+    font-size: 15px;
+    outline: none; 
+    transition: 0.3s var(--ease);
+}
+
+.input-group input:focus, .input-group select:focus { 
+    border-color: var(--primary); 
+    background: rgba(255, 109, 27, 0.02);
+    box-shadow: 0 0 0 4px var(--primary-glow); 
+}
+
+/* --- IMAGE PREVIEW --- */
+#imagePreviewContainer {
+    margin-top: 15px; 
+    text-align: center; 
+    padding: 15px; 
+    border: 2px dashed var(--border); 
+    border-radius: 20px;
+    background: rgba(0,0,0,0.3);
+}
+
+#imagePreview {
+    max-width: 100%; 
+    max-height: 180px; 
+    border-radius: 12px; 
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* --- BUTTONS --- */
+.btn-save { 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    padding: 14px 30px; 
+    border-radius: 14px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.3s;
+    box-shadow: 0 8px 20px var(--primary-glow);
+}
+
+.btn-save:hover { 
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 12px 25px var(--primary-glow);
+}
+
+.btn-cancel { 
+    background: transparent; 
+    color: var(--text-muted); 
+    border: 1px solid var(--border); 
+    padding: 14px 25px; 
+    border-radius: 14px; 
+    cursor: pointer; 
+    font-weight: 600;
+}
+
+.btn-cancel:hover { 
+    background: rgba(255, 255, 255, 0.05); 
+    color: white; 
+}
+
+/* --- TABLE CUSTOMIZATION --- */
+.glass-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 30px;
+    backdrop-filter: blur(20px);
+}
+
+table th {
+    color: var(--primary) !important; /* Màu cam cho tiêu đề bảng */
+    font-weight: 700;
+}
+
+#recipeList tr td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+#recipeList tr:hover td {
+    background: rgba(255, 109, 27, 0.02);
+}
+
+/* --- UI TRANG TRÍ --- */
+.loading {
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
     </style>
 </head>
 <body>
@@ -117,10 +199,10 @@
             </div>
             
             <div style="display: flex; align-items: center; gap: 20px;">
-                <div class="admin-profile-header">
+                <!-- <div class="admin-profile-header">
                     <img id="adminAvatar" src="https://via.placeholder.com/35" alt="Avatar">
                     <span id="adminName">Bach Cong Tuan Anh</span>
-                </div>
+                </div> -->
                 <button class="btn btn-primary" onclick="openModal()" style="padding: 12px 24px; border-radius: 12px; background: #4facfe; border: none; color: white; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);">
                     + Thêm món mới
                 </button>
