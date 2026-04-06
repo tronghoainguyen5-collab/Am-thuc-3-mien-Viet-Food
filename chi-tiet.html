@@ -8,17 +8,35 @@
     </head>
     <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
-        <ul class="nav-links">
-            <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="mien.html?region=bac">Miền Bắc</a></li>
-            <li><a href="mien.html?region=trung">Miền Trung</a></li>
-            <li><a href="mien.html?region=nam">Miền Nam</a></li>
-            <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
-            <li><a href="lien-he.html">Liên Hệ</a></li>
-        </ul>
+
+<!-- NAVBAR -->
+ <nav class="navbar">
+    <img class="logo" src="./public/image/logo.jpg" alt="VietFood Logo">
+    <ul class="nav-links">
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li class="dropdown-parent">
+    <a href="#">Món Ngon <i class="fa fa-chevron-down"></i></a>
+
+    <ul class="dropdown-menu">
+        <li><a href="danh-muc.html?type=kho">Tất Cả</a></li>
+        <li><a href="danh-muc.html?type=kho">Kho</a></li>
+        <li><a href="danh-muc.html?type=chien">Chiên</a></li>
+        <li><a href="danh-muc.html?type=xao">Xào</a></li>
+        <li><a href="danh-muc.html?type=nuong">Nướng</a></li>
+        <li><a href="danh-muc.html?type=goi">Gỏi/Nộm</a></li>
+        <li><a href="danh-muc.html?type=canh">Canh/Súp</a></li>
+        <li><a href="danh-muc.html?type=hap">Hấp</a></li>
+        <li><a href="danh-muc.html?type=mon nuoc">Món Nước</a></li>
+        <li><a href="danh-muc.html?type=orther">Cách chế biến khác</a></li>
+    </ul>
+</li>
+        <li><a href="mien.html?region=bac">Miền Bắc</a></li>
+        <li><a href="mien.html?region=trung">Miền Trung</a></li>
+        <li><a href="mien.html?region=nam">Miền Nam</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+    </ul>
+
 
     <div class="nav-actions">
     <div class="auth-buttons">
@@ -43,33 +61,15 @@
         </li>
     </ul>
 </div>
-        <div class="nav-actions">
-        <div class="auth-buttons">
-            <div class="btn-login" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
-            <img src="./public/image/avatar.png" class="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
-            <span class="username">Đăng Nhập</span>
-            
-            <div class="dropdown user-dropdown">
-        <ul class="user-menu">
-            <li class="profile-link">
-                <i class="fa-solid fa-user"></i> Trang cá nhân
-            </li>
-            <li class="logout-link">
-                <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
-            </li>
-        </ul>
-    </div>
-        </div>
-
-        <a href="yeu-thich.html" class="btn-saved">
+</div>
+<a href="yeu-thich.html" class="btn-saved">
             <i class="fa-solid fa-bookmark"></i> Món ăn đã lưu
         </a>
 
         <a href="dang-ky.html" class="btn-register">Đăng Ký</a>
-    </div>
 
-    </div>
-
+    
+   </div>
         <!-- Toast -->
         <div id="toast" class="toast"></div>
     </nav>
