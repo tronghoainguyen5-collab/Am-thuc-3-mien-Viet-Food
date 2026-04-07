@@ -4315,6 +4315,7 @@
       "image": "https://cdn.tgdd.vn/2021/08/CookProduct/Duanmoi-1200x676-1.jpg",
       "description": "Món ăn đậm đà vị biển Đà Nẵng với thịt cá trích tươi rói, thấm đẫm nước mắm Nam Ô trứ danh, hòa quyện cùng vị bùi của đậu phộng và các loại rau rừng đặc trưng.",
       "categoryId": 2,
+      "type":"goi",
       "userId": 2,
       "ingredients": [
         "Cá trích tươi (hoặc cá thu, cá cơm): 500g",
@@ -4342,6 +4343,7 @@
       "image": "https://img-global.cpcdn.com/recipes/9bf7b93b52ade46d/600x852f0.5_0.500105_1.0q80/banh-can-recipe-main-photo.webp",
       "description": "Món bánh nướng trong khuôn đất nung với lớp vỏ giòn rụm, thơm mùi trứng, ăn kèm mỡ hành béo ngậy và nước mắm cà chua thơm dịu đặc trưng.",
       "categoryId": 2,
+      "type":"nuong",
       "userId": 2,
       "ingredients": [
         "Gạo (loại nở, xốp): 1kg",
@@ -4373,6 +4375,7 @@
       "image": "https://bizweb.dktcdn.net/100/489/006/files/pho-kho-gia-lai-1.jpg?v=1698305557083",
       "description": "Đặc sản nức tiếng với sợi phở nhỏ dai, trộn cùng tương đen đặc chế, tóp mỡ, thịt băm và ăn kèm một tô nước dùng ngọt thanh từ xương bò.",
       "categoryId": 2,
+      "type":"orther",
       "userId": 2,
       "ingredients": [
         "Sợi phở khô Gia Lai: 500g",
@@ -4402,6 +4405,7 @@
   "image": "https://cdn.tgdd.vn/2021/02/CookProduct/CACHLAMBANHKHOTVUNGTAUNGONTAINHADONGIANNHAT-CKK0-4screenshot-1200x675.jpg",
   "description": "Món bánh chiên vàng giòn rụm với vị béo ngậy đặc trưng từ nước cốt dừa, nhân hải sản tươi rói, ăn kèm rau sống và nước mắm chua ngọt đậm đà.",
   "categoryId": 3,
+  "type":"chien",
   "userId": 2,
   "ingredients": [
     "Bột bánh khọt: 200g",
@@ -4431,6 +4435,7 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/08/05/anhdaidien-1691221857-9943-1691221866.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=KZRGjdJmptImeOcmcXpQbw",
   "description": "Món ăn vặt đường phố nổi tiếng với sự kết hợp hài hòa giữa bánh tráng dai nhẹ, vị chua của xoài, bùi béo của trứng cút, đậu phộng và đậm đà từ khô bò, muối tôm.",
   "categoryId": 3,
+  "type":"orther",
   "userId": 2,
   "ingredients": [
     "Bánh tráng trắng: 200g",
@@ -4464,6 +4469,7 @@
   "image": "https://cdn.tgdd.vn/2021/08/CookRecipe/Avatar/hu-tieu-go-thumbnail.jpg",
   "description": "Món ăn đêm bình dân gắn liền với ký ức Sài Gòn, sở hữu nước dùng ngọt thanh từ xương heo và tôm khô, ăn kèm thịt heo thái mỏng, da heo béo ngậy và tóp mỡ thơm lừng.",
   "categoryId": 3,
+  "type":"mon-nuoc",
   "userId": 2,
   "ingredients": [
     "Sợi hủ tiếu dai: 300g",
@@ -4494,6 +4500,7 @@
   "image": "https://i-giadinh.vnecdn.net/2021/03/05/nh5-1614933205-3705-1614933598.jpg",
   "description": "Sự kết hợp hoàn hảo giữa thịt ba chỉ nướng vàng óng, chả viên đậm đà, ăn kèm bún tươi, đồ chua giòn rụm và nước mắm chua ngọt tinh tế.",
   "categoryId": 3,
+  "type":"nuong",
   "userId": 2,
   "ingredients": [
     "Thịt ba chỉ: 500g",
@@ -4522,6 +4529,7 @@
   "image": "https://file.hstatic.net/1000093072/file/lau_ca_linh_bong_dien_dien_1_61576883aeb64ebeb3a826efe37b237b_grande.jpeg",
   "description": "Đặc sản mùa nước nổi miền Tây với vị chua thanh từ me, vị ngọt béo tự nhiên của cá linh non hòa quyện cùng hương thơm đặc trưng của bông điên điển vàng rực.",
   "categoryId": 3,
+  "type":"orther",
   "userId": 2,
   "ingredients": [
     "Cá linh non tươi: 500g",
@@ -4551,6 +4559,7 @@
   "image": "https://tuyhoafoods.vn/wp-content/uploads/2024/03/image-45.png",
   "description": "Món ăn độc đáo với gạo ngon được nấu trực tiếp trong gáo dừa xiêm, thấm đẫm vị ngọt thanh của nước dừa và hương thơm béo ngậy từ cơm dừa non.",
   "categoryId": 3,
+  "type":"hap",
   "userId": 2,
   "ingredients": [
     "Gạo trắng (loại dẻo thơm, hạt mẩy): 300g",
@@ -4577,6 +4586,7 @@
   "image": "https://cdn.tgdd.vn/2022/10/CookDish/cach-lam-mon-nem-ran-thom-ngon-chuan-vi-don-gian-tai-nha-avt-1200x676.jpg",
   "description": "Món ăn quốc hồn quốc túy với lớp vỏ đa nem giòn rụm, phần nhân thịt băm hòa quyện cùng mộc nhĩ, miến và rau củ, chấm kèm nước mắm chua ngọt tinh tế.",
   "categoryId": 1,
+  "type":"chien",
   "userId": 2,
   "ingredients": [
     "Thịt nạc vai heo: 200g",
@@ -4606,6 +4616,7 @@
   "image": "https://cdn.tgdd.vn/2021/04/CookProduct/thumbbanhpia-1200x676.jpg",
   "description": "Món bánh đặc sản trứ danh của Sóc Trăng với lớp vỏ mềm dẻo, nhân đậu xanh ngọt bùi, thơm nồng hương vani, mang đậm nét văn hóa ẩm thực vùng sông nước.",
   "categoryId": 3,
+  "type":"orther",
   "userId": 2,
   "ingredients": [
     "Bột nếp: 400g",
@@ -4634,6 +4645,7 @@
   "image": "https://static-images.vnncdn.net/files/publish/2023/1/5/goi-du-du-1-850.jpg?width=0&s=K0yaRYJ7tA9SMrIJI2-DNw",
   "description": "Món nộm thanh mát với sợi đu đủ xanh giòn sần sật, tai heo dai giòn và tôm tươi ngọt thịt, hòa quyện cùng nước mắm chua ngọt đậm đà và lạc rang thơm bùi.",
   "categoryId": 3,
+  "type":"goi",
   "userId": 2,
   "ingredients": [
     "Đu đủ xanh: 1 quả",
@@ -4662,6 +4674,7 @@
   "image": "https://cdnv2.tgdd.vn/bhx-static/bhx/production/2026/3/image/News/Images/2021/05/28/1355352/image1_202603162329056805.jpg",
   "description": "Sự kết hợp tinh tế giữa các loại đậu bùi béo, cốm xanh thơm nồng và các loại topping như nho khô, dừa khô, tạo nên món tráng miệng đa dạng hương vị và màu sắc.",
   "categoryId": 1,
+  "type":"orther",
   "userId": 2,
   "ingredients": [
     "Đậu đen, đậu đỏ, đậu xanh: mỗi loại 100g",
