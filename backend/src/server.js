@@ -24,30 +24,33 @@
 // app.listen(process.env.PORT, () => {
 //   console.log("🚀 Server chạy port " + process.env.PORT);
 // });
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
-
-import connectDB from "./config/db.js";
-
-import authRoutes from "./routes/auth.js";
-import recipeRoutes from "./routes/recipes.js";
-import categoryRoutes from "./routes/categories.js";
-import typeRoutes from "./routes/types.js";
-
-dotenv.config();
-connectDB();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
+// middleware
 app.use(cors());
 app.use(express.json());
 
+// routes
+const authRoutes = require("./routes/auth");
 app.use("/api/auth", authRoutes);
-app.use("/api/recipes", recipeRoutes);
-app.use("/api/categories", categoryRoutes);
-app.use("/api/types", typeRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log("🚀 Server running...");
+// test route
+app.get("/", (req, res) => {
+  res.send("API VietFood running...");
 });
+
+// connect MongoDB
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("✅ Connected MongoDB");
+
+    app.listen(process.env.PORT || 5000, () => {
+      console.log("🚀 Server running...");
+    });
+  })
+  .catch(err => console.log("❌ DB Error:", err));
