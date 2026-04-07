@@ -207,7 +207,7 @@ function validateField(type, value, extra = null) {
 // =======================
 // 📝 REGISTER
 // =======================
-function register(e) {
+async function register(e) {
   e.preventDefault();
 
   const username = document.getElementById("user")?.value.trim();
@@ -236,62 +236,64 @@ function register(e) {
 
   if (!isValid) return;
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  try {
+    const res = await fetch("https://am-thuc-3-mien-viet-food.onrender.com/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password: pass
+      })
+    });
 
-  if (users.find(u => u.email === email)) {
-    setError("email", "Email đã tồn tại");
-    return;
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || "Lỗi đăng ký");
+      return;
+    }
+
+    alert("Đăng ký thành công!");
+    window.location.href = "dang-nhap.html";
+
+  } catch (err) {
+    console.error(err);
   }
-
-  const newUser = {
-    id: Date.now(),
-    username,
-    email,
-    password: pass,
-    role: email.includes("admin") ? "admin" : "user",
-    avatar: "public/image/avatar.png"
-  };
-
-  users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("Đăng ký thành công!");
-  window.location.href = "dang-nhap.html";
 }
 
 // =======================
 // 🔑 LOGIN
 // =======================
-function login(e) {
+async function login(e) {
   e.preventDefault();
 
   const email = document.getElementById("username")?.value.trim();
   const password = document.getElementById("password")?.value.trim();
 
-  let isValid = true;
+  const res = await fetch("https://am-thuc-3-mien-viet-food.onrender.com/api/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email: email,       // 🔥 PHẢI LÀ email
+      password: password  // 🔥 PHẢI LÀ password
+    })
+  });
 
-  const emailErr = validateField("login-email", email);
-  const passErr = validateField("login-pass", password);
+  const data = await res.json();
+  console.log("LOGIN RESPONSE:", data);
 
-  if (emailErr) { setError("username", emailErr); isValid = false; }
-  else setSuccess("username");
-
-  if (passErr) { setError("password", passErr); isValid = false; }
-  else setSuccess("password");
-
-  if (!isValid) return;
-
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-  let user = users.find(u => u.email === email && u.password === password);
-
-  if (!user) {
-    setError("password", "Sai email hoặc mật khẩu");
+  if (!res.ok) {
+    alert(data.message);
     return;
   }
 
-  localStorage.setItem("currentUser", JSON.stringify(user));
-
-  window.location.href = user.role === "admin" ? "admin.html" : "index.html";
+  localStorage.setItem("currentUser", JSON.stringify(data.user));
+  window.location.href = "index.html";
 }
 
 // =======================

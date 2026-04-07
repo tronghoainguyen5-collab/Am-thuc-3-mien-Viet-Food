@@ -22,31 +22,29 @@ const type = params.get('type');
 // =======================
 async function loadData() {
     try {
-        const res = await fetch('./data/db.json');
-        const data = await res.json();
+        const API = "https://am-thuc-3-mien-viet-food.onrender.com";
 
-        console.log(data);
+        const [recipesRes, typesRes] = await Promise.all([
+            fetch(API + "/api/recipes"),
+            fetch(API + "/api/types")
+        ]);
 
-        // ❗ FIX: nếu không có type → dừng
+        const recipes = await recipesRes.json();
+        const types = await typesRes.json();
+
+        console.log({ recipes, types });
+
         if (!type) return;
-
-        // ❗ FIX: check tồn tại
         if (!titleEl || !productList) return;
 
-        // =======================
-        // 🎯 TITLE
-        // =======================
-        const typeObj = data.types?.find(t => t.type === type);
+        // TITLE
+        const typeObj = types?.find(t => t.type === type);
 
         titleEl.innerText = typeObj
             ? typeObj.name
             : 'Không tìm thấy danh mục';
 
-        // =======================
-        // 📋 DATA
-        // =======================
-        const recipes = data.recipes || [];
-
+        // FILTER
         const filteredRecipes = recipes.filter(r => r.type === type);
 
         renderRecipes(filteredRecipes);

@@ -92,11 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const id = params.get("id");
     if (!id) return;
 
-    fetch("./data/db.json")
+    // 🔥 FETCH API THẬT
+    fetch("https://am-thuc-3-mien-viet-food.onrender.com/api/recipes")
         .then(res => res.json())
         .then(data => {
 
-            const food = data.recipes.find(r => r.id == id);
+            // 🔥 API trả về mảng
+            const food = data.find(r => r.id == id || r._id == id);
+
             const detailInfo = document.querySelector(".detail-info");
 
             if (!food) {
@@ -105,20 +108,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // ===== RENDER DATA =====
-            document.getElementById("main-img").src = food.image;
-            document.getElementById("title").innerText = food.name;
-            document.getElementById("description").innerText = food.description;
+            const img = document.getElementById("main-img");
+            const title = document.getElementById("title");
+            const desc = document.getElementById("description");
 
-            document.querySelector(".detail-meta").innerHTML = `
-                <span>⏱ ${food.time}</span>
-                <span>🍽 ${food.serving || "2-4 người"}</span>
-            `;
+            if (img) img.src = food.image;
+            if (title) title.innerText = food.name;
+            if (desc) desc.innerText = food.description;
+
+            const meta = document.querySelector(".detail-meta");
+            if (meta) {
+                meta.innerHTML = `
+                    <span>⏱ ${food.time}</span>
+                    <span>🍽 ${food.serving || "2-4 người"}</span>
+                `;
+            }
 
             const ing = document.getElementById("ingredients");
-            ing.innerHTML = food.ingredients?.map(i => `<li>${i}</li>`).join("") || "";
+            if (ing) {
+                ing.innerHTML = food.ingredients?.map(i => `<li>${i}</li>`).join("") || "";
+            }
 
             const steps = document.getElementById("steps");
-            steps.innerHTML = food.steps?.map(s => `<li>${s}</li>`).join("") || "";
+            if (steps) {
+                steps.innerHTML = food.steps?.map(s => `<li>${s}</li>`).join("") || "";
+            }
 
             // ===== SAVE =====
             const saveBtn = document.getElementById("btn-save");
@@ -150,6 +164,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
             }
 
+        })
+        .catch(err => {
+            console.error("❌ Lỗi fetch detail:", err);
         });
 
 });
