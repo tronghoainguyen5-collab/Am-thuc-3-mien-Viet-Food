@@ -1,4 +1,9 @@
 // =======================
+// 🌐 API
+// =======================
+const API_FAV = "https://am-thuc-3-mien-viet-food.onrender.com/api/favorites";
+
+// =======================
 // GLOBAL
 // =======================
 let deleteId = null;
@@ -11,7 +16,7 @@ function getCurrentUser() {
 }
 
 // =======================
-// FAVORITES
+// FAVORITES (LOCAL - fallback)
 // =======================
 function getFavorites() {
   return JSON.parse(localStorage.getItem("favorites")) || {};
@@ -29,47 +34,56 @@ function isSaved(recipeId) {
   if (!user) return false;
 
   let favorites = getFavorites();
-  let list = favorites[user.id] || [];
+  let list = favorites[user._id] || []; // 🔥 FIX
 
   return list.some(item => item.id === recipeId);
 }
 
 // =======================
-// TOGGLE SAVE (XỊN)
+// TOGGLE SAVE (API + LOCAL)
 // =======================
-function addToFavorite(recipe, btn) {
+async function addToFavorite(recipe, btn) {
   let user = getCurrentUser();
 
- if (!user) {
-  showPopup("⚠️ Vui lòng đăng nhập!");
-  return;
-}
-
-  let favorites = getFavorites();
-
-  if (!favorites[user.id]) {
-    favorites[user.id] = [];
-  }
-
-  let index = favorites[user.id].findIndex(item => item.id === recipe.id);
-
-  // ❌ ĐÃ TỒN TẠI → BỎ LƯU
-  if (index !== -1) {
-    favorites[user.id].splice(index, 1);
-    saveFavorites(favorites);
-
-    if (btn) {
-      btn.classList.remove("active");
-      btn.style.color = "#000";
-    }
-
-    showToast("❌ Đã bỏ lưu");
-    updateSavedCount();
+  if (!user) {
+    showPopup("⚠️ Vui lòng đăng nhập!");
     return;
   }
 
-  // ✅ THÊM
-  favorites[user.id].push(recipe);
+  let favorites = getFavorites();
+  if (!favorites[user._id]) {
+    favorites[user._id] = [];
+  }
+
+  let index = favorites[user._id].findIndex(item => item.id === recipe.id);
+
+  // ❌ ĐÃ TỒN TẠI → XÓA
+  if (index !== -1) {
+    await removeFavorite(recipe.id);
+    return;
+  }
+
+  // ================= API =================
+  try {
+    await fetch(API_FAV, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        userId: user._id,
+        recipeId: recipe.id,
+        name: recipe.name,
+        image: recipe.image
+      })
+    });
+
+  } catch (err) {
+    console.log("API lỗi → fallback local");
+  }
+
+  // ================= LOCAL =================
+  favorites[user._id].push(recipe);
   saveFavorites(favorites);
 
   if (btn) {
@@ -89,15 +103,25 @@ function addToFavorite(recipe, btn) {
 }
 
 // =======================
-// XÓA (TRANG YÊU THÍCH)
+// XÓA (API + LOCAL)
 // =======================
-function removeFavorite(id) {
+async function removeFavorite(id) {
   let user = getCurrentUser();
   if (!user) return;
 
+  // ================= API =================
+  try {
+    await fetch(`${API_FAV}/${user._id}/${id}`, {
+      method: "DELETE"
+    });
+  } catch (err) {
+    console.log("API lỗi → fallback local");
+  }
+
+  // ================= LOCAL =================
   let favorites = getFavorites();
 
-  favorites[user.id] = (favorites[user.id] || []).filter(item => item.id !== id);
+  favorites[user._id] = (favorites[user._id] || []).filter(item => item.id !== id);
 
   saveFavorites(favorites);
 
@@ -121,9 +145,9 @@ function closeConfirm() {
 }
 
 // =======================
-// RENDER FAVORITES
+// RENDER FAVORITES (🔥 LOAD DB)
 // =======================
-function renderFavorites() {
+async function renderFavorites() {
   let user = getCurrentUser();
 
   if (!user) {
@@ -132,8 +156,17 @@ function renderFavorites() {
     return;
   }
 
-  let favorites = getFavorites();
-  let list = favorites[user.id] || [];
+  let list = [];
+
+  // ================= LOAD API =================
+  try {
+    const res = await fetch(`${API_FAV}/${user._id}`);
+    list = await res.json();
+  } catch (err) {
+    console.log("API lỗi → dùng local");
+    let favorites = getFavorites();
+    list = favorites[user._id] || [];
+  }
 
   let container = document.getElementById("favorite-list");
   if (!container) return;
@@ -149,7 +182,7 @@ function renderFavorites() {
       <div class="favorite-thumb">
         <img src="${item.image}" alt="${item.name}">
         
-        <button class="favorite-icon active" onclick="confirmRemove(${item.id})">
+        <button class="favorite-icon active" onclick="confirmRemove(${item.recipeId || item.id})">
           <i class="fa-solid fa-bookmark"></i>
         </button>
       </div>
@@ -158,11 +191,11 @@ function renderFavorites() {
         <h3>${item.name}</h3>
 
         <div class="favorite-actions">
-          <a href="chi-tiet.html?id=${item.id}" class="btn-view">
+          <a href="chi-tiet.html?id=${item.recipeId || item.id}" class="btn-view">
             Xem chi tiết
           </a>
 
-          <button class="btn-remove" onclick="confirmRemove(${item.id})">
+          <button class="btn-remove" onclick="confirmRemove(${item.recipeId || item.id})">
             <i class="fa-solid fa-trash"></i> Xóa
           </button>
         </div>
@@ -182,7 +215,7 @@ function updateSavedCount() {
   if (!user || !savedBtn) return;
 
   let favorites = getFavorites();
-  let count = favorites[user.id]?.length || 0;
+  let count = favorites[user._id]?.length || 0;
 
   savedBtn.innerHTML = `
     <i class="fa-solid fa-bookmark"></i> Món đã lưu (${count})
@@ -203,62 +236,39 @@ function checkSaved(recipeId) {
 }
 
 // =======================
-// SETUP BUTTON DETAIL
+// SETUP BUTTON DETAIL (🔥 FIX API)
 // =======================
 function setupSaveButton() {
   let btnSave = document.getElementById("btn-save");
   if (!btnSave) return;
 
-  // 🔥 lấy id từ slider (hero)
-  let currentId = null;
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-  // 👉 lấy id khi slider render
-  function updateCurrentRecipe() {
-    const title = document.getElementById("hero-title")?.innerText;
+  if (!id) return;
 
-    // 🔥 tìm trong data (hack nhẹ nhưng hiệu quả)
-    fetch("./data/db.json")
-      .then(res => res.json())
-      .then(data => {
-        let found = data.recipes.find(r => r.name === title);
-        if (found) {
-          currentId = found.id;
+  fetch(`https://am-thuc-3-mien-viet-food.onrender.com/api/recipes/${id}`)
+    .then(res => res.json())
+    .then(recipe => {
 
-          // 👉 check saved
-          if (isSaved(currentId)) {
-            btnSave.classList.add("active");
-            btnSave.innerHTML = "✅ Đã lưu";
-          } else {
-            btnSave.classList.remove("active");
-            btnSave.innerHTML = `<i class="fa-solid fa-bookmark"></i> Lưu công thức`;
-          }
-        }
-      });
-  }
+      if (!recipe) return;
 
-  // 🔥 click save
-  btnSave.onclick = (e) => {
-    e.preventDefault();
+      if (isSaved(recipe.id)) {
+        btnSave.classList.add("active");
+        btnSave.innerHTML = "✅ Đã lưu";
+      }
 
-    let name = document.getElementById("hero-title")?.innerText;
-    let image = document.getElementById("main-img")?.src;
+      btnSave.onclick = (e) => {
+        e.preventDefault();
 
-    if (!currentId) return;
+        addToFavorite({
+          id: recipe.id,
+          name: recipe.name,
+          image: recipe.image
+        }, btnSave);
+      };
 
-    let recipe = {
-      id: currentId,
-      name,
-      image
-    };
-
-    addToFavorite(recipe, btnSave);
-
-    // update lại text
-    setTimeout(updateCurrentRecipe, 100);
-  };
-
-  // 🔥 theo dõi slider thay đổi
-  setInterval(updateCurrentRecipe, 500);
+    });
 }
 
 // =======================
@@ -277,14 +287,12 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 200);
   }, 2000);
 }
+
 function showPopup(message) {
   const popup = document.getElementById("popup");
   const msg = document.getElementById("popup-message");
 
-  if (!popup || !msg) {
-    console.error("Popup chưa tồn tại!");
-    return;
-  }
+  if (!popup || !msg) return;
 
   msg.innerText = message;
   popup.classList.add("show");
@@ -295,11 +303,11 @@ function showPopup(message) {
     popup.classList.remove("show");
   }, 2000);
 }
+
 function closePopup() {
   const popup = document.getElementById("popup");
   if (popup) popup.classList.remove("show");
 }
-
 
 // =======================
 // INIT

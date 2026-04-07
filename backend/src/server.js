@@ -43,6 +43,8 @@ app.use("/api/auth", authRoutes);
 const recipeRoutes = require("./routes/recipe.routes");
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/types", require("./routes/type.routes"));
+const favoriteRoutes = require("./routes/favorite.routes");
+app.use("/api/favorites", favoriteRoutes);
 
 // test route
 app.get("/", (req, res) => {
