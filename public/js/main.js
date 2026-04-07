@@ -13,31 +13,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const LIMIT = 8;
 
-    fetch("./data/db.json")
-        .then(res => res.json())
-        .then(data => {
-            let recipes = data.recipes;
-            if (categoryId) recipes = recipes.filter(r => r.categoryId == categoryId);
-             
+   fetch("https://am-thuc-3-mien-viet-food.onrender.com/api/recipes")
+    .then(res => res.json())
+    .then(data => {
+        console.log("DATA:", data);
+
+        // 🔥 FIX DATA (MongoDB -> Frontend)
+        let recipes = data.map(r => ({
+            ...r,
+            id: r._id // map id
+        }));
+
+        if (categoryId) {
+            recipes = recipes.filter(r => r.categoryId == categoryId);
+        }
+
         if (type) {
             recipes = recipes.filter(r => r.type === type);
         }
-            if (!recipes.length) return;
-            allRecipes = data.recipes;
-            // 🔥 INIT SEARCH (THÊM DÒNG NÀY)
-            initAdvancedSearch_VS(allRecipes);
-            if (categoryId) {
-                allRecipes = allRecipes.filter(r => r.categoryId == categoryId);
-            }
 
-            sliderData = allRecipes.slice(0, 10);
-            if (document.getElementById('img-current')) {
+        if (!recipes.length) return;
+
+        allRecipes = recipes;
+
+        // 🔥 SEARCH
+        initAdvancedSearch_VS(allRecipes);
+
+        if (categoryId) {
+            allRecipes = allRecipes.filter(r => r.categoryId == categoryId);
+        }
+
+        sliderData = allRecipes.slice(0, 10);
+
+        if (document.getElementById('img-current')) {
             initSlider(sliderData);
         }
 
-            renderInitial();
-            updateTitle(region);
-        });
+        renderInitial();
+        updateTitle(region);
+    })
+    .catch(err => {
+        console.error("Lỗi fetch API:", err);
+    });
 
     // =======================
     // 🚀 RENDER BAN ĐẦU
@@ -146,7 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateBtnText(btn);
 
-        btn.onclick = () => {
+        if (btn) {
+  btn.onclick = () => {
             const container = document.querySelector('.recipe-grid');
 
             if (!expanded) {
@@ -167,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBtnText(btn);
         };
     }
+}
 
     function updateBtnText(btn) {
         btn.innerHTML = expanded
