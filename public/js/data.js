@@ -2,6 +2,7 @@ const defaultData = {
     "users": [
         { "id": 1, "fullname": "Đào Nguyễn Quốc Việt", "email": "daonguyenquocviet9190@gmail.com", "role": "Admin", "avatar": "public/image/viet.jpg" },
         { "id": 2, "fullname": "Ngô Trường Giang", "email": "ngo779998@gmail.com", "role": "Admin", "avatar": "public/image/giang.jpg" },
+        { "id": 3, "fullname": "Nguyễn Sơn Hà", "email": "sonhadepchai@gmail.com", "role": "Admin", "avatar": "public/image/ha.jpg" },
     ],
     "categories": [
         { "id": 1, "name": "Miền Bắc" },
