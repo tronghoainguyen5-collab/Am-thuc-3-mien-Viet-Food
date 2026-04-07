@@ -2190,36 +2190,6 @@
   "time": "120 phút"
 },
 {
-  "id": 41,
-  "name": "Cơm gà Hội An",
-  "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_VviRYSnhMvPjlmzeGytlQ",
-  "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
-  "categoryId": 2,
-  "type": "orther",
-  "userId": 2,
-  "ingredients": [
-    "Gà mái tơ thả vườn: 1.5 - 1.6kg",
-    "Gạo tẻ: 200g, Gạo nếp: 1 nắm",
-    "Hành tây: 1 củ, Đu đủ xanh và cà rốt bào sợi",
-    "Lá dứa (lá nếp), Nghệ tươi hoặc bột nghệ",
-    "Rau răm, hành phi, gừng, hành khô, tỏi",
-    "Lòng gà (để làm nước mạ hoặc xào)",
-    "Tương ớt Hội An",
-    "Gia vị: Nước mắm, đường, chanh/quất, muối hạt, tiêu, dầu ăn",
-    "Nguồn: VnExpress"
-  ],
-  "steps": [
-    "🍗 1. Luộc và xé gà: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Luộc gà cùng gừng, hành khô. Khi chín vớt ra để nguội, lọc lấy thịt xé nhỏ. Ướp thịt gà với mắm, đường, chanh, tiêu và tỏi băm.",
-    "🍚 2. Nấu cơm nghệ: Vo sạch gạo, để ráo. Phi thơm tỏi với dầu ăn, cho gạo vào rang sơ khoảng 30 giây. Cho gạo vào nồi cơm điện, thêm nước luộc gà, lá dứa, chút muối và bột nghệ rồi nấu chín.",
-    "🥗 3. Làm gỏi hành tây & đồ chua: Hành tây thái mỏng ngâm nước đá cho bớt hăng rồi trộn với thịt gà đã ướp. Đu đủ và cà rốt bào sợi ngâm nước đá, sau đó trộn với muối, đường, chanh và rau răm.",
-    "🥘 4. Làm nước mạ: Lòng gà làm sạch, thái miếng, ướp gia vị rồi xào chín với tỏi. Thêm chút nước luộc gà và dầu hạt điều, đun khoảng 10-15 phút để làm nước sốt rưới cơm.",
-    "🍲 5. Nước canh: Dùng nước luộc gà đun nóng, nêm nếm vừa ăn và thêm hành lá cắt nhỏ làm nước dùng ăn kèm.",
-    "🍽️ 6. Trình bày và thưởng thức: Ép cơm vào bát rồi úp ra đĩa, xếp gà trộn hành tây, gỏi đu đủ lên bên cạnh. Ăn kèm tương ớt Hội An và bát nước canh nóng hổi.",
-    "Nguồn: VnExpress"
-  ],
-  "time": "75 phút"
-},
-{
   "id": 42,
   "name": "Mì Quảng gà",
   "image": "https://i1-giadinh.vnecdn.net/2022/10/07/-1238-1665132014.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=OtUz8nAFXK6yWDEYj7n1wg",
@@ -3602,46 +3572,6 @@
       "time": "150 phút"
     },
     {
-      "id": "25",
-      "name": "Cơm hến Huế",
-      "image": "https://nethue.com.vn/uploaded/Tin%20tuc/tin-tuc-nguongoc-1.jpg",
-      "description": "Món cơm đặc sản Huế: cơm nguội trộn hến xào, tóp mỡ, đậu phộng, rau thơm, nước mắm ruốc cay – mát lạnh mùa hè",
-      "categoryId": 2,
-      "userId": 1,
-      "ingredients": [
-        "Cơm nguội: 1 ít",
-        "Hến tươi: 3kg",
-        "Da heo khô hoặc bóng bì: 200g",
-        "Đậu phộng: 300g",
-        "Khế chua: 2 trái",
-        "Bạc hà: 200g",
-        "Thân chuối bào: 100g",
-        "Bắp chuối bào: 100g",
-        "Giá: 200g",
-        "Rau thơm, ngò rí, húng lủi: 100g",
-        "Gốc hành lá: 50g",
-        "Ớt xiêm xanh: 20g",
-        "Tỏi: 1 củ",
-        "Ớt bột Huế: 1 ít",
-        "Dầu màu điều: 1/2 chén",
-        "Gia vị: nước mắm, muối, đường, hạt nêm, mắm ruốc Huế, dầu ăn",
-        "Nguồn: dienmayxanh"
-      ],
-      "steps": [
-        "🦪 1. Sơ chế hến: Rửa hến nhiều lần với nước sạch để loại bỏ bùn cát. Ngâm hến trong nước vo gạo và ớt khoảng 30–60 phút cho hến nhả cát.",
-        "🔥 2. Luộc hến: Đun nước nóng khoảng 80°C rồi cho hến vào. Khuấy nhẹ cho hến mở miệng và thịt tách khỏi vỏ. Vớt hến ra để ráo, giữ lại nước luộc hến, để lắng rồi lấy phần nước trong.",
-        "🥓 3. Chuẩn bị da heo và đậu phộng: Da heo khô hoặc bóng bì cắt nhỏ rồi chiên ngập dầu cho giòn. Sau đó chiên đậu phộng với dầu màu điều trên lửa nhỏ đến khi vàng.",
-        "🥬 4. Chuẩn bị rau ăn kèm: Bạc hà, khế chua bào sợi. Rửa sạch các loại rau thơm, bắp chuối, thân chuối, giá rồi để ráo và trộn đều.",
-        "🍳 5. Xào hến: Phi thơm gốc hành lá với dầu màu điều, thêm ớt bột Huế và mắm ruốc. Cho hến vào đảo đều cho thấm gia vị.",
-        "🍲 6. Nấu nước hến: Cho nước luộc hến đã lọc vào nồi, thêm vài lát gừng và mắm ruốc Huế. Đun sôi rồi tắt bếp.",
-        "🥣 7. Làm mắm ruốc: Phi thơm tỏi với dầu màu điều, cho mắm ruốc Huế và ớt bột vào. Thêm một ít nước hến để làm loãng, nêm đường cho vừa ăn.",
-        "🌶️ 8. Pha nước mắm: Giã nhuyễn tỏi và ớt xiêm xanh, thêm đường, nước mắm và nước nguội. Khuấy đều cho tan.",
-        "🍚 9. Hoàn thành: Cho cơm nguội ra tô, thêm hến xào, rau sống, da heo chiên giòn, đậu phộng rang và chan nước hến. Ăn kèm mắm ruốc và nước mắm tỏi ớt.",
-        "Nguồn: dienmayxanh"
-      ],
-      "time": "120 phút"
-    },
-    {
       "id": "26",
       "name": "Bánh khoái Huế",
       "image": "https://huesmiletravel.com.vn/wp-content/uploads/2019/07/banh-khoai.jpg",
@@ -4108,35 +4038,6 @@
         "Nguồn: Thế Giới Di Động"
       ],
       "time": "120 phút"
-    },
-    {
-      "id": "41",
-      "name": "Cơm gà Hội An",
-      "image": "https://i1-giadinh.vnecdn.net/2021/01/29/com2-1611892464-7028-1611892596.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=_VviRYSnhMvPjlmzeGytlQ",
-      "description": "Món ăn tinh tế của phố cổ với hạt cơm vàng óng thơm mùi lá dứa, thịt gà ta thả vườn chắc ngọt trộn gỏi hành tây, ăn kèm đồ chua và tương ớt đặc trưng.",
-      "categoryId": 2,
-      "userId": 2,
-      "ingredients": [
-        "Gà mái tơ thả vườn: 1.5 - 1.6kg",
-        "Gạo tẻ: 200g, Gạo nếp: 1 nắm",
-        "Hành tây: 1 củ, Đu đủ xanh và cà rốt bào sợi",
-        "Lá dứa (lá nếp), Nghệ tươi hoặc bột nghệ",
-        "Rau răm, hành phi, gừng, hành khô, tỏi",
-        "Lòng gà (để làm nước mạ hoặc xào)",
-        "Tương ớt Hội An",
-        "Gia vị: Nước mắm, đường, chanh/quất, muối hạt, tiêu, dầu ăn",
-        "Nguồn: VnExpress"
-      ],
-      "steps": [
-        "🍗 1. Luộc và xé gà: Gà xát muối, chanh và nghệ để khử mùi và tạo màu vàng. Luộc gà cùng gừng, hành khô. Khi chín vớt ra để nguội, lọc lấy thịt xé nhỏ. Ướp thịt gà với mắm, đường, chanh, tiêu và tỏi băm.",
-        "🍚 2. Nấu cơm nghệ: Vo sạch gạo, để ráo. Phi thơm tỏi với dầu ăn, cho gạo vào rang sơ khoảng 30 giây. Cho gạo vào nồi cơm điện, thêm nước luộc gà, lá dứa, chút muối và bột nghệ rồi nấu chín.",
-        "🥗 3. Làm gỏi hành tây & đồ chua: Hành tây thái mỏng ngâm nước đá cho bớt hăng rồi trộn với thịt gà đã ướp. Đu đủ và cà rốt bào sợi ngâm nước đá, sau đó trộn với muối, đường, chanh và rau răm.",
-        "🥘 4. Làm nước mạ: Lòng gà làm sạch, thái miếng, ướp gia vị rồi xào chín với tỏi. Thêm chút nước luộc gà và dầu hạt điều, đun khoảng 10-15 phút để làm nước sốt rưới cơm.",
-        "🍲 5. Nước canh: Dùng nước luộc gà đun nóng, nêm nếm vừa ăn và thêm hành lá cắt nhỏ làm nước dùng ăn kèm.",
-        "🍽️ 6. Trình bày và thưởng thức: Ép cơm vào bát rồi úp ra đĩa, xếp gà trộn hành tây, gỏi đu đủ lên bên cạnh. Ăn kèm tương ớt Hội An và bát nước canh nóng hổi.",
-        "Nguồn: VnExpress"
-      ],
-      "time": "75 phút"
     },
     {
       "id": "42",
