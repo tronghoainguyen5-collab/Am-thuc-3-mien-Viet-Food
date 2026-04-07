@@ -2,58 +2,62 @@ const express = require("express");
 const router = express.Router();
 const Favorite = require("../models/Favorite");
 
-// GET
+// =======================
+// GET FAVORITES BY USER
+// =======================
 router.get("/:userId", async (req, res) => {
   try {
-    const fav = await Favorite.findOne({ userId: req.params.userId });
-    res.json(fav || { recipes: [] });
+    const data = await Favorite.find({ userId: req.params.userId });
+    res.json(data);
   } catch (err) {
     res.status(500).json({ message: "Lỗi server" });
   }
 });
 
-// ADD / TOGGLE
+// =======================
+// ADD FAVORITE
+// =======================
 router.post("/", async (req, res) => {
-  const { userId, recipe } = req.body;
+  try {
+    const { userId, recipeId, name, image } = req.body;
 
-  let fav = await Favorite.findOne({ userId });
+    console.log("BODY:", req.body); // 🔥 debug
 
-  if (!fav) {
-    fav = await Favorite.create({
-      userId,
-      recipes: [recipe]
-    });
-  } else {
-    const exist = fav.recipes.find(r => r.id === recipe.id);
+    const exist = await Favorite.findOne({ userId, recipeId });
 
+    // ❌ đã tồn tại → xóa (toggle)
     if (exist) {
-      fav.recipes = fav.recipes.filter(r => r.id !== recipe.id);
-    } else {
-      fav.recipes.push(recipe);
+      await Favorite.deleteOne({ userId, recipeId });
+      return res.json({ message: "Đã xóa khỏi yêu thích" });
     }
 
-    await fav.save();
-  }
+    // ✅ thêm mới
+    const fav = await Favorite.create({
+      userId,
+      recipeId,
+      name,
+      image
+    });
 
-  res.json(fav);
+    res.json(fav);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Lỗi server" });
+  }
 });
 
-// DELETE
+// =======================
+// DELETE FAVORITE
+// =======================
 router.delete("/:userId/:recipeId", async (req, res) => {
   try {
-    const { userId, recipeId } = req.params;
+    await Favorite.deleteOne({
+      userId: req.params.userId,
+      recipeId: req.params.recipeId
+    });
 
-    let fav = await Favorite.findOne({ userId });
-
-    if (!fav) return res.status(404).json({ message: "Không có data" });
-
-    fav.recipes = fav.recipes.filter(
-      r => r.id !== Number(recipeId)
-    );
-
-    await fav.save();
-
-    res.json({ message: "Đã xóa", data: fav });
+    res.json({ message: "Đã xóa" });
 
   } catch (err) {
     res.status(500).json({ message: "Lỗi server" });

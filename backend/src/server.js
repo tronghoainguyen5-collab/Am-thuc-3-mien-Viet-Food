@@ -33,7 +33,9 @@ const app = express();
 
 // middleware
 app.use(cors({
-  origin: "http://127.0.0.1:5500"
+  origin: "*", // hoặc "http://127.0.0.1:5500"
+  methods: ["GET", "POST", "DELETE", "PUT"],
+  allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json());
 
