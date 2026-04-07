@@ -27,20 +27,20 @@ function saveFavorites(favorites) {
 }
 
 // =======================
-// CHECK ĐÃ LƯU (THEO ID)
+// CHECK ĐÃ LƯU
 // =======================
 function isSaved(recipeId) {
   let user = getCurrentUser();
   if (!user) return false;
 
   let favorites = getFavorites();
-  let list = favorites[user._id] || []; // 🔥 FIX
+  let list = favorites[user._id] || [];
 
   return list.some(item => item.id === recipeId);
 }
 
 // =======================
-// TOGGLE SAVE (API + LOCAL)
+// ADD / TOGGLE FAVORITE
 // =======================
 async function addToFavorite(recipe, btn) {
   let user = getCurrentUser();
@@ -57,7 +57,7 @@ async function addToFavorite(recipe, btn) {
 
   let index = favorites[user._id].findIndex(item => item.id === recipe.id);
 
-  // ❌ ĐÃ TỒN TẠI → XÓA
+  // ❌ ĐÃ CÓ → XÓA
   if (index !== -1) {
     await removeFavorite(recipe.id);
     return;
@@ -72,12 +72,9 @@ async function addToFavorite(recipe, btn) {
       },
       body: JSON.stringify({
         userId: user._id,
-        recipeId: recipe.id,
-        name: recipe.name,
-        image: recipe.image
+        recipe: recipe // 🔥 FIX QUAN TRỌNG
       })
     });
-
   } catch (err) {
     console.log("API lỗi → fallback local");
   }
@@ -103,7 +100,7 @@ async function addToFavorite(recipe, btn) {
 }
 
 // =======================
-// XÓA (API + LOCAL)
+// REMOVE FAVORITE
 // =======================
 async function removeFavorite(id) {
   let user = getCurrentUser();
@@ -121,7 +118,9 @@ async function removeFavorite(id) {
   // ================= LOCAL =================
   let favorites = getFavorites();
 
-  favorites[user._id] = (favorites[user._id] || []).filter(item => item.id !== id);
+  favorites[user._id] = (favorites[user._id] || []).filter(
+    item => item.id !== id
+  );
 
   saveFavorites(favorites);
 
@@ -145,7 +144,7 @@ function closeConfirm() {
 }
 
 // =======================
-// RENDER FAVORITES (🔥 LOAD DB)
+// RENDER FAVORITES (API)
 // =======================
 async function renderFavorites() {
   let user = getCurrentUser();
@@ -161,9 +160,12 @@ async function renderFavorites() {
   // ================= LOAD API =================
   try {
     const res = await fetch(`${API_FAV}/${user._id}`);
-    list = await res.json();
+    const data = await res.json();
+
+    list = data.recipes || []; // 🔥 FIX
   } catch (err) {
     console.log("API lỗi → dùng local");
+
     let favorites = getFavorites();
     list = favorites[user._id] || [];
   }
@@ -182,7 +184,7 @@ async function renderFavorites() {
       <div class="favorite-thumb">
         <img src="${item.image}" alt="${item.name}">
         
-        <button class="favorite-icon active" onclick="confirmRemove(${item.recipeId || item.id})">
+        <button class="favorite-icon active" onclick="confirmRemove(${item.id})">
           <i class="fa-solid fa-bookmark"></i>
         </button>
       </div>
@@ -191,11 +193,11 @@ async function renderFavorites() {
         <h3>${item.name}</h3>
 
         <div class="favorite-actions">
-          <a href="chi-tiet.html?id=${item.recipeId || item.id}" class="btn-view">
+          <a href="chi-tiet.html?id=${item.id}" class="btn-view">
             Xem chi tiết
           </a>
 
-          <button class="btn-remove" onclick="confirmRemove(${item.recipeId || item.id})">
+          <button class="btn-remove" onclick="confirmRemove(${item.id})">
             <i class="fa-solid fa-trash"></i> Xóa
           </button>
         </div>
@@ -236,7 +238,7 @@ function checkSaved(recipeId) {
 }
 
 // =======================
-// SETUP BUTTON DETAIL (🔥 FIX API)
+// SETUP DETAIL BUTTON
 // =======================
 function setupSaveButton() {
   let btnSave = document.getElementById("btn-save");
@@ -267,7 +269,6 @@ function setupSaveButton() {
           image: recipe.image
         }, btnSave);
       };
-
     });
 }
 
@@ -288,6 +289,9 @@ function showToast(msg) {
   }, 2000);
 }
 
+// =======================
+// POPUP
+// =======================
 function showPopup(message) {
   const popup = document.getElementById("popup");
   const msg = document.getElementById("popup-message");
