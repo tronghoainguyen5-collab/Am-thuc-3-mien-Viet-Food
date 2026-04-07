@@ -37,8 +37,8 @@ app.use(express.json());
 
 // routes
 const authRoutes = require("./routes/auth");
-app.use("/api/auth", authRoutes);
 const recipeRoutes = require("./routes/recipe.routes");
+app.use("/api/auth", authRoutes);
 app.use("/api/recipes", recipeRoutes);
 
 // test route
