@@ -1,128 +1,200 @@
-// Lấy các element cần thiết
-const userList = document.getElementById("userList");
-const userForm = document.getElementById("userForm");
-const userModal = document.getElementById("userModal");
+/**
+ * VietStove Admin - User Management Controller (FULL & FINAL FIX)
+ * Khắc phục triệt để lỗi: Null 'src', Không lưu được, Mất dữ liệu.
+ */
 
-// Lấy dữ liệu từ data.js
-let db = getDB();
+// 1. Hàm lấy dữ liệu an toàn từ nhiều nguồn
+function getCurrentDB() {
+    if (typeof getDB === 'function') return getDB();
+    const local = localStorage.getItem("vietstove_db");
+    if (local) return JSON.parse(local);
+    if (typeof defaultData !== 'undefined') return JSON.parse(JSON.stringify(defaultData));
+    return { users: [] };
+}
+
+let db = getCurrentDB();
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (userList) {
-        renderUsers();
-    }
+    const userList = document.getElementById("userList");
+    const userForm = document.getElementById("userForm");
+
+    // Khởi tạo phần chọn ảnh và hiển thị dữ liệu
+    injectImageUpload(userForm);
+    
+    if (userList) renderUsers();
+    if (userForm) setupFormSubmit(userForm);
 });
 
-// --- 1. HIỂN THỊ DANH SÁCH NGƯỜI DÙNG ---
+// --- 2. HÀM CHÈN Ô CHỌN ẢNH (Bảo vệ chống lỗi Null 'src') ---
+function injectImageUpload(form) {
+    if (!form || document.getElementById('userAvatar')) return;
+    
+    // Tìm vị trí chèn: trước nút Hủy/Lưu hoặc cuối Form
+    const actionGroup = form.querySelector('.modal-actions') || form.querySelector('button[type="submit"]')?.parentNode;
+    
+    const imageGroup = document.createElement('div');
+    imageGroup.className = 'input-group';
+    imageGroup.style.marginBottom = "22px";
+    imageGroup.innerHTML = `
+        <label style="display: block; margin-bottom: 10px; color: var(--text-muted); font-size: 12px; font-weight: 700; text-transform: uppercase;">Ảnh đại diện</label>
+        <div style="display: flex; align-items: center; gap: 15px; background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 16px; border: 1px solid var(--border);">
+            <img id="imgPreview" src="https://ui-avatars.com/api/?name=U&background=4facfe&color=fff" 
+                 style="width: 55px; height: 55px; border-radius: 12px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1);">
+            <input type="file" id="userAvatar" accept="image/*" style="font-size: 11px; color: #a1a1aa; cursor: pointer;">
+        </div>
+    `;
+    
+    if (actionGroup) {
+        actionGroup.parentNode.insertBefore(imageGroup, actionGroup);
+    } else {
+        form.appendChild(imageGroup);
+    }
+
+    // Xử lý đổi ảnh thời gian thực
+    const avatarInput = document.getElementById('userAvatar');
+    if (avatarInput) {
+        avatarInput.onchange = function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const preview = document.getElementById('imgPreview');
+                    if (preview) preview.src = ev.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+    }
+}
+
+// --- 3. HIỂN THỊ DANH SÁCH NGƯỜI DÙNG ---
 function renderUsers() {
-    if (!userList || !db || !db.users) return;
+    const userList = document.getElementById("userList");
+    if (!userList) return;
 
-    // Sắp xếp ID mới nhất lên đầu
-    const sortedUsers = [...db.users].sort((a, b) => b.id - a.id);
-
-    if (sortedUsers.length === 0) {
-        userList.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 40px; color: #94a3b8;">Chưa có người dùng nào.</td></tr>`;
+    db = getCurrentDB();
+    const users = db.users || [];
+    
+    if (users.length === 0) {
+        userList.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 40px; color: #a1a1aa;">Chưa có dữ liệu người dùng.</td></tr>`;
         return;
     }
 
-    userList.innerHTML = sortedUsers.map((user) => {
+    userList.innerHTML = users.map(user => {
+        const avatar = user.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.fullname)}&background=4facfe&color=fff`;
+        const roleClass = (user.role === 'Admin' || user.role === 'Quản trị') ? 'role-admin' : 'role-user';
+        
         return `
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <td style="padding: 15px; color: #94a3b8;">#${user.id}</td>
-            <td style="padding: 15px;">
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+            <td style="padding: 18px 15px; color: #64748b;">#${user.id}</td>
+            <td style="padding: 18px 15px;">
                 <div style="display: flex; align-items: center; gap: 12px;">
-                    <img src="${user.avatar || 'https://ui-avatars.com/api/?name=' + user.fullname}" 
-                         alt="Avatar" style="width:35px; height:35px; border-radius:50%; border: 2px solid #4facfe;">
-                    <span style="font-weight:600; color:#e2e8f0;">${user.fullname}</span>
+                    <img src="${avatar}" style="width:38px; height:38px; border-radius:10px; object-fit:cover;">
+                    <span style="font-weight:600; color:#fff;">${user.fullname}</span>
                 </div>
             </td>
-            <td style="padding: 15px; color:#94a3b8;">${user.email}</td>
-            <td style="padding: 15px;">
-                <span style="background: ${user.role === 'Admin' ? 'rgba(79, 172, 254, 0.1)' : 'rgba(148, 163, 184, 0.1)'}; 
-                             color: ${user.role === 'Admin' ? '#4facfe' : '#94a3b8'}; 
-                             padding: 5px 12px; border-radius: 6px; font-size:12px; font-weight: 500;">
-                    ${user.role}
-                </span>
-            </td>
-            <td style="padding: 15px; text-align:center;">
-                <button class="btn-edit" onclick="openUserModal(true, ${user.id})" 
-                        style="background:none; border:1px solid #4facfe; color:#4facfe; padding:4px 12px; border-radius:4px; cursor:pointer; margin-right:5px;">Sửa</button>
-                <button class="btn-delete" onclick="deleteUser(${user.id})" 
-                        style="background:none; border:1px solid #f87171; color:#f87171; padding:4px 12px; border-radius:4px; cursor:pointer;">Xóa</button>
+            <td style="padding: 18px 15px; color: #a1a1aa;">${user.email}</td>
+            <td style="padding: 18px 15px;"><span class="role-badge ${roleClass}">${user.role}</span></td>
+            <td style="padding: 18px 15px; text-align:center;">
+                <button onclick="openUserModal(true, ${user.id})" style="background:none; border:none; color:#4facfe; cursor:pointer; font-weight:700; margin-right:12px;">Sửa</button>
+                <button onclick="deleteUser(${user.id})" style="background:none; border:none; color:#ff4d4d; cursor:pointer; font-weight:700;">Xóa</button>
             </td>
         </tr>`;
     }).join('');
 }
 
-// --- 2. ĐIỀU KHIỂN MODAL ---
+// --- 4. ĐIỀU KHIỂN MODAL (Fix lỗi Null khi mở) ---
 function openUserModal(isEdit = false, id = null) {
-    if (!userModal || !userForm) return;
+    const modal = document.getElementById("userModal");
+    if (!modal) return;
+
+    const form = document.getElementById("userForm");
+    if (form) form.reset();
     
-    userModal.style.display = "flex";
-    userForm.reset();
-    const title = document.getElementById("userModalTitle");
+    modal.style.display = "flex";
+
+    // Reset ảnh về mặc định
+    const preview = document.getElementById("imgPreview");
+    if (preview) preview.src = "https://ui-avatars.com/api/?name=U&background=4facfe&color=fff";
 
     if (isEdit && id) {
         const user = db.users.find(u => u.id == id);
         if (user) {
-            title.innerText = "Chỉnh sửa người dùng";
+            document.getElementById("userModalTitle").innerText = "Chỉnh sửa người dùng";
             document.getElementById("userId").value = user.id;
             document.getElementById("userName").value = user.fullname;
             document.getElementById("userEmail").value = user.email;
             document.getElementById("userRole").value = user.role;
+            if (user.avatar && preview) preview.src = user.avatar;
         }
     } else {
-        title.innerText = "Thêm người dùng mới";
+        document.getElementById("userModalTitle").innerText = "Thêm người dùng mới";
         document.getElementById("userId").value = "";
     }
 }
 
 function closeUserModal() {
-    if (userModal) userModal.style.display = "none";
+    const m = document.getElementById("userModal");
+    if (m) m.style.display = "none";
 }
 
-// --- 3. XỬ LÝ LƯU (THÊM / SỬA) ---
-if (userForm) {
-    userForm.onsubmit = (e) => {
+// --- 5. LƯU DỮ LIỆU (Fix lỗi không bấm được nút Lưu) ---
+function setupFormSubmit(form) {
+    form.onsubmit = function(e) {
         e.preventDefault();
         
-        const id = document.getElementById("userId").value;
-        const fullname = document.getElementById("userName").value.trim();
-        const email = document.getElementById("userEmail").value.trim();
-        const role = document.getElementById("userRole").value;
+        try {
+            const id = document.getElementById("userId").value;
+            const fullname = document.getElementById("userName").value.trim();
+            const email = document.getElementById("userEmail").value.trim();
+            const role = document.getElementById("userRole").value;
+            const preview = document.getElementById("imgPreview");
+            const avatar = preview ? preview.src : "";
 
-        if (id) {
-            // Sửa
-            const index = db.users.findIndex(u => u.id == id);
-            if (index !== -1) {
-                db.users[index] = { ...db.users[index], fullname, email, role };
+            if (!fullname || !email) return alert("Vui lòng nhập đầy đủ thông tin!");
+
+            db = getCurrentDB();
+            if (!db.users) db.users = [];
+
+            if (id) {
+                const idx = db.users.findIndex(u => u.id == id);
+                if (idx !== -1) db.users[idx] = { ...db.users[idx], fullname, email, role, avatar };
+            } else {
+                db.users.push({
+                    id: Math.floor(Math.random() * 9000) + 1000,
+                    fullname, email, role,
+                    avatar: avatar.includes('ui-avatars') ? "" : avatar
+                });
             }
-        } else {
-            // Thêm mới
-            const newUser = {
-                id: Date.now() % 10000, // Tạo ID ngắn gọn
-                fullname,
-                email,
-                role,
-                avatar: `https://i.pravatar.cc/150?u=${Date.now()}`
-            };
-            db.users.push(newUser);
-        }
 
-        saveDB(db);
-        closeUserModal();
-        renderUsers();
-        alert("Cập nhật thành công!");
+            // Lưu an toàn
+            if (typeof saveDB === 'function') saveDB(db);
+            else localStorage.setItem("vietstove_db", JSON.stringify(db));
+
+            closeUserModal();
+            renderUsers();
+            alert("Đã lưu thông tin người dùng!");
+
+        } catch (err) {
+            console.error("Lỗi thực thi:", err);
+            alert("Có lỗi xảy ra khi lưu dữ liệu!");
+        }
     };
 }
 
-// --- 4. XÓA NGƯỜI DÙNG ---
+// --- 6. XÓA NGƯỜI DÙNG ---
 function deleteUser(id) {
     if (confirm("Bạn có chắc chắn muốn xóa người dùng này?")) {
+        db = getCurrentDB();
         db.users = db.users.filter(u => u.id != id);
-        saveDB(db);
+        if (typeof saveDB === 'function') saveDB(db);
+        else localStorage.setItem("vietstove_db", JSON.stringify(db));
         renderUsers();
     }
 }
 
-// Đóng modal khi click ra ngoài
-window.onclick = (e) => { if (e.target == userModal) closeUserModal(); };
+// Click ra ngoài để đóng modal
+window.onclick = (e) => {
+    const modal = document.getElementById("userModal");
+    if (e.target == modal) closeUserModal();
+};

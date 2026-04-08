@@ -1,5 +1,6 @@
-// Lấy các element
-localStorage.removeItem("db.json"); // Dòng code tạm thời
+/**
+ * Quản lý công thức - VietStove
+ */
 const recipeList = document.getElementById("recipeList");
 const recipeForm = document.getElementById("recipeForm");
 const modal = document.getElementById("recipeModal");
@@ -7,7 +8,7 @@ const imageInput = document.getElementById("recipeImage");
 const imagePreview = document.getElementById("imagePreview");
 const imagePreviewContainer = document.getElementById("imagePreviewContainer");
 
-// Khởi tạo dữ liệu
+// Khởi tạo biến db toàn cục
 let db = getDB(); 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// --- 1. HIỂN THỊ DANH MỤC TRONG MODAL ---
 function renderCategories() {
     const selectRegion = document.getElementById("recipeRegion");
     if (selectRegion && db.categories) {
@@ -28,43 +28,33 @@ function renderCategories() {
     }
 }
 
-// --- 2. HIỂN THỊ DANH SÁCH MÓN ĂN ---
 function renderRecipes() {
     if (!recipeList) return;
-
-    // Sắp xếp ID giảm dần để món mới luôn nằm trên cùng
     const sortedRecipes = [...db.recipes].sort((a, b) => b.id - a.id);
 
     if (sortedRecipes.length === 0) {
-        recipeList.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 40px; color: #94a3b8;">Chưa có dữ liệu công thức.</td></tr>`;
+        recipeList.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 40px; color: #94a3b8;">Chưa có dữ liệu.</td></tr>`;
         return;
     }
 
     recipeList.innerHTML = sortedRecipes.map((item) => {
         const category = db.categories.find(cat => cat.id == item.categoryId);
-        const categoryName = category ? category.name : "N/A";
-
         return `
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
             <td style="padding: 15px; text-align:center;">
-                <img src="${item.image}" alt="${item.name}" style="width:80px; height:55px; object-fit:cover; border-radius:8px; border: 1px solid #334155;" onerror="this.src='https://placehold.co/80x55?text=No+Image'">
+                <img src="${item.image}" style="width:80px; height:55px; object-fit:cover; border-radius:8px;" onerror="this.src='https://placehold.co/80x55?text=No+Img'">
             </td>
             <td style="padding: 15px;"><span style="font-weight:600; color:#e2e8f0;">${item.name}</span></td>
-            <td style="padding: 15px;">
-                <span style="background: rgba(79, 172, 254, 0.1); color: #4facfe; padding: 6px 14px; border-radius: 20px; font-size:12px; border: 1px solid rgba(79, 172, 254, 0.2); white-space: nowrap;">
-                    ${categoryName}
-                </span>
-            </td>
+            <td style="padding: 15px;"><span class="badge">${category ? category.name : "N/A"}</span></td>
             <td style="padding: 15px; text-align:center; color:#94a3b8;">${item.views || 0} lượt</td>
             <td style="padding: 15px; text-align:center;">
-                <button onclick="openModal(true, ${item.id})" style="background:none; border:1px solid #4facfe; color:#4facfe; padding:6px 16px; border-radius:8px; cursor:pointer; margin-right:5px; transition: 0.3s;">Sửa</button>
-                <button onclick="deleteRecipe(${item.id})" style="background:none; border:1px solid #f87171; color:#f87171; padding:6px 16px; border-radius:8px; cursor:pointer; transition: 0.3s;">Xóa</button>
+                <button onclick="openModal(true, ${item.id})" class="btn-edit">Sửa</button>
+                <button onclick="deleteRecipe(${item.id})" class="btn-delete">Xóa</button>
             </td>
         </tr>`;
     }).join('');
 }
 
-// --- 3. XỬ LÝ ẢNH ---
 function setupImagePreview() {
     if (!imageInput) return;
     imageInput.addEventListener('change', function() {
@@ -80,15 +70,6 @@ function setupImagePreview() {
     });
 }
 
-function fileToBase64(file) {
-    return new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-    });
-}
-
-// --- 4. MODAL CONTROL ---
 function openModal(isEdit = false, id = null) {
     if (!modal) return;
     recipeForm.reset();
@@ -113,22 +94,19 @@ function openModal(isEdit = false, id = null) {
 
 function closeModal() { modal.style.display = "none"; }
 
-// --- 5. LƯU DỮ LIỆU ---
 recipeForm.onsubmit = async (e) => {
     e.preventDefault();
     const id = document.getElementById("recipeId").value;
     const name = document.getElementById("recipeName").value.trim();
     const catId = parseInt(document.getElementById("recipeRegion").value);
-    const file = imageInput.files[0];
-
+    
     let imageData = imagePreview.src;
-    if (file) imageData = await fileToBase64(file);
 
     if (id) {
         const index = db.recipes.findIndex(r => r.id == id);
         db.recipes[index] = { ...db.recipes[index], name, categoryId: catId, image: imageData };
     } else {
-        db.recipes.push({
+        db.recipes.unshift({
             id: Date.now(),
             name,
             categoryId: catId,
@@ -137,12 +115,11 @@ recipeForm.onsubmit = async (e) => {
         });
     }
 
-    saveDB(db);
+    saveDB(db); // Quan trọng: Lưu vào localStorage
     closeModal();
     renderRecipes();
 };
 
-// --- 6. XÓA ---
 function deleteRecipe(id) {
     if (confirm("Xác nhận xóa món ăn này?")) {
         db.recipes = db.recipes.filter(r => r.id != id);
@@ -150,5 +127,3 @@ function deleteRecipe(id) {
         renderRecipes();
     }
 }
-
-window.onclick = (e) => { if (e.target == modal) closeModal(); };
