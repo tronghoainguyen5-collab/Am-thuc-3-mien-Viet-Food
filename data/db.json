@@ -561,7 +561,6 @@
   "image": "https://i1-giadinh.vnecdn.net/2023/09/19/Buoc-10-Thanh-pham-1-1-5225-1695107554.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=w2NSjDRK5L-CXyoFHF9ygw",
   "description": "Bánh xèo miền Tây giòn rụm, nhân đầy tôm, thịt, giá, ăn kèm rau sống và nước chấm đậm đà",
   "categoryId": 3,
-   "type": "chien",
   "userId": 2,
   "ingredients": [
     "Bột bánh xèo: 250g",
@@ -1853,7 +1852,6 @@
       "image": "https://i1-giadinh.vnecdn.net/2023/04/25/Thanh-pham-1-1-7239-1682395675.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=ESfJ2TFAlck0kXhPfOIkxQ",
       "description": "Canh chua cá thơm mát, vị chua thanh, ăn cùng cơm nóng, chuẩn miền Nam",
       "categoryId": 3,
-      "type": "canh",
       "userId": 2,
       "ingredients": [
         "Cá lóc (cá quả): 400g",
@@ -2537,6 +2535,7 @@
       "image": "https://cdn.tgdd.vn/Files/2020/03/23/1243844/lam-nem-chua-ran-chien-xu-chuan-vi-ha-noi-tai-nha-202202241114056183.jpg",
       "description": "Món ăn vặt đường phố nức tiếng Hà Nội với lớp vỏ chiên xù giòn rụm, bên trong nhân thịt và bì heo dai giòn sần sật, thơm mùi thính gạo.",
       "categoryId": 1,
+      "type": "chien",
       "userId": 2,
       "ingredients": [
         "Thịt heo xay (tỷ lệ nạc mỡ 8:2 hoặc 9:1): 300g",
@@ -2650,6 +2649,7 @@
       "image": "https://i1-giadinh.vnecdn.net/2021/11/19/Thnhphm1-1637329120-4505-1637329124.jpg?w=320&h=320&q=100&dpr=2&fit=crop&s=mElqEmiDFMHfhGlVWvc6nA",
       "description": "Món gà kho đậm đà với màu vàng óng ả từ nghệ tươi, dậy mùi thơm nồng của sả gừng, nước sốt sánh quyện cực kỳ bắt cơm.",
       "categoryId": 2,
+      "type":"kho",
       "userId": 2,
       "ingredients": [
         "Gà mái ta: 1.4 - 1.5kg",
@@ -2678,6 +2678,7 @@
       "image": "https://img-global.cpcdn.com/recipes/b62c051f7b90a2f9/600x852cq80/chao-l%C6%B0%C6%A1n-ngh%E1%BB%87-an-recipe-main-photo.webp",
       "description": "Món cháo đặc sản miền Trung với thịt lươn đồng dai ngọt, vàng óng màu nghệ, thơm nồng vị sả và tiêu, mang đến hương vị ấm nồng, bổ dưỡng.",
       "categoryId": 2,
+      "type":"mon-nuoc",
       "userId": 2,
       "ingredients": [
         "Gạo tẻ và gạo nếp (tỷ lệ 3:1): 1 bát",
