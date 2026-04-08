@@ -130,7 +130,60 @@ function timeAgo(ts) {
 // =======================
 // 💬 REVIEW SYSTEM
 // =======================
+// ===== LOGIN MODAL FIX =====
+// ===== MODAL LOGIN =====
+window.showLoginModal = function () {
+    const modal = document.getElementById("login-required-modal");
+    if (modal) modal.classList.add("show");
+};
 
+window.closeLoginModal = function () {
+    const modal = document.getElementById("login-required-modal");
+    if (modal) modal.classList.remove("show");
+};
+
+// click ra ngoài để đóng
+document.addEventListener("click", (e) => {
+    const modal = document.getElementById("login-required-modal");
+    if (!modal) return;
+
+    if (e.target === modal) {
+        closeLoginModal();
+    }
+});
+
+// ESC để đóng
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeLoginModal();
+    }
+});
+
+function flyReaction(el, emoji) {
+    const rect = el.getBoundingClientRect();
+
+    const fly = document.createElement("div");
+    fly.innerText = emoji;
+    fly.style.position = "fixed";
+    fly.style.left = rect.left + "px";
+    fly.style.top = rect.top + "px";
+    fly.style.fontSize = "22px";
+    fly.style.zIndex = 9999;
+    fly.style.pointerEvents = "none";
+
+    document.body.appendChild(fly);
+
+    fly.animate([
+        { transform: "translateY(0) scale(1)", opacity: 1 },
+        { transform: "translateY(-60px) scale(1.6)", opacity: 0 }
+    ], {
+        duration: 600,
+        easing: "ease-out"
+    });
+
+    setTimeout(() => fly.remove(), 600);
+}
+// ===== REVIEW SYSTEM =====
 function initReviewSystem_VS_PRO() {
 
     const recipeId = new URLSearchParams(window.location.search).get("id");
@@ -141,17 +194,12 @@ function initReviewSystem_VS_PRO() {
 
     const stars = document.querySelectorAll("#star-rating i");
     const ratingText = document.getElementById("rating-text");
+    const avgRating = document.getElementById("avg-rating");
 
-    let currentRate = 5;
+    let currentRate = 0;
+    let showAll = false;
 
-    function showLoginModal() {
-        document.getElementById("login-required-modal").classList.add("show");
-    }
-
-    window.closeLoginModal = () => {
-        document.getElementById("login-required-modal").classList.remove("show");
-    };
-
+    // ===== DATA =====
     function getData() {
         return JSON.parse(localStorage.getItem("cmt_" + recipeId)) || [];
     }
@@ -160,129 +208,345 @@ function initReviewSystem_VS_PRO() {
         localStorage.setItem("cmt_" + recipeId, JSON.stringify(data));
     }
 
-    // ===== STAR =====
+    // ===== REALTIME =====
+    window.addEventListener("storage", (e) => {
+        if (e.key === "cmt_" + recipeId) render();
+    });
+
+    // ===== ⭐ STAR =====
     stars.forEach((star, index) => {
+
+        star.onmousemove = () => {
+            stars.forEach(s => s.classList.remove("hover"));
+            for (let i = 0; i <= index; i++) stars[i].classList.add("hover");
+        };
+
+        star.onmouseleave = () => {
+            stars.forEach(s => s.classList.remove("hover"));
+        };
+
         star.onclick = () => {
             if (!isLoggedIn()) return showLoginModal();
 
             currentRate = index + 1;
 
             stars.forEach(s => s.classList.remove("active"));
-            for (let i = 0; i < currentRate; i++) {
-                stars[i].classList.add("active");
-            }
+            for (let i = 0; i < currentRate; i++) stars[i].classList.add("active");
 
             ratingText.innerText = currentRate + " / 5 ⭐";
         };
     });
 
+    // ===== RATING SUMMARY =====
+    function calcRating() {
+        const data = getData();
+        if (!data.length) return avgRating.innerHTML = "";
+
+        const total = data.length;
+        const avg = (data.reduce((s, c) => s + (c.rate || 0), 0) / total).toFixed(1);
+
+        const count = [0,0,0,0,0];
+        data.forEach(c => count[c.rate - 1]++);
+
+        avgRating.innerHTML = `
+            <div class="rating-summary">
+                <div class="avg-score">${avg} ⭐</div>
+                ${[5,4,3,2,1].map(i => {
+                    const percent = total ? (count[i-1]/total)*100 : 0;
+                    return `
+                    <div class="bar-row">
+                        <span>${i}</span>
+                        <div class="bar">
+                            <div class="fill" style="width:${percent}%"></div>
+                        </div>
+                    </div>
+                    `;
+                }).join("")}
+            </div>
+        `;
+    }
+
     // ===== RENDER =====
     function render() {
-        const data = getData();
 
-        list.innerHTML = data.map((c, i) => `
+        const data = getData();
+        const user = getCurrentUser();
+        const visible = showAll ? data : data.slice(0, 3);
+
+        list.innerHTML = visible.map((c, i) => {
+
+            const replies = c.replies || [];
+            const showReplies = c.showAllReply ? replies : replies.slice(0, 2);
+
+            const myReact = user ? c.reacted?.[user.username] : null;
+            const reactCount = Object.keys(c.reacted || {}).length;
+
+            return `
             <div class="comment-item">
 
-                <img src="${c.avatar || './public/image/avatar.png'}" class="comment-avatar">
+                <img src="${c.avatar || './public/image/avatar.jpg'}" class="comment-avatar">
 
                 <div class="comment-content">
+
                     <div class="comment-top">
-                        <div>
-                            <strong>${c.username}</strong>
-                            <div class="time">${timeAgo(c.time)}</div>
-                        </div>
-                        <span>${c.rate}⭐</span>
+                        <strong>${c.username}</strong>
+                        <span>${timeAgo(c.time)}</span>
                     </div>
 
-                    <p>${c.text}</p>
+                    <p id="text-${i}">${c.text}</p>
 
                     <div class="comment-actions">
-                        <span onclick="likeCmt(${i})">👍 ${c.likes}</span>
-                        <span onclick="toggleReply(${i})">💬 Trả lời</span>
-                        <span onclick="deleteCmt(${i})">🗑</span>
+
+                        <div class="react-wrapper"
+                        onmouseenter="showReact(${i})"
+                        onmouseleave="hideReact(${i})"
+                        onclick="toggleLike(${i})">
+
+                        <span class="react-btn ${myReact ? 'active' : ''}">
+                        ${myReact ? myReact : "👍"} ${reactCount > 0 ? reactCount : ""}
+                    </span>
+
+                        <div class="reaction-dropdown"
+                            id="react-${i}"
+                            onmouseenter="showReact(${i})"
+                            onmouseleave="hideReact(${i})">
+
+                            ${["👍","❤️","😆","😮","😢"].map(r => `
+                                <span onclick="reactCmt(${i}, '${r}')">${r}</span>
+                            `).join("")}
+
+                        </div>
+                    </div>
+
+                        <span onclick="toggleReply(${i})">💬</span>
+
+                        ${user && user.username === c.username ? `
+                            <span onclick="editCmt(${i})">✏️</span>
+                            <span onclick="deleteCmt(${i})">🗑</span>
+                        ` : ""}
                     </div>
 
                     <div class="reply-box" id="reply-${i}">
-                        <input placeholder="Nhập reply..." onkeypress="addReply(event, ${i})">
+                        <input placeholder="Viết phản hồi..." onkeypress="addReply(event, ${i})">
                     </div>
 
                     <div class="reply-list">
-                        ${(c.replies || []).map(r => `
-                            <div class="reply-item">
-                                ↳ <b>${r.username}</b>: ${r.text}
-                            </div>
+                        ${showReplies.map(r => `
+                            <div class="reply-item"><b>${r.username}</b>: ${r.text}</div>
                         `).join("")}
+
+                        ${!c.showAllReply && replies.length > 2 ? `
+                            <div class="view-more" onclick="showMoreReply(${i})">
+                                Xem thêm ${replies.length - 2}
+                            </div>
+                        ` : ""}
+
+                        ${c.showAllReply ? `
+                            <div class="view-more" onclick="hideReply(${i})">Thu gọn</div>
+                        ` : ""}
                     </div>
 
                 </div>
             </div>
-        `).join("");
+            `;
+        }).join("");
+
+        if (data.length > 3 && !showAll) {
+            list.innerHTML += `<div class="view-more" onclick="showAllCmt()">Xem thêm bình luận</div>`;
+        }
+
+        if (showAll) {
+            list.innerHTML += `<div class="view-more" onclick="hideAllCmt()">Thu gọn</div>`;
+        }
+
+        calcRating();
     }
 
     // ===== ADD COMMENT =====
-    btn.onclick = () => {
-        if (!isLoggedIn()) return showLoginModal();
+    function addComment() {
+    if (!isLoggedIn()) return showLoginModal();
 
-        const text = input.value.trim();
-        if (!text) return;
+    const text = input.value.trim();
+    if (!text) return;
 
-        const user = getCurrentUser();
+    const user = getCurrentUser();
+    const data = getData();
 
+    data.unshift({
+        username: user.username,
+        avatar: user.avatar,
+        text,
+        rate: currentRate || 5,
+        reacted: {},
+        time: Date.now(),
+        replies: []
+    });
+
+    saveData(data);
+    input.value = "";
+    currentRate = 0;
+
+    render();
+
+    // highlight comment mới
+    setTimeout(() => {
+        const first = document.querySelector(".comment-item");
+        if (first) first.classList.add("highlight");
+    }, 50);
+}
+
+    btn.onclick = addComment;
+
+    
+    // ===== REACTION =====
+  // ===== REACTION =====
+window.reactCmt = (i, type) => {
+    const user = getCurrentUser();
+    if (!user) return showLoginModal();
+
+    const data = getData();
+    if (!data[i].reacted) data[i].reacted = {};
+
+    const current = data[i].reacted[user.username];
+
+    const btn = document.querySelectorAll(".react-btn")[i];
+
+    // ❌ UNLIKE
+    if (current === type) {
+        delete data[i].reacted[user.username];
+    } 
+    // 🔄 CHANGE
+    else {
+        data[i].reacted[user.username] = type;
+
+        // 🎉 bay emoji
+        if (btn) flyReaction(btn, type);
+    }
+
+    saveData(data);
+    render();
+};
+
+   let reactTimeout = {};
+
+window.showReact = (i) => {
+    clearTimeout(reactTimeout[i]);
+    reactTimeout[i] = setTimeout(() => {
+        document.getElementById("react-" + i)?.classList.add("show");
+    }, 200);
+};
+
+window.hideReact = (i) => {
+    clearTimeout(reactTimeout[i]);
+    reactTimeout[i] = setTimeout(() => {
+        const el = document.getElementById("react-" + i);
+        if (el && !el.matches(":hover")) {
+            el.classList.remove("show");
+        }
+    }, 250);
+};
+
+    // ===== EDIT =====
+    window.editCmt = (i) => {
+    const el = document.getElementById("text-" + i);
+    el.contentEditable = true;
+    el.classList.add("editing");
+    el.focus();
+
+    const save = () => {
         const data = getData();
-
-        data.unshift({
-            username: user.username,
-            avatar: user.avatar,
-            text,
-            rate: currentRate,
-            likes: 0,
-            time: Date.now(),
-            replies: []
-        });
-
+        data[i].text = el.innerText.trim();
         saveData(data);
-        input.value = "";
-        render();
+
+        el.contentEditable = false;
+        el.classList.remove("editing");
     };
 
-    // ===== GLOBAL =====
-    window.likeCmt = (i) => {
-        const data = getData();
-        data[i].likes++;
-        saveData(data);
-        render();
-    };
+    el.onblur = save;
 
+    el.onkeypress = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            el.blur();
+        }
+    };
+};
+
+    // ===== DELETE =====
     window.deleteCmt = (i) => {
-        if (!confirm("Xóa bình luận?")) return;
-        const data = getData();
-        data.splice(i, 1);
-        saveData(data);
-        render();
-    };
+    const user = getCurrentUser();
+    const data = getData();
 
+    if (!user || user.username !== data[i].username) return alert("Không phải của bạn");
+    if (!confirm("Xóa?")) return;
+
+    const item = document.querySelectorAll(".comment-item")[i];
+    if (item) {
+        item.classList.add("fade-out");
+
+        setTimeout(() => {
+            data.splice(i, 1);
+            saveData(data);
+            render();
+        }, 300);
+    }
+};
+
+    // ===== REPLY =====
     window.toggleReply = (i) => {
-        if (!isLoggedIn()) return showLoginModal();
+    const box = document.getElementById("reply-" + i);
 
-        const box = document.getElementById("reply-" + i);
-        box.style.display = box.style.display === "block" ? "none" : "block";
-    };
+    if (box.style.display === "block") {
+        box.style.height = box.scrollHeight + "px";
+
+        setTimeout(() => {
+            box.style.height = "0px";
+        }, 10);
+
+        setTimeout(() => {
+            box.style.display = "none";
+        }, 300);
+
+    } else {
+        box.style.display = "block";
+        box.style.height = "0px";
+
+        setTimeout(() => {
+            box.style.height = box.scrollHeight + "px";
+        }, 10);
+    }
+};
 
     window.addReply = (e, i) => {
-        if (!isLoggedIn()) return showLoginModal();
         if (e.key !== "Enter") return;
+
+        const user = getCurrentUser();
+        if (!user) return showLoginModal();
 
         const val = e.target.value.trim();
         if (!val) return;
 
-        const user = getCurrentUser();
         const data = getData();
+        data[i].replies.push({ username: user.username, text: val });
 
-        data[i].replies.push({
-            username: user.username,
-            text: val
-        });
+        saveData(data);
+        render();
+    };
 
+    // ===== LIMIT =====
+    window.showAllCmt = () => { showAll = true; render(); };
+    window.hideAllCmt = () => { showAll = false; render(); };
+
+    window.showMoreReply = (i) => {
+        const data = getData();
+        data[i].showAllReply = true;
+        saveData(data);
+        render();
+    };
+
+    window.hideReply = (i) => {
+        const data = getData();
+        data[i].showAllReply = false;
         saveData(data);
         render();
     };
