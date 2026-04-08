@@ -249,7 +249,7 @@ function register(e) {
     email,
     password: pass,
     role: email.includes("admin") ? "admin" : "user",
-    avatar: "public/image/avatar.png"
+    avatar: "public/image/avatar.jpg"
   };
 
   users.push(newUser);
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (avatarImg) {
     avatarImg.style.display = "inline-block";
-    avatarImg.src = currentUser.avatar || "public/image/avatar.png";
+    avatarImg.src = currentUser.avatar || "public/image/avatar.jpg";
   }
 
   // dropdown
