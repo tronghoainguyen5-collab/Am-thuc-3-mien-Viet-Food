@@ -3043,3 +3043,51 @@ body {
     0% { background: #fff8e1; }
     100% { background: transparent; }
 }   
+
+/* ===== NÚT LƯU CÔNG THỨC ===== */
+#btn-save {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid #bababa;
+
+    background: transparent;
+    color: #e67e22;
+    /* color: black; */
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+#btn-save:hover {
+    background: #f2f2f2;
+    border-color: transparent;
+    color: #e67e22;
+}
+
+
+
+/* trạng thái đã lưu */
+#btn-save.active {
+    background: #e67e22;
+    border-color: transparent;
+    color: #fff !important;
+}
+
+/* hover khi đã lưu */
+#btn-save.active:hover {
+    opacity: 0.9;
+}
+
+/* icon */
+#btn-save i {
+    transition: transform 0.2s;
+}
+
+/* hiệu ứng click */
+#btn-save:active {
+    transform: scale(0.95);
+}

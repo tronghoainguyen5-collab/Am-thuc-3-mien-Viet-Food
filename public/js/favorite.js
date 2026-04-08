@@ -31,7 +31,7 @@ function isSaved(recipeId) {
   let favorites = getFavorites();
   let list = favorites[user.id] || [];
 
-  return list.some(item => item.id === recipeId);
+  return list.some(item => Number(item.id) === Number(recipeId));
 }
 
 // =======================
@@ -51,7 +51,7 @@ function addToFavorite(recipe, btn) {
     favorites[user.id] = [];
   }
 
-  let index = favorites[user.id].findIndex(item => item.id === recipe.id);
+  let index = favorites[user.id].findIndex(item => Number(item.id) === Number(recipe.id));
 
   // ❌ ĐÃ TỒN TẠI → BỎ LƯU
   if (index !== -1) {
@@ -97,7 +97,7 @@ function removeFavorite(id) {
 
   let favorites = getFavorites();
 
-  favorites[user.id] = (favorites[user.id] || []).filter(item => item.id !== id);
+  favorites[user.id] = (favorites[user.id] || []).filter(item => Number(item.id) !== Number(id));
 
   saveFavorites(favorites);
 
@@ -241,7 +241,7 @@ function setupSaveButton() {
     e.preventDefault();
 
     let name = document.getElementById("hero-title")?.innerText;
-    let image = document.getElementById("main-img")?.src;
+    let image = document.getElementById("img-current")?.src;
 
     if (!currentId) return;
 

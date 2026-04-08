@@ -51,26 +51,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // ===== SAVE =====
-            const saveBtn = document.getElementById("btn-save");
+            // const saveBtn = document.getElementById("btn-save");
 
-            if (saveBtn) {
-                let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+            // if (saveBtn) {
+            //     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-                if (favorites.includes(food.id)) {
-                    saveBtn.innerHTML = "Đã lưu ❤️";
-                }
+            //     if (favorites.includes(food.id)) {
+            //         saveBtn.innerHTML = "Đã lưu ❤️";
+            //     }
 
-                saveBtn.onclick = () => {
-                    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+            //     saveBtn.onclick = () => {
+            //         let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-                    if (!favorites.includes(food.id)) {
-                        favorites.push(food.id);
-                        localStorage.setItem("favorites", JSON.stringify(favorites));
+            //         if (!favorites.includes(food.id)) {
+            //             favorites.push(food.id);
+            //             localStorage.setItem("favorites", JSON.stringify(favorites));
 
-                        saveBtn.innerHTML = "Đã lưu ❤️";
-                    }
-                };
-            }
+            //             saveBtn.innerHTML = "Đã lưu ❤️";
+            //         }
+            //     };
+            // }
+            setupSaveButtonDetail(food);
 
             // ===== COOK =====
             const cookBtn = document.getElementById("btn-cook");
@@ -93,14 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // =======================
 
 function getCurrentUser() {
-    const username = localStorage.getItem("currentUser");
-
-    if (!username || username === "null" || username === "undefined") {
-        return null;
-    }
-
     try {
-        return JSON.parse(localStorage.getItem("user_" + username));
+        return JSON.parse(localStorage.getItem("currentUser"));
     } catch {
         return null;
     }
@@ -555,3 +550,38 @@ window.hideReact = (i) => {
 }
 
 document.addEventListener("DOMContentLoaded", initReviewSystem_VS_PRO);
+
+function setupSaveButtonDetail(food) {
+    const btnSave = document.getElementById("btn-save");
+    if (!btnSave) return;
+
+    // check đã lưu chưa
+    if (isSaved(food.id)) {
+        btnSave.classList.add("active");
+        btnSave.innerHTML = "✅ Đã lưu";
+    }
+
+    btnSave.onclick = (e) => {
+    e.preventDefault();
+
+    const recipe = {
+        id: food.id,
+        name: food.name,
+        image: food.image
+    };
+
+    // 👉 toggle lưu
+    addToFavorite(recipe, btnSave);
+
+    // 👉 UPDATE UI NGAY (KHÔNG CẦN RELOAD)
+    setTimeout(() => {
+        if (isSaved(food.id)) {
+            btnSave.classList.add("active");
+            btnSave.innerHTML = "✅ Đã lưu";
+        } else {
+            btnSave.classList.remove("active");
+            btnSave.innerHTML = `<i class="fa-solid fa-bookmark"></i> Lưu công thức`;
+        }
+    }, 50);
+};
+}
