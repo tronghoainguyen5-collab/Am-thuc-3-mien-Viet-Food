@@ -91,6 +91,8 @@ function editProfile() {
 // ================= LỊCH SỬ ĐÃ XEM =================
 
 // Load lịch sử
+let showAllHistory = false; // trạng thái
+
 function loadHistory() {
     const historyList = document.getElementById("history-list");
     if (!historyList) return;
@@ -104,7 +106,12 @@ function loadHistory() {
         return;
     }
 
-    [...history].reverse().forEach(item => {
+    const reversed = [...history].reverse();
+
+    // 🔥 CHỈ HIỂN THỊ 6 MÓN
+    const visibleItems = showAllHistory ? reversed : reversed.slice(0, 6);
+
+    visibleItems.forEach(item => {
         const card = document.createElement("div");
         card.className = "history-card";
 
@@ -121,19 +128,45 @@ function loadHistory() {
             </span>
         `;
 
-        // click mở món
         card.onclick = () => {
             window.location.href = `chi-tiet.html?id=${item.id}`;
         };
 
-        // ❌ click nút xóa (chặn click card)
         card.querySelector(".delete-item").onclick = (e) => {
-            e.stopPropagation(); // chặn click lan ra card
+            e.stopPropagation();
             deleteHistoryItem(item.id);
         };
 
         historyList.appendChild(card);
     });
+
+    // 🔥 NÚT XEM THÊM
+    if (history.length > 6) {
+        const btn = document.createElement("button");
+        btn.className = "btn-history";
+        btn.innerHTML = showAllHistory ? "Thu gọn" : "Xem thêm";
+
+        btn.onclick = () => {
+            showAllHistory = !showAllHistory;
+            loadHistory();
+        };
+
+        historyList.appendChild(btn);
+    }
+
+    // 🔥 NÚT XÓA TẤT CẢ
+    const clearBtn = document.createElement("button");
+    clearBtn.className = "btn-history";
+    clearBtn.innerHTML = "🗑 Xóa tất cả";
+
+    clearBtn.onclick = () => {
+        if (confirm("Xóa toàn bộ lịch sử?")) {
+            localStorage.removeItem("viewHistory");
+            loadHistory();
+        }
+    };
+
+    historyList.appendChild(clearBtn);
 }
 
 // Gọi khi load trang (KHÔNG đụng code cũ)
@@ -141,21 +174,6 @@ document.addEventListener("DOMContentLoaded", loadHistory);
 
 
 // Hàm lưu lịch sử (gọi ở trang món ăn)
-function saveToHistory(recipe) {
-    let history = JSON.parse(localStorage.getItem("viewHistory")) || [];
-
-    // tránh trùng
-    history = history.filter(item => item.name !== recipe.name);
-
-    history.push(recipe);
-
-    // giới hạn 10 món
-    if (history.length > 10) {
-        history.shift();
-    }
-
-    localStorage.setItem("viewHistory", JSON.stringify(history));
-}
 // ================= TOGGLE LỊCH SỬ =================
 function toggleHistory() {
     const box = document.getElementById("history-box");

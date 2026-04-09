@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const recipes = data.recipes || data;
 
             const food = recipes.find(r => r.id == id);
+            // ===== LƯU LỊCH SỬ =====
+saveToHistory({
+    id: food.id,
+    name: food.name,
+    img: food.image,
+    time: food.time,
+    viewedAt: Date.now()
+});
 
             const detailInfo = document.querySelector(".detail-info");
 
