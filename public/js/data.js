@@ -63,7 +63,17 @@ const defaultData = {
     { "id": 47, "name": "Chuối Nếp Nướng", "image": "public/image/image1/id47.png", "categoryId": 3, "views": 0 },
     { "id": 48, "name": "Gà Kho Sả Nghệ", "image": "public/image/image1/id48.png", "categoryId": 3, "views": 0 },
     { "id": 49, "name": "Phở Khô Gia Lai", "image": "public/image/image1/id49.png", "categoryId": 3, "views": 0 },
-    { "id": 50, "name": "Bánh Tét Miền Tây", "image": "public/image/image1/id50.png", "categoryId": 3, "views": 0 }
+    { "id": 50, "name": "Bánh Tét Miền Tây", "image": "public/image/image1/id50.png", "categoryId": 3, "views": 0 },
+    { "id": 51, "name": "Bò Kho Sài Gòn", "image": "public/image/image1/id45.png", "categoryId": 3, "views": 0 },
+    { "id": 52, "name": "Canh Chua Cá Lóc", "image": "public/image/image1/id46.png", "categoryId": 3, "views": 0 },
+    { "id": 53, "name": "Chuối Nếp Nướng", "image": "public/image/image1/id47.png", "categoryId": 3, "views": 0 },
+    { "id": 54, "name": "Gà Kho Sả Nghệ", "image": "public/image/image1/id48.png", "categoryId": 3, "views": 0 },
+    { "id": 55, "name": "Phở Khô Gia Lai", "image": "public/image/image1/id49.png", "categoryId": 3, "views": 0 },
+    { "id": 56, "name": "Bánh Tét Miền Tây", "image": "public/image/image1/id50.png", "categoryId": 3, "views": 0 },
+    { "id": 57, "name": "Thắng Cố Hà Giang", "image": "public/image/image1/id15.png", "categoryId": 1, "views": 0 },
+    { "id": 58, "name": "Thịt Trâu Gác Bếp", "image": "public/image/image1/id16.png", "categoryId": 1, "views": 1 },
+    { "id": 59, "name": "Bún Ốc Hà Nội", "image": "public/image/image1/id17.png", "categoryId": 1, "views": 0 },
+    { "id": 60, "name": "Nem Chua Rán", "image": "public/image/image1/id18.png", "categoryId": 1, "views": 0 },
 ]
 };
 
