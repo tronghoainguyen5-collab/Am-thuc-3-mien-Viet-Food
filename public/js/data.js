@@ -27,7 +27,7 @@ const defaultData = {
     { "id": 15, "name": "Thắng Cố Hà Giang", "image": "public/image/image1/id15.png", "categoryId": 1, "views": 0 },
     { "id": 16, "name": "Thịt Trâu Gác Bếp", "image": "public/image/image1/id16.png", "categoryId": 1, "views": 1 },
     { "id": 17, "name": "Bún Ốc Hà Nội", "image": "public/image/image1/id17.png", "categoryId": 1, "views": 0 },
-    { "id": 18, "name": "Nem Chua Rán", "image": "public/image/image1/id18.png", "categoryId": 1, "views": 0 },
+    { "id": 18, "name": "Nem Chua Rán", "image": "public/image/image1/id18.png", "categoryId": 1, "views": 1 },
 
     // --- MIỀN TRUNG (categoryId: 2) - Tổng ~30 views ---
     { "id": 19, "name": "Bún Bò Huế", "image": "public/image/image1/id19.png", "categoryId": 2, "views": 10 },
